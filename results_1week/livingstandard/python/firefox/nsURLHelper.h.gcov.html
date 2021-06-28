@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - lcov.info - /home/mozilla-unified/netwerk/base/nsURLHelper.h</title>
+  <link rel="stylesheet" type="text/css" href="../../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title">LCOV - code coverage report</td></tr>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../../index.html">top level</a> - <a href="index.html">home/mozilla-unified/netwerk/base</a> - nsURLHelper.h<span style="font-size: 80%;"> (source / <a href="nsURLHelper.h.func-sort-c.html">functions</a>)</span></td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Test:</td>
+            <td class="headerValue">lcov.info</td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-06-28 05:45:55</td>
+            <td></td>
+            <td class="headerItem">Functions:</td>
+            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">7</td>
+            <td class="headerCovTableEntryLo">0.0 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span>            : /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */</a>
+<span class="lineNum">       2 </span>            : /* This Source Code Form is subject to the terms of the Mozilla Public
+<span class="lineNum">       3 </span>            :  * License, v. 2.0. If a copy of the MPL was not distributed with this
+<span class="lineNum">       4 </span>            :  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+<span class="lineNum">       5 </span>            : 
+<span class="lineNum">       6 </span>            : #ifndef nsURLHelper_h__
+<span class="lineNum">       7 </span>            : #define nsURLHelper_h__
+<span class="lineNum">       8 </span>            : 
+<span class="lineNum">       9 </span>            : #include &quot;nsString.h&quot;
+<span class="lineNum">      10 </span>            : #include &quot;nsTArray.h&quot;
+<span class="lineNum">      11 </span>            : 
+<span class="lineNum">      12 </span>            : class nsIFile;
+<span class="lineNum">      13 </span>            : class nsIURLParser;
+<span class="lineNum">      14 </span>            : 
+<span class="lineNum">      15 </span>            : enum netCoalesceFlags {
+<span class="lineNum">      16 </span>            :   NET_COALESCE_NORMAL = 0,
+<span class="lineNum">      17 </span>            : 
+<span class="lineNum">      18 </span>            :   /**
+<span class="lineNum">      19 </span>            :    * retains /../ that reach above dir root (useful for FTP
+<span class="lineNum">      20 </span>            :    * servers in which the root of the FTP URL is not necessarily
+<span class="lineNum">      21 </span>            :    * the root of the FTP filesystem).
+<span class="lineNum">      22 </span>            :    */
+<span class="lineNum">      23 </span>            :   NET_COALESCE_ALLOW_RELATIVE_ROOT = 1 &lt;&lt; 0,
+<span class="lineNum">      24 </span>            : 
+<span class="lineNum">      25 </span>            :   /**
+<span class="lineNum">      26 </span>            :    * recognizes /%2F and // as markers for the root directory
+<span class="lineNum">      27 </span>            :    * and handles them properly.
+<span class="lineNum">      28 </span>            :    */
+<span class="lineNum">      29 </span>            :   NET_COALESCE_DOUBLE_SLASH_IS_ROOT = 1 &lt;&lt; 1
+<span class="lineNum">      30 </span>            : };
+<span class="lineNum">      31 </span>            : 
+<span class="lineNum">      32 </span>            : //----------------------------------------------------------------------------
+<span class="lineNum">      33 </span>            : // This module contains some private helper functions related to URL parsing.
+<span class="lineNum">      34 </span>            : //----------------------------------------------------------------------------
+<span class="lineNum">      35 </span>            : 
+<span class="lineNum">      36 </span>            : /* shutdown frees URL parser */
+<span class="lineNum">      37 </span>            : void net_ShutdownURLHelper();
+<span class="lineNum">      38 </span>            : #ifdef XP_MACOSX
+<span class="lineNum">      39 </span>            : void net_ShutdownURLHelperOSX();
+<span class="lineNum">      40 </span>            : #endif
+<span class="lineNum">      41 </span>            : 
+<span class="lineNum">      42 </span>            : /* access URL parsers */
+<span class="lineNum">      43 </span>            : nsIURLParser* net_GetAuthURLParser();
+<span class="lineNum">      44 </span>            : nsIURLParser* net_GetNoAuthURLParser();
+<span class="lineNum">      45 </span>            : nsIURLParser* net_GetStdURLParser();
+<span class="lineNum">      46 </span>            : 
+<span class="lineNum">      47 </span>            : /* convert between nsIFile and file:// URL spec
+<span class="lineNum">      48 </span>            :  * net_GetURLSpecFromFile does an extra stat, so callers should
+<span class="lineNum">      49 </span>            :  * avoid it if possible in favor of net_GetURLSpecFromActualFile
+<span class="lineNum">      50 </span>            :  * and net_GetURLSpecFromDir */
+<span class="lineNum">      51 </span>            : nsresult net_GetURLSpecFromFile(nsIFile*, nsACString&amp;);
+<span class="lineNum">      52 </span>            : nsresult net_GetURLSpecFromDir(nsIFile*, nsACString&amp;);
+<span class="lineNum">      53 </span>            : nsresult net_GetURLSpecFromActualFile(nsIFile*, nsACString&amp;);
+<span class="lineNum">      54 </span>            : nsresult net_GetFileFromURLSpec(const nsACString&amp;, nsIFile**);
+<span class="lineNum">      55 </span>            : 
+<span class="lineNum">      56 </span>            : /* extract file path components from file:// URL */
+<span class="lineNum">      57 </span>            : nsresult net_ParseFileURL(const nsACString&amp; inURL, nsACString&amp; outDirectory,
+<span class="lineNum">      58 </span>            :                           nsACString&amp; outFileBaseName,
+<span class="lineNum">      59 </span>            :                           nsACString&amp; outFileExtension);
+<span class="lineNum">      60 </span>            : 
+<span class="lineNum">      61 </span>            : /* handle .. in dirs while resolving URLs (path is UTF-8) */
+<span class="lineNum">      62 </span>            : void net_CoalesceDirs(netCoalesceFlags flags, char* path);
+<span class="lineNum">      63 </span>            : 
+<span class="lineNum">      64 </span>            : /**
+<span class="lineNum">      65 </span>            :  * Check if a URL is absolute
+<span class="lineNum">      66 </span>            :  *
+<span class="lineNum">      67 </span>            :  * @param inURL     URL spec
+<span class="lineNum">      68 </span>            :  * @return true if the given spec represents an absolute URL
+<span class="lineNum">      69 </span>            :  */
+<span class="lineNum">      70 </span>            : bool net_IsAbsoluteURL(const nsACString&amp; inURL);
+<span class="lineNum">      71 </span>            : 
+<span class="lineNum">      72 </span>            : /**
+<span class="lineNum">      73 </span>            :  * Extract URI-Scheme if possible
+<span class="lineNum">      74 </span>            :  *
+<span class="lineNum">      75 </span>            :  * @param inURI     URI spec
+<span class="lineNum">      76 </span>            :  * @param scheme    scheme copied to this buffer on return. Is lowercase.
+<span class="lineNum">      77 </span>            :  */
+<span class="lineNum">      78 </span>            : nsresult net_ExtractURLScheme(const nsACString&amp; inURI, nsACString&amp; scheme);
+<span class="lineNum">      79 </span>            : 
+<span class="lineNum">      80 </span>            : /* check that the given scheme conforms to RFC 2396 */
+<span class="lineNum">      81 </span>            : bool net_IsValidScheme(const nsACString&amp; scheme);
+<span class="lineNum">      82 </span>            : 
+<span class="lineNum">      83 </span>            : /**
+<span class="lineNum">      84 </span>            :  * This function strips out all C0 controls and space at the beginning and end
+<span class="lineNum">      85 </span>            :  * of the URL and filters out \r, \n, \t from the middle of the URL.  This makes
+<span class="lineNum">      86 </span>            :  * it safe to call on things like javascript: urls or data: urls, where we may
+<span class="lineNum">      87 </span>            :  * in fact run into whitespace that is not properly encoded.
+<span class="lineNum">      88 </span>            :  *
+<span class="lineNum">      89 </span>            :  * @param input the URL spec we want to filter
+<span class="lineNum">      90 </span>            :  * @param result the out param to write to if filtering happens
+<span class="lineNum">      91 </span>            :  */
+<span class="lineNum">      92 </span>            : void net_FilterURIString(const nsACString&amp; input, nsACString&amp; result);
+<span class="lineNum">      93 </span>            : 
+<span class="lineNum">      94 </span>            : /**
+<span class="lineNum">      95 </span>            :  * This function performs character stripping just like net_FilterURIString,
+<span class="lineNum">      96 </span>            :  * with the added benefit of also performing percent escaping of dissallowed
+<span class="lineNum">      97 </span>            :  * characters, all in one pass. Saving one pass is very important when operating
+<span class="lineNum">      98 </span>            :  * on really large strings.
+<span class="lineNum">      99 </span>            :  *
+<span class="lineNum">     100 </span>            :  * @param aInput the URL spec we want to filter
+<span class="lineNum">     101 </span>            :  * @param aFlags the flags which control which characters we escape
+<span class="lineNum">     102 </span>            :  * @param aResult the out param to write to if filtering happens
+<span class="lineNum">     103 </span>            :  */
+<span class="lineNum">     104 </span>            : nsresult net_FilterAndEscapeURI(const nsACString&amp; aInput, uint32_t aFlags,
+<span class="lineNum">     105 </span>            :                                 nsACString&amp; aResult);
+<span class="lineNum">     106 </span>            : 
+<span class="lineNum">     107 </span>            : #if defined(XP_WIN)
+<span class="lineNum">     108 </span>            : /**
+<span class="lineNum">     109 </span>            :  * On Win32 and OS/2 system's a back-slash in a file:// URL is equivalent to a
+<span class="lineNum">     110 </span>            :  * forward-slash.  This function maps any back-slashes to forward-slashes.
+<span class="lineNum">     111 </span>            :  *
+<span class="lineNum">     112 </span>            :  * @param aURL
+<span class="lineNum">     113 </span>            :  *        The URL string to normalize (UTF-8 encoded).  This can be a
+<span class="lineNum">     114 </span>            :  *        relative URL segment.
+<span class="lineNum">     115 </span>            :  * @param aResultBuf
+<span class="lineNum">     116 </span>            :  *        The resulting string is appended to this string.  If the input URL
+<span class="lineNum">     117 </span>            :  *        is already normalized, then aResultBuf is unchanged.
+<span class="lineNum">     118 </span>            :  *
+<span class="lineNum">     119 </span>            :  * @returns false if aURL is already normalized.  Otherwise, returns true.
+<span class="lineNum">     120 </span>            :  */
+<span class="lineNum">     121 </span>            : bool net_NormalizeFileURL(const nsACString&amp; aURL, nsCString&amp; aResultBuf);
+<span class="lineNum">     122 </span>            : #endif
+<span class="lineNum">     123 </span>            : 
+<span class="lineNum">     124 </span>            : /*****************************************************************************
+<span class="lineNum">     125 </span>            :  * generic string routines follow (XXX move to someplace more generic).
+<span class="lineNum">     126 </span>            :  */
+<span class="lineNum">     127 </span>            : 
+<span class="lineNum">     128 </span>            : /* convert to lower case */
+<span class="lineNum">     129 </span>            : void net_ToLowerCase(char* str, uint32_t length);
+<span class="lineNum">     130 </span>            : void net_ToLowerCase(char* str);
+<span class="lineNum">     131 </span>            : 
+<span class="lineNum">     132 </span>            : /**
+<span class="lineNum">     133 </span>            :  * returns pointer to first character of |str| in the given set.  if not found,
+<span class="lineNum">     134 </span>            :  * then |end| is returned.  stops prematurely if a null byte is encountered,
+<span class="lineNum">     135 </span>            :  * and returns the address of the null byte.
+<span class="lineNum">     136 </span>            :  */
+<span class="lineNum">     137 </span>            : char* net_FindCharInSet(const char* str, const char* end, const char* set);
+<span class="lineNum">     138 </span>            : 
+<span class="lineNum">     139 </span>            : /**
+<span class="lineNum">     140 </span>            :  * returns pointer to first character of |str| NOT in the given set.  if all
+<span class="lineNum">     141 </span>            :  * characters are in the given set, then |end| is returned.  if '\0' is not
+<span class="lineNum">     142 </span>            :  * included in |set|, then stops prematurely if a null byte is encountered,
+<span class="lineNum">     143 </span>            :  * and returns the address of the null byte.
+<span class="lineNum">     144 </span>            :  */
+<span class="lineNum">     145 </span>            : char* net_FindCharNotInSet(const char* str, const char* end, const char* set);
+<span class="lineNum">     146 </span>            : 
+<span class="lineNum">     147 </span>            : /**
+<span class="lineNum">     148 </span>            :  * returns pointer to last character of |str| NOT in the given set.  if all
+<span class="lineNum">     149 </span>            :  * characters are in the given set, then |str - 1| is returned.
+<span class="lineNum">     150 </span>            :  */
+<span class="lineNum">     151 </span>            : char* net_RFindCharNotInSet(const char* str, const char* end, const char* set);
+<span class="lineNum">     152 </span>            : 
+<span class="lineNum">     153 </span>            : /**
+<span class="lineNum">     154 </span>            :  * Parses a content-type header and returns the content type and
+<span class="lineNum">     155 </span>            :  * charset (if any).  aCharset is not modified if no charset is
+<span class="lineNum">     156 </span>            :  * specified in anywhere in aHeaderStr.  In that case (no charset
+<span class="lineNum">     157 </span>            :  * specified), aHadCharset is set to false.  Otherwise, it's set to
+<span class="lineNum">     158 </span>            :  * true.  Note that aContentCharset can be empty even if aHadCharset
+<span class="lineNum">     159 </span>            :  * is true.
+<span class="lineNum">     160 </span>            :  *
+<span class="lineNum">     161 </span>            :  * This parsing is suitable for HTTP request.  Use net_ParseContentType
+<span class="lineNum">     162 </span>            :  * for parsing this header in HTTP responses.
+<span class="lineNum">     163 </span>            :  */
+<span class="lineNum">     164 </span>            : void net_ParseRequestContentType(const nsACString&amp; aHeaderStr,
+<span class="lineNum">     165 </span>            :                                  nsACString&amp; aContentType,
+<span class="lineNum">     166 </span>            :                                  nsACString&amp; aContentCharset,
+<span class="lineNum">     167 </span>            :                                  bool* aHadCharset);
+<span class="lineNum">     168 </span>            : 
+<span class="lineNum">     169 </span>            : /**
+<span class="lineNum">     170 </span>            :  * Parses a content-type header and returns the content type and
+<span class="lineNum">     171 </span>            :  * charset (if any).  aCharset is not modified if no charset is
+<span class="lineNum">     172 </span>            :  * specified in anywhere in aHeaderStr.  In that case (no charset
+<span class="lineNum">     173 </span>            :  * specified), aHadCharset is set to false.  Otherwise, it's set to
+<span class="lineNum">     174 </span>            :  * true.  Note that aContentCharset can be empty even if aHadCharset
+<span class="lineNum">     175 </span>            :  * is true.
+<span class="lineNum">     176 </span>            :  */
+<span class="lineNum">     177 </span>            : void net_ParseContentType(const nsACString&amp; aHeaderStr,
+<span class="lineNum">     178 </span>            :                           nsACString&amp; aContentType, nsACString&amp; aContentCharset,
+<span class="lineNum">     179 </span>            :                           bool* aHadCharset);
+<span class="lineNum">     180 </span>            : /**
+<span class="lineNum">     181 </span>            :  * As above, but also returns the start and end indexes for the charset
+<span class="lineNum">     182 </span>            :  * parameter in aHeaderStr.  These are indices for the entire parameter, NOT
+<span class="lineNum">     183 </span>            :  * just the value.  If there is &quot;effectively&quot; no charset parameter (e.g. if an
+<span class="lineNum">     184 </span>            :  * earlier type with one is overridden by a later type without one),
+<span class="lineNum">     185 </span>            :  * *aHadCharset will be true but *aCharsetStart will be set to -1.  Note that
+<span class="lineNum">     186 </span>            :  * it's possible to have aContentCharset empty and *aHadCharset true when
+<span class="lineNum">     187 </span>            :  * *aCharsetStart is nonnegative; this corresponds to charset=&quot;&quot;.
+<span class="lineNum">     188 </span>            :  */
+<span class="lineNum">     189 </span>            : void net_ParseContentType(const nsACString&amp; aHeaderStr,
+<span class="lineNum">     190 </span>            :                           nsACString&amp; aContentType, nsACString&amp; aContentCharset,
+<span class="lineNum">     191 </span>            :                           bool* aHadCharset, int32_t* aCharsetStart,
+<span class="lineNum">     192 </span>            :                           int32_t* aCharsetEnd);
+<span class="lineNum">     193 </span>            : 
+<span class="lineNum">     194 </span>            : /* inline versions */
+<span class="lineNum">     195 </span>            : 
+<span class="lineNum">     196 </span>            : /* remember the 64-bit platforms ;-) */
+<span class="lineNum">     197 </span>            : #define NET_MAX_ADDRESS ((char*)UINTPTR_MAX)
+<span class="lineNum">     198 </span>            : 
+<span class="lineNum">     199 </span>            : inline char* net_FindCharInSet(const char* str, const char* set) {
+<span class="lineNum">     200 </span>            :   return net_FindCharInSet(str, NET_MAX_ADDRESS, set);
+<span class="lineNum">     201 </span>            : }
+<span class="lineNum">     202 </span>            : inline char* net_FindCharNotInSet(const char* str, const char* set) {
+<span class="lineNum">     203 </span>            :   return net_FindCharNotInSet(str, NET_MAX_ADDRESS, set);
+<span class="lineNum">     204 </span>            : }
+<span class="lineNum">     205 </span>            : inline char* net_RFindCharNotInSet(const char* str, const char* set) {
+<span class="lineNum">     206 </span>            :   return net_RFindCharNotInSet(str, str + strlen(str), set);
+<span class="lineNum">     207 </span>            : }
+<span class="lineNum">     208 </span>            : 
+<span class="lineNum">     209 </span>            : /**
+<span class="lineNum">     210 </span>            :  * This function returns true if the given hostname does not include any
+<span class="lineNum">     211 </span>            :  * restricted characters.  Otherwise, false is returned.
+<span class="lineNum">     212 </span>            :  */
+<span class="lineNum">     213 </span>            : bool net_IsValidHostName(const nsACString&amp; host);
+<span class="lineNum">     214 </span>            : 
+<span class="lineNum">     215 </span>            : /**
+<span class="lineNum">     216 </span>            :  * Checks whether the IPv4 address is valid according to RFC 3986 section 3.2.2.
+<span class="lineNum">     217 </span>            :  */
+<span class="lineNum">     218 </span>            : bool net_IsValidIPv4Addr(const nsACString&amp; aAddr);
+<span class="lineNum">     219 </span>            : 
+<span class="lineNum">     220 </span>            : /**
+<span class="lineNum">     221 </span>            :  * Checks whether the IPv6 address is valid according to RFC 3986 section 3.2.2.
+<span class="lineNum">     222 </span>            :  */
+<span class="lineNum">     223 </span>            : bool net_IsValidIPv6Addr(const nsACString&amp; aAddr);
+<span class="lineNum">     224 </span>            : 
+<span class="lineNum">     225 </span>            : namespace mozilla {
+<span class="lineNum">     226 </span>            : /**
+<span class="lineNum">     227 </span>            :  * A class for handling form-urlencoded query strings.
+<span class="lineNum">     228 </span>            :  *
+<span class="lineNum">     229 </span>            :  * Manages an ordered list of name-value pairs, and allows conversion from and
+<span class="lineNum">     230 </span>            :  * to the string representation.
+<span class="lineNum">     231 </span>            :  *
+<span class="lineNum">     232 </span>            :  * In addition, there are static functions for handling one-shot use cases.
+<span class="lineNum">     233 </span>            :  */
+<span class="lineNum">     234 </span>            : class URLParams final {
+<span class="lineNum">     235 </span>            :  public:
+<span class="lineNum">     236 </span>            :   /**
+<span class="lineNum">     237 </span>            :    * \brief Parses a query string and calls a parameter handler for each
+<span class="lineNum">     238 </span>            :    * name/value pair. The parameter handler can stop processing early by
+<span class="lineNum">     239 </span>            :    * returning false.
+<span class="lineNum">     240 </span>            :    *
+<span class="lineNum">     241 </span>            :    * \param aInput the query string to parse
+<span class="lineNum">     242 </span>            :    * \param aParamHandler the parameter handler as desribed above
+<span class="lineNum">     243 </span>            :    * \tparam ParamHandler a function type compatible with signature
+<span class="lineNum">     244 </span>            :    * bool(nsString, nsString)
+<span class="lineNum">     245 </span>            :    *
+<span class="lineNum">     246 </span>            :    * \return false if the parameter handler returned false for any parameter,
+<span class="lineNum">     247 </span>            :    * true otherwise
+<a name="248"><span class="lineNum">     248 </span>            :    */</a>
+<span class="lineNum">     249 </span>            :   template &lt;typename ParamHandler&gt;
+<span class="lineNum">     250 </span><span class="lineNoCov">          0 :   static bool Parse(const nsACString&amp; aInput, ParamHandler aParamHandler) {</span>
+<span class="lineNum">     251 </span><span class="lineNoCov">          0 :     const char* start = aInput.BeginReading();</span>
+<span class="lineNum">     252 </span><span class="lineNoCov">          0 :     const char* const end = aInput.EndReading();</span>
+<span class="lineNum">     253 </span>            : 
+<span class="lineNum">     254 </span><span class="lineNoCov">          0 :     while (start != end) {</span>
+<span class="lineNum">     255 </span><span class="lineNoCov">          0 :       nsAutoString decodedName;</span>
+<span class="lineNum">     256 </span><span class="lineNoCov">          0 :       nsAutoString decodedValue;</span>
+<span class="lineNum">     257 </span>            : 
+<span class="lineNum">     258 </span><span class="lineNoCov">          0 :       if (!ParseNextInternal(start, end, &amp;decodedName, &amp;decodedValue)) {</span>
+<span class="lineNum">     259 </span><span class="lineNoCov">          0 :         continue;</span>
+<span class="lineNum">     260 </span>            :       }
+<span class="lineNum">     261 </span>            : 
+<span class="lineNum">     262 </span><span class="lineNoCov">          0 :       if (!aParamHandler(std::move(decodedName), std::move(decodedValue))) {</span>
+<span class="lineNum">     263 </span><span class="lineNoCov">          0 :         return false;</span>
+<span class="lineNum">     264 </span>            :       }
+<span class="lineNum">     265 </span><span class="lineNoCov">          0 :     }</span>
+<span class="lineNum">     266 </span><span class="lineNoCov">          0 :     return true;</span>
+<span class="lineNum">     267 </span><span class="lineNoCov">          0 :   }</span>
+<span class="lineNum">     268 </span>            : 
+<span class="lineNum">     269 </span>            :   /**
+<span class="lineNum">     270 </span>            :    * \brief Parses a query string and returns the value of a single parameter
+<span class="lineNum">     271 </span>            :    * specified by name.
+<span class="lineNum">     272 </span>            :    *
+<span class="lineNum">     273 </span>            :    * If there are multiple parameters with the same name, the value of the first
+<span class="lineNum">     274 </span>            :    * is returned.
+<span class="lineNum">     275 </span>            :    *
+<span class="lineNum">     276 </span>            :    * \param aInput the query string to parse
+<span class="lineNum">     277 </span>            :    * \param aName the name of the parameter to extract
+<span class="lineNum">     278 </span>            :    * \param[out] aValue will be assigned the parameter value, set to void if
+<span class="lineNum">     279 </span>            :    * there is no match \return true iff there was a parameter with with name
+<span class="lineNum">     280 </span>            :    * \paramref aName
+<span class="lineNum">     281 </span>            :    */
+<span class="lineNum">     282 </span>            :   static bool Extract(const nsACString&amp; aInput, const nsAString&amp; aName,
+<span class="lineNum">     283 </span>            :                       nsAString&amp; aValue);
+<span class="lineNum">     284 </span>            : 
+<span class="lineNum">     285 </span>            :   /**
+<span class="lineNum">     286 </span>            :    * \brief Resets the state of this instance and parses a new query string.
+<span class="lineNum">     287 </span>            :    *
+<span class="lineNum">     288 </span>            :    * \param aInput the query string to parse
+<span class="lineNum">     289 </span>            :    */
+<span class="lineNum">     290 </span>            :   void ParseInput(const nsACString&amp; aInput);
+<span class="lineNum">     291 </span>            : 
+<span class="lineNum">     292 </span>            :   /**
+<span class="lineNum">     293 </span>            :    * Serializes the current state to a query string.
+<span class="lineNum">     294 </span>            :    */
+<span class="lineNum">     295 </span>            :   void Serialize(nsAString&amp; aValue) const;
+<span class="lineNum">     296 </span>            : 
+<span class="lineNum">     297 </span>            :   void Get(const nsAString&amp; aName, nsString&amp; aRetval);
+<span class="lineNum">     298 </span>            : 
+<span class="lineNum">     299 </span>            :   void GetAll(const nsAString&amp; aName, nsTArray&lt;nsString&gt;&amp; aRetval);
+<span class="lineNum">     300 </span>            : 
+<span class="lineNum">     301 </span>            :   /**
+<span class="lineNum">     302 </span>            :    * \brief Sets the value of a given parameter.
+<span class="lineNum">     303 </span>            :    *
+<span class="lineNum">     304 </span>            :    * If one or more parameters of the name exist, the value of the first is
+<span class="lineNum">     305 </span>            :    * replaced, and all further parameters of the name are deleted. Otherwise,
+<span class="lineNum">     306 </span>            :    * the behaviour is the same as \ref Append.
+<span class="lineNum">     307 </span>            :    */
+<span class="lineNum">     308 </span>            :   void Set(const nsAString&amp; aName, const nsAString&amp; aValue);
+<span class="lineNum">     309 </span>            : 
+<span class="lineNum">     310 </span>            :   void Append(const nsAString&amp; aName, const nsAString&amp; aValue);
+<span class="lineNum">     311 </span>            : 
+<span class="lineNum">     312 </span>            :   bool Has(const nsAString&amp; aName);
+<span class="lineNum">     313 </span>            : 
+<span class="lineNum">     314 </span>            :   /**
+<span class="lineNum">     315 </span>            :    * \brief Deletes all parameters with the given name.
+<span class="lineNum">     316 </span>            :    */
+<a name="317"><span class="lineNum">     317 </span>            :   void Delete(const nsAString&amp; aName);</a>
+<span class="lineNum">     318 </span>            : 
+<span class="lineNum">     319 </span><span class="lineNoCov">          0 :   void DeleteAll() { mParams.Clear(); }</span>
+<span class="lineNum">     320 </span>            : 
+<span class="lineNum">     321 </span>            :   uint32_t Length() const { return mParams.Length(); }
+<span class="lineNum">     322 </span>            : 
+<span class="lineNum">     323 </span>            :   const nsAString&amp; GetKeyAtIndex(uint32_t aIndex) const {
+<span class="lineNum">     324 </span>            :     MOZ_ASSERT(aIndex &lt; mParams.Length());
+<span class="lineNum">     325 </span>            :     return mParams[aIndex].mKey;
+<span class="lineNum">     326 </span>            :   }
+<span class="lineNum">     327 </span>            : 
+<span class="lineNum">     328 </span>            :   const nsAString&amp; GetValueAtIndex(uint32_t aIndex) const {
+<span class="lineNum">     329 </span>            :     MOZ_ASSERT(aIndex &lt; mParams.Length());
+<span class="lineNum">     330 </span>            :     return mParams[aIndex].mValue;
+<span class="lineNum">     331 </span>            :   }
+<span class="lineNum">     332 </span>            : 
+<span class="lineNum">     333 </span>            :   /**
+<span class="lineNum">     334 </span>            :    * \brief Performs a stable sort of the parameters, maintaining the order of
+<span class="lineNum">     335 </span>            :    * multiple parameters with the same name.
+<span class="lineNum">     336 </span>            :    */
+<span class="lineNum">     337 </span>            :   void Sort();
+<span class="lineNum">     338 </span>            : 
+<span class="lineNum">     339 </span>            :  private:
+<span class="lineNum">     340 </span>            :   static void DecodeString(const nsACString&amp; aInput, nsAString&amp; aOutput);
+<span class="lineNum">     341 </span>            :   static void ConvertString(const nsACString&amp; aInput, nsAString&amp; aOutput);
+<span class="lineNum">     342 </span>            :   static bool ParseNextInternal(const char*&amp; aStart, const char* aEnd,
+<span class="lineNum">     343 </span>            :                                 nsAString* aOutDecodedName,
+<a name="344"><span class="lineNum">     344 </span>            :                                 nsAString* aOutDecodedValue);</a>
+<span class="lineNum">     345 </span>            : 
+<span class="lineNum">     346 </span><span class="lineNoCov">          0 :   struct Param {</span>
+<span class="lineNum">     347 </span>            :     nsString mKey;
+<span class="lineNum">     348 </span>            :     nsString mValue;
+<span class="lineNum">     349 </span>            :   };
+<span class="lineNum">     350 </span>            : 
+<span class="lineNum">     351 </span>            :   nsTArray&lt;Param&gt; mParams;
+<span class="lineNum">     352 </span>            : };
+<span class="lineNum">     353 </span>            : }  // namespace mozilla
+<span class="lineNum">     354 </span>            : 
+<span class="lineNum">     355 </span>            : #endif  // !nsURLHelper_h__
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.13</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>
