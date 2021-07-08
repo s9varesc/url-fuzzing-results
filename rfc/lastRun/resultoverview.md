@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 51
+Total number of URLs: 56
 
 Total number of Parsers: 11
 
@@ -12,13 +12,13 @@ JavaScripturijs | 0 | 0 | 18.46%
 Cpp | 0 | 0 | 17.6% 
 Go | 0 | 0 | 71.4% 
 Python | 0 | 0 | 32.0% 
-firefox | 21 | 1 | 48.1% 
-chromium | 21 | 1 | 13.72% 
-C | 25 | 1 | 43.1% 
-PHP | 25 | 25 | 58.62% 
-Ruby | 32 | 1 | 68.91% 
-JavaScriptwhatwg-url | 38 | 1 | 35.62% 
-Java | 51 | 20 | 36.0% 
+firefox | 24 | 1 | 48.1% 
+chromium | 24 | 1 | 13.72% 
+C | 29 | 1 | 43.1% 
+PHP | 29 | 29 | 58.62% 
+Ruby | 36 | 1 | 68.91% 
+JavaScriptwhatwg-url | 42 | 1 | 35.62% 
+Java | 56 | 20 | 36.0% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -27,14 +27,14 @@ Java | 51 | 20 | 36.0%
 
  Exception Type | URLs 
  --- | --- 
- ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> 
+ ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> ``` //[::bcfa:eaad:7efa%25~] ```  <br> ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  <br> ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  <br> 
 
 
 ### C
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` I://[::250.253.200.252%25.] ```  <br> ``` W://[fcbb:dcef:ddab:bfba:cdbb:beef:252.254.77.253%25-] ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~] ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` d://[eceb:ebaa:eeac:bffe:efce:fccd:252.255.252.0%25_] ```  <br> ``` C://[bcca:fdde:bedd:cbeb:afef:ecdc:251.56.254.251%25.] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` d://[::abdf:bbcf:250.251.255.241%25-] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` z://[bcea::addb:cdfe:aefd:bffc:246.250.250.251%25~] ```  <br> ``` D://[ccbf:efac:fdbb:dcbb:eceb:dfed:1.252.253.254%25.] ```  <br> ``` R://[::%25O] ```  <br> ``` b://[::eedd:cbba:dfeb:dafe:adef:253.205.253.254] ```  <br> ``` H://[::220.255.252.252%25~] ```  <br> ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> ``` t://[adcf:feab:cceb:eacd:cbef:bfdd:23.253.252.255%25.] ```  <br> ``` S://[::efbb:badb:3.253.253.255%25.] ```  <br> ``` v://[::eaff:2.250.253.252%25~] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` E://[::250.253.251.197%25.] ```  <br> 
+ ``` 1 ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` I://[::250.253.200.252%25.] ```  <br> ``` W://[fcbb:dcef:ddab:bfba:cdbb:beef:252.254.77.253%25-] ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~] ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` d://[eceb:ebaa:eeac:bffe:efce:fccd:252.255.252.0%25_] ```  <br> ``` C://[bcca:fdde:bedd:cbeb:afef:ecdc:251.56.254.251%25.] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` d://[::abdf:bbcf:250.251.255.241%25-] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` z://[bcea::addb:cdfe:aefd:bffc:246.250.250.251%25~] ```  <br> ``` D://[ccbf:efac:fdbb:dcbb:eceb:dfed:1.252.253.254%25.] ```  <br> ``` R://[::%25O] ```  <br> ``` b://[::eedd:cbba:dfeb:dafe:adef:253.205.253.254] ```  <br> ``` H://[::220.255.252.252%25~] ```  <br> ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> ``` t://[adcf:feab:cceb:eacd:cbef:bfdd:23.253.252.255%25.] ```  <br> ``` S://[::efbb:badb:3.253.253.255%25.] ```  <br> ``` v://[::eaff:2.250.253.252%25~] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` E://[::250.253.251.197%25.] ```  <br> ``` x://[::%250] ```  <br> ``` //[::bcfa:eaad:7efa%25~] ```  <br> ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  <br> ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  <br> 
 
 
 ### JavaScripturijs
@@ -78,13 +78,17 @@ Java | 51 | 20 | 36.0%
  ``` Host `[::eaff:2.250.253.252%25~]` is invalid : the IP host is malformed ```  |  ``` v://[::eaff:2.250.253.252%25~] ```  <br> 
  ``` Host `[::dfcf:deab:1.250.250.253%25_]` is invalid : the IP host is malformed ```  |  ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> 
  ``` Host `[::250.253.251.197%25.]` is invalid : the IP host is malformed ```  |  ``` E://[::250.253.251.197%25.] ```  <br> 
+ ``` Host `[::%250]` is invalid : the IP host is malformed ```  |  ``` x://[::%250] ```  <br> 
+ ``` Host `[::bcfa:eaad:7efa%25~]` is invalid : the IP host is malformed ```  |  ``` //[::bcfa:eaad:7efa%25~] ```  <br> 
+ ``` Host `[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.]` is invalid : the IP host is malformed ```  |  ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  <br> 
+ ``` Host `[::becc:fcba:dfde:ddfc:8eca%25~]` is invalid : the IP host is malformed ```  |  ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  <br> 
 
 
 ### Java
 
  Exception Type | URLs 
  --- | --- 
- ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> 
+ ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> ``` //[::bcfa:eaad:7efa%25~] ```  <br> ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  <br> ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` H://[::dabf:edad:eabc:cbef:aacf:4bbb:afba] ```  <br> ``` H://[::220.255.252.252%25~] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: p ```  |  ``` p://* ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: i ```  |  ``` I://[::250.253.200.252%25.] ```  <br> 
@@ -92,13 +96,13 @@ Java | 51 | 20 | 36.0%
  ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` d://255.76.253.254 ```  <br> ``` d://[::bedb:adea:6fdf:bdfa] ```  <br> ``` d://[::deba:cead:dbba:250.255.255.56] ```  <br> ``` d://[eceb:ebaa:eeac:bffe:efce:fccd:252.255.252.0%25_] ```  <br> ``` d://[::abdf:bbcf:250.251.255.241%25-] ```  <br> ``` D://[ccbf:efac:fdbb:dcbb:eceb:dfed:1.252.253.254%25.] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: c ```  |  ``` C:///' ```  <br> ``` C://[bcca:fdde:bedd:cbeb:afef:ecdc:251.56.254.251%25.] ```  <br> ``` c://[::baac:cffb:29.252.255.251] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: y ```  |  ``` Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: b ```  |  ``` B://@/_ ```  <br> ``` b://[::eedd:cbba:dfeb:dafe:adef:253.205.253.254] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: b ```  |  ``` B://@/_ ```  <br> ``` b://[::eedd:cbba:dfeb:dafe:adef:253.205.253.254] ```  <br> ``` b:///%1b ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` Q://[::aaad:cbfa:deea:36.255.253.254] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: e ```  |  ``` E://[::fddb:bafe:efcb:254.114.254.255] ```  <br> ``` E://[::250.253.251.197%25.] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: z ```  |  ``` z://[bcea::addb:cdfe:aefd:bffc:246.250.250.251%25~] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: r ```  |  ``` R://[::%25O] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: j ```  |  ``` j://[::0bbe:ccfc:bdec:252.250.252.255] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: x ```  |  ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: x ```  |  ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> ``` x://[::%250] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` f://[2afb:dedc:ecea:bcfd:efea:feff:250.254.253.252] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: t ```  |  ``` t://[adcf:feab:cceb:eacd:cbef:bfdd:23.253.252.255%25.] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: s ```  |  ``` S://[::efbb:badb:3.253.253.255%25.] ```  <br> 
@@ -116,14 +120,14 @@ Java | 51 | 20 | 36.0%
 
  Exception Type | URLs 
  --- | --- 
- ``` Invalid URL:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` I://[::250.253.200.252%25.] ```  <br> ``` W://[fcbb:dcef:ddab:bfba:cdbb:beef:252.254.77.253%25-] ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~] ```  <br> ``` B://@/_ ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` d://[eceb:ebaa:eeac:bffe:efce:fccd:252.255.252.0%25_] ```  <br> ``` C://[bcca:fdde:bedd:cbeb:afef:ecdc:251.56.254.251%25.] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` d://[::abdf:bbcf:250.251.255.241%25-] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` z://[bcea::addb:cdfe:aefd:bffc:246.250.250.251%25~] ```  <br> ``` D://[ccbf:efac:fdbb:dcbb:eceb:dfed:1.252.253.254%25.] ```  <br> ``` R://[::%25O] ```  <br> ``` H://[::220.255.252.252%25~] ```  <br> ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> ``` t://[adcf:feab:cceb:eacd:cbef:bfdd:23.253.252.255%25.] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` S://[::efbb:badb:3.253.253.255%25.] ```  <br> ``` K://[vd._] ```  <br> ``` v://[::eaff:2.250.253.252%25~] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` E://[::250.253.251.197%25.] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> 
+ ``` Invalid URL:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` I://[::250.253.200.252%25.] ```  <br> ``` W://[fcbb:dcef:ddab:bfba:cdbb:beef:252.254.77.253%25-] ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~] ```  <br> ``` B://@/_ ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` d://[eceb:ebaa:eeac:bffe:efce:fccd:252.255.252.0%25_] ```  <br> ``` C://[bcca:fdde:bedd:cbeb:afef:ecdc:251.56.254.251%25.] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` d://[::abdf:bbcf:250.251.255.241%25-] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` z://[bcea::addb:cdfe:aefd:bffc:246.250.250.251%25~] ```  <br> ``` D://[ccbf:efac:fdbb:dcbb:eceb:dfed:1.252.253.254%25.] ```  <br> ``` R://[::%25O] ```  <br> ``` H://[::220.255.252.252%25~] ```  <br> ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> ``` t://[adcf:feab:cceb:eacd:cbef:bfdd:23.253.252.255%25.] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` S://[::efbb:badb:3.253.253.255%25.] ```  <br> ``` K://[vd._] ```  <br> ``` v://[::eaff:2.250.253.252%25~] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` E://[::250.253.251.197%25.] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> ``` x://[::%250] ```  <br> ``` //[::bcfa:eaad:7efa%25~] ```  <br> ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  <br> ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  <br> 
 
 
 ### chromium
 
  Exception Type | URLs 
  --- | --- 
- ``` invalid URL ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> 
+ ``` invalid URL ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` ///@/%1d ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` ///@/%e7 ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //%d2 ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` //N@ ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> ``` //[::bcfa:eaad:7efa%25~] ```  <br> ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  <br> ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  <br> 
 
 
 ### Python
@@ -136,7 +140,7 @@ Java | 51 | 20 | 36.0%
 
  Exception Type | URLs 
  --- | --- 
- ``` bad URI(is not URI?):  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` I://[::250.253.200.252%25.] ```  <br> ``` W://[fcbb:dcef:ddab:bfba:cdbb:beef:252.254.77.253%25-] ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~] ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` d://[eceb:ebaa:eeac:bffe:efce:fccd:252.255.252.0%25_] ```  <br> ``` C://[bcca:fdde:bedd:cbeb:afef:ecdc:251.56.254.251%25.] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` d://[::abdf:bbcf:250.251.255.241%25-] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` z://[bcea::addb:cdfe:aefd:bffc:246.250.250.251%25~] ```  <br> ``` D://[ccbf:efac:fdbb:dcbb:eceb:dfed:1.252.253.254%25.] ```  <br> ``` R://[::%25O] ```  <br> ``` H://[::220.255.252.252%25~] ```  <br> ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> ``` t://[adcf:feab:cceb:eacd:cbef:bfdd:23.253.252.255%25.] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` S://[::efbb:badb:3.253.253.255%25.] ```  <br> ``` v://[::eaff:2.250.253.252%25~] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` E://[::250.253.251.197%25.] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> 
+ ``` bad URI(is not URI?):  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> ``` //[adcf:dffc:ebfa:cbbc:beea:afcc:62.251.255.255] ```  <br> ``` //[::abab:afdf:efbe:ddda:fcac:aadb:afea%25-] ```  <br> ``` //[6bef::bbbc:255.252.251.255] ```  <br> ``` I://[::250.253.200.252%25.] ```  <br> ``` W://[fcbb:dcef:ddab:bfba:cdbb:beef:252.254.77.253%25-] ```  <br> ``` //[::aded:cffa:dcde:252.255.224.254%25_] ```  <br> ``` //[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250] ```  <br> ``` //[::abdd:addc:255.254.1.252%25_] ```  <br> ``` Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~] ```  <br> ``` //[8abb:ceea::acec:adeb:251.251.254.250%25~] ```  <br> ``` d://[eceb:ebaa:eeac:bffe:efce:fccd:252.255.252.0%25_] ```  <br> ``` C://[bcca:fdde:bedd:cbeb:afef:ecdc:251.56.254.251%25.] ```  <br> ``` //[eafd:aaac:bfba:faac:cbec:cdad:57.250.253.254%25~] ```  <br> ``` d://[::abdf:bbcf:250.251.255.241%25-] ```  <br> ``` //[dcad:dbaf:cbda:ddaa:cdec:aeed:251.222.255.250%25~] ```  <br> ``` //[cacc::ebcc:edcd:adec:caaf:253.252.163.254%25_] ```  <br> ``` z://[bcea::addb:cdfe:aefd:bffc:246.250.250.251%25~] ```  <br> ``` D://[ccbf:efac:fdbb:dcbb:eceb:dfed:1.252.253.254%25.] ```  <br> ``` R://[::%25O] ```  <br> ``` H://[::220.255.252.252%25~] ```  <br> ``` x://[bbcb:ecee:aeaf:eccb:bffc:ccdf:9dbc:cfea%25~] ```  <br> ``` t://[adcf:feab:cceb:eacd:cbef:bfdd:23.253.252.255%25.] ```  <br> ``` //[bfdc:aabd:adbc:ffaa:acfb:cfda:bdfc:9bde] ```  <br> ``` S://[::efbb:badb:3.253.253.255%25.] ```  <br> ``` v://[::eaff:2.250.253.252%25~] ```  <br> ``` //[::dfcf:deab:1.250.250.253%25_] ```  <br> ``` //[4bcc:bafd::bcad:254.255.255.252] ```  <br> ``` E://[::250.253.251.197%25.] ```  <br> ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  <br> ``` x://[::%250] ```  <br> ``` //[::bcfa:eaad:7efa%25~] ```  <br> ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  <br> ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  <br> 
 
 
 ## URL Comparison 
@@ -194,13 +198,18 @@ Java | 51 | 20 | 36.0%
  ``` //[4bcc:bafd::bcad:254.255.255.252] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
  ``` E://[::250.253.251.197%25.] ```  | C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br>
  ``` //[bbda:ecdd:bdbe:dbcf:fbfb:acee:7ede:bfab] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` x://[::%250] ```  | C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br>
+ ``` //[::bcfa:eaad:7efa%25~] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` //[::afbf:ebed:ecfe:ffab:dbdc:252.25.253.252%25.] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` //[::becc:fcba:dfde:ddfc:8eca%25~] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` b:///%1b ```  | Java <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 21 | 21 | 0
-chromium | 21 | 21 | 0
+firefox | 24 | 24 | 0
+chromium | 24 | 24 | 0
 
 [full browser comparison](./browseroverview.html)
 
