@@ -12,15 +12,15 @@
 <tbody>
 <tr>
 <td>parsed successfully</td>
-<td>(31/62)</td>
-<td>(33/62)</td>
-<td>(52/62)</td>
+<td>(34/68)</td>
+<td>(36/68)</td>
+<td>(57/68)</td>
 </tr>
 <tr>
 <td>rejected</td>
-<td>(0/62)</td>
-<td>(1/62)</td>
-<td>(1/62)</td>
+<td>(0/68)</td>
+<td>(1/68)</td>
+<td>(1/68)</td>
 </tr>
 <tr>
 <td>also rejected by whatwg</td>
@@ -31,18 +31,18 @@
 <tr>
 <td>component errors</td>
 <td></td>
-<td>(28/62)</td>
-<td>(9/62)</td>
+<td>(31/68)</td>
+<td>(10/68)</td>
 </tr>
 <tr>
 <td>equal component errors</td>
-<td>(4/62)</td>
+<td>(5/68)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>unequal component errors</td>
-<td>(2/62)</td>
+<td>(2/68)</td>
 <td></td>
 <td></td>
 </tr>
@@ -54,13 +54,13 @@
 </tr>
 <tr>
 <td>overall equal results</td>
-<td>(35/62)</td>
+<td>(39/68)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>overall unequal results</td>
-<td>(27/62)</td>
+<td>(29/68)</td>
 <td></td>
 <td></td>
 </tr>
@@ -385,6 +385,36 @@
 <td><code>ftp://[::] &lt; //@+</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>ws://[::] &lt; //[cab2::dedc:255.250.251.251]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>F:/ &lt; /./蔚</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>D:/ &lt; //[eade:afdd:cade:bcff:fbca:adce:adca:aaed]</code></td>
+<td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>eade:afdd:cade:bcff:fbca:adce:adca:aaed</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file:/// &lt; /?𿅢</code></td>
+<td class="cfail"> query is "<code>%F0%BF%85%A2</code>" != "<code>?%F0%BF%85%A2</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file:///#!</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>r:/ &lt; //%6f</code></td>
+<td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>%6f</code>"</td>
+<td class="cfail"> host is "<code>o</code>" != "<code>%6f</code>"</td>
 </tr>
 </tbody>
 </table></body></html>
