@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 16</p>
+<p>Total number of URLs: 21</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -35,7 +35,7 @@
 <td>JavaScriptwhatwg-url</td>
 <td>0</td>
 <td>0</td>
-<td>50.82%</td>
+<td>50.97%</td>
 </tr>
 <tr>
 <td>chromium</td>
@@ -53,7 +53,7 @@
 <td>firefox</td>
 <td>1</td>
 <td>1</td>
-<td>62.5%</td>
+<td>62.8%</td>
 </tr>
 <tr>
 <td>PHP</td>
@@ -63,20 +63,20 @@
 </tr>
 <tr>
 <td>Java</td>
+<td>9</td>
 <td>6</td>
-<td>4</td>
 <td>39.0%</td>
 </tr>
 <tr>
 <td>C</td>
-<td>7</td>
+<td>10</td>
 <td>1</td>
 <td>34.9%</td>
 </tr>
 <tr>
 <td>Ruby</td>
-<td>10</td>
-<td>10</td>
+<td>13</td>
+<td>13</td>
 <td>72.02%</td>
 </tr>
 </tbody>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td><code>ftp://[::]/￴</code>  <br> <code>file:/// &lt; /?䉷</code>  <br> <code>http://[::]#𕱽</code>  <br> <code>file:/// &lt; /􏔼</code>  <br> <code>http://[::]/󚇜</code>  <br> <code>file:///?﹩</code>  <br> <code>N:/ &lt; ///../]</code>  <br></td>
+<td><code>ftp://[::]/￴</code>  <br> <code>file:/// &lt; /?䉷</code>  <br> <code>http://[::]#𕱽</code>  <br> <code>file:/// &lt; /􏔼</code>  <br> <code>http://[::]/󚇜</code>  <br> <code>file:///?﹩</code>  <br> <code>N:/ &lt; ///../]</code>  <br> <code>file://[::]/􏘦</code>  <br> <code>P:/ &lt; /?􏔲</code>  <br> <code>M:/ &lt; /嫭</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -180,7 +180,7 @@
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: wss</code></td>
-<td><code>wss://D</code>  <br> <code>wss://[::] &lt; //*o</code>  <br></td>
+<td><code>wss://D</code>  <br> <code>wss://[::] &lt; //*o</code>  <br> <code>wss://251.255.214.253</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: ws</code></td>
@@ -189,6 +189,14 @@
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: q</code></td>
 <td><code>Q:/%3f</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: p</code></td>
+<td><code>P:/ &lt; /?􏔲</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: m</code></td>
+<td><code>M:/ &lt; /嫭</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -301,6 +309,18 @@
 <td><code>bad URI(is not URI?): ///../]</code></td>
 <td><code>N:/ &lt; ///../]</code>  <br></td>
 </tr>
+<tr>
+<td><code>URI must be ascii only "file://[::]/\u{10F626}"</code></td>
+<td><code>file://[::]/􏘦</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "/?\u{10F532}"</code></td>
+<td><code>P:/ &lt; /?􏔲</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "/\u5AED"</code></td>
+<td><code>M:/ &lt; /嫭</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h2>URL Comparison</h2>
@@ -368,6 +388,22 @@
 <td><code>wss://[::] &lt; //*o</code></td>
 <td>firefox <br>Java <br></td>
 </tr>
+<tr>
+<td><code>file://[::]/􏘦</code></td>
+<td>C <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>P:/ &lt; /?􏔲</code></td>
+<td>C <br>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>M:/ &lt; /嫭</code></td>
+<td>C <br>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>wss://251.255.214.253</code></td>
+<td>Java <br></td>
+</tr>
 </tbody>
 </table>
 <h2>Browsers</h2>
@@ -383,9 +419,9 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>6</td>
+<td>8</td>
 <td>1</td>
-<td>5</td>
+<td>7</td>
 </tr>
 <tr>
 <td>chromium</td>
@@ -407,6 +443,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>P:/ &lt; /?􏔲</code></td>
+<td>query</td>
+<td><code>?%F4%8F%94%B2</code></td>
+<td><code>%F4%8F%94%B2</code></td>
+</tr>
 <tr>
 <td><code>file:/// &lt; /?䉷</code></td>
 <td>query</td>
@@ -435,6 +477,12 @@
 <td><code>file://250.251.7.251</code></td>
 <td>host</td>
 <td><code>250.251.7.251</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>file://[::]/􏘦</code></td>
+<td>host</td>
+<td><code>::</code></td>
 <td><code></code></td>
 </tr>
 </tbody>

@@ -12,15 +12,15 @@
 <tbody>
 <tr>
 <td>parsed successfully</td>
-<td>(10/15)</td>
-<td>(10/15)</td>
-<td>(14/15)</td>
+<td>(10/18)</td>
+<td>(10/18)</td>
+<td>(16/18)</td>
 </tr>
 <tr>
 <td>rejected</td>
-<td>(0/15)</td>
-<td>(0/15)</td>
-<td>(0/15)</td>
+<td>(0/18)</td>
+<td>(1/18)</td>
+<td>(0/18)</td>
 </tr>
 <tr>
 <td>also rejected by whatwg</td>
@@ -31,36 +31,36 @@
 <tr>
 <td>component errors</td>
 <td></td>
-<td>(5/15)</td>
-<td>(1/15)</td>
+<td>(7/18)</td>
+<td>(2/18)</td>
 </tr>
 <tr>
 <td>equal component errors</td>
-<td>(0/15)</td>
+<td>(0/18)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>unequal component errors</td>
-<td>(1/15)</td>
+<td>(1/18)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>code coverage</td>
 <td></td>
-<td>62.5%</td>
+<td>62.8%</td>
 <td>41.54%</td>
 </tr>
 <tr>
 <td>overall equal results</td>
-<td>(10/15)</td>
+<td>(10/18)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>overall unequal results</td>
-<td>(5/15)</td>
+<td>(8/18)</td>
 <td></td>
 <td></td>
 </tr>
@@ -150,6 +150,21 @@
 <td><code>N:/ &lt; ///../]</code></td>
 <td class="cfail"> filePath is "<code>//../]</code>" != "<code>/]</code>"</td>
 <td class="cfail"> host is "<code>..</code>" != "<code></code>"</td>
+</tr>
+<tr>
+<td><code>wss://[::] &lt; //*o</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="cfail"> host is "<code>%2Ao</code>" != "<code>*o</code>"</td>
+</tr>
+<tr>
+<td><code>file://[::]/􏘦</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>::</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>P:/ &lt; /?􏔲</code></td>
+<td class="cfail"> query is "<code>%F4%8F%94%B2</code>" != "<code>?%F4%8F%94%B2</code>"</td>
+<td class="psucc"> PASS</td>
 </tr>
 </tbody>
 </table></body></html>
