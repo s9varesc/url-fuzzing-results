@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 76</p>
+<p>Total number of URLs: 81</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -57,7 +57,7 @@
 </tr>
 <tr>
 <td>PHP</td>
-<td>7</td>
+<td>8</td>
 <td>6</td>
 <td>46.55%</td>
 </tr>
@@ -69,14 +69,14 @@
 </tr>
 <tr>
 <td>Java</td>
-<td>36</td>
+<td>37</td>
 <td>21</td>
 <td>39.0%</td>
 </tr>
 <tr>
 <td>Ruby</td>
-<td>40</td>
-<td>40</td>
+<td>44</td>
+<td>44</td>
 <td>72.02%</td>
 </tr>
 </tbody>
@@ -153,7 +153,7 @@
 <tbody>
 <tr>
 <td><code>The uri `` is invalid for the `file` scheme.</code></td>
-<td><code>file:///#=</code>  <br> <code>file:///#!</code>  <br></td>
+<td><code>file:///#=</code>  <br> <code>file:///#!</code>  <br> <code>file:///?%23</code>  <br></td>
 </tr>
 <tr>
 <td><code>The uri `file:///?%E4%89%B7` is invalid for the `file` scheme.</code></td>
@@ -228,7 +228,7 @@
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: u</code></td>
-<td><code>U:/ &lt; //[::bffa:eecf:180.253.255.252]</code>  <br></td>
+<td><code>U:/ &lt; //[::bffa:eecf:180.253.255.252]</code>  <br> <code>u:/ &lt; //[d1ef::eeef:253.255.255.253]</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: v</code></td>
@@ -509,6 +509,22 @@
 <td><code>bad URI(is not URI?): //[e5bf:aeaa::]</code></td>
 <td><code>O:/ &lt; //[e5bf:aeaa::]</code>  <br></td>
 </tr>
+<tr>
+<td><code>bad URI(is not URI?): //[fd3e:fdda::254.250.255.252]</code></td>
+<td><code>http://[::] &lt; //[fd3e:fdda::254.250.255.252]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::bdbb:faab:ccd9]</code></td>
+<td><code>https://[::] &lt; //[::bdbb:faab:ccd9]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[d1ef::eeef:253.255.255.253]</code></td>
+<td><code>u:/ &lt; //[d1ef::eeef:253.255.255.253]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[ebfe:abdd:caff:cadf:aeeb:fcaf:78.254.252.250]</code></td>
+<td><code>file:/// &lt; //[ebfe:abdd:caff:cadf:aeeb:fcaf:78.254.252.250]</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h2>URL Comparison</h2>
@@ -760,6 +776,26 @@
 <td><code>O:/ &lt; //[e5bf:aeaa::]</code></td>
 <td>Java <br>Ruby <br></td>
 </tr>
+<tr>
+<td><code>http://[::] &lt; //[fd3e:fdda::254.250.255.252]</code></td>
+<td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>https://[::] &lt; //[::bdbb:faab:ccd9]</code></td>
+<td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>file:///?%23</code></td>
+<td>PHP <br></td>
+</tr>
+<tr>
+<td><code>u:/ &lt; //[d1ef::eeef:253.255.255.253]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[ebfe:abdd:caff:cadf:aeeb:fcaf:78.254.252.250]</code></td>
+<td>Ruby <br></td>
+</tr>
 </tbody>
 </table>
 <h2>Browsers</h2>
@@ -775,9 +811,9 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>37</td>
+<td>40</td>
 <td>2</td>
-<td>35</td>
+<td>38</td>
 </tr>
 <tr>
 <td>chromium</td>
@@ -846,6 +882,12 @@
 <td>host</td>
 <td><code>::fadb:aae1:acce</code></td>
 <td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[ebfe:abdd:caff:cadf:aeeb:fcaf:78.254.252.250]</code></td>
+<td>host</td>
+<td><code>ebfe:abdd:caff:cadf:aeeb:fcaf:4efe:fcfa</code></td>
+<td><code></code></td>
 </tr>
 <tr>
 <td><code>O:/ &lt; //[e5bf:aeaa::]</code></td>
@@ -971,6 +1013,18 @@
 <td><code>T://N</code></td>
 <td>host</td>
 <td><code>n</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>file:///?%23</code></td>
+<td>query</td>
+<td><code>?%23</code></td>
+<td><code>%23</code></td>
+</tr>
+<tr>
+<td><code>u:/ &lt; //[d1ef::eeef:253.255.255.253]</code></td>
+<td>host</td>
+<td><code>d1ef::eeef:fdff:fffd</code></td>
 <td><code>NS_ERROR_FAILURE 2147500037</code></td>
 </tr>
 <tr>
