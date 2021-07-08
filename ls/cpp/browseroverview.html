@@ -12,15 +12,15 @@
 <tbody>
 <tr>
 <td>parsed successfully</td>
-<td>(24/50)</td>
-<td>(26/50)</td>
-<td>(43/50)</td>
+<td>(26/57)</td>
+<td>(28/57)</td>
+<td>(47/57)</td>
 </tr>
 <tr>
 <td>rejected</td>
-<td>(0/50)</td>
-<td>(1/50)</td>
-<td>(1/50)</td>
+<td>(0/57)</td>
+<td>(1/57)</td>
+<td>(1/57)</td>
 </tr>
 <tr>
 <td>also rejected by whatwg</td>
@@ -31,18 +31,18 @@
 <tr>
 <td>component errors</td>
 <td></td>
-<td>(23/50)</td>
-<td>(6/50)</td>
+<td>(28/57)</td>
+<td>(9/57)</td>
 </tr>
 <tr>
 <td>equal component errors</td>
-<td>(2/50)</td>
+<td>(4/57)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>unequal component errors</td>
-<td>(1/50)</td>
+<td>(2/57)</td>
 <td></td>
 <td></td>
 </tr>
@@ -54,13 +54,13 @@
 </tr>
 <tr>
 <td>overall equal results</td>
-<td>(26/50)</td>
+<td>(30/57)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>overall unequal results</td>
-<td>(24/50)</td>
+<td>(27/57)</td>
 <td></td>
 <td></td>
 </tr>
@@ -323,6 +323,41 @@
 </tr>
 <tr>
 <td><code>g:/ &lt; %2e/*</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file://[::cdfb:bafe:39.254.250.250] &lt; /</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>::cdfb:bafe:27fe:fafa</code>"</td>
+<td class="cfail"> host is "<code></code>" != "<code>[::cdfb:bafe:27fe:fafa]</code>"</td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[dd8c::cbee:bdee:251.252.254.252]</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>dd8c::cbee:bdee:fbfc:fefc</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>a:///d:/ &lt; /</code></td>
+<td class="cfail"> filePath is "<code>///</code>" != "<code>/</code>"</td>
+<td class="cfail"> path is "<code>///d:/</code>" != "<code>/</code>"</td>
+</tr>
+<tr>
+<td><code>J:/ &lt; ///&amp;</code></td>
+<td class="cfail"> filePath is "<code>//&amp;/</code>" != "<code>/&amp;</code>"</td>
+<td class="cfail"> host is "<code>%26</code>" != "<code></code>"</td>
+</tr>
+<tr>
+<td><code>ftp://[::] &lt; ＆</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>D:/ &lt; //[::dcef:caec:c3ef]</code></td>
+<td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>::dcef:caec:c3ef</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>ftp://[::] &lt; //[::]/)򢮯</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
