@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 1
+Total number of URLs: 4
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 16.72% 
-Cpp | 0 | 0 | 8.8% 
+JavaScripturijs | 0 | 0 | 17.33% 
+Cpp | 0 | 0 | 16.0% 
 Go | 0 | 0 | 68.5% 
-Python | 0 | 0 | 31.0% 
-firefox | 1 | 1 | 48.1% 
-C | 1 | 1 | 12.3% 
-PHP | 1 | 1 | 34.48% 
-Java | 1 | 1 | 23.0% 
-JavaScriptwhatwg-url | 1 | 1 | 11.92% 
-chromium | 1 | 1 | 13.53% 
-Ruby | 1 | 1 | 63.21% 
+Python | 0 | 0 | 32.0% 
+C | 1 | 1 | 24.7% 
+PHP | 1 | 1 | 41.38% 
+firefox | 3 | 1 | 48.1% 
+JavaScriptwhatwg-url | 3 | 1 | 26.08% 
+chromium | 3 | 1 | 13.53% 
+Ruby | 3 | 1 | 67.88% 
+Java | 4 | 2 | 36.0% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -27,7 +27,7 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> 
+ ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> 
 
 
 ### C
@@ -60,7 +60,8 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> 
+ ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` H://[::dabf:edad:eabc:cbef:aacf:4bbb:afba] ```  <br> 
 
 
 ### Go
@@ -73,14 +74,14 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` Invalid URL:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> 
+ ``` Invalid URL:  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> 
 
 
 ### chromium
 
  Exception Type | URLs 
  --- | --- 
- ``` invalid URL ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> 
+ ``` invalid URL ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> 
 
 
 ### Python
@@ -93,7 +94,7 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` bad URI(is not URI?):  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> 
+ ``` bad URI(is not URI?):  ```  |  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  <br> ``` //[::dbac:edbe:2.253.250.254] ```  <br> ``` //[::254.9.252.252] ```  <br> 
 
 
 ## URL Comparison 
@@ -101,13 +102,16 @@ Ruby | 1 | 1 | 63.21%
  URL | Parsers 
  --- | --- 
  ``` //[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%25-] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` //[::dbac:edbe:2.253.250.254] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` //[::254.9.252.252] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` H://[::dabf:edad:eabc:cbef:aacf:4bbb:afba] ```  | Java <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 1 | 1 | 0
-chromium | 1 | 1 | 0
+firefox | 3 | 3 | 0
+chromium | 3 | 3 | 0
 
 [full browser comparison](./browseroverview.html)
 
