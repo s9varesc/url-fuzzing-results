@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 61
+Total number of URLs: 66
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 29.12% 
+JavaScripturijs | 0 | 0 | 29.55% 
 Cpp | 0 | 0 | 35.4% 
-Go | 0 | 0 | 68.3% 
-JavaScriptwhatwg-url | 0 | 0 | 62.44% 
+JavaScriptwhatwg-url | 0 | 0 | 64.08% 
 Python | 0 | 0 | 44.0% 
-firefox | 1 | 1 | 63.4% 
-chromium | 1 | 1 | 47.18% 
-PHP | 5 | 5 | 45.69% 
-C | 18 | 1 | 47.0% 
-Java | 27 | 18 | 39.0% 
-Ruby | 30 | 30 | 72.02% 
+firefox | 1 | 1 | 69.4% 
+Go | 1 | 1 | 71.7% 
+chromium | 1 | 1 | 50.38% 
+PHP | 6 | 6 | 46.55% 
+C | 21 | 1 | 47.1% 
+Java | 30 | 19 | 39.0% 
+Ruby | 35 | 35 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -34,7 +34,7 @@ Ruby | 30 | 30 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> ``` http://[::]/󚇜 ```  <br> ``` file:///?﹩ ```  <br> ``` N:/ < ///../] ```  <br> ``` file://[::]/􏘦 ```  <br> ``` P:/ < /?􏔲 ```  <br> ``` M:/ < /嫭 ```  <br> ``` file:/// < /%2e./􏲉 ```  <br> ``` file:///?} ```  <br> ``` file://ġ-Ł ```  <br> ``` file:/// < /툨 ```  <br> ``` file:///?ｦ ```  <br> ``` ftp://[::] < ＆ ```  <br> ``` ftp://[::] < //[::]/)򢮯 ```  <br> ``` v:/ ```  <br> 
+ ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> ``` http://[::]/󚇜 ```  <br> ``` file:///?﹩ ```  <br> ``` N:/ < ///../] ```  <br> ``` file://[::]/􏘦 ```  <br> ``` P:/ < /?􏔲 ```  <br> ``` M:/ < /嫭 ```  <br> ``` file:/// < /%2e./􏲉 ```  <br> ``` file:///?} ```  <br> ``` file://ġ-Ł ```  <br> ``` file:/// < /툨 ```  <br> ``` file:///?ｦ ```  <br> ``` ftp://[::] < ＆ ```  <br> ``` ftp://[::] < //[::]/)򢮯 ```  <br> ``` v:/ ```  <br> ``` ftp://[::] < //@+ ```  <br> ``` F:/ < /./蔚 ```  <br> ``` file:/// < /?𿅢 ```  <br> 
 
 
 ### JavaScripturijs
@@ -58,6 +58,7 @@ Ruby | 30 | 30 | 72.02%
  ``` The uri `file:///?%EF%B9%A9` is invalid for the `file` scheme. ```  |  ``` file:///?﹩ < / ```  <br> 
  ``` The uri `file:///?%7D` is invalid for the `file` scheme. ```  |  ``` file:///?} < / ```  <br> 
  ``` The uri `file:///?%EF%BD%A6` is invalid for the `file` scheme. ```  |  ``` file:///?ｦ ```  <br> 
+ ``` The uri `file:///?%F0%BF%85%A2` is invalid for the `file` scheme. ```  |  ``` file:/// < /?𿅢 ```  <br> 
 
 
 ### Java
@@ -66,13 +67,13 @@ Ruby | 30 | 30 | 72.02%
  --- | --- 
  ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` n:/ < //[dbc1:bcca::] ```  <br> ``` N:/ < ///../] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: wss ```  |  ``` wss://D ```  <br> ``` wss://[::] < //*o ```  <br> ``` wss://251.255.214.253 ```  <br> ``` wss://Z! ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::] < //[::cdef:bacb:cfc0] ```  <br> ``` ws://[eebd::efbe] < / ```  <br> ``` ws://[::] < /_ ```  <br> ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::] < //[::cdef:bacb:cfc0] ```  <br> ``` ws://[eebd::efbe] < / ```  <br> ``` ws://[::] < /_ ```  <br> ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  <br> ``` ws://[::] < //[cab2::dedc:255.250.251.251] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` Q:/%3f ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: p ```  |  ``` P:/ < /?􏔲 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: m ```  |  ``` M:/ < /嫭 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: k ```  |  ``` K:/ < //[::252.251.253.49] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` h:/ < //[::fadb:aae1:acce] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` D://_ ```  <br> ``` D:/ < //[::dcef:caec:c3ef] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` D://_ ```  <br> ``` D:/ < //[::dcef:caec:c3ef] ```  <br> ``` D:/ < //[eade:afdd:cade:bcff:fbca:adce:adca:aaed] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: r ```  |  ``` R:/ < //[::]:64305 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: u ```  |  ``` U:/ < //[::bffa:eecf:180.253.255.252] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: v ```  |  ``` V:/ < //[::cdbe:8.251.254.254] ```  <br> ``` v:/ < / ```  <br> 
@@ -82,12 +83,14 @@ Ruby | 30 | 30 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: j ```  |  ``` J:/ < ///& ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: rc ```  |  ``` rC:/ < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: i ```  |  ``` i:/K:/ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` F:/ < /./蔚 ```  <br> 
 
 
 ### Go
 
  Exception Type | URLs 
  --- | --- 
+ ``` parse //@+: net/url: invalid userinfo ```  |  ``` ftp://[::] < //@+ ```  <br> 
 
 
 ### JavaScriptwhatwg-url
@@ -143,6 +146,11 @@ Ruby | 30 | 30 | 72.02%
  ``` URI must be ascii only "//[::]/)\u{A2BAF}" ```  |  ``` ftp://[::] < //[::]/)򢮯 ```  <br> 
  ``` URI must be ascii only "v:/\uF0A6" ```  |  ``` v:/ < / ```  <br> 
  ``` bad URI(is not URI?): //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  |  ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  <br> 
+ ``` URI must be ascii only "//\uF0DE@+" ```  |  ``` ftp://[::] < //@+ ```  <br> 
+ ``` bad URI(is not URI?): //[cab2::dedc:255.250.251.251] ```  |  ``` ws://[::] < //[cab2::dedc:255.250.251.251] ```  <br> 
+ ``` URI must be ascii only "/./\u851A" ```  |  ``` F:/ < /./蔚 ```  <br> 
+ ``` bad URI(is not URI?): //[eade:afdd:cade:bcff:fbca:adce:adca:aaed] ```  |  ``` D:/ < //[eade:afdd:cade:bcff:fbca:adce:adca:aaed] ```  <br> 
+ ``` URI must be ascii only "/?\u{3F162}" ```  |  ``` file:/// < /?𿅢 ```  <br> 
 
 
 ## URL Comparison 
@@ -195,12 +203,17 @@ Ruby | 30 | 30 | 72.02%
  ``` rC:/ < / ```  | Java <br>
  ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  | Java <br>Ruby <br>
  ``` i:/K:/ ```  | Java <br>
+ ``` ftp://[::] < //@+ ```  | C <br>Go <br>Ruby <br>
+ ``` ws://[::] < //[cab2::dedc:255.250.251.251] ```  | Java <br>Ruby <br>
+ ``` F:/ < /./蔚 ```  | C <br>Java <br>Ruby <br>
+ ``` D:/ < //[eade:afdd:cade:bcff:fbca:adce:adca:aaed] ```  | Java <br>Ruby <br>
+ ``` file:/// < /?𿅢 ```  | C <br>PHP <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 29 | 1 | 28
+firefox | 31 | 1 | 30
 chromium | 10 | 1 | 9
 
 [full browser comparison](./browseroverview.html)
@@ -228,11 +241,13 @@ chromium | 10 | 1 | 9
  ``` file:///?ｦ ```  | query |  ``` ?%EF%BD%A6 ```  |  ``` %EF%BD%A6 ``` 
  ``` file:/// < //[::dcfd:dcef] ```  | host |  ``` ::dcfd:dcef ```  |  ```  ``` 
  ``` file://207.254.251.254 ```  | host |  ``` 207.254.251.254 ```  |  ```  ``` 
+ ``` file:/// < /?𿅢 ```  | query |  ``` ?%F0%BF%85%A2 ```  |  ``` %F0%BF%85%A2 ``` 
  ``` file:/// < //[::ffed:abde:defd:fdc8] ```  | host |  ``` ::ffed:abde:defd:fdc8 ```  |  ```  ``` 
  ``` C:/ < //[::ffd3:bada] ```  | host |  ``` ::ffd3:bada ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` N:/ < ///../] ```  | filePath |  ``` /] ```  |  ``` //../] ``` 
  ``` file://250.251.7.251 ```  | host |  ``` 250.251.7.251 ```  |  ```  ``` 
  ``` R:/ < //[::]:64305 ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` D:/ < //[eade:afdd:cade:bcff:fbca:adce:adca:aaed] ```  | host |  ``` eade:afdd:cade:bcff:fbca:adce:adca:aaed ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` V:/ < //[::cdbe:8.251.254.254] ```  | host |  ``` ::cdbe:8fb:fefe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://[::]/􏘦 ```  | host |  ``` :: ```  |  ```  ``` 
  ``` D://_ ```  | host |  ``` _ ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 

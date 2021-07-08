@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 60
+Total number of URLs: 62
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 29.12% 
+JavaScripturijs | 0 | 0 | 29.55% 
 Cpp | 0 | 0 | 35.4% 
-Go | 0 | 0 | 68.3% 
-JavaScriptwhatwg-url | 0 | 0 | 62.44% 
+JavaScriptwhatwg-url | 0 | 0 | 64.08% 
 Python | 0 | 0 | 44.0% 
-firefox | 1 | 1 | 63.4% 
-chromium | 1 | 1 | 47.18% 
-PHP | 5 | 5 | 45.69% 
-C | 18 | 1 | 47.0% 
-Java | 26 | 17 | 39.0% 
-Ruby | 30 | 30 | 72.02% 
+firefox | 1 | 1 | 69.4% 
+Go | 1 | 1 | 71.7% 
+chromium | 1 | 1 | 50.38% 
+PHP | 5 | 5 | 46.55% 
+C | 19 | 1 | 47.0% 
+Java | 27 | 18 | 39.0% 
+Ruby | 31 | 31 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -34,7 +34,7 @@ Ruby | 30 | 30 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> ``` http://[::]/󚇜 ```  <br> ``` file:///?﹩ ```  <br> ``` N:/ < ///../] ```  <br> ``` file://[::]/􏘦 ```  <br> ``` P:/ < /?􏔲 ```  <br> ``` M:/ < /嫭 ```  <br> ``` file:/// < /%2e./􏲉 ```  <br> ``` file:///?} ```  <br> ``` file://ġ-Ł ```  <br> ``` file:/// < /툨 ```  <br> ``` file:///?ｦ ```  <br> ``` ftp://[::] < ＆ ```  <br> ``` ftp://[::] < //[::]/)򢮯 ```  <br> ``` v:/ ```  <br> 
+ ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> ``` http://[::]/󚇜 ```  <br> ``` file:///?﹩ ```  <br> ``` N:/ < ///../] ```  <br> ``` file://[::]/􏘦 ```  <br> ``` P:/ < /?􏔲 ```  <br> ``` M:/ < /嫭 ```  <br> ``` file:/// < /%2e./􏲉 ```  <br> ``` file:///?} ```  <br> ``` file://ġ-Ł ```  <br> ``` file:/// < /툨 ```  <br> ``` file:///?ｦ ```  <br> ``` ftp://[::] < ＆ ```  <br> ``` ftp://[::] < //[::]/)򢮯 ```  <br> ``` v:/ ```  <br> ``` ftp://[::] < //@+ ```  <br> 
 
 
 ### JavaScripturijs
@@ -81,12 +81,14 @@ Ruby | 30 | 30 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: a ```  |  ``` a:///d:/ < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: j ```  |  ``` J:/ < ///& ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: rc ```  |  ``` rC:/ < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: i ```  |  ``` i:/K:/ ```  <br> 
 
 
 ### Go
 
  Exception Type | URLs 
  --- | --- 
+ ``` parse //@+: net/url: invalid userinfo ```  |  ``` ftp://[::] < //@+ ```  <br> 
 
 
 ### JavaScriptwhatwg-url
@@ -142,6 +144,7 @@ Ruby | 30 | 30 | 72.02%
  ``` URI must be ascii only "//[::]/)\u{A2BAF}" ```  |  ``` ftp://[::] < //[::]/)򢮯 ```  <br> 
  ``` URI must be ascii only "v:/\uF0A6" ```  |  ``` v:/ < / ```  <br> 
  ``` bad URI(is not URI?): //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  |  ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  <br> 
+ ``` URI must be ascii only "//\uF0DE@+" ```  |  ``` ftp://[::] < //@+ ```  <br> 
 
 
 ## URL Comparison 
@@ -193,6 +196,8 @@ Ruby | 30 | 30 | 72.02%
  ``` v:/ < / ```  | Java <br>Ruby <br>
  ``` rC:/ < / ```  | Java <br>
  ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  | Java <br>Ruby <br>
+ ``` i:/K:/ ```  | Java <br>
+ ``` ftp://[::] < //@+ ```  | C <br>Go <br>Ruby <br>
 
 ## Browsers
 
