@@ -40,7 +40,14 @@ static URLParseCase parse_cases[]={{"//[fbdd:bbfb:bdfe:cafd:efbe:cddd:2aae:fddc%
 {"W://[fcbb:dcef:ddab:bfba:cdbb:beef:252.254.77.253%25-]"},
 {"//[::aded:cffa:dcde:252.255.224.254%25_]"},
 {"//[adcc::ceda:ddfb:bdeb:efbf:252.252.232.250]"},
-{"//%d2"}};
+{"//%d2"},
+{"d://255.76.253.254"},
+{"C:///'"},
+{"W://="},
+{"//[::abdd:addc:255.254.1.252%25_]"},
+{"d://[::bedb:adea:6fdf:bdfa]"},
+{"Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~]"},
+{"B://@/_"}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {

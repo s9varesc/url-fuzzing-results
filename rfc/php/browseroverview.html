@@ -12,37 +12,37 @@
 <tbody>
 <tr>
 <td>parsed successfully</td>
-<td>(4/15)</td>
-<td>(4/15)</td>
-<td>(4/15)</td>
+<td>(10/22)</td>
+<td>(10/22)</td>
+<td>(10/22)</td>
 </tr>
 <tr>
 <td>rejected</td>
-<td>(11/15)</td>
-<td>(11/15)</td>
-<td>(11/15)</td>
+<td>(12/22)</td>
+<td>(12/22)</td>
+<td>(12/22)</td>
 </tr>
 <tr>
 <td>also rejected by whatwg</td>
-<td>(11/13)</td>
-<td>(11/13)</td>
-<td>(11/13)</td>
+<td>(12/16)</td>
+<td>(12/16)</td>
+<td>(12/16)</td>
 </tr>
 <tr>
 <td>component errors</td>
 <td></td>
-<td>(0/15)</td>
-<td>(0/15)</td>
+<td>(0/22)</td>
+<td>(0/22)</td>
 </tr>
 <tr>
 <td>equal component errors</td>
-<td>(0/15)</td>
+<td>(0/22)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>unequal component errors</td>
-<td>(0/15)</td>
+<td>(0/22)</td>
 <td></td>
 <td></td>
 </tr>
@@ -54,13 +54,13 @@
 </tr>
 <tr>
 <td>overall equal results</td>
-<td>(15/15)</td>
+<td>(22/22)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>overall unequal results</td>
-<td>(0/15)</td>
+<td>(0/22)</td>
 <td></td>
 <td></td>
 </tr>
@@ -150,6 +150,41 @@
 <td class="wgfail">  <code>//%d2</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td><code>d://255.76.253.254</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>C:///'</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>W://=</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::abdd:addc:255.254.1.252%25_]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td><code>d://[::bedb:adea:6fdf:bdfa]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>Y://[dbfb:dfcd:caaa:aceb:ecaa:aafa:255.255.2.253%25~]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>B://@/_</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
 </tr>
 </tbody>
 </table></body></html>
