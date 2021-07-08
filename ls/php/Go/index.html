@@ -54,7 +54,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">net/url/url.go (71.7%)</option>
+				<option value="file0">net/url/url.go (73.1%)</option>
 				
 				</select>
 			</div>
@@ -154,7 +154,7 @@ const (
 
 type EscapeError string
 
-func (e EscapeError) Error() string <span class="cov0" title="0">{
+func (e EscapeError) Error() string <span class="cov8" title="1">{
         return "invalid URL escape " + strconv.Quote(string(e))
 }</span>
 
@@ -277,7 +277,7 @@ func unescape(s string, mode encoding) (string, error) <span class="cov8" title=
                         // But https://tools.ietf.org/html/rfc6874#section-2
                         // introduces %25 being allowed to escape a percent sign
                         // in IPv6 scoped-address literals. Yay.
-                        <span class="cov8" title="1">if mode == encodeHost &amp;&amp; unhex(s[i+1]) &lt; 8 &amp;&amp; s[i:i+3] != "%25" </span><span class="cov0" title="0">{
+                        <span class="cov8" title="1">if mode == encodeHost &amp;&amp; unhex(s[i+1]) &lt; 8 &amp;&amp; s[i:i+3] != "%25" </span><span class="cov8" title="1">{
                                 return "", EscapeError(s[i : i+3])
                         }</span>
                         <span class="cov8" title="1">if mode == encodeZone </span><span class="cov0" title="0">{
@@ -626,7 +626,7 @@ func parseAuthority(authority string) (user *Userinfo, host string, err error) <
         }</span> else<span class="cov8" title="1"> {
                 host, err = parseHost(authority[i+1:])
         }</span>
-        <span class="cov8" title="1">if err != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if err != nil </span><span class="cov8" title="1">{
                 return nil, "", err
         }</span>
         <span class="cov8" title="1">if i &lt; 0 </span><span class="cov8" title="1">{
@@ -694,7 +694,7 @@ func parseHost(host string) (string, error) <span class="cov8" title="1">{
         }
 
         <span class="cov8" title="1">var err error
-        if host, err = unescape(host, encodeHost); err != nil </span><span class="cov0" title="0">{
+        if host, err = unescape(host, encodeHost); err != nil </span><span class="cov8" title="1">{
                 return "", err
         }</span>
         <span class="cov8" title="1">return host, nil</span>
@@ -988,7 +988,7 @@ func resolvePath(base, ref string) string <span class="cov8" title="1">{
         src := strings.Split(full, "/")
         for _, elem := range src </span><span class="cov8" title="1">{
                 switch elem </span>{
-                case ".":</span><span class="cov0" title="0">
+                case ".":</span><span class="cov8" title="1">
                         // drop
                 case "..":<span class="cov8" title="1">
                         if len(dst) &gt; 0 </span><span class="cov8" title="1">{
@@ -998,7 +998,7 @@ func resolvePath(base, ref string) string <span class="cov8" title="1">{
                         dst = append(dst, elem)</span>
                 }
         }
-        <span class="cov8" title="1">if last := src[len(src)-1]; last == "." || last == ".." </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if last := src[len(src)-1]; last == "." || last == ".." </span><span class="cov8" title="1">{
                 // Add final slash to the joined path.
                 dst = append(dst, "")
         }</span>
@@ -1164,7 +1164,7 @@ func validUserinfo(s string) bool <span class="cov8" title="1">{
                 }
                 <span class="cov8" title="1">switch r </span>{
                 case '-', '.', '_', ':', '~', '!', '$', '&amp;', '\'',
-                        '(', ')', '*', '+', ',', ';', '=', '%', '@':<span class="cov0" title="0">
+                        '(', ')', '*', '+', ',', ';', '=', '%', '@':<span class="cov8" title="1">
                         continue</span>
                 default:<span class="cov8" title="1">
                         return false</span>
