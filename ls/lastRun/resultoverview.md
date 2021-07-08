@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 41
+Total number of URLs: 46
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 28.51% 
-Cpp | 0 | 0 | 34.5% 
+JavaScripturijs | 0 | 0 | 28.94% 
+Cpp | 0 | 0 | 35.0% 
 Go | 0 | 0 | 68.3% 
-JavaScriptwhatwg-url | 0 | 0 | 59.91% 
+JavaScriptwhatwg-url | 0 | 0 | 62.15% 
 Python | 0 | 0 | 44.0% 
-firefox | 1 | 1 | 62.8% 
+firefox | 1 | 1 | 63.4% 
 chromium | 1 | 1 | 47.18% 
 PHP | 4 | 4 | 45.69% 
-C | 13 | 1 | 45.3% 
+C | 14 | 1 | 46.8% 
 Java | 18 | 13 | 39.0% 
-Ruby | 22 | 22 | 72.02% 
+Ruby | 23 | 23 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -34,7 +34,7 @@ Ruby | 22 | 22 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> ``` http://[::]/󚇜 ```  <br> ``` file:///?﹩ ```  <br> ``` N:/ < ///../] ```  <br> ``` file://[::]/􏘦 ```  <br> ``` P:/ < /?􏔲 ```  <br> ``` M:/ < /嫭 ```  <br> ``` file:/// < /%2e./􏲉 ```  <br> ``` file:///?} ```  <br> ``` file://ġ-Ł ```  <br> 
+ ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> ``` http://[::]/󚇜 ```  <br> ``` file:///?﹩ ```  <br> ``` N:/ < ///../] ```  <br> ``` file://[::]/􏘦 ```  <br> ``` P:/ < /?􏔲 ```  <br> ``` M:/ < /嫭 ```  <br> ``` file:/// < /%2e./􏲉 ```  <br> ``` file:///?} ```  <br> ``` file://ġ-Ł ```  <br> ``` file:/// < /툨 ```  <br> 
 
 
 ### JavaScripturijs
@@ -129,6 +129,7 @@ Ruby | 22 | 22 | 72.02%
  ``` bad URI(is not URI?): //[::cdbe:8.251.254.254] ```  |  ``` V:/ < //[::cdbe:8.251.254.254] ```  <br> 
  ``` URI must be ascii only "file://\u0121-\u0141" ```  |  ``` file://ġ-Ł < / ```  <br> 
  ``` bad URI(is not URI?): //[::ffd3:bada] ```  |  ``` C:/ < //[::ffd3:bada] ```  <br> 
+ ``` URI must be ascii only "/\uD228" ```  |  ``` file:/// < /툨 ```  <br> 
 
 
 ## URL Comparison 
@@ -167,12 +168,13 @@ Ruby | 22 | 22 | 72.02%
  ``` V:/ < //[::cdbe:8.251.254.254] ```  | Java <br>Ruby <br>
  ``` file://ġ-Ł < / ```  | Ruby <br>
  ``` C:/ < //[::ffd3:bada] ```  | Java <br>Ruby <br>
+ ``` file:/// < /툨 ```  | C <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 20 | 1 | 19
+firefox | 23 | 1 | 22
 chromium | 7 | 1 | 6
 
 [full browser comparison](./browseroverview.html)
@@ -183,9 +185,12 @@ chromium | 7 | 1 | 6
  --- | --- | --- | --- 
  ``` P:/ < /?􏔲 ```  | query |  ``` ?%F4%8F%94%B2 ```  |  ``` %F4%8F%94%B2 ``` 
  ``` file:/// < //253.252.255.220 ```  | host |  ``` 253.252.255.220 ```  |  ```  ``` 
+ ``` file://[bee7:bddb::abec] ```  | host |  ``` bee7:bddb::abec ```  |  ```  ``` 
  ``` h:/ < //[::fadb:aae1:acce] ```  | host |  ``` ::fadb:aae1:acce ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:/// < /?䉷 ```  | query |  ``` ?%E4%89%B7 ```  |  ``` %E4%89%B7 ``` 
+ ``` https://[::] < /?g ```  | query |  ``` ?g ```  |  ``` g ``` 
  ``` file://;, ```  | host |  ``` ;, ```  |  ```  ``` 
+ ``` http://[::] < %2e%2e//%2e. ```  | filePath |  ``` / ```  |  ``` //%2e. ``` 
  ``` U:/ < //[::bffa:eecf:180.253.255.252] ```  | host |  ``` ::bffa:eecf:b4fd:fffc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` n:/ < //[dbc1:bcca::] ```  | host |  ``` dbc1:bcca:: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://ġ-Ł < / ```  | host |  ``` xn----hja4h ```  |  ```  ``` 

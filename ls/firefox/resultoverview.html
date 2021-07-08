@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 17</p>
+<p>Total number of URLs: 43</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -17,13 +17,13 @@
 <td>JavaScripturijs</td>
 <td>0</td>
 <td>0</td>
-<td>24.7%</td>
+<td>28.6%</td>
 </tr>
 <tr>
 <td>Cpp</td>
 <td>0</td>
 <td>0</td>
-<td>30.2%</td>
+<td>34.6%</td>
 </tr>
 <tr>
 <td>Go</td>
@@ -35,48 +35,48 @@
 <td>JavaScriptwhatwg-url</td>
 <td>0</td>
 <td>0</td>
-<td>50.82%</td>
-</tr>
-<tr>
-<td>chromium</td>
-<td>0</td>
-<td>0</td>
-<td>41.54%</td>
+<td>62.0%</td>
 </tr>
 <tr>
 <td>Python</td>
 <td>0</td>
 <td>0</td>
-<td>42.0%</td>
+<td>44.0%</td>
 </tr>
 <tr>
 <td>firefox</td>
 <td>1</td>
 <td>1</td>
-<td>62.8%</td>
+<td>63.4%</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>1</td>
+<td>1</td>
+<td>47.18%</td>
 </tr>
 <tr>
 <td>PHP</td>
-<td>3</td>
-<td>3</td>
-<td>38.79%</td>
-</tr>
-<tr>
-<td>Java</td>
-<td>6</td>
 <td>4</td>
-<td>39.0%</td>
+<td>4</td>
+<td>45.69%</td>
 </tr>
 <tr>
 <td>C</td>
-<td>8</td>
+<td>13</td>
 <td>1</td>
-<td>34.9%</td>
+<td>45.7%</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>18</td>
+<td>13</td>
+<td>39.0%</td>
 </tr>
 <tr>
 <td>Ruby</td>
-<td>11</td>
-<td>11</td>
+<td>22</td>
+<td>22</td>
 <td>72.02%</td>
 </tr>
 </tbody>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td><code>ftp://[::]/￴</code>  <br> <code>file:/// &lt; /?䉷</code>  <br> <code>http://[::]#𕱽</code>  <br> <code>file:/// &lt; /􏔼</code>  <br> <code>http://[::]/󚇜</code>  <br> <code>file:///?﹩</code>  <br> <code>N:/ &lt; ///../]</code>  <br> <code>file://[::]/􏘦</code>  <br></td>
+<td><code>ftp://[::]/￴</code>  <br> <code>file:/// &lt; /?䉷</code>  <br> <code>http://[::]#𕱽</code>  <br> <code>file:/// &lt; /􏔼</code>  <br> <code>http://[::]/󚇜</code>  <br> <code>file:///?﹩</code>  <br> <code>N:/ &lt; ///../]</code>  <br> <code>file://[::]/􏘦</code>  <br> <code>P:/ &lt; /?􏔲</code>  <br> <code>M:/ &lt; /嫭</code>  <br> <code>file:/// &lt; /%2e./􏲉</code>  <br> <code>file:///?}</code>  <br> <code>file://ġ-Ł</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -163,6 +163,10 @@
 <td><code>The uri `file:///?%EF%B9%A9` is invalid for the `file` scheme.</code></td>
 <td><code>file:///?﹩ &lt; /</code>  <br></td>
 </tr>
+<tr>
+<td><code>The uri `file:///?%7D` is invalid for the `file` scheme.</code></td>
+<td><code>file:///?} &lt; /</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h3>Java</h3>
@@ -180,15 +184,51 @@
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: wss</code></td>
-<td><code>wss://D</code>  <br> <code>wss://[::] &lt; //*o</code>  <br></td>
+<td><code>wss://D</code>  <br> <code>wss://[::] &lt; //*o</code>  <br> <code>wss://251.255.214.253</code>  <br> <code>wss://Z!</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: ws</code></td>
-<td><code>ws://[::] &lt; //[::cdef:bacb:cfc0]</code>  <br></td>
+<td><code>ws://[::] &lt; //[::cdef:bacb:cfc0]</code>  <br> <code>ws://[eebd::efbe] &lt; /</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: q</code></td>
 <td><code>Q:/%3f</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: p</code></td>
+<td><code>P:/ &lt; /?􏔲</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: m</code></td>
+<td><code>M:/ &lt; /嫭</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: k</code></td>
+<td><code>K:/ &lt; //[::252.251.253.49]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: h</code></td>
+<td><code>h:/ &lt; //[::fadb:aae1:acce]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: d</code></td>
+<td><code>D://_</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: r</code></td>
+<td><code>R:/ &lt; //[::]:64305</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: u</code></td>
+<td><code>U:/ &lt; //[::bffa:eecf:180.253.255.252]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: v</code></td>
+<td><code>V:/ &lt; //[::cdbe:8.251.254.254]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: c</code></td>
+<td><code>C:/ &lt; //[::ffd3:bada]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -232,8 +272,8 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>invalid URL</code></td>
+<td><code>file://;,</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -304,6 +344,50 @@
 <tr>
 <td><code>URI must be ascii only "file://[::]/\u{10F626}"</code></td>
 <td><code>file://[::]/􏘦</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "/?\u{10F532}"</code></td>
+<td><code>P:/ &lt; /?􏔲</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "/\u5AED"</code></td>
+<td><code>M:/ &lt; /嫭</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "/%2e./\u{10FC89}"</code></td>
+<td><code>file:/// &lt; /%2e./􏲉</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::252.251.253.49]</code></td>
+<td><code>K:/ &lt; //[::252.251.253.49]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::fadb:aae1:acce]</code></td>
+<td><code>h:/ &lt; //[::fadb:aae1:acce]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::]:64305</code></td>
+<td><code>R:/ &lt; //[::]:64305</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::dcfd:dcef]</code></td>
+<td><code>file:/// &lt; //[::dcfd:dcef]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::bffa:eecf:180.253.255.252]</code></td>
+<td><code>U:/ &lt; //[::bffa:eecf:180.253.255.252]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::cdbe:8.251.254.254]</code></td>
+<td><code>V:/ &lt; //[::cdbe:8.251.254.254]</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "file://\u0121-\u0141"</code></td>
+<td><code>file://ġ-Ł &lt; /</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::ffd3:bada]</code></td>
+<td><code>C:/ &lt; //[::ffd3:bada]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -376,6 +460,74 @@
 <td><code>file://[::]/􏘦</code></td>
 <td>C <br>Ruby <br></td>
 </tr>
+<tr>
+<td><code>P:/ &lt; /?􏔲</code></td>
+<td>C <br>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>M:/ &lt; /嫭</code></td>
+<td>C <br>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>wss://251.255.214.253</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; /%2e./􏲉</code></td>
+<td>C <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>K:/ &lt; //[::252.251.253.49]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>ws://[eebd::efbe] &lt; /</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>file:///?} &lt; /</code></td>
+<td>PHP <br></td>
+</tr>
+<tr>
+<td><code>h:/ &lt; //[::fadb:aae1:acce]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>D://_</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>wss://Z!</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>file://;,</code></td>
+<td>chromium <br></td>
+</tr>
+<tr>
+<td><code>R:/ &lt; //[::]:64305</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[::dcfd:dcef]</code></td>
+<td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>U:/ &lt; //[::bffa:eecf:180.253.255.252]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>V:/ &lt; //[::cdbe:8.251.254.254]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>file://ġ-Ł &lt; /</code></td>
+<td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>C:/ &lt; //[::ffd3:bada]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
 </tbody>
 </table>
 <h2>Browsers</h2>
@@ -391,15 +543,15 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>7</td>
+<td>21</td>
 <td>1</td>
-<td>6</td>
+<td>20</td>
 </tr>
 <tr>
 <td>chromium</td>
-<td>2</td>
-<td>0</td>
-<td>2</td>
+<td>7</td>
+<td>1</td>
+<td>6</td>
 </tr>
 </tbody>
 </table>
@@ -416,10 +568,46 @@
 </thead>
 <tbody>
 <tr>
+<td><code>P:/ &lt; /?􏔲</code></td>
+<td>query</td>
+<td><code>?%F4%8F%94%B2</code></td>
+<td><code>%F4%8F%94%B2</code></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //253.252.255.220</code></td>
+<td>host</td>
+<td><code>253.252.255.220</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>file://[bee7:bddb::abec]</code></td>
+<td>host</td>
+<td><code>bee7:bddb::abec</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>h:/ &lt; //[::fadb:aae1:acce]</code></td>
+<td>host</td>
+<td><code>::fadb:aae1:acce</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
 <td><code>file:/// &lt; /?䉷</code></td>
 <td>query</td>
 <td><code>?%E4%89%B7</code></td>
 <td><code>%E4%89%B7</code></td>
+</tr>
+<tr>
+<td><code>file://;,</code></td>
+<td>host</td>
+<td><code>;,</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>U:/ &lt; //[::bffa:eecf:180.253.255.252]</code></td>
+<td>host</td>
+<td><code>::bffa:eecf:b4fd:fffc</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
 </tr>
 <tr>
 <td><code>n:/ &lt; //[dbc1:bcca::]</code></td>
@@ -428,10 +616,34 @@
 <td><code>NS_ERROR_FAILURE 2147500037</code></td>
 </tr>
 <tr>
+<td><code>file://ġ-Ł &lt; /</code></td>
+<td>host</td>
+<td><code>xn----hja4h</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[::dcfd:dcef]</code></td>
+<td>host</td>
+<td><code>::dcfd:dcef</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>file://207.254.251.254</code></td>
+<td>host</td>
+<td><code>207.254.251.254</code></td>
+<td><code></code></td>
+</tr>
+<tr>
 <td><code>file:/// &lt; //[::ffed:abde:defd:fdc8]</code></td>
 <td>host</td>
 <td><code>::ffed:abde:defd:fdc8</code></td>
 <td><code></code></td>
+</tr>
+<tr>
+<td><code>C:/ &lt; //[::ffd3:bada]</code></td>
+<td>host</td>
+<td><code>::ffd3:bada</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
 </tr>
 <tr>
 <td><code>N:/ &lt; ///../]</code></td>
@@ -446,10 +658,34 @@
 <td><code></code></td>
 </tr>
 <tr>
+<td><code>R:/ &lt; //[::]:64305</code></td>
+<td>host</td>
+<td><code>::</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>V:/ &lt; //[::cdbe:8.251.254.254]</code></td>
+<td>host</td>
+<td><code>::cdbe:8fb:fefe</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
 <td><code>file://[::]/􏘦</code></td>
 <td>host</td>
 <td><code>::</code></td>
 <td><code></code></td>
+</tr>
+<tr>
+<td><code>D://_</code></td>
+<td>host</td>
+<td><code>_</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>K:/ &lt; //[::252.251.253.49]</code></td>
+<td>host</td>
+<td><code>::fcfb:fd31</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
 </tr>
 </tbody>
 </table>
@@ -465,6 +701,18 @@
 </thead>
 <tbody>
 <tr>
+<td><code>https://F,</code></td>
+<td>host</td>
+<td><code>f,</code></td>
+<td><code>f%2C</code></td>
+</tr>
+<tr>
+<td><code>wss://Z!</code></td>
+<td>host</td>
+<td><code>z!</code></td>
+<td><code>z%21</code></td>
+</tr>
+<tr>
 <td><code>wss://[::] &lt; //*o</code></td>
 <td>host</td>
 <td><code>*o</code></td>
@@ -475,6 +723,18 @@
 <td>host</td>
 <td><code></code></td>
 <td><code>..</code></td>
+</tr>
+<tr>
+<td><code>D://_</code></td>
+<td>host</td>
+<td><code>_</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>file://ġ-Ł &lt; /</code></td>
+<td>host</td>
+<td><code>xn----hja4h</code></td>
+<td><code></code></td>
 </tr>
 </tbody>
 </table>
