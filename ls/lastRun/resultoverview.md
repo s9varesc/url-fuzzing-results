@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 96
+Total number of URLs: 100
 
 Total number of Parsers: 11
 
@@ -17,8 +17,8 @@ firefox | 3 | 1 | 70.3%
 Go | 4 | 4 | 75.3% 
 PHP | 12 | 10 | 47.41% 
 C | 27 | 1 | 52.9% 
-Java | 44 | 21 | 39.0% 
-Ruby | 51 | 51 | 72.02% 
+Java | 45 | 21 | 39.0% 
+Ruby | 54 | 54 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -71,7 +71,7 @@ Ruby | 51 | 51 | 72.02%
  --- | --- 
  ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` n:/ < //[dbc1:bcca::] ```  <br> ``` N:/ < ///../] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: wss ```  |  ``` wss://D ```  <br> ``` wss://[::] < //*o ```  <br> ``` wss://251.255.214.253 ```  <br> ``` wss://Z! ```  <br> ``` wss://[::] < //[cecc:aecb:bbdb:ebff:fecf:babe:ab0c:dbde] ```  <br> ``` wss://:@* ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::] < //[::cdef:bacb:cfc0] ```  <br> ``` ws://[eebd::efbe] < / ```  <br> ``` ws://[::] < /_ ```  <br> ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  <br> ``` ws://[::] < //[cab2::dedc:255.250.251.251] ```  <br> ``` ws://R ```  <br> ``` ws://[::]#@ < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::] < //[::cdef:bacb:cfc0] ```  <br> ``` ws://[eebd::efbe] < / ```  <br> ``` ws://[::] < /_ ```  <br> ``` ws://[::] < //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251] ```  <br> ``` ws://[::] < //[cab2::dedc:255.250.251.251] ```  <br> ``` ws://R ```  <br> ``` ws://[::]#@ < / ```  <br> ``` ws://[::] < //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` Q:/%3f ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: p ```  |  ``` P:/ < /?􏔲 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: m ```  |  ``` M:/ < /嫭 ```  <br> 
@@ -176,6 +176,9 @@ Ruby | 51 | 51 | 72.02%
  ``` bad URI(is not URI?): //[::245.252.254.253] ```  |  ``` H:/ < //[::245.252.254.253] ```  <br> 
  ``` bad URI(is not URI?): file://`{ ```  |  ``` file://`{ < / ```  <br> 
  ``` bad URI(is not URI?): //[ebc9:dced::] ```  |  ``` file:/// < //[ebc9:dced::] ```  <br> 
+ ``` bad URI(is not URI?): //[::baef:251.212.254.251] ```  |  ``` https://[::] < //[::baef:251.212.254.251] ```  <br> 
+ ``` bad URI(is not URI?): //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255] ```  |  ``` ws://[::] < //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255] ```  <br> 
+ ``` bad URI(is not URI?): //[6bee::255.252.254.250] ```  |  ``` file:/// < //[6bee::255.252.254.250] ```  <br> 
 
 
 ## URL Comparison 
@@ -260,12 +263,15 @@ Ruby | 51 | 51 | 72.02%
  ``` ws://[::]#@ < / ```  | PHP <br>Java <br>
  ``` file://`{ < / ```  | PHP <br>Go <br>Ruby <br>
  ``` file:/// < //[ebc9:dced::] ```  | Ruby <br>
+ ``` https://[::] < //[::baef:251.212.254.251] ```  | Ruby <br>
+ ``` ws://[::] < //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255] ```  | Java <br>Ruby <br>
+ ``` file:/// < //[6bee::255.252.254.250] ```  | Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 48 | 3 | 45
+firefox | 49 | 3 | 46
 chromium | 17 | 2 | 15
 
 [full browser comparison](./browseroverview.html)
@@ -276,6 +282,7 @@ chromium | 17 | 2 | 15
  --- | --- | --- | --- 
  ``` file://[::cdfb:bafe:39.254.250.250] < / ```  | host |  ``` ::cdfb:bafe:27fe:fafa ```  |  ```  ``` 
  ``` P:/ < /?􏔲 ```  | query |  ``` ?%F4%8F%94%B2 ```  |  ``` %F4%8F%94%B2 ``` 
+ ``` file:/// < //[6bee::255.252.254.250] ```  | host |  ``` 6bee::fffc:fefa ```  |  ```  ``` 
  ``` file:/// < //253.252.255.220 ```  | host |  ``` 253.252.255.220 ```  |  ```  ``` 
  ``` D:/ < //[::dcef:caec:c3ef] ```  | host |  ``` ::dcef:caec:c3ef ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://[bee7:bddb::abec] ```  | host |  ``` bee7:bddb::abec ```  |  ```  ``` 

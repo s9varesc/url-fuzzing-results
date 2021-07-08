@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 96</p>
+<p>Total number of URLs: 100</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -69,14 +69,14 @@
 </tr>
 <tr>
 <td>Java</td>
-<td>44</td>
+<td>45</td>
 <td>21</td>
 <td>39.0%</td>
 </tr>
 <tr>
 <td>Ruby</td>
-<td>51</td>
-<td>51</td>
+<td>54</td>
+<td>54</td>
 <td>72.02%</td>
 </tr>
 </tbody>
@@ -212,7 +212,7 @@
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: ws</code></td>
-<td><code>ws://[::] &lt; //[::cdef:bacb:cfc0]</code>  <br> <code>ws://[eebd::efbe] &lt; /</code>  <br> <code>ws://[::] &lt; /_</code>  <br> <code>ws://[::] &lt; //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251]</code>  <br> <code>ws://[::] &lt; //[cab2::dedc:255.250.251.251]</code>  <br> <code>ws://R</code>  <br> <code>ws://[::]#@ &lt; /</code>  <br></td>
+<td><code>ws://[::] &lt; //[::cdef:bacb:cfc0]</code>  <br> <code>ws://[eebd::efbe] &lt; /</code>  <br> <code>ws://[::] &lt; /_</code>  <br> <code>ws://[::] &lt; //[fffc:beac:feff:bebc:beea:fbad:250.81.251.251]</code>  <br> <code>ws://[::] &lt; //[cab2::dedc:255.250.251.251]</code>  <br> <code>ws://R</code>  <br> <code>ws://[::]#@ &lt; /</code>  <br> <code>ws://[::] &lt; //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255]</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: q</code></td>
@@ -573,6 +573,18 @@
 <td><code>bad URI(is not URI?): //[ebc9:dced::]</code></td>
 <td><code>file:/// &lt; //[ebc9:dced::]</code>  <br></td>
 </tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::baef:251.212.254.251]</code></td>
+<td><code>https://[::] &lt; //[::baef:251.212.254.251]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255]</code></td>
+<td><code>ws://[::] &lt; //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[6bee::255.252.254.250]</code></td>
+<td><code>file:/// &lt; //[6bee::255.252.254.250]</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h2>URL Comparison</h2>
@@ -896,6 +908,18 @@
 <td><code>file:/// &lt; //[ebc9:dced::]</code></td>
 <td>Ruby <br></td>
 </tr>
+<tr>
+<td><code>https://[::] &lt; //[::baef:251.212.254.251]</code></td>
+<td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>ws://[::] &lt; //[bdaf:bfdc:eadd:bfca:bfff:defb:254.250.5.255]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[6bee::255.252.254.250]</code></td>
+<td>Ruby <br></td>
+</tr>
 </tbody>
 </table>
 <h2>Browsers</h2>
@@ -911,9 +935,9 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>48</td>
+<td>49</td>
 <td>3</td>
-<td>45</td>
+<td>46</td>
 </tr>
 <tr>
 <td>chromium</td>
@@ -946,6 +970,12 @@
 <td>query</td>
 <td><code>?%F4%8F%94%B2</code></td>
 <td><code>%F4%8F%94%B2</code></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[6bee::255.252.254.250]</code></td>
+<td>host</td>
+<td><code>6bee::fffc:fefa</code></td>
+<td><code></code></td>
 </tr>
 <tr>
 <td><code>file:/// &lt; //253.252.255.220</code></td>
