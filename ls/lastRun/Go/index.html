@@ -54,7 +54,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">net/url/url.go (73.1%)</option>
+				<option value="file0">net/url/url.go (74.8%)</option>
 				
 				</select>
 			</div>
@@ -414,7 +414,7 @@ type URL struct {
 
 // User returns a Userinfo containing the provided username
 // and no password set.
-func User(username string) *Userinfo <span class="cov0" title="0">{
+func User(username string) *Userinfo <span class="cov8" title="1">{
         return &amp;Userinfo{username, "", false}
 }</span>
 
@@ -636,11 +636,11 @@ func parseAuthority(authority string) (user *Userinfo, host string, err error) <
         if !validUserinfo(userinfo) </span><span class="cov8" title="1">{
                 return nil, "", errors.New("net/url: invalid userinfo")
         }</span>
-        <span class="cov0" title="0">if !strings.Contains(userinfo, ":") </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if !strings.Contains(userinfo, ":") </span><span class="cov8" title="1">{
                 if userinfo, err = unescape(userinfo, encodeUserPassword); err != nil </span><span class="cov0" title="0">{
                         return nil, "", err
                 }</span>
-                <span class="cov0" title="0">user = User(userinfo)</span>
+                <span class="cov8" title="1">user = User(userinfo)</span>
         } else<span class="cov0" title="0"> {
                 username, password := split(userinfo, ":", true)
                 if username, err = unescape(username, encodeUserPassword); err != nil </span><span class="cov0" title="0">{
@@ -651,7 +651,7 @@ func parseAuthority(authority string) (user *Userinfo, host string, err error) <
                 }</span>
                 <span class="cov0" title="0">user = UserPassword(username, password)</span>
         }
-        <span class="cov0" title="0">return user, host, nil</span>
+        <span class="cov8" title="1">return user, host, nil</span>
 }
 
 // parseHost parses host as an authority without user
@@ -1159,7 +1159,7 @@ func validUserinfo(s string) bool <span class="cov8" title="1">{
                 <span class="cov8" title="1">if 'a' &lt;= r &amp;&amp; r &lt;= 'z' </span><span class="cov0" title="0">{
                         continue</span>
                 }
-                <span class="cov8" title="1">if '0' &lt;= r &amp;&amp; r &lt;= '9' </span><span class="cov0" title="0">{
+                <span class="cov8" title="1">if '0' &lt;= r &amp;&amp; r &lt;= '9' </span><span class="cov8" title="1">{
                         continue</span>
                 }
                 <span class="cov8" title="1">switch r </span>{
@@ -1170,7 +1170,7 @@ func validUserinfo(s string) bool <span class="cov8" title="1">{
                         return false</span>
                 }
         }
-        <span class="cov0" title="0">return true</span>
+        <span class="cov8" title="1">return true</span>
 }
 </pre>
 		
