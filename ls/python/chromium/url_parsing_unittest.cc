@@ -61,10 +61,20 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 
 //Test inputs
 static URLParseCase parse_cases[]={{"http://[::]#𕱽" ,"/" ,"http" ,"" ,"" ,"[::]" ,-1 ,"/" ,"" ,""},
+{"ws://[::]" ,"//[::cdef:bacb:cfc0]" ,"ws" ,"" ,"" ,"[::cdef:bacb:cfc0]" ,-1 ,"/" ,"" ,""},
+{"" ,"Q:/%3f" ,"q" ,"" ,"" ,"" ,-1 ,"/%3f" ,"" ,""},
+{"" ,"wss://D" ,"wss" ,"" ,"" ,"d" ,-1 ,"/" ,"" ,""},
+{"file:///?﹩" ,"/" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"" ,""},
+{"" ,"http://[::]/󚇜" ,"http" ,"" ,"" ,"[::]" ,-1 ,"/%F3%9A%87%9C" ,"" ,""},
 {"" ,"file:///#=" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"" ,"="},
 {"file:///" ,"/?䉷" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"%E4%89%B7" ,""},
 {"" ,"ftp://[::]/￴" ,"ftp" ,"" ,"" ,"[::]" ,-1 ,"/%EF%BF%B4" ,"" ,""},
-{"n:/" ,"//[dbc1:bcca::]" ,"n" ,"" ,"" ,"[dbc1:bcca::]" ,-1 ,"/" ,"" ,""}};
+{"N:/" ,"///../]" ,"n" ,"" ,"" ,"" ,-1 ,"/]" ,"" ,""},
+{"https://[::]" ,"//s" ,"https" ,"" ,"" ,"s" ,-1 ,"/" ,"" ,""},
+{"n:/" ,"//[dbc1:bcca::]" ,"n" ,"" ,"" ,"[dbc1:bcca::]" ,-1 ,"/" ,"" ,""},
+{"" ,"file://250.251.7.251" ,"file" ,"" ,"" ,"250.251.7.251" ,-1 ,"/" ,"" ,""},
+{"file:///" ,"//[::ffed:abde:defd:fdc8]" ,"file" ,"" ,"" ,"[::ffed:abde:defd:fdc8]" ,-1 ,"/" ,"" ,""},
+{"file:///" ,"/􏔼" ,"file" ,"" ,"" ,"" ,-1 ,"/%F4%8F%94%BC" ,"" ,""}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {

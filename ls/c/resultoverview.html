@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 10</p>
+<p>Total number of URLs: 15</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -29,7 +29,7 @@
 <td>Cpp</td>
 <td>0</td>
 <td>0</td>
-<td>27.5%</td>
+<td>30.2%</td>
 </tr>
 <tr>
 <td>Go</td>
@@ -41,43 +41,43 @@
 <td>JavaScriptwhatwg-url</td>
 <td>0</td>
 <td>0</td>
-<td>48.88%</td>
+<td>50.82%</td>
 </tr>
 <tr>
 <td>chromium</td>
 <td>0</td>
 <td>0</td>
-<td>40.98%</td>
+<td>41.54%</td>
 </tr>
 <tr>
 <td>Python</td>
 <td>0</td>
 <td>0</td>
-<td>41.0%</td>
+<td>42.0%</td>
 </tr>
 <tr>
 <td>PHP</td>
-<td>2</td>
-<td>2</td>
+<td>3</td>
+<td>3</td>
 <td>38.79%</td>
 </tr>
 <tr>
 <td>Java</td>
-<td>2</td>
-<td>2</td>
+<td>5</td>
+<td>4</td>
 <td>39.0%</td>
 </tr>
 <tr>
 <td>C</td>
-<td>5</td>
+<td>7</td>
 <td>1</td>
-<td>31.5%</td>
+<td>34.9%</td>
 </tr>
 <tr>
 <td>Ruby</td>
-<td>7</td>
-<td>7</td>
-<td>70.47%</td>
+<td>10</td>
+<td>10</td>
+<td>72.02%</td>
 </tr>
 </tbody>
 </table>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td><code>ftp://[::]/￴</code>  <br> <code>file:/// &lt; /?䉷</code>  <br> <code>http://[::]#𕱽</code>  <br> <code>file:/// &lt; /􏔼</code>  <br> <code>http://[::]/󚇜</code>  <br></td>
+<td><code>ftp://[::]/￴</code>  <br> <code>file:/// &lt; /?䉷</code>  <br> <code>http://[::]#𕱽</code>  <br> <code>file:/// &lt; /􏔼</code>  <br> <code>http://[::]/󚇜</code>  <br> <code>file:///?﹩</code>  <br> <code>N:/ &lt; ///../]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -159,6 +159,10 @@
 <td><code>The uri `file:///?%E4%89%B7` is invalid for the `file` scheme.</code></td>
 <td><code>file:/// &lt; /?䉷</code>  <br></td>
 </tr>
+<tr>
+<td><code>The uri `file:///?%EF%B9%A9` is invalid for the `file` scheme.</code></td>
+<td><code>file:///?﹩ &lt; /</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h3>Java</h3>
@@ -172,11 +176,19 @@
 <tbody>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: n</code></td>
-<td><code>n:/ &lt; //[dbc1:bcca::]</code>  <br></td>
+<td><code>n:/ &lt; //[dbc1:bcca::]</code>  <br> <code>N:/ &lt; ///../]</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: wss</code></td>
 <td><code>wss://D</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: ws</code></td>
+<td><code>ws://[::] &lt; //[::cdef:bacb:cfc0]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: q</code></td>
+<td><code>Q:/%3f</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -277,6 +289,18 @@
 <td><code>bad URI(is not URI?): //[::ffed:abde:defd:fdc8]</code></td>
 <td><code>file:/// &lt; //[::ffed:abde:defd:fdc8]</code>  <br></td>
 </tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::cdef:bacb:cfc0]</code></td>
+<td><code>ws://[::] &lt; //[::cdef:bacb:cfc0]</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "file:///?\uFE69"</code></td>
+<td><code>file:///?﹩ &lt; /</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): ///../]</code></td>
+<td><code>N:/ &lt; ///../]</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h2>URL Comparison</h2>
@@ -324,6 +348,22 @@
 <td><code>file:/// &lt; //[::ffed:abde:defd:fdc8]</code></td>
 <td>Ruby <br></td>
 </tr>
+<tr>
+<td><code>ws://[::] &lt; //[::cdef:bacb:cfc0]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>file:///?﹩ &lt; /</code></td>
+<td>PHP <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>Q:/%3f</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>N:/ &lt; ///../]</code></td>
+<td>C <br>Java <br>Ruby <br></td>
+</tr>
 </tbody>
 </table>
 <h2>Browsers</h2>
@@ -339,15 +379,15 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>4</td>
+<td>5</td>
 <td>0</td>
-<td>4</td>
+<td>5</td>
 </tr>
 <tr>
 <td>chromium</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>0</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -382,6 +422,12 @@
 <td><code></code></td>
 </tr>
 <tr>
+<td><code>N:/ &lt; ///../]</code></td>
+<td>filePath</td>
+<td><code>/]</code></td>
+<td><code>//../]</code></td>
+</tr>
+<tr>
 <td><code>file://250.251.7.251</code></td>
 <td>host</td>
 <td><code>250.251.7.251</code></td>
@@ -401,10 +447,10 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>N:/ &lt; ///../]</code></td>
+<td>host</td>
+<td><code></code></td>
+<td><code>..</code></td>
 </tr>
 </tbody>
 </table>
