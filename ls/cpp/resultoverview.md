@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 4
+Total number of URLs: 7
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 57.5% 
-JavaScripturijs | 0 | 0 | 24.35% 
-Cpp | 0 | 0 | 27.3% 
-Go | 0 | 0 | 67.8% 
-JavaScriptwhatwg-url | 0 | 0 | 39.34% 
-chromium | 0 | 0 | 40.6% 
-Python | 0 | 0 | 39.0% 
+firefox | 0 | 0 | 61.6% 
+JavaScripturijs | 0 | 0 | 24.7% 
+Cpp | 0 | 0 | 27.5% 
+Go | 0 | 0 | 68.3% 
+JavaScriptwhatwg-url | 0 | 0 | 47.54% 
+chromium | 0 | 0 | 40.98% 
+Python | 0 | 0 | 41.0% 
 Java | 1 | 1 | 39.0% 
-C | 2 | 1 | 27.1% 
-PHP | 2 | 2 | 34.48% 
-Ruby | 3 | 3 | 70.47% 
+PHP | 2 | 2 | 38.79% 
+C | 4 | 1 | 30.7% 
+Ruby | 5 | 5 | 70.47% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -33,7 +33,7 @@ Ruby | 3 | 3 | 70.47%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> 
+ ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> 
 
 
 ### JavaScripturijs
@@ -94,6 +94,8 @@ Ruby | 3 | 3 | 70.47%
  ``` URI must be ascii only "ftp://[::]/\uFFF4" ```  |  ``` ftp://[::]/￴ ```  <br> 
  ``` URI must be ascii only "/?\u4277" ```  |  ``` file:/// < /?䉷 ```  <br> 
  ``` bad URI(is not URI?): //[dbc1:bcca::] ```  |  ``` n:/ < //[dbc1:bcca::] ```  <br> 
+ ``` URI must be ascii only "http://[::]#\u{15C7D}" ```  |  ``` http://[::]#𕱽 < / ```  <br> 
+ ``` URI must be ascii only "/\u{10F53C}" ```  |  ``` file:/// < /􏔼 ```  <br> 
 
 
 ## URL Comparison 
@@ -104,12 +106,14 @@ Ruby | 3 | 3 | 70.47%
  ``` file:///#= ```  | PHP <br>
  ``` file:/// < /?䉷 ```  | C <br>PHP <br>Ruby <br>
  ``` n:/ < //[dbc1:bcca::] ```  | Java <br>Ruby <br>
+ ``` http://[::]#𕱽 < / ```  | Ruby <br>
+ ``` file:/// < /􏔼 ```  | C <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 2 | 0 | 2
+firefox | 3 | 0 | 3
 chromium | 0 | 0 | 0
 
 [full browser comparison](./browseroverview.html)
@@ -120,6 +124,7 @@ chromium | 0 | 0 | 0
  --- | --- | --- | --- 
  ``` file:/// < /?䉷 ```  | query |  ``` ?%E4%89%B7 ```  |  ``` %E4%89%B7 ``` 
  ``` n:/ < //[dbc1:bcca::] ```  | host |  ``` dbc1:bcca:: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://250.251.7.251 ```  | host |  ``` 250.251.7.251 ```  |  ```  ``` 
 
 ### chromium
 
