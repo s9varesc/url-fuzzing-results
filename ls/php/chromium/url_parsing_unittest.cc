@@ -60,7 +60,8 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 }
 
 //Test inputs
-static URLParseCase parse_cases[]={{"" ,"ftp://[::]/￴" ,"ftp" ,"" ,"" ,"[::]" ,-1 ,"/%EF%BF%B4" ,"" ,""}};
+static URLParseCase parse_cases[]={{"" ,"file:///#=" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"" ,"="},
+{"" ,"ftp://[::]/￴" ,"ftp" ,"" ,"" ,"[::]" ,-1 ,"/%EF%BF%B4" ,"" ,""}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {
