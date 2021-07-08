@@ -54,7 +54,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">net/url/url.go (66.3%)</option>
+				<option value="file0">net/url/url.go (67.8%)</option>
 				
 				</select>
 			</div>
@@ -526,10 +526,10 @@ func Parse(rawurl string) (*URL, error) <span class="cov8" title="1">{
         <span class="cov8" title="1">if frag == "" </span><span class="cov8" title="1">{
                 return url, nil
         }</span>
-        <span class="cov0" title="0">if url.Fragment, err = unescape(frag, encodeFragment); err != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if url.Fragment, err = unescape(frag, encodeFragment); err != nil </span><span class="cov0" title="0">{
                 return nil, &amp;Error{"parse", rawurl, err}
         }</span>
-        <span class="cov0" title="0">return url, nil</span>
+        <span class="cov8" title="1">return url, nil</span>
 }
 
 // ParseRequestURI parses rawurl into a URL structure. It assumes that
@@ -973,7 +973,7 @@ func (v Values) Encode() string <span class="cov8" title="1">{
 // them to base, per RFC 3986.
 func resolvePath(base, ref string) string <span class="cov8" title="1">{
         var full string
-        if ref == "" </span><span class="cov0" title="0">{
+        if ref == "" </span><span class="cov8" title="1">{
                 full = base
         }</span> else<span class="cov8" title="1"> if ref[0] != '/' </span><span class="cov8" title="1">{
                 i := strings.LastIndex(base, "/")
@@ -981,7 +981,7 @@ func resolvePath(base, ref string) string <span class="cov8" title="1">{
         }</span> else<span class="cov8" title="1"> {
                 full = ref
         }</span>
-        <span class="cov8" title="1">if full == "" </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if full == "" </span><span class="cov8" title="1">{
                 return ""
         }</span>
         <span class="cov8" title="1">var dst []string
@@ -1033,7 +1033,7 @@ func (u *URL) ResolveReference(ref *URL) *URL <span class="cov8" title="1">{
         if ref.Scheme == "" </span><span class="cov8" title="1">{
                 url.Scheme = u.Scheme
         }</span>
-        <span class="cov8" title="1">if ref.Scheme != "" || ref.Host != "" || ref.User != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if ref.Scheme != "" || ref.Host != "" || ref.User != nil </span><span class="cov8" title="1">{
                 // The "absoluteURI" or "net_path" cases.
                 // We can ignore the error from setPath since we know we provided a
                 // validly-escaped path.

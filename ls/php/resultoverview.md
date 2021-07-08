@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 1
+Total number of URLs: 2
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 54.4% 
-JavaScripturijs | 0 | 0 | 16.9% 
-Cpp | 0 | 0 | 14.2% 
-PHP | 0 | 0 | 33.62% 
+firefox | 0 | 0 | 55.9% 
+JavaScripturijs | 0 | 0 | 17.68% 
+Cpp | 0 | 0 | 15.4% 
 Java | 0 | 0 | 36.0% 
-Go | 0 | 0 | 66.3% 
-JavaScriptwhatwg-url | 0 | 0 | 24.59% 
-chromium | 0 | 0 | 25.56% 
+Go | 0 | 0 | 66.8% 
+JavaScriptwhatwg-url | 0 | 0 | 28.61% 
+chromium | 0 | 0 | 27.44% 
 Python | 0 | 0 | 32.0% 
-C | 1 | 1 | 18.9% 
-Ruby | 1 | 1 | 61.66% 
+C | 1 | 1 | 21.5% 
+PHP | 1 | 1 | 34.48% 
+Ruby | 1 | 1 | 66.84% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -52,6 +52,7 @@ Ruby | 1 | 1 | 61.66%
 
  Exception Type | URLs 
  --- | --- 
+ ``` The uri `` is invalid for the `file` scheme. ```  |  ``` file:///#= ```  <br> 
 
 
 ### Java
@@ -96,6 +97,7 @@ Ruby | 1 | 1 | 61.66%
  URL | Parsers 
  --- | --- 
  ``` ftp://[::]/￴ ```  | C <br>Ruby <br>
+ ``` file:///#= ```  | PHP <br>
 
 ## Browsers
 

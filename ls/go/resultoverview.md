@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 1
+Total number of URLs: 6
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 54.4% 
-JavaScripturijs | 0 | 0 | 16.9% 
-Cpp | 0 | 0 | 14.2% 
-PHP | 0 | 0 | 33.62% 
-Java | 0 | 0 | 36.0% 
-Go | 0 | 0 | 66.3% 
-JavaScriptwhatwg-url | 0 | 0 | 24.59% 
-chromium | 0 | 0 | 25.56% 
-Python | 0 | 0 | 32.0% 
-C | 1 | 1 | 18.9% 
-Ruby | 1 | 1 | 61.66% 
+firefox | 0 | 0 | 57.8% 
+JavaScripturijs | 0 | 0 | 24.7% 
+Cpp | 0 | 0 | 27.3% 
+Go | 0 | 0 | 68.3% 
+JavaScriptwhatwg-url | 0 | 0 | 40.39% 
+chromium | 0 | 0 | 40.98% 
+Python | 0 | 0 | 41.0% 
+Java | 1 | 1 | 39.0% 
+PHP | 2 | 2 | 34.48% 
+C | 4 | 1 | 27.1% 
+Ruby | 5 | 5 | 70.47% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -33,7 +33,7 @@ Ruby | 1 | 1 | 61.66%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> 
+ ``` 1 ```  |  ``` ftp://[::]/￴ ```  <br> ``` file:/// < /?䉷 ```  <br> ``` http://[::]#𕱽 ```  <br> ``` file:/// < /􏔼 ```  <br> 
 
 
 ### JavaScripturijs
@@ -52,12 +52,15 @@ Ruby | 1 | 1 | 61.66%
 
  Exception Type | URLs 
  --- | --- 
+ ``` The uri `` is invalid for the `file` scheme. ```  |  ``` file:///#= ```  <br> 
+ ``` The uri `file:///?%E4%89%B7` is invalid for the `file` scheme. ```  |  ``` file:/// < /?䉷 ```  <br> 
 
 
 ### Java
 
  Exception Type | URLs 
  --- | --- 
+ ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` n:/ < //[dbc1:bcca::] ```  <br> 
 
 
 ### Go
@@ -89,6 +92,10 @@ Ruby | 1 | 1 | 61.66%
  Exception Type | URLs 
  --- | --- 
  ``` URI must be ascii only "ftp://[::]/\uFFF4" ```  |  ``` ftp://[::]/￴ ```  <br> 
+ ``` URI must be ascii only "/?\u4277" ```  |  ``` file:/// < /?䉷 ```  <br> 
+ ``` bad URI(is not URI?): //[dbc1:bcca::] ```  |  ``` n:/ < //[dbc1:bcca::] ```  <br> 
+ ``` URI must be ascii only "http://[::]#\u{15C7D}" ```  |  ``` http://[::]#𕱽 < / ```  <br> 
+ ``` URI must be ascii only "/\u{10F53C}" ```  |  ``` file:/// < /􏔼 ```  <br> 
 
 
 ## URL Comparison 
@@ -96,12 +103,17 @@ Ruby | 1 | 1 | 61.66%
  URL | Parsers 
  --- | --- 
  ``` ftp://[::]/￴ ```  | C <br>Ruby <br>
+ ``` file:///#= ```  | PHP <br>
+ ``` file:/// < /?䉷 ```  | C <br>PHP <br>Ruby <br>
+ ``` n:/ < //[dbc1:bcca::] ```  | Java <br>Ruby <br>
+ ``` http://[::]#𕱽 < / ```  | Ruby <br>
+ ``` file:/// < /􏔼 ```  | C <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 0 | 0 | 0
+firefox | 2 | 0 | 2
 chromium | 0 | 0 | 0
 
 [full browser comparison](./browseroverview.html)
@@ -110,6 +122,8 @@ chromium | 0 | 0 | 0
 
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
+ ``` file:/// < /?䉷 ```  | query |  ``` ?%E4%89%B7 ```  |  ``` %E4%89%B7 ``` 
+ ``` n:/ < //[dbc1:bcca::] ```  | host |  ``` dbc1:bcca:: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
 
 ### chromium
 
