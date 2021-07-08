@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 45
+Total number of URLs: 47
 
 Total number of Parsers: 11
 
@@ -11,12 +11,12 @@ Total number of Parsers: 11
 JavaScripturijs | 0 | 0 | 28.94% 
 Cpp | 0 | 0 | 35.0% 
 Go | 0 | 0 | 68.3% 
-JavaScriptwhatwg-url | 0 | 0 | 62.15% 
+JavaScriptwhatwg-url | 0 | 0 | 62.3% 
 Python | 0 | 0 | 44.0% 
 firefox | 1 | 1 | 63.4% 
 chromium | 1 | 1 | 47.18% 
 PHP | 4 | 4 | 45.69% 
-C | 14 | 1 | 46.7% 
+C | 14 | 1 | 46.8% 
 Java | 18 | 13 | 39.0% 
 Ruby | 23 | 23 | 72.02% 
 
@@ -174,7 +174,7 @@ Ruby | 23 | 23 | 72.02%
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 22 | 1 | 21
+firefox | 23 | 1 | 22
 chromium | 7 | 1 | 6
 
 [full browser comparison](./browseroverview.html)
@@ -188,6 +188,7 @@ chromium | 7 | 1 | 6
  ``` file://[bee7:bddb::abec] ```  | host |  ``` bee7:bddb::abec ```  |  ```  ``` 
  ``` h:/ < //[::fadb:aae1:acce] ```  | host |  ``` ::fadb:aae1:acce ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:/// < /?䉷 ```  | query |  ``` ?%E4%89%B7 ```  |  ``` %E4%89%B7 ``` 
+ ``` https://[::] < /?g ```  | query |  ``` ?g ```  |  ``` g ``` 
  ``` file://;, ```  | host |  ``` ;, ```  |  ```  ``` 
  ``` http://[::] < %2e%2e//%2e. ```  | filePath |  ``` / ```  |  ``` //%2e. ``` 
  ``` U:/ < //[::bffa:eecf:180.253.255.252] ```  | host |  ``` ::bffa:eecf:b4fd:fffc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
