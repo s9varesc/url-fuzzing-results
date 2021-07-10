@@ -49,7 +49,23 @@ static URLParseCase parse_cases[]={{"//[::eebf:fbed:decc:badc:fbde:255.50.253.25
 {"x://#%9f"},
 {"//[::dacb:cbdb:efdd:214.251.253.251%25~]"},
 {"//[::ddad:ecef:dbcb:dfda:feab:253.251.250.8]"},
-{"//z"}};
+{"//z"},
+{"G://[::edfe:bace:ffae:fbcd:dece:253.252.255.7%25-]"},
+{"//[fcef::dbce:ffcf:aaef:fead:2dff:adbd%25.]"},
+{"//[fdfe::afcf:caeb:ebab:dffc:230.253.251.252]"},
+{"//[1ccf::%25_]"},
+{"//[::fdaf:fded:255.251.188.252]"},
+{"a://[::caef:deda:bbfb:171.252.252.251%25-]"},
+{"R://[::eecc:edda:253.220.255.254]"},
+{"x://[::255.19.254.251]"},
+{"//[::0dbc:beff:253.250.250.255]"},
+{"O://[::caab:8fae]"},
+{"U://[::abcc:255.254.231.251]"},
+{"//[::fced:bfab:fdeb:97.251.255.251]"},
+{"//[::ecab:cfcb:eaba:3cef%25~]"},
+{"J://4@"},
+{"H://252.251.251.211"},
+{"U://[::dcfd:cfda:203.253.255.251%25_]"}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {
