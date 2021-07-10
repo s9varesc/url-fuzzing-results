@@ -54,7 +54,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">net/url/url.go (66.3%)</option>
+				<option value="file0">net/url/url.go (68.5%)</option>
 				
 				</select>
 			</div>
@@ -280,7 +280,7 @@ func unescape(s string, mode encoding) (string, error) <span class="cov8" title=
                         <span class="cov8" title="1">if mode == encodeHost &amp;&amp; unhex(s[i+1]) &lt; 8 &amp;&amp; s[i:i+3] != "%25" </span><span class="cov0" title="0">{
                                 return "", EscapeError(s[i : i+3])
                         }</span>
-                        <span class="cov8" title="1">if mode == encodeZone </span><span class="cov0" title="0">{
+                        <span class="cov8" title="1">if mode == encodeZone </span><span class="cov8" title="1">{
                                 // RFC 6874 says basically "anything goes" for zone identifiers
                                 // and that even non-ASCII can be redundantly escaped,
                                 // but it seems prudent to restrict %-escaped bytes here to those
@@ -676,20 +676,20 @@ func parseHost(host string) (string, error) <span class="cov8" title="1">{
                 // We do impose some restrictions on the zone, to avoid stupidity
                 // like newlines.
                 <span class="cov8" title="1">zone := strings.Index(host[:i], "%25")
-                if zone &gt;= 0 </span><span class="cov0" title="0">{
+                if zone &gt;= 0 </span><span class="cov8" title="1">{
                         host1, err := unescape(host[:zone], encodeHost)
                         if err != nil </span><span class="cov0" title="0">{
                                 return "", err
                         }</span>
-                        <span class="cov0" title="0">host2, err := unescape(host[zone:i], encodeZone)
+                        <span class="cov8" title="1">host2, err := unescape(host[zone:i], encodeZone)
                         if err != nil </span><span class="cov0" title="0">{
                                 return "", err
                         }</span>
-                        <span class="cov0" title="0">host3, err := unescape(host[i:], encodeHost)
+                        <span class="cov8" title="1">host3, err := unescape(host[i:], encodeHost)
                         if err != nil </span><span class="cov0" title="0">{
                                 return "", err
                         }</span>
-                        <span class="cov0" title="0">return host1 + host2 + host3, nil</span>
+                        <span class="cov8" title="1">return host1 + host2 + host3, nil</span>
                 }
         }
 
