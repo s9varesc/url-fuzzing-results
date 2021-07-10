@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 55
+Total number of URLs: 62
 
 Total number of Parsers: 11
 
@@ -16,9 +16,9 @@ Python | 0 | 0 | 44.0%
 Go | 3 | 3 | 73.1% 
 chromium | 3 | 1 | 50.19% 
 PHP | 4 | 4 | 47.41% 
-C | 20 | 1 | 49.6% 
-Java | 24 | 16 | 39.0% 
-Ruby | 24 | 24 | 72.02% 
+C | 22 | 1 | 49.7% 
+Ruby | 27 | 27 | 72.02% 
+Java | 28 | 18 | 39.0% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -33,7 +33,7 @@ Ruby | 24 | 24 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> ``` file:///? ```  <br> ``` file:/// < /?漭 ```  <br> ``` N:/?񶫕 ```  <br> ``` file:/// < /%2e./򤋣 ```  <br> ``` A:/#秴 ```  <br> ``` http://[::dace:efee:250.250.253.202] ```  <br> ``` http://[::] < //:𺈟@, ```  <br> ``` l:/]%60 ```  <br> ``` http://[::250.253.203.254] ```  <br> ``` ws://[::] < //䉠@) ```  <br> ``` file://[::209.255.253.254] ```  <br> ``` file://[::bbbf:faac:252.251.255.207] ```  <br> ``` file:/// < ///;Ｒ ```  <br> ``` http://[::] < //[::205.253.255.250] ```  <br> ``` file:/// < //Gă ```  <br> ``` K:/祴 ```  <br> ``` M:/﫭 ```  <br> 
+ ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> ``` file:///? ```  <br> ``` file:/// < /?漭 ```  <br> ``` N:/?񶫕 ```  <br> ``` file:/// < /%2e./򤋣 ```  <br> ``` A:/#秴 ```  <br> ``` http://[::dace:efee:250.250.253.202] ```  <br> ``` http://[::] < //:𺈟@, ```  <br> ``` l:/]%60 ```  <br> ``` http://[::250.253.203.254] ```  <br> ``` ws://[::] < //䉠@) ```  <br> ``` file://[::209.255.253.254] ```  <br> ``` file://[::bbbf:faac:252.251.255.207] ```  <br> ``` file:/// < ///;Ｒ ```  <br> ``` http://[::] < //[::205.253.255.250] ```  <br> ``` file:/// < //Gă ```  <br> ``` K:/祴 ```  <br> ``` M:/﫭 ```  <br> ``` Z:/ < /#ﺞ ```  <br> ``` i:/?󆮖 ```  <br> 
 
 
 ### JavaScripturijs
@@ -64,7 +64,7 @@ Ruby | 24 | 24 | 72.02%
  --- | --- 
  ``` java.net.MalformedURLException: unknown protocol: g ```  |  ``` g:/ < //{' ```  <br> ``` g:/ < //O ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: v ```  |  ``` V:/ < //- ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` h:/a:/ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` h:/a:/ ```  <br> ``` h:/ < //l ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` D:/ < /? ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` N:/?񶫕 ```  <br> 
@@ -75,9 +75,11 @@ Ruby | 24 | 24 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: x ```  |  ``` X://[::]:65502 < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: l ```  |  ``` l:/]%60 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: p ```  |  ``` p:/ < //[::e8ed] ```  <br> ``` P:/ < //[bce3:abcc::edcb:fbff:255.252.251.254] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: i ```  |  ``` I:///! < / ```  <br> ``` i:/ < /m:/ ```  <br> ``` i:/ < //,i ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: i ```  |  ``` I:///! < / ```  <br> ``` i:/ < /m:/ ```  <br> ``` i:/ < //,i ```  <br> ``` i:/?󆮖 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: k ```  |  ``` K:/祴 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: m ```  |  ``` M:/﫭 ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: z ```  |  ``` Z:/ < /#ﺞ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: u ```  |  ``` u:/?+ ```  <br> 
 
 
 ### Go
@@ -136,6 +138,9 @@ Ruby | 24 | 24 | 72.02%
  ``` URI must be ascii only "M:/\uFAED" ```  |  ``` M:/﫭 ```  <br> 
  ``` bad URI(is not URI?): //[cdcb::ebab:252.254.254.255] ```  |  ``` file:/// < //[cdcb::ebab:252.254.254.255] ```  <br> 
  ``` bad URI(is not URI?): //[bce3:abcc::edcb:fbff:255.252.251.254] ```  |  ``` P:/ < //[bce3:abcc::edcb:fbff:255.252.251.254] ```  <br> 
+ ``` bad URI(is not URI?): //[::efde:bbdf] ```  |  ``` file:/// < //[::efde:bbdf] ```  <br> 
+ ``` URI must be ascii only "/#\uFE9E" ```  |  ``` Z:/ < /#ﺞ ```  <br> 
+ ``` URI must be ascii only "i:/?\u{C6B96}" ```  |  ``` i:/?󆮖 ```  <br> 
 
 
 ## URL Comparison 
@@ -182,12 +187,17 @@ Ruby | 24 | 24 | 72.02%
  ``` file:/// < //[cdcb::ebab:252.254.254.255] ```  | Ruby <br>
  ``` P:/ < //[bce3:abcc::edcb:fbff:255.252.251.254] ```  | Java <br>Ruby <br>
  ``` g:/ < //O ```  | Java <br>
+ ``` h:/ < //l ```  | Java <br>
+ ``` file:/// < //[::efde:bbdf] ```  | Ruby <br>
+ ``` Z:/ < /#ﺞ ```  | C <br>Java <br>Ruby <br>
+ ``` i:/?󆮖 ```  | C <br>Java <br>Ruby <br>
+ ``` u:/?+ ```  | Java <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 27 | 0 | 27
+firefox | 31 | 0 | 31
 chromium | 8 | 3 | 5
 
 [full browser comparison](./browseroverview.html)
@@ -203,10 +213,13 @@ chromium | 8 | 3 | 5
  ``` file://[::209.255.253.254] ```  | host |  ``` ::d1ff:fdfe ```  |  ```  ``` 
  ``` g:/ < //O ```  | host |  ``` o ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` I:///! < / ```  | filePath |  ``` / ```  |  ``` /// ``` 
+ ``` h:/ < //l ```  | host |  ``` l ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` i:/?󆮖 ```  | query |  ``` ?%F3%86%AE%96 ```  |  ``` %F3%86%AE%96 ``` 
  ``` N:/?񶫕 ```  | query |  ``` ?%F1%B6%AB%95 ```  |  ``` %F1%B6%AB%95 ``` 
  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  | host |  ``` dffb:adba:dfbb:effe:adad:caac:fc10:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://RĤ ```  | host |  ``` xn--r-qja ```  |  ```  ``` 
  ``` b://[::]:62556 < / ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` u:/?+ ```  | query |  ``` ?+ ```  |  ``` + ``` 
  ``` file:/// < /?漭 ```  | query |  ``` ?%E6%BC%AD ```  |  ``` %E6%BC%AD ``` 
  ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://-w ```  | host |  ``` -w ```  |  ```  ``` 
@@ -217,6 +230,7 @@ chromium | 8 | 3 | 5
  ``` p:/ < //[::e8ed] ```  | host |  ``` ::e8ed ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` P:/ < //[bce3:abcc::edcb:fbff:255.252.251.254] ```  | host |  ``` bce3:abcc::edcb:fbff:fffc:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:/// < /.%2e ```  | filePath |  ``` / ```  |  ``` /.%2e ``` 
+ ``` file:/// < //[::efde:bbdf] ```  | host |  ``` ::efde:bbdf ```  |  ```  ``` 
  ``` i:/ < //,i ```  | host |  ``` ,i ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` D:/ < /? ```  | query |  ``` ?%EF%A0%88 ```  |  ``` %EF%A0%88 ``` 
  ``` file:/// < //Gă ```  | host |  ``` xn--g-sha ```  |  ```  ``` 
