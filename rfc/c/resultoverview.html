@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 11</p>
+<p>Total number of URLs: 12</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -39,15 +39,15 @@
 </tr>
 <tr>
 <td>PHP</td>
-<td>4</td>
-<td>4</td>
+<td>5</td>
+<td>5</td>
 <td>45.69%</td>
 </tr>
 <tr>
 <td>C</td>
-<td>5</td>
+<td>6</td>
 <td>1</td>
-<td>28.6%</td>
+<td>29.0%</td>
 </tr>
 <tr>
 <td>firefox</td>
@@ -63,20 +63,20 @@
 </tr>
 <tr>
 <td>Ruby</td>
-<td>9</td>
+<td>10</td>
 <td>1</td>
 <td>68.91%</td>
 </tr>
 <tr>
 <td>JavaScriptwhatwg-url</td>
-<td>10</td>
+<td>11</td>
 <td>1</td>
-<td>28.76%</td>
+<td>29.06%</td>
 </tr>
 <tr>
 <td>Java</td>
-<td>11</td>
-<td>3</td>
+<td>12</td>
+<td>4</td>
 <td>36.0%</td>
 </tr>
 </tbody>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td><code>//[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255]</code>  <br> <code>//[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_]</code>  <br> <code>//[2cae::ecda:acce:fbcd:254.253.254.251%25-]</code>  <br> <code>//[::beed:fdbc:ffbf:251.251.1.252%25_]</code>  <br> <code>W://[::250.253.250.246%25-]</code>  <br></td>
+<td><code>//[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255]</code>  <br> <code>//[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_]</code>  <br> <code>//[2cae::ecda:acce:fbcd:254.253.254.251%25-]</code>  <br> <code>//[::beed:fdbc:ffbf:251.251.1.252%25_]</code>  <br> <code>W://[::250.253.250.246%25-]</code>  <br> <code>U://[::aabe:aeeb:eeee:bdbd:dfed:cbee:8adc%25-]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -167,6 +167,10 @@
 <td><code>Host `[::250.253.250.246%25-]` is invalid : the IP host is malformed</code></td>
 <td><code>W://[::250.253.250.246%25-]</code>  <br></td>
 </tr>
+<tr>
+<td><code>Host `[::aabe:aeeb:eeee:bdbd:dfed:cbee:8adc%25-]` is invalid : the IP host is malformed</code></td>
+<td><code>U://[::aabe:aeeb:eeee:bdbd:dfed:cbee:8adc%25-]</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h3>Java</h3>
@@ -189,6 +193,10 @@
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: w</code></td>
 <td><code>W://[::250.253.250.246%25-]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: u</code></td>
+<td><code>U://[::aabe:aeeb:eeee:bdbd:dfed:cbee:8adc%25-]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -218,7 +226,7 @@
 <tbody>
 <tr>
 <td><code>Invalid URL:</code></td>
-<td><code>//[::eebf:fbed:decc:badc:fbde:255.50.253.250]</code>  <br> <code>//[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255]</code>  <br> <code>//253.8.251.252</code>  <br> <code>//[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251]</code>  <br> <code>//[dfab::feee:dafb:bcaa:ecef:251.52.253.255]</code>  <br> <code>//[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_]</code>  <br> <code>//[2cae::ecda:acce:fbcd:254.253.254.251%25-]</code>  <br> <code>//[::beed:fdbc:ffbf:251.251.1.252%25_]</code>  <br> <code>//[5fff::abff]</code>  <br> <code>W://[::250.253.250.246%25-]</code>  <br></td>
+<td><code>//[::eebf:fbed:decc:badc:fbde:255.50.253.250]</code>  <br> <code>//[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255]</code>  <br> <code>//253.8.251.252</code>  <br> <code>//[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251]</code>  <br> <code>//[dfab::feee:dafb:bcaa:ecef:251.52.253.255]</code>  <br> <code>//[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_]</code>  <br> <code>//[2cae::ecda:acce:fbcd:254.253.254.251%25-]</code>  <br> <code>//[::beed:fdbc:ffbf:251.251.1.252%25_]</code>  <br> <code>//[5fff::abff]</code>  <br> <code>W://[::250.253.250.246%25-]</code>  <br> <code>U://[::aabe:aeeb:eeee:bdbd:dfed:cbee:8adc%25-]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -263,7 +271,7 @@
 <tbody>
 <tr>
 <td><code>bad URI(is not URI?):</code></td>
-<td><code>//[::eebf:fbed:decc:badc:fbde:255.50.253.250]</code>  <br> <code>//[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255]</code>  <br> <code>//[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251]</code>  <br> <code>//[dfab::feee:dafb:bcaa:ecef:251.52.253.255]</code>  <br> <code>//[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_]</code>  <br> <code>//[2cae::ecda:acce:fbcd:254.253.254.251%25-]</code>  <br> <code>//[::beed:fdbc:ffbf:251.251.1.252%25_]</code>  <br> <code>//[5fff::abff]</code>  <br> <code>W://[::250.253.250.246%25-]</code>  <br></td>
+<td><code>//[::eebf:fbed:decc:badc:fbde:255.50.253.250]</code>  <br> <code>//[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255]</code>  <br> <code>//[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251]</code>  <br> <code>//[dfab::feee:dafb:bcaa:ecef:251.52.253.255]</code>  <br> <code>//[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_]</code>  <br> <code>//[2cae::ecda:acce:fbcd:254.253.254.251%25-]</code>  <br> <code>//[::beed:fdbc:ffbf:251.251.1.252%25_]</code>  <br> <code>//[5fff::abff]</code>  <br> <code>W://[::250.253.250.246%25-]</code>  <br> <code>U://[::aabe:aeeb:eeee:bdbd:dfed:cbee:8adc%25-]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -318,6 +326,10 @@
 </tr>
 <tr>
 <td><code>W://[::250.253.250.246%25-]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>U://[::aabe:aeeb:eeee:bdbd:dfed:cbee:8adc%25-]</code></td>
 <td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
 </tr>
 </tbody>
