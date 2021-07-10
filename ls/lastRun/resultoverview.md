@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 6
+Total number of URLs: 11
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 57.8% 
-JavaScripturijs | 0 | 0 | 24.09% 
-Cpp | 0 | 0 | 26.2% 
-JavaScriptwhatwg-url | 0 | 0 | 47.84% 
-chromium | 0 | 0 | 38.91% 
-Python | 0 | 0 | 37.0% 
-PHP | 1 | 1 | 43.97% 
+firefox | 0 | 0 | 63.4% 
+JavaScripturijs | 0 | 0 | 24.61% 
+Cpp | 0 | 0 | 27.5% 
+JavaScriptwhatwg-url | 0 | 0 | 53.06% 
+chromium | 0 | 0 | 43.8% 
+Python | 0 | 0 | 42.0% 
 Go | 1 | 1 | 68.8% 
-C | 3 | 1 | 38.2% 
-Java | 4 | 4 | 38.0% 
-Ruby | 4 | 4 | 72.02% 
+PHP | 3 | 3 | 46.55% 
+C | 6 | 1 | 40.4% 
+Java | 6 | 6 | 38.0% 
+Ruby | 8 | 8 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -33,7 +33,7 @@ Ruby | 4 | 4 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> 
+ ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> ``` file:///? ```  <br> ``` file:/// < /?漭 ```  <br> ``` N:/?񶫕 ```  <br> 
 
 
 ### JavaScripturijs
@@ -53,6 +53,8 @@ Ruby | 4 | 4 | 72.02%
  Exception Type | URLs 
  --- | --- 
  ``` Host `{'` is invalid : the host is not a valid registered name ```  |  ``` g:/ < //{' ```  <br> 
+ ``` The uri `file:///?%EE%BF%82` is invalid for the `file` scheme. ```  |  ``` file:///? ```  <br> 
+ ``` The uri `file:///?%E6%BC%AD` is invalid for the `file` scheme. ```  |  ``` file:/// < /?漭 ```  <br> 
 
 
 ### Java
@@ -63,6 +65,8 @@ Ruby | 4 | 4 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: v ```  |  ``` V:/ < //- ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` h:/a:/ ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` D:/ < /? ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` N:/?񶫕 ```  <br> 
 
 
 ### Go
@@ -98,6 +102,10 @@ Ruby | 4 | 4 | 72.02%
  ``` bad URI(is not URI?): //{' ```  |  ``` g:/ < //{' ```  <br> 
  ``` bad URI(is not URI?): //[::dcce:251.255.185.255] ```  |  ``` https://[::] < //[::dcce:251.255.185.255] ```  <br> 
  ``` URI must be ascii only "/?\uF808" ```  |  ``` D:/ < /? ```  <br> 
+ ``` bad URI(is not URI?): //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  |  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  <br> 
+ ``` URI must be ascii only "file:///?\uEFC2" ```  |  ``` file:///? ```  <br> 
+ ``` URI must be ascii only "/?\u6F2D" ```  |  ``` file:/// < /?漭 ```  <br> 
+ ``` URI must be ascii only "N:/?\u{76AD5}" ```  |  ``` N:/?񶫕 ```  <br> 
 
 
 ## URL Comparison 
@@ -110,12 +118,16 @@ Ruby | 4 | 4 | 72.02%
  ``` V:/ < //- ```  | Java <br>
  ``` h:/a:/ ```  | Java <br>
  ``` D:/ < /? ```  | C <br>Java <br>Ruby <br>
+ ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  | Java <br>Ruby <br>
+ ``` file:///? ```  | C <br>PHP <br>Ruby <br>
+ ``` file:/// < /?漭 ```  | C <br>PHP <br>Ruby <br>
+ ``` N:/?񶫕 ```  | C <br>Java <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 4 | 0 | 4
+firefox | 8 | 0 | 8
 chromium | 1 | 0 | 1
 
 [full browser comparison](./browseroverview.html)
@@ -124,7 +136,11 @@ chromium | 1 | 0 | 1
 
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
+ ``` file:///? ```  | query |  ``` ?%EE%BF%82 ```  |  ``` %EE%BF%82 ``` 
+ ``` N:/?񶫕 ```  | query |  ``` ?%F1%B6%AB%95 ```  |  ``` %F1%B6%AB%95 ``` 
+ ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  | host |  ``` dffb:adba:dfbb:effe:adad:caac:fc10:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://RĤ ```  | host |  ``` xn--r-qja ```  |  ```  ``` 
+ ``` file:/// < /?漭 ```  | query |  ``` ?%E6%BC%AD ```  |  ``` %E6%BC%AD ``` 
  ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` V:/ < //- ```  | host |  ``` - ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` D:/ < /? ```  | query |  ``` ?%EF%A0%88 ```  |  ``` %EF%A0%88 ``` 

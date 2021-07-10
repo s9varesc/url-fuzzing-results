@@ -61,8 +61,11 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 
 //Test inputs
 static URLParseCase parse_cases[]={{"g:/" ,"//{'" ,"g" ,"" ,"" ,"{'" ,-1 ,"/" ,"" ,""},
+{"" ,"http://[::]:65355" ,"http" ,"" ,"" ,"[::]" ,65355 ,"/" ,"" ,""},
 {"" ,"h:/a:/" ,"h" ,"" ,"" ,"" ,-1 ,"/a:/" ,"" ,""},
+{"F:/" ,"//[dffb:adba:dfbb:effe:adad:caac:252.16.254.252]" ,"f" ,"" ,"" ,"[dffb:adba:dfbb:effe:adad:caac:fc10:fefc]" ,-1 ,"/" ,"" ,""},
 {"https://[::]" ,"//[::dcce:251.255.185.255]" ,"https" ,"" ,"" ,"[::dcce:fbff:b9ff]" ,-1 ,"/" ,"" ,""},
+{"" ,"file:///?" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"%EE%BF%82" ,""},
 {"" ,"file://RĤ" ,"file" ,"" ,"" ,"xn--r-qja" ,-1 ,"/" ,"" ,""},
 {"V:/" ,"//-" ,"v" ,"" ,"" ,"-" ,-1 ,"/" ,"" ,""},
 {"D:/" ,"/?" ,"d" ,"" ,"" ,"" ,-1 ,"/" ,"%EF%A0%88" ,""}};

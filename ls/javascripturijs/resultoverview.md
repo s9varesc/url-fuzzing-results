@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 6
+Total number of URLs: 7
 
 Total number of Parsers: 11
 
@@ -8,15 +8,15 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 57.8% 
-JavaScripturijs | 0 | 0 | 24.09% 
-Cpp | 0 | 0 | 26.2% 
-JavaScriptwhatwg-url | 0 | 0 | 47.84% 
-chromium | 0 | 0 | 38.91% 
-Python | 0 | 0 | 37.0% 
-PHP | 1 | 1 | 43.97% 
+firefox | 0 | 0 | 61.9% 
+JavaScripturijs | 0 | 0 | 24.61% 
+Cpp | 0 | 0 | 27.5% 
+JavaScriptwhatwg-url | 0 | 0 | 50.82% 
+chromium | 0 | 0 | 43.8% 
+Python | 0 | 0 | 39.0% 
+PHP | 1 | 1 | 45.69% 
 Go | 1 | 1 | 68.8% 
-C | 3 | 1 | 38.2% 
+C | 3 | 1 | 39.6% 
 Java | 4 | 4 | 38.0% 
 Ruby | 4 | 4 | 72.02% 
 
