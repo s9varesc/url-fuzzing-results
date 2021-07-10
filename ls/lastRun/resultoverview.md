@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 96
+Total number of URLs: 100
 
 Total number of Parsers: 11
 
@@ -16,9 +16,9 @@ Python | 0 | 0 | 45.0%
 Go | 3 | 3 | 73.1% 
 chromium | 4 | 1 | 50.75% 
 PHP | 8 | 8 | 47.41% 
-C | 31 | 1 | 50.2% 
-Java | 45 | 22 | 39.0% 
-Ruby | 47 | 47 | 72.02% 
+C | 32 | 1 | 50.2% 
+Java | 46 | 22 | 39.0% 
+Ruby | 48 | 48 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -33,7 +33,7 @@ Ruby | 47 | 47 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> ``` file:///? ```  <br> ``` file:/// < /?漭 ```  <br> ``` N:/?񶫕 ```  <br> ``` file:/// < /%2e./򤋣 ```  <br> ``` A:/#秴 ```  <br> ``` http://[::dace:efee:250.250.253.202] ```  <br> ``` http://[::] < //:𺈟@, ```  <br> ``` l:/]%60 ```  <br> ``` http://[::250.253.203.254] ```  <br> ``` ws://[::] < //䉠@) ```  <br> ``` file://[::209.255.253.254] ```  <br> ``` file://[::bbbf:faac:252.251.255.207] ```  <br> ``` file:/// < ///;Ｒ ```  <br> ``` http://[::] < //[::205.253.255.250] ```  <br> ``` file:/// < //Gă ```  <br> ``` K:/祴 ```  <br> ``` M:/﫭 ```  <br> ``` Z:/ < /#ﺞ ```  <br> ``` i:/?󆮖 ```  <br> ``` file:///#Ȑ ```  <br> ``` file:///?` ```  <br> ``` file:/// < /./ ```  <br> ``` file:/// < /?􏼏 ```  <br> ``` file://śO ```  <br> ``` file:/// < 񁝅 ```  <br> ``` c:/#{ ```  <br> ``` ws://[::255.100.254.255] ```  <br> ``` file:/// < ///' ```  <br> 
+ ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> ``` file:///? ```  <br> ``` file:/// < /?漭 ```  <br> ``` N:/?񶫕 ```  <br> ``` file:/// < /%2e./򤋣 ```  <br> ``` A:/#秴 ```  <br> ``` http://[::dace:efee:250.250.253.202] ```  <br> ``` http://[::] < //:𺈟@, ```  <br> ``` l:/]%60 ```  <br> ``` http://[::250.253.203.254] ```  <br> ``` ws://[::] < //䉠@) ```  <br> ``` file://[::209.255.253.254] ```  <br> ``` file://[::bbbf:faac:252.251.255.207] ```  <br> ``` file:/// < ///;Ｒ ```  <br> ``` http://[::] < //[::205.253.255.250] ```  <br> ``` file:/// < //Gă ```  <br> ``` K:/祴 ```  <br> ``` M:/﫭 ```  <br> ``` Z:/ < /#ﺞ ```  <br> ``` i:/?󆮖 ```  <br> ``` file:///#Ȑ ```  <br> ``` file:///?` ```  <br> ``` file:/// < /./ ```  <br> ``` file:/// < /?􏼏 ```  <br> ``` file://śO ```  <br> ``` file:/// < 񁝅 ```  <br> ``` c:/#{ ```  <br> ``` ws://[::255.100.254.255] ```  <br> ``` file:/// < ///' ```  <br> ``` file:/// < /򍲕 ```  <br> 
 
 
 ### JavaScripturijs
@@ -82,7 +82,7 @@ Ruby | 47 | 47 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: i ```  |  ``` I:///! < / ```  <br> ``` i:/ < /m:/ ```  <br> ``` i:/ < //,i ```  <br> ``` i:/?󆮖 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: k ```  |  ``` K:/祴 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: m ```  |  ``` M:/﫭 ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: z ```  |  ``` Z:/ < /#ﺞ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: z ```  |  ``` Z:/ < /#ﺞ ```  <br> ``` Z:/ < //! ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: u ```  |  ``` u:/?+ ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: r ```  |  ``` r:/ < //[::c1ab:250.251.252.255] ```  <br> ``` R:/ < //[bebc:eabc:afba:bfef:bbfe:afcc:254.252.252.43] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: gq ```  |  ``` Gq:/ < / ```  <br> 
@@ -169,6 +169,7 @@ Ruby | 47 | 47 | 72.02%
  ``` URI must be ascii only "///'\uF327" ```  |  ``` file:/// < ///' ```  <br> 
  ``` bad URI(is not URI?): //[::]/%22 ```  |  ``` file:/// < //[::]/%22 ```  <br> 
  ``` bad URI(is not URI?): //[ddcd:cceb:dcde:ceff:dabf:edfa:255.250.230.255] ```  |  ``` ws://[::] < //[ddcd:cceb:dcde:ceff:dabf:edfa:255.250.230.255] ```  <br> 
+ ``` URI must be ascii only "/\u{8DC95}" ```  |  ``` file:/// < /򍲕 ```  <br> 
 
 
 ## URL Comparison 
@@ -253,13 +254,15 @@ Ruby | 47 | 47 | 72.02%
  ``` F:/ < //q~ ```  | Java <br>chromium <br>
  ``` wss://[::ffbc:daba:75.250.251.252] ```  | Java <br>
  ``` ws://[::] < //[ddcd:cceb:dcde:ceff:dabf:edfa:255.250.230.255] ```  | Java <br>Ruby <br>
+ ``` file:/// < /򍲕 ```  | C <br>Ruby <br>
+ ``` Z:/ < //! ```  | Java <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 44 | 0 | 44
-chromium | 10 | 4 | 6
+firefox | 46 | 0 | 46
+chromium | 11 | 4 | 7
 
 [full browser comparison](./browseroverview.html)
 
@@ -279,6 +282,7 @@ chromium | 10 | 4 | 6
  ``` I:///! < / ```  | filePath |  ``` / ```  |  ``` /// ``` 
  ``` h:/ < //l ```  | host |  ``` l ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` i:/?󆮖 ```  | query |  ``` ?%F3%86%AE%96 ```  |  ``` %F3%86%AE%96 ``` 
+ ``` Z:/ < //! ```  | host |  ``` ! ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:///?%22 ```  | query |  ``` ?%22 ```  |  ``` %22 ``` 
  ``` N:/?񶫕 ```  | query |  ``` ?%F1%B6%AB%95 ```  |  ``` %F1%B6%AB%95 ``` 
  ``` ftp://[::]/%2e ```  | filePath |  ``` / ```  |  ``` /%2e ``` 
@@ -293,6 +297,7 @@ chromium | 10 | 4 | 6
  ``` file:/// < //= ```  | host |  ``` = ```  |  ```  ``` 
  ``` V:/ < //- ```  | host |  ``` - ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:/// < //[cdcb::ebab:252.254.254.255] ```  | host |  ``` cdcb::ebab:fcfe:feff ```  |  ```  ``` 
+ ``` file:/// < //du ```  | host |  ``` du ```  |  ```  ``` 
  ``` file:/// < //c ```  | host |  ``` c ```  |  ```  ``` 
  ``` p:/ < //[::e8ed] ```  | host |  ``` ::e8ed ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` P:/ < //[bce3:abcc::edcb:fbff:255.252.251.254] ```  | host |  ``` bce3:abcc::edcb:fbff:fffc:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
@@ -318,6 +323,7 @@ chromium | 10 | 4 | 6
  --- | --- | --- | --- 
  ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` %7B%27 ``` 
  ``` i:/ < //,i ```  | host |  ``` ,i ```  |  ``` %2Ci ``` 
+ ``` Z:/ < //! ```  | host |  ``` ! ```  |  ``` %21 ``` 
  ``` H:/ < //P, ```  | host |  ``` p, ```  |  ``` p%2C ``` 
  ``` http://[::] < //:𺈟@, ```  | host |  ``` , ```  |  ``` %2C ``` 
  ``` file:/// < //= ```  | host |  ``` = ```  |  ``` %3D ``` 
