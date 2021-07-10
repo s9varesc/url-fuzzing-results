@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 21</p>
+<p>Total number of URLs: 23</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -35,19 +35,19 @@
 <td>JavaScriptwhatwg-url</td>
 <td>0</td>
 <td>0</td>
-<td>57.68%</td>
-</tr>
-<tr>
-<td>chromium</td>
-<td>0</td>
-<td>0</td>
-<td>49.25%</td>
+<td>59.61%</td>
 </tr>
 <tr>
 <td>Python</td>
 <td>0</td>
 <td>0</td>
 <td>43.0%</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>1</td>
+<td>1</td>
+<td>49.25%</td>
 </tr>
 <tr>
 <td>Go</td>
@@ -65,11 +65,11 @@
 <td>C</td>
 <td>10</td>
 <td>1</td>
-<td>45.9%</td>
+<td>46.3%</td>
 </tr>
 <tr>
 <td>Java</td>
-<td>10</td>
+<td>11</td>
 <td>10</td>
 <td>38.0%</td>
 </tr>
@@ -200,7 +200,7 @@
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: b</code></td>
-<td><code>B:/ &lt; //[::]:4</code>  <br></td>
+<td><code>B:/ &lt; //[::]:4</code>  <br> <code>b://[::]:62556 &lt; /</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: ws</code></td>
@@ -260,8 +260,8 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>invalid URL</code></td>
+<td><code>b://[::]:62556 &lt; /</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -428,6 +428,10 @@
 <td><code>http://[::] &lt; //:𺈟@,</code></td>
 <td>C <br>Go <br>Ruby <br></td>
 </tr>
+<tr>
+<td><code>b://[::]:62556 &lt; /</code></td>
+<td>Java <br>chromium <br></td>
+</tr>
 </tbody>
 </table>
 <h2>Browsers</h2>
@@ -443,14 +447,14 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>12</td>
+<td>14</td>
 <td>0</td>
-<td>12</td>
+<td>14</td>
 </tr>
 <tr>
 <td>chromium</td>
-<td>2</td>
-<td>0</td>
+<td>3</td>
+<td>1</td>
 <td>2</td>
 </tr>
 </tbody>
@@ -504,6 +508,12 @@
 <td><code></code></td>
 </tr>
 <tr>
+<td><code>b://[::]:62556 &lt; /</code></td>
+<td>host</td>
+<td><code>::</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
 <td><code>file:/// &lt; /?漭</code></td>
 <td>query</td>
 <td><code>?%E6%BC%AD</code></td>
@@ -538,6 +548,12 @@
 <td>query</td>
 <td><code>?%EF%A0%88</code></td>
 <td><code>%EF%A0%88</code></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //252.251.253.205</code></td>
+<td>host</td>
+<td><code>252.251.253.205</code></td>
+<td><code></code></td>
 </tr>
 </tbody>
 </table>

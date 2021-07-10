@@ -17,8 +17,16 @@ Expected equality of these values:
     Which is: "%7B%27"
 {"url":"g:/<//{'", "error":{"component":"host", "expected":"{'", "actual":"%7B%27"}}
 Stack trace:
-#0 0x56102460aa45 url::(anonymous namespace)::CheckComponents()
-#1 0x561024608768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55dc4d1dbf05 url::(anonymous namespace)::CheckComponents()
+#1 0x55dc4d1d9c28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:32: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"X://[::]:65502</", "exception":"invalid URL"}
+Stack trace:
+#0 0x55dc4d1d9ac6 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -28,10 +36,18 @@ Expected equality of these values:
     Which is: "%2C"
 {"url":"http://[::]<//:𺈟@,", "error":{"component":"host", "expected":",", "actual":"%2C"}}
 Stack trace:
-#0 0x56102460aa45 url::(anonymous namespace)::CheckComponents()
-#1 0x561024608768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55dc4d1dbf05 url::(anonymous namespace)::CheckComponents()
+#1 0x55dc4d1d9c28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
-[  FAILED  ] URLParser.Parsing (1 ms)
+../../url/url_parsing_unittest.cc:32: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"b://[::]:62556</", "exception":"invalid URL"}
+Stack trace:
+#0 0x55dc4d1d9ac6 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+[  FAILED  ] URLParser.Parsing (2 ms)
 [----------] 1 test from URLParser (2 ms total)
 
 [----------] Global test environment tear-down
@@ -41,7 +57,7 @@ Stack trace:
 [  FAILED  ] URLParser.Parsing
 
  1 FAILED TEST
-[1/1] URLParser.Parsing (1 ms)
+[1/1] URLParser.Parsing (2 ms)
 1 test failed:
-    URLParser.Parsing (../../url/url_parsing_unittest.cc:85)
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:90)
 Tests took 0 seconds.
