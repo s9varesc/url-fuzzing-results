@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 21
+Total number of URLs: 23
 
 Total number of Parsers: 11
 
@@ -11,13 +11,13 @@ Total number of Parsers: 11
 firefox | 0 | 0 | 70.9% 
 JavaScripturijs | 0 | 0 | 25.65% 
 Cpp | 0 | 0 | 31.4% 
-JavaScriptwhatwg-url | 0 | 0 | 57.68% 
-chromium | 0 | 0 | 49.25% 
+JavaScriptwhatwg-url | 0 | 0 | 59.61% 
 Python | 0 | 0 | 43.0% 
+chromium | 1 | 1 | 49.25% 
 Go | 2 | 2 | 72.4% 
 PHP | 3 | 3 | 47.41% 
-C | 10 | 1 | 45.9% 
-Java | 10 | 10 | 38.0% 
+C | 10 | 1 | 46.3% 
+Java | 11 | 10 | 38.0% 
 Ruby | 14 | 14 | 72.02% 
 
 
@@ -67,7 +67,7 @@ Ruby | 14 | 14 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` D:/ < /? ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` N:/?񶫕 ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: b ```  |  ``` B:/ < //[::]:4 ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: b ```  |  ``` B:/ < //[::]:4 ```  <br> ``` b://[::]:62556 < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::]:60132 < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: a ```  |  ``` A:/#秴 < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: w ```  |  ``` W:/ < //[::]:6 ```  <br> 
@@ -91,6 +91,7 @@ Ruby | 14 | 14 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
+ ``` invalid URL ```  |  ``` b://[::]:62556 < / ```  <br> 
 
 
 ### Python
@@ -141,13 +142,14 @@ Ruby | 14 | 14 | 72.02%
  ``` W:/ < //[::]:6 ```  | Java <br>Ruby <br>
  ``` ftp://[::] < //[8bae::ceae] ```  | Ruby <br>
  ``` http://[::] < //:𺈟@, ```  | C <br>Go <br>Ruby <br>
+ ``` b://[::]:62556 < / ```  | Java <br>chromium <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 12 | 0 | 12
-chromium | 2 | 0 | 2
+firefox | 14 | 0 | 14
+chromium | 3 | 1 | 2
 
 [full browser comparison](./browseroverview.html)
 
@@ -161,12 +163,14 @@ chromium | 2 | 0 | 2
  ``` N:/?񶫕 ```  | query |  ``` ?%F1%B6%AB%95 ```  |  ``` %F1%B6%AB%95 ``` 
  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  | host |  ``` dffb:adba:dfbb:effe:adad:caac:fc10:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://RĤ ```  | host |  ``` xn--r-qja ```  |  ```  ``` 
+ ``` b://[::]:62556 < / ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:/// < /?漭 ```  | query |  ``` ?%E6%BC%AD ```  |  ``` %E6%BC%AD ``` 
  ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` V:/ < //- ```  | host |  ``` - ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:/// < //c ```  | host |  ``` c ```  |  ```  ``` 
  ``` file:/// < /.%2e ```  | filePath |  ``` / ```  |  ``` /.%2e ``` 
  ``` D:/ < /? ```  | query |  ``` ?%EF%A0%88 ```  |  ``` %EF%A0%88 ``` 
+ ``` file:/// < //252.251.253.205 ```  | host |  ``` 252.251.253.205 ```  |  ```  ``` 
 
 ### chromium
 
