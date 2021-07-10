@@ -9,12 +9,28 @@ Note: Google Test filter = URLParser.Parsing
 [----------] Global test environment set-up.
 [----------] 1 test from URLParser
 [ RUN      ] URLParser.Parsing
-[       OK ] URLParser.Parsing (0 ms)
-[----------] 1 test from URLParser (0 ms total)
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: "{'"
+  parsed_url.host()
+    Which is: "%7B%27"
+{"url":"g:/<//{'", "error":{"component":"host", "expected":"{'", "actual":"%7B%27"}}
+Stack trace:
+#0 0x559f0be1ba45 url::(anonymous namespace)::CheckComponents()
+#1 0x559f0be19768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+[  FAILED  ] URLParser.Parsing (10 ms)
+[----------] 1 test from URLParser (10 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-[1/1] URLParser.Parsing (0 ms)
-SUCCESS: all tests passed.
+[==========] 1 test from 1 test suite ran. (10 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] URLParser.Parsing
+
+ 1 FAILED TEST
+[1/1] URLParser.Parsing (10 ms)
+1 test failed:
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:68)
 Tests took 0 seconds.
