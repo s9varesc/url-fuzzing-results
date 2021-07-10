@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 1
+Total number of URLs: 6
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 51.9% 
-JavaScripturijs | 0 | 0 | 17.33% 
-Cpp | 0 | 0 | 10.1% 
-PHP | 0 | 0 | 37.93% 
-Java | 0 | 0 | 27.0% 
-Go | 0 | 0 | 66.1% 
-JavaScriptwhatwg-url | 0 | 0 | 24.59% 
-chromium | 0 | 0 | 6.58% 
-Python | 0 | 0 | 33.0% 
-C | 1 | 1 | 12.8% 
-Ruby | 1 | 1 | 61.66% 
+firefox | 0 | 0 | 57.8% 
+JavaScripturijs | 0 | 0 | 24.09% 
+Cpp | 0 | 0 | 26.2% 
+JavaScriptwhatwg-url | 0 | 0 | 47.84% 
+chromium | 0 | 0 | 38.91% 
+Python | 0 | 0 | 37.0% 
+PHP | 1 | 1 | 43.97% 
+Go | 1 | 1 | 68.8% 
+C | 3 | 1 | 38.2% 
+Java | 4 | 4 | 38.0% 
+Ruby | 4 | 4 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -33,7 +33,7 @@ Ruby | 1 | 1 | 61.66%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` file://RĤ ```  <br> 
+ ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> 
 
 
 ### JavaScripturijs
@@ -52,18 +52,24 @@ Ruby | 1 | 1 | 61.66%
 
  Exception Type | URLs 
  --- | --- 
+ ``` Host `{'` is invalid : the host is not a valid registered name ```  |  ``` g:/ < //{' ```  <br> 
 
 
 ### Java
 
  Exception Type | URLs 
  --- | --- 
+ ``` java.net.MalformedURLException: unknown protocol: g ```  |  ``` g:/ < //{' ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: v ```  |  ``` V:/ < //- ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` h:/a:/ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` D:/ < /? ```  <br> 
 
 
 ### Go
 
  Exception Type | URLs 
  --- | --- 
+ ``` parse //{': invalid character "{" in host name ```  |  ``` g:/ < //{' ```  <br> 
 
 
 ### JavaScriptwhatwg-url
@@ -89,6 +95,9 @@ Ruby | 1 | 1 | 61.66%
  Exception Type | URLs 
  --- | --- 
  ``` URI must be ascii only "file://R\u0124" ```  |  ``` file://RĤ ```  <br> 
+ ``` bad URI(is not URI?): //{' ```  |  ``` g:/ < //{' ```  <br> 
+ ``` bad URI(is not URI?): //[::dcce:251.255.185.255] ```  |  ``` https://[::] < //[::dcce:251.255.185.255] ```  <br> 
+ ``` URI must be ascii only "/?\uF808" ```  |  ``` D:/ < /? ```  <br> 
 
 
 ## URL Comparison 
@@ -96,13 +105,18 @@ Ruby | 1 | 1 | 61.66%
  URL | Parsers 
  --- | --- 
  ``` file://RĤ ```  | C <br>Ruby <br>
+ ``` g:/ < //{' ```  | C <br>PHP <br>Java <br>Go <br>Ruby <br>
+ ``` https://[::] < //[::dcce:251.255.185.255] ```  | Ruby <br>
+ ``` V:/ < //- ```  | Java <br>
+ ``` h:/a:/ ```  | Java <br>
+ ``` D:/ < /? ```  | C <br>Java <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 1 | 0 | 1
-chromium | 0 | 0 | 0
+firefox | 4 | 0 | 4
+chromium | 1 | 0 | 1
 
 [full browser comparison](./browseroverview.html)
 
@@ -111,11 +125,15 @@ chromium | 0 | 0 | 0
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
  ``` file://RĤ ```  | host |  ``` xn--r-qja ```  |  ```  ``` 
+ ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` V:/ < //- ```  | host |  ``` - ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` D:/ < /? ```  | query |  ``` ?%EF%A0%88 ```  |  ``` %EF%A0%88 ``` 
 
 ### chromium
 
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
+ ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` %7B%27 ``` 
 
 ## Coverage Reports 
 
