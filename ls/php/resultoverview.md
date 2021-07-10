@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 9
+Total number of URLs: 21
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 63.4% 
-JavaScripturijs | 0 | 0 | 24.61% 
-Cpp | 0 | 0 | 27.5% 
-JavaScriptwhatwg-url | 0 | 0 | 51.42% 
-chromium | 0 | 0 | 43.8% 
-Python | 0 | 0 | 40.0% 
-Go | 1 | 1 | 68.8% 
-PHP | 2 | 2 | 46.55% 
-C | 4 | 1 | 40.4% 
-Java | 5 | 5 | 38.0% 
-Ruby | 6 | 6 | 72.02% 
+firefox | 0 | 0 | 70.9% 
+JavaScripturijs | 0 | 0 | 25.65% 
+Cpp | 0 | 0 | 31.4% 
+JavaScriptwhatwg-url | 0 | 0 | 57.68% 
+chromium | 0 | 0 | 49.25% 
+Python | 0 | 0 | 43.0% 
+Go | 2 | 2 | 72.4% 
+PHP | 3 | 3 | 47.41% 
+C | 10 | 1 | 45.9% 
+Java | 10 | 10 | 38.0% 
+Ruby | 14 | 14 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -33,7 +33,7 @@ Ruby | 6 | 6 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> ``` file:///? ```  <br> 
+ ``` 1 ```  |  ``` file://RĤ ```  <br> ``` g:/ < //{' ```  <br> ``` D:/ < /? ```  <br> ``` file:///? ```  <br> ``` file:/// < /?漭 ```  <br> ``` N:/?񶫕 ```  <br> ``` file:/// < /%2e./򤋣 ```  <br> ``` A:/#秴 ```  <br> ``` http://[::dace:efee:250.250.253.202] ```  <br> ``` http://[::] < //:𺈟@, ```  <br> 
 
 
 ### JavaScripturijs
@@ -54,6 +54,7 @@ Ruby | 6 | 6 | 72.02%
  --- | --- 
  ``` Host `{'` is invalid : the host is not a valid registered name ```  |  ``` g:/ < //{' ```  <br> 
  ``` The uri `file:///?%EE%BF%82` is invalid for the `file` scheme. ```  |  ``` file:///? ```  <br> 
+ ``` The uri `file:///?%E6%BC%AD` is invalid for the `file` scheme. ```  |  ``` file:/// < /?漭 ```  <br> 
 
 
 ### Java
@@ -65,6 +66,11 @@ Ruby | 6 | 6 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` h:/a:/ ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` D:/ < /? ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` N:/?񶫕 ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: b ```  |  ``` B:/ < //[::]:4 ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::]:60132 < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: a ```  |  ``` A:/#秴 < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: w ```  |  ``` W:/ < //[::]:6 ```  <br> 
 
 
 ### Go
@@ -72,6 +78,7 @@ Ruby | 6 | 6 | 72.02%
  Exception Type | URLs 
  --- | --- 
  ``` parse //{': invalid character "{" in host name ```  |  ``` g:/ < //{' ```  <br> 
+ ``` parse //:𺈟@,: net/url: invalid userinfo ```  |  ``` http://[::] < //:𺈟@, ```  <br> 
 
 
 ### JavaScriptwhatwg-url
@@ -102,6 +109,14 @@ Ruby | 6 | 6 | 72.02%
  ``` URI must be ascii only "/?\uF808" ```  |  ``` D:/ < /? ```  <br> 
  ``` bad URI(is not URI?): //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  |  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  <br> 
  ``` URI must be ascii only "file:///?\uEFC2" ```  |  ``` file:///? ```  <br> 
+ ``` URI must be ascii only "/?\u6F2D" ```  |  ``` file:/// < /?漭 ```  <br> 
+ ``` URI must be ascii only "N:/?\u{76AD5}" ```  |  ``` N:/?񶫕 ```  <br> 
+ ``` bad URI(is not URI?): //[::]:4 ```  |  ``` B:/ < //[::]:4 ```  <br> 
+ ``` URI must be ascii only "/%2e./\u{A42E3}" ```  |  ``` file:/// < /%2e./򤋣 ```  <br> 
+ ``` URI must be ascii only "A:/#\u79F4" ```  |  ``` A:/#秴 < / ```  <br> 
+ ``` bad URI(is not URI?): //[::]:6 ```  |  ``` W:/ < //[::]:6 ```  <br> 
+ ``` bad URI(is not URI?): //[8bae::ceae] ```  |  ``` ftp://[::] < //[8bae::ceae] ```  <br> 
+ ``` URI must be ascii only "//:\u{3A21F}@," ```  |  ``` http://[::] < //:𺈟@, ```  <br> 
 
 
 ## URL Comparison 
@@ -116,13 +131,23 @@ Ruby | 6 | 6 | 72.02%
  ``` D:/ < /? ```  | C <br>Java <br>Ruby <br>
  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  | Java <br>Ruby <br>
  ``` file:///? ```  | C <br>PHP <br>Ruby <br>
+ ``` file:/// < /?漭 ```  | C <br>PHP <br>Ruby <br>
+ ``` N:/?񶫕 ```  | C <br>Java <br>Ruby <br>
+ ``` B:/ < //[::]:4 ```  | Java <br>Ruby <br>
+ ``` ws://[::]:60132 < / ```  | Java <br>
+ ``` file:/// < /%2e./򤋣 ```  | C <br>Ruby <br>
+ ``` A:/#秴 < / ```  | Java <br>Ruby <br>
+ ``` http://[::dace:efee:250.250.253.202] ```  | C <br>
+ ``` W:/ < //[::]:6 ```  | Java <br>Ruby <br>
+ ``` ftp://[::] < //[8bae::ceae] ```  | Ruby <br>
+ ``` http://[::] < //:𺈟@, ```  | C <br>Go <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 6 | 0 | 6
-chromium | 1 | 0 | 1
+firefox | 12 | 0 | 12
+chromium | 2 | 0 | 2
 
 [full browser comparison](./browseroverview.html)
 
@@ -130,11 +155,17 @@ chromium | 1 | 0 | 1
 
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
+ ``` B:/ < //[::]:4 ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file:///? ```  | query |  ``` ?%EE%BF%82 ```  |  ``` %EE%BF%82 ``` 
+ ``` W:/ < //[::]:6 ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` N:/?񶫕 ```  | query |  ``` ?%F1%B6%AB%95 ```  |  ``` %F1%B6%AB%95 ``` 
  ``` F:/ < //[dffb:adba:dfbb:effe:adad:caac:252.16.254.252] ```  | host |  ``` dffb:adba:dfbb:effe:adad:caac:fc10:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://RĤ ```  | host |  ``` xn--r-qja ```  |  ```  ``` 
+ ``` file:/// < /?漭 ```  | query |  ``` ?%E6%BC%AD ```  |  ``` %E6%BC%AD ``` 
  ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` V:/ < //- ```  | host |  ``` - ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //c ```  | host |  ``` c ```  |  ```  ``` 
+ ``` file:/// < /.%2e ```  | filePath |  ``` / ```  |  ``` /.%2e ``` 
  ``` D:/ < /? ```  | query |  ``` ?%EF%A0%88 ```  |  ``` %EF%A0%88 ``` 
 
 ### chromium
@@ -142,6 +173,7 @@ chromium | 1 | 0 | 1
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
  ``` g:/ < //{' ```  | host |  ``` {' ```  |  ``` %7B%27 ``` 
+ ``` http://[::] < //:𺈟@, ```  | host |  ``` , ```  |  ``` %2C ``` 
 
 ## Coverage Reports 
 
