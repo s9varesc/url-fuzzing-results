@@ -17,20 +17,31 @@ Expected equality of these values:
     Which is: "%7B%27"
 {"url":"g:/<//{'", "error":{"component":"host", "expected":"{'", "actual":"%7B%27"}}
 Stack trace:
-#0 0x55fe57455585 url::(anonymous namespace)::CheckComponents()
-#1 0x55fe574532a8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x56102460aa45 url::(anonymous namespace)::CheckComponents()
+#1 0x561024608768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
-[  FAILED  ] URLParser.Parsing (3 ms)
-[----------] 1 test from URLParser (3 ms total)
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: ","
+  parsed_url.host()
+    Which is: "%2C"
+{"url":"http://[::]<//:𺈟@,", "error":{"component":"host", "expected":",", "actual":"%2C"}}
+Stack trace:
+#0 0x56102460aa45 url::(anonymous namespace)::CheckComponents()
+#1 0x561024608768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+[  FAILED  ] URLParser.Parsing (1 ms)
+[----------] 1 test from URLParser (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (3 ms total)
+[==========] 1 test from 1 test suite ran. (2 ms total)
 [  PASSED  ] 0 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] URLParser.Parsing
 
  1 FAILED TEST
-[1/1] URLParser.Parsing (3 ms)
+[1/1] URLParser.Parsing (1 ms)
 1 test failed:
-    URLParser.Parsing (../../url/url_parsing_unittest.cc:80)
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:85)
 Tests took 0 seconds.

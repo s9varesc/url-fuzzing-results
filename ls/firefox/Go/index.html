@@ -54,7 +54,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">net/url/url.go (69.2%)</option>
+				<option value="file0">net/url/url.go (72.4%)</option>
 				
 				</select>
 			</div>
@@ -526,10 +526,10 @@ func Parse(rawurl string) (*URL, error) <span class="cov8" title="1">{
         <span class="cov8" title="1">if frag == "" </span><span class="cov8" title="1">{
                 return url, nil
         }</span>
-        <span class="cov0" title="0">if url.Fragment, err = unescape(frag, encodeFragment); err != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if url.Fragment, err = unescape(frag, encodeFragment); err != nil </span><span class="cov0" title="0">{
                 return nil, &amp;Error{"parse", rawurl, err}
         }</span>
-        <span class="cov0" title="0">return url, nil</span>
+        <span class="cov8" title="1">return url, nil</span>
 }
 
 // ParseRequestURI parses rawurl into a URL structure. It assumes that
@@ -623,7 +623,7 @@ func parseAuthority(authority string) (user *Userinfo, host string, err error) <
         i := strings.LastIndex(authority, "@")
         if i &lt; 0 </span><span class="cov8" title="1">{
                 host, err = parseHost(authority)
-        }</span> else<span class="cov0" title="0"> {
+        }</span> else<span class="cov8" title="1"> {
                 host, err = parseHost(authority[i+1:])
         }</span>
         <span class="cov8" title="1">if err != nil </span><span class="cov8" title="1">{
@@ -632,8 +632,8 @@ func parseAuthority(authority string) (user *Userinfo, host string, err error) <
         <span class="cov8" title="1">if i &lt; 0 </span><span class="cov8" title="1">{
                 return nil, host, nil
         }</span>
-        <span class="cov0" title="0">userinfo := authority[:i]
-        if !validUserinfo(userinfo) </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">userinfo := authority[:i]
+        if !validUserinfo(userinfo) </span><span class="cov8" title="1">{
                 return nil, "", errors.New("net/url: invalid userinfo")
         }</span>
         <span class="cov0" title="0">if !strings.Contains(userinfo, ":") </span><span class="cov0" title="0">{
@@ -1151,22 +1151,22 @@ func (u *URL) UnmarshalBinary(text []byte) error <span class="cov8" title="1">{
 //                   / "*" / "+" / "," / ";" / "="
 //
 // It doesn't validate pct-encoded. The caller does that via func unescape.
-func validUserinfo(s string) bool <span class="cov0" title="0">{
-        for _, r := range s </span><span class="cov0" title="0">{
+func validUserinfo(s string) bool <span class="cov8" title="1">{
+        for _, r := range s </span><span class="cov8" title="1">{
                 if 'A' &lt;= r &amp;&amp; r &lt;= 'Z' </span><span class="cov0" title="0">{
                         continue</span>
                 }
-                <span class="cov0" title="0">if 'a' &lt;= r &amp;&amp; r &lt;= 'z' </span><span class="cov0" title="0">{
+                <span class="cov8" title="1">if 'a' &lt;= r &amp;&amp; r &lt;= 'z' </span><span class="cov0" title="0">{
                         continue</span>
                 }
-                <span class="cov0" title="0">if '0' &lt;= r &amp;&amp; r &lt;= '9' </span><span class="cov0" title="0">{
+                <span class="cov8" title="1">if '0' &lt;= r &amp;&amp; r &lt;= '9' </span><span class="cov0" title="0">{
                         continue</span>
                 }
-                <span class="cov0" title="0">switch r </span>{
+                <span class="cov8" title="1">switch r </span>{
                 case '-', '.', '_', ':', '~', '!', '$', '&amp;', '\'',
-                        '(', ')', '*', '+', ',', ';', '=', '%', '@':<span class="cov0" title="0">
+                        '(', ')', '*', '+', ',', ';', '=', '%', '@':<span class="cov8" title="1">
                         continue</span>
-                default:<span class="cov0" title="0">
+                default:<span class="cov8" title="1">
                         return false</span>
                 }
         }
