@@ -1,0 +1,65 @@
+IMPORTANT DEBUGGING NOTE: batches of tests are run inside their
+own process. For debugging a test inside a debugger, use the
+--gtest_filter=<your_test_name> flag along with
+--single-process-tests.
+Using sharding settings from environment. This is shard 0/1
+Using 1 parallel jobs.
+Note: Google Test filter = URLParser.Parsing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from URLParser
+[ RUN      ] URLParser.Parsing
+../../url/url_parsing_unittest.cc:22: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"//?.", "exception":"invalid URL"}
+Stack trace:
+#0 0x55a4dd3c23c0 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:22: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"//[::227.5.8.5]", "exception":"invalid URL"}
+Stack trace:
+#0 0x55a4dd3c23c0 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:22: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"//[::becd:dcde:feab:dabb:beaa:1.2.252.9]", "exception":"invalid URL"}
+Stack trace:
+#0 0x55a4dd3c23c0 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:22: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"//[dadb::fafb:eeeb:bcfb:dffd:210.1.2.9%25_]", "exception":"invalid URL"}
+Stack trace:
+#0 0x55a4dd3c23c0 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:22: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"//[::bfda:acda:5.8.3.252%25_]", "exception":"invalid URL"}
+Stack trace:
+#0 0x55a4dd3c23c0 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+[  FAILED  ] URLParser.Parsing (2 ms)
+[----------] 1 test from URLParser (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] URLParser.Parsing
+
+ 1 FAILED TEST
+[1/1] URLParser.Parsing (2 ms)
+1 test failed:
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:40)
+Tests took 0 seconds.
