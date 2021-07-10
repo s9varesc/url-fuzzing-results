@@ -17,8 +17,19 @@ Expected equality of these values:
     Which is: "%7B%27"
 {"url":"g:/<//{'", "error":{"component":"host", "expected":"{'", "actual":"%7B%27"}}
 Stack trace:
-#0 0x55d8353a3885 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8353a15a8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x5642ef3a6a45 url::(anonymous namespace)::CheckComponents()
+#1 0x5642ef3a4768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: ",i"
+  parsed_url.host()
+    Which is: "%2Ci"
+{"url":"i:/<//,i", "error":{"component":"host", "expected":",i", "actual":"%2Ci"}}
+Stack trace:
+#0 0x5642ef3a6a45 url::(anonymous namespace)::CheckComponents()
+#1 0x5642ef3a4768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:32: Failure
 Value of: parsed_url.is_valid()
@@ -26,7 +37,7 @@ Value of: parsed_url.is_valid()
 Expected: true
 {"url":"X://[::]:65502</", "exception":"invalid URL"}
 Stack trace:
-#0 0x55d8353a1446 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x5642ef3a4606 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -36,8 +47,8 @@ Expected equality of these values:
     Which is: "%2C"
 {"url":"http://[::]<//:𺈟@,", "error":{"component":"host", "expected":",", "actual":"%2C"}}
 Stack trace:
-#0 0x55d8353a3885 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8353a15a8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x5642ef3a6a45 url::(anonymous namespace)::CheckComponents()
+#1 0x5642ef3a4768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:32: Failure
 Value of: parsed_url.is_valid()
@@ -45,7 +56,7 @@ Value of: parsed_url.is_valid()
 Expected: true
 {"url":"b://[::]:62556</", "exception":"invalid URL"}
 Stack trace:
-#0 0x55d8353a1446 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x5642ef3a4606 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -55,8 +66,8 @@ Expected equality of these values:
     Which is: "%3D"
 {"url":"file:///<//=", "error":{"component":"host", "expected":"=", "actual":"%3D"}}
 Stack trace:
-#0 0x55d8353a3885 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8353a15a8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x5642ef3a6a45 url::(anonymous namespace)::CheckComponents()
+#1 0x5642ef3a4768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:32: Failure
 Value of: parsed_url.is_valid()
@@ -64,7 +75,7 @@ Value of: parsed_url.is_valid()
 Expected: true
 {"url":"I:///!</", "exception":"invalid URL"}
 Stack trace:
-#0 0x55d8353a1446 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x5642ef3a4606 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -74,20 +85,20 @@ Expected equality of these values:
     Which is: "%29"
 {"url":"ws://[::]<//䉠@)", "error":{"component":"host", "expected":")", "actual":"%29"}}
 Stack trace:
-#0 0x55d8353a3885 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8353a15a8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x5642ef3a6a45 url::(anonymous namespace)::CheckComponents()
+#1 0x5642ef3a4768 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
-[  FAILED  ] URLParser.Parsing (3 ms)
-[----------] 1 test from URLParser (4 ms total)
+[  FAILED  ] URLParser.Parsing (19 ms)
+[----------] 1 test from URLParser (19 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (5 ms total)
+[==========] 1 test from 1 test suite ran. (19 ms total)
 [  PASSED  ] 0 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] URLParser.Parsing
 
  1 FAILED TEST
-[1/1] URLParser.Parsing (3 ms)
+[1/1] URLParser.Parsing (19 ms)
 1 test failed:
-    URLParser.Parsing (../../url/url_parsing_unittest.cc:100)
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:119)
 Tests took 0 seconds.
