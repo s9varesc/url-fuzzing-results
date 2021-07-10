@@ -96,7 +96,12 @@ static URLParseCase parse_cases[]={{"//[::eebf:fbed:decc:badc:fbde:255.50.253.25
 {"w://[cccc::dccc:bdca:deff:feea:252.252.86.252]"},
 {"//[::bffb:252.255.204.253]"},
 {"//9@"},
-{"//#L"}};
+{"//#L"},
+{"//[::bcdc:fdef:fccf:badd:fcee:184.251.252.254%25.]"},
+{"//[::deda:edfe:ceed:acbb:cdda:255.250.0.252%25~]"},
+{"//[::ebcb:afac:bcff:bfeb:adef:251.1.250.250%25-]"},
+{"Y://[1aad::bdac:250.251.255.255]"},
+{"b://[::6aac:bacf:dbde:255.255.254.253]"}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {
