@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 6
+Total number of URLs: 11
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 17.33% 
-Cpp | 0 | 0 | 8.8% 
+JavaScripturijs | 0 | 0 | 17.94% 
+Cpp | 0 | 0 | 16.0% 
 Go | 0 | 0 | 68.5% 
-Python | 0 | 0 | 31.0% 
-PHP | 1 | 1 | 45.69% 
-C | 2 | 1 | 25.6% 
-Ruby | 5 | 1 | 65.8% 
-firefox | 6 | 1 | 48.1% 
-Java | 6 | 1 | 23.0% 
-JavaScriptwhatwg-url | 6 | 1 | 11.92% 
-chromium | 6 | 1 | 13.72% 
+Python | 0 | 0 | 32.0% 
+PHP | 4 | 4 | 45.69% 
+C | 5 | 1 | 28.6% 
+firefox | 9 | 1 | 48.1% 
+chromium | 9 | 1 | 13.72% 
+Ruby | 9 | 1 | 68.91% 
+JavaScriptwhatwg-url | 10 | 1 | 28.76% 
+Java | 11 | 3 | 36.0% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -27,14 +27,14 @@ chromium | 6 | 1 | 13.72%
 
  Exception Type | URLs 
  --- | --- 
- ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> 
+ ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  <br> ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  <br> ``` //[5fff::abff] ```  <br> 
 
 
 ### C
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> 
+ ``` 1 ```  |  ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  <br> ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  <br> ``` W://[::250.253.250.246%25-] ```  <br> 
 
 
 ### JavaScripturijs
@@ -54,13 +54,18 @@ chromium | 6 | 1 | 13.72%
  Exception Type | URLs 
  --- | --- 
  ``` Host `[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_]` is invalid : the IP host is malformed ```  |  ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> 
+ ``` Host `[2cae::ecda:acce:fbcd:254.253.254.251%25-]` is invalid : the IP host is malformed ```  |  ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  <br> 
+ ``` Host `[::beed:fdbc:ffbf:251.251.1.252%25_]` is invalid : the IP host is malformed ```  |  ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  <br> 
+ ``` Host `[::250.253.250.246%25-]` is invalid : the IP host is malformed ```  |  ``` W://[::250.253.250.246%25-] ```  <br> 
 
 
 ### Java
 
  Exception Type | URLs 
  --- | --- 
- ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> 
+ ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  <br> ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  <br> ``` //[5fff::abff] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: x ```  |  ``` X://[edda:ddcc:fcbe:edfd:bfaa:eaaf:254.250.253.4] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: w ```  |  ``` W://[::250.253.250.246%25-] ```  <br> 
 
 
 ### Go
@@ -73,14 +78,14 @@ chromium | 6 | 1 | 13.72%
 
  Exception Type | URLs 
  --- | --- 
- ``` Invalid URL:  ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> 
+ ``` Invalid URL:  ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  <br> ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  <br> ``` //[5fff::abff] ```  <br> ``` W://[::250.253.250.246%25-] ```  <br> 
 
 
 ### chromium
 
  Exception Type | URLs 
  --- | --- 
- ``` invalid URL ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> 
+ ``` invalid URL ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //253.8.251.252 ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  <br> ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  <br> ``` //[5fff::abff] ```  <br> 
 
 
 ### Python
@@ -93,7 +98,7 @@ chromium | 6 | 1 | 13.72%
 
  Exception Type | URLs 
  --- | --- 
- ``` bad URI(is not URI?):  ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> 
+ ``` bad URI(is not URI?):  ```  |  ``` //[::eebf:fbed:decc:badc:fbde:255.50.253.250] ```  <br> ``` //[bfbe:abea:aabd:bafe:eeeb:ecfb:252.250.109.255] ```  <br> ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  <br> ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  <br> ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  <br> ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  <br> ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  <br> ``` //[5fff::abff] ```  <br> ``` W://[::250.253.250.246%25-] ```  <br> 
 
 
 ## URL Comparison 
@@ -106,13 +111,18 @@ chromium | 6 | 1 | 13.72%
  ``` //[bacd::dcdb:eaeb:aeed:ecca:251.254.41.251] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
  ``` //[dfab::feee:dafb:bcaa:ecef:251.52.253.255] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
  ``` //[::ecda:ccfe:adba:affb:edbc:255.252.253.105%25_] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` //[2cae::ecda:acce:fbcd:254.253.254.251%25-] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` //[::beed:fdbc:ffbf:251.251.1.252%25_] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` X://[edda:ddcc:fcbe:edfd:bfaa:eaaf:254.250.253.4] ```  | Java <br>
+ ``` //[5fff::abff] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` W://[::250.253.250.246%25-] ```  | C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 6 | 6 | 0
-chromium | 6 | 6 | 0
+firefox | 9 | 9 | 0
+chromium | 9 | 9 | 0
 
 [full browser comparison](./browseroverview.html)
 
