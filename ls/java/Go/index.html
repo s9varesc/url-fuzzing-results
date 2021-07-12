@@ -54,7 +54,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">net/url/url.go (70.2%)</option>
+				<option value="file0">net/url/url.go (76.3%)</option>
 				
 				</select>
 			</div>
@@ -96,7 +96,7 @@ type Error struct {
         Err error
 }
 
-func (e *Error) Error() string <span class="cov0" title="0">{ return e.Op + " " + e.URL + ": " + e.Err.Error() }</span>
+func (e *Error) Error() string <span class="cov8" title="1">{ return e.Op + " " + e.URL + ": " + e.Err.Error() }</span>
 
 type timeout interface {
         Timeout() bool
@@ -122,10 +122,10 @@ func ishex(c byte) bool <span class="cov8" title="1">{
                 return true</span>
         case 'a' &lt;= c &amp;&amp; c &lt;= 'f':<span class="cov8" title="1">
                 return true</span>
-        case 'A' &lt;= c &amp;&amp; c &lt;= 'F':<span class="cov0" title="0">
+        case 'A' &lt;= c &amp;&amp; c &lt;= 'F':<span class="cov8" title="1">
                 return true</span>
         }
-        <span class="cov0" title="0">return false</span>
+        <span class="cov8" title="1">return false</span>
 }
 
 func unhex(c byte) byte <span class="cov8" title="1">{
@@ -134,7 +134,7 @@ func unhex(c byte) byte <span class="cov8" title="1">{
                 return c - '0'</span>
         case 'a' &lt;= c &amp;&amp; c &lt;= 'f':<span class="cov8" title="1">
                 return c - 'a' + 10</span>
-        case 'A' &lt;= c &amp;&amp; c &lt;= 'F':<span class="cov0" title="0">
+        case 'A' &lt;= c &amp;&amp; c &lt;= 'F':<span class="cov8" title="1">
                 return c - 'A' + 10</span>
         }
         <span class="cov0" title="0">return 0</span>
@@ -154,13 +154,13 @@ const (
 
 type EscapeError string
 
-func (e EscapeError) Error() string <span class="cov0" title="0">{
+func (e EscapeError) Error() string <span class="cov8" title="1">{
         return "invalid URL escape " + strconv.Quote(string(e))
 }</span>
 
 type InvalidHostError string
 
-func (e InvalidHostError) Error() string <span class="cov0" title="0">{
+func (e InvalidHostError) Error() string <span class="cov8" title="1">{
         return "invalid character " + strconv.Quote(string(e)) + " in host name"
 }</span>
 
@@ -264,12 +264,12 @@ func unescape(s string, mode encoding) (string, error) <span class="cov8" title=
                 switch s[i] </span>{
                 case '%':<span class="cov8" title="1">
                         n++
-                        if i+2 &gt;= len(s) || !ishex(s[i+1]) || !ishex(s[i+2]) </span><span class="cov0" title="0">{
+                        if i+2 &gt;= len(s) || !ishex(s[i+1]) || !ishex(s[i+2]) </span><span class="cov8" title="1">{
                                 s = s[i:]
-                                if len(s) &gt; 3 </span><span class="cov0" title="0">{
+                                if len(s) &gt; 3 </span><span class="cov8" title="1">{
                                         s = s[:3]
                                 }</span>
-                                <span class="cov0" title="0">return "", EscapeError(s)</span>
+                                <span class="cov8" title="1">return "", EscapeError(s)</span>
                         }
                         // Per https://tools.ietf.org/html/rfc3986#page-21
                         // in the host component %-encoding can only be used
@@ -294,11 +294,11 @@ func unescape(s string, mode encoding) (string, error) <span class="cov8" title=
                                 }</span>
                         }
                         <span class="cov8" title="1">i += 3</span>
-                case '+':<span class="cov0" title="0">
+                case '+':<span class="cov8" title="1">
                         hasPlus = mode == encodeQueryComponent
                         i++</span>
                 default:<span class="cov8" title="1">
-                        if (mode == encodeHost || mode == encodeZone) &amp;&amp; s[i] &lt; 0x80 &amp;&amp; shouldEscape(s[i], mode) </span><span class="cov0" title="0">{
+                        if (mode == encodeHost || mode == encodeZone) &amp;&amp; s[i] &lt; 0x80 &amp;&amp; shouldEscape(s[i], mode) </span><span class="cov8" title="1">{
                                 return "", InvalidHostError(s[i : i+1])
                         }</span>
                         <span class="cov8" title="1">i++</span>
@@ -526,10 +526,10 @@ func Parse(rawurl string) (*URL, error) <span class="cov8" title="1">{
         <span class="cov8" title="1">if frag == "" </span><span class="cov8" title="1">{
                 return url, nil
         }</span>
-        <span class="cov0" title="0">if url.Fragment, err = unescape(frag, encodeFragment); err != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if url.Fragment, err = unescape(frag, encodeFragment); err != nil </span><span class="cov0" title="0">{
                 return nil, &amp;Error{"parse", rawurl, err}
         }</span>
-        <span class="cov0" title="0">return url, nil</span>
+        <span class="cov8" title="1">return url, nil</span>
 }
 
 // ParseRequestURI parses rawurl into a URL structure. It assumes that
@@ -605,7 +605,7 @@ func parse(rawurl string, viaRequest bool) (*URL, error) <span class="cov8" titl
                 var authority string
                 authority, rest = split(rest[2:], "/", false)
                 url.User, url.Host, err = parseAuthority(authority)
-                if err != nil </span><span class="cov0" title="0">{
+                if err != nil </span><span class="cov8" title="1">{
                         return nil, err
                 }</span>
         }
@@ -613,7 +613,7 @@ func parse(rawurl string, viaRequest bool) (*URL, error) <span class="cov8" titl
         // RawPath is a hint of the encoding of Path. We don't want to set it if
         // the default escaping of Path is equivalent, to help make sure that people
         // don't rely on it in general.
-        <span class="cov8" title="1">if err := url.setPath(rest); err != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if err := url.setPath(rest); err != nil </span><span class="cov8" title="1">{
                 return nil, err
         }</span>
         <span class="cov8" title="1">return url, nil</span>
@@ -626,7 +626,7 @@ func parseAuthority(authority string) (user *Userinfo, host string, err error) <
         }</span> else<span class="cov8" title="1"> {
                 host, err = parseHost(authority[i+1:])
         }</span>
-        <span class="cov8" title="1">if err != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if err != nil </span><span class="cov8" title="1">{
                 return nil, "", err
         }</span>
         <span class="cov8" title="1">if i &lt; 0 </span><span class="cov8" title="1">{
@@ -694,7 +694,7 @@ func parseHost(host string) (string, error) <span class="cov8" title="1">{
         }
 
         <span class="cov8" title="1">var err error
-        if host, err = unescape(host, encodeHost); err != nil </span><span class="cov0" title="0">{
+        if host, err = unescape(host, encodeHost); err != nil </span><span class="cov8" title="1">{
                 return "", err
         }</span>
         <span class="cov8" title="1">return host, nil</span>
@@ -710,7 +710,7 @@ func parseHost(host string) (string, error) <span class="cov8" title="1">{
 // escaping.
 func (u *URL) setPath(p string) error <span class="cov8" title="1">{
         path, err := unescape(p, encodePath)
-        if err != nil </span><span class="cov0" title="0">{
+        if err != nil </span><span class="cov8" title="1">{
                 return err
         }</span>
         <span class="cov8" title="1">u.Path = path
@@ -755,7 +755,7 @@ func validEncodedPath(s string) bool <span class="cov8" title="1">{
                 // so we check the sub-delims ourselves and let
                 // shouldEscape handle the others.
                 switch s[i] </span>{
-                case '!', '$', '&amp;', '\'', '(', ')', '*', '+', ',', ';', '=', ':', '@':</span><span class="cov0" title="0">
+                case '!', '$', '&amp;', '\'', '(', ')', '*', '+', ',', ';', '=', ':', '@':</span><span class="cov8" title="1">
                         // ok
                 case '[', ']':</span><span class="cov0" title="0">
                         // ok - not specified in RFC 3986 but left alone by modern browsers
@@ -773,7 +773,7 @@ func validEncodedPath(s string) bool <span class="cov8" title="1">{
 // validOptionalPort reports whether port is either an empty string
 // or matches /^:\d*$/
 func validOptionalPort(port string) bool <span class="cov8" title="1">{
-        if port == "" </span><span class="cov0" title="0">{
+        if port == "" </span><span class="cov8" title="1">{
                 return true
         }</span>
         <span class="cov8" title="1">if port[0] != ':' </span><span class="cov0" title="0">{
@@ -973,7 +973,7 @@ func (v Values) Encode() string <span class="cov8" title="1">{
 // them to base, per RFC 3986.
 func resolvePath(base, ref string) string <span class="cov8" title="1">{
         var full string
-        if ref == "" </span><span class="cov0" title="0">{
+        if ref == "" </span><span class="cov8" title="1">{
                 full = base
         }</span> else<span class="cov8" title="1"> if ref[0] != '/' </span><span class="cov8" title="1">{
                 i := strings.LastIndex(base, "/")
@@ -981,14 +981,14 @@ func resolvePath(base, ref string) string <span class="cov8" title="1">{
         }</span> else<span class="cov8" title="1"> {
                 full = ref
         }</span>
-        <span class="cov8" title="1">if full == "" </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if full == "" </span><span class="cov8" title="1">{
                 return ""
         }</span>
         <span class="cov8" title="1">var dst []string
         src := strings.Split(full, "/")
         for _, elem := range src </span><span class="cov8" title="1">{
                 switch elem </span>{
-                case ".":</span><span class="cov0" title="0">
+                case ".":</span><span class="cov8" title="1">
                         // drop
                 case "..":<span class="cov8" title="1">
                         if len(dst) &gt; 0 </span><span class="cov8" title="1">{
@@ -1033,7 +1033,7 @@ func (u *URL) ResolveReference(ref *URL) *URL <span class="cov8" title="1">{
         if ref.Scheme == "" </span><span class="cov8" title="1">{
                 url.Scheme = u.Scheme
         }</span>
-        <span class="cov8" title="1">if ref.Scheme != "" || ref.Host != "" || ref.User != nil </span><span class="cov0" title="0">{
+        <span class="cov8" title="1">if ref.Scheme != "" || ref.Host != "" || ref.User != nil </span><span class="cov8" title="1">{
                 // The "absoluteURI" or "net_path" cases.
                 // We can ignore the error from setPath since we know we provided a
                 // validly-escaped path.
