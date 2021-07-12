@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 81</p>
+<p>Total number of URLs: 82</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -57,15 +57,15 @@
 </tr>
 <tr>
 <td>PHP</td>
-<td>12</td>
-<td>9</td>
+<td>13</td>
+<td>10</td>
 <td>53.45%</td>
 </tr>
 <tr>
 <td>C</td>
 <td>32</td>
 <td>1</td>
-<td>48.4%</td>
+<td>48.8%</td>
 </tr>
 <tr>
 <td>Java</td>
@@ -158,6 +158,10 @@
 <tr>
 <td><code>Host `"` is invalid : the host is not a valid registered name</code></td>
 <td><code>https://%3d@"</code>  <br> <code>ws://鸐@"</code>  <br></td>
+</tr>
+<tr>
+<td><code>The uri `file:///?/` is invalid for the `file` scheme.</code></td>
+<td><code>file:/// &lt; /?/</code>  <br></td>
 </tr>
 <tr>
 <td><code>Host ``` is invalid : the host is not a valid registered name</code></td>
@@ -625,6 +629,10 @@
 <td>Java <br>Ruby <br></td>
 </tr>
 <tr>
+<td><code>file:/// &lt; /?/</code></td>
+<td>PHP <br></td>
+</tr>
+<tr>
 <td><code>e:/ &lt; //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254]</code></td>
 <td>Java <br>Ruby <br></td>
 </tr>
@@ -839,9 +847,9 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>34</td>
+<td>35</td>
 <td>2</td>
-<td>32</td>
+<td>33</td>
 </tr>
 <tr>
 <td>chromium</td>
@@ -863,6 +871,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>file:/// &lt; /?/</code></td>
+<td>query</td>
+<td><code>?/</code></td>
+<td><code>/</code></td>
+</tr>
 <tr>
 <td><code>file:/// &lt; /%2e///%2e</code></td>
 <td>filePath</td>

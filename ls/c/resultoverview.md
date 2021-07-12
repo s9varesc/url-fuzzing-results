@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 81
+Total number of URLs: 82
 
 Total number of Parsers: 11
 
@@ -15,8 +15,8 @@ firefox | 2 | 1 | 72.8%
 Cpp | 2 | 1 | 37.0% 
 chromium | 2 | 1 | 49.81% 
 Go | 8 | 7 | 77.0% 
-PHP | 12 | 9 | 53.45% 
-C | 32 | 1 | 48.4% 
+PHP | 13 | 10 | 53.45% 
+C | 32 | 1 | 48.8% 
 Java | 41 | 20 | 39.0% 
 Ruby | 49 | 47 | 72.02% 
 
@@ -57,6 +57,7 @@ Ruby | 49 | 47 | 72.02%
  --- | --- 
  ``` The uri `file:///#%F4%87%87%A5` is invalid for the `file` scheme. ```  |  ``` file:///#􇇥 ```  <br> 
  ``` Host `"` is invalid : the host is not a valid registered name ```  |  ``` https://%3d@" ```  <br> ``` ws://鸐@" ```  <br> 
+ ``` The uri `file:///?/` is invalid for the `file` scheme. ```  |  ``` file:/// < /?/ ```  <br> 
  ```` Host ``` is invalid : the host is not a valid registered name ````  |  ``` L:/ < //` ```  <br> ``` S:/ < //` ```  <br> 
  ``` Host `%ed` is not a valid IDN host : a label or domain name contains disallowed characters. ```  |  ``` O:/ < //%ed ```  <br> 
  ``` Host `{` is invalid : the host is not a valid registered name ```  |  ``` file://{ ```  <br> ``` file://{ < / ```  <br> 
@@ -194,6 +195,7 @@ Ruby | 49 | 47 | 72.02%
  ``` ws://[::dced:ffda:dbea:eebf] ```  | Java <br>
  ``` ws://[::] < /?񢰜 ```  | C <br>Java <br>Ruby <br>
  ``` wss://[::]?ﹴ < / ```  | Java <br>Ruby <br>
+ ``` file:/// < /?/ ```  | PHP <br>
  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  | Java <br>Ruby <br>
  ``` ws://[::] < //[ba2c:cbdc::fafe:255.254.250.254] ```  | Java <br>Ruby <br>
  ``` Q:/h:/ < / ```  | Java <br>
@@ -249,7 +251,7 @@ Ruby | 49 | 47 | 72.02%
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 34 | 2 | 32
+firefox | 35 | 2 | 33
 chromium | 15 | 2 | 13
 
 [full browser comparison](./browseroverview.html)
@@ -258,6 +260,7 @@ chromium | 15 | 2 | 13
 
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
+ ``` file:/// < /?/ ```  | query |  ``` ?/ ```  |  ``` / ``` 
  ``` file:/// < /%2e///%2e ```  | filePath |  ``` /// ```  |  ``` ///%2e ``` 
  ``` file:/// < //250.253.252.6 ```  | host |  ``` 250.253.252.6 ```  |  ```  ``` 
  ``` file://250.253.251.250 < / ```  | host |  ``` 250.253.251.250 ```  |  ```  ``` 

@@ -134,6 +134,7 @@ static URLParseCase parse_cases[]={{"F:/" ,"//M~" ,"f" ,"" ,"" ,"m~" ,-1 ,"/" ,"
 {"R:/" ,"//[::eded]" ,"r" ,"" ,"" ,"[::eded]" ,-1 ,"/" ,"" ,""},
 {"ws://[::]" ,"//[fdde:acbd:efee:ccea:accf:fdce:242.255.254.251]" ,"ws" ,"" ,"" ,"[fdde:acbd:efee:ccea:accf:fdce:f2ff:fefb]" ,-1 ,"/" ,"" ,""},
 {"" ,"https://[::cbfa:eded:6aab]" ,"https" ,"" ,"" ,"[::cbfa:eded:6aab]" ,-1 ,"/" ,"" ,""},
+{"file:///" ,"/?/" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"/" ,""},
 {"" ,"file://ck" ,"file" ,"" ,"" ,"ck" ,-1 ,"/" ,"" ,""},
 {"wss://[::]" ,"[ﴙ" ,"wss" ,"" ,"" ,"[::]" ,-1 ,"/[%EF%B4%99" ,"" ,""},
 {"" ,"file:///#򃣻" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"" ,"%F2%83%A3%BB"},
