@@ -26,7 +26,12 @@ void CheckValidity(const URLParseCase& parse_case, const GURL& parsed_url) {
 
 
 //Test inputs
-static URLParseCase parse_cases[]={{"L://[::dbca:eafc:acca:255.255.254.243%25_]"}};
+static URLParseCase parse_cases[]={{"f:///+"},
+{"q://[5dbf:faed::badf:255.250.252.251%25_]"},
+{"//[::deca:eabe:bbdc:251.252.90.251]"},
+{"//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]"},
+{"L://[::dbca:eafc:acca:255.255.254.243%25_]"},
+{"d://[::8ceb:cfcd]"}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {
