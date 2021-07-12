@@ -62,9 +62,16 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 //Test inputs
 static URLParseCase parse_cases[]={{"e:/" ,"//[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254]" ,"e" ,"" ,"" ,"[eada:fffc:eede:fdeb:adbc:edce:60fe:fafe]" ,-1 ,"/" ,"" ,""},
 {"file://{" ,"/" ,"file" ,"" ,"" ,"{" ,-1 ,"/" ,"" ,""},
+{"" ,"file:///+" ,"file" ,"" ,"" ,"" ,-1 ,"/+%EE%B3%97" ,"" ,""},
 {"" ,"file://{" ,"file" ,"" ,"" ,"{" ,-1 ,"/" ,"" ,""},
 {"Q:/h:/" ,"/" ,"q" ,"" ,"" ,"" ,-1 ,"/" ,"" ,""},
 {"" ,"https://%3d@\"" ,"https" ,"%3d" ,"" ,"\"" ,-1 ,"/" ,"" ,""},
+{"W:/?" ,"/" ,"w" ,"" ,"" ,"" ,-1 ,"/" ,"" ,""},
+{"" ,"file://ž2" ,"file" ,"" ,"" ,"xn--2-soa" ,-1 ,"/" ,"" ,""},
+{"m:/" ,"/?ｷ" ,"m" ,"" ,"" ,"" ,-1 ,"/" ,"%EF%BD%B7" ,""},
+{"file:///" ,"//[cae2:ebaa::feff:fadc:251.254.253.254]" ,"file" ,"" ,"" ,"[cae2:ebaa::feff:fadc:fbfe:fdfe]" ,-1 ,"/" ,"" ,""},
+{"" ,"ws://[::]:65530" ,"ws" ,"" ,"" ,"[::]" ,65530 ,"/" ,"" ,""},
+{"R:/" ,"//[::eded]" ,"r" ,"" ,"" ,"[::eded]" ,-1 ,"/" ,"" ,""},
 {"" ,"ws://[::]?⍭" ,"ws" ,"" ,"" ,"[::]" ,-1 ,"/" ,"%E2%8D%AD" ,""}};
 //test execution
 TEST(URLParser, Parsing){
