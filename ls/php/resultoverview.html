@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 1</p>
+<p>Total number of URLs: 4</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -17,67 +17,67 @@
 <td>JavaScripturijs</td>
 <td>0</td>
 <td>0</td>
-<td>17.59%</td>
+<td>23.05%</td>
 </tr>
 <tr>
 <td>Cpp</td>
 <td>0</td>
 <td>0</td>
-<td>10.4%</td>
-</tr>
-<tr>
-<td>Java</td>
-<td>0</td>
-<td>0</td>
-<td>36.0%</td>
-</tr>
-<tr>
-<td>Go</td>
-<td>0</td>
-<td>0</td>
-<td>70.2%</td>
+<td>24.8%</td>
 </tr>
 <tr>
 <td>JavaScriptwhatwg-url</td>
 <td>0</td>
 <td>0</td>
-<td>27.72%</td>
+<td>41.28%</td>
 </tr>
 <tr>
 <td>chromium</td>
 <td>0</td>
 <td>0</td>
-<td>22.18%</td>
+<td>37.41%</td>
 </tr>
 <tr>
 <td>Python</td>
 <td>0</td>
 <td>0</td>
-<td>32.0%</td>
+<td>33.0%</td>
 </tr>
 <tr>
 <td>firefox</td>
 <td>1</td>
 <td>1</td>
-<td>57.8%</td>
+<td>66.6%</td>
 </tr>
 <tr>
-<td>C</td>
+<td>Go</td>
 <td>1</td>
 <td>1</td>
-<td>15.7%</td>
+<td>71.9%</td>
 </tr>
 <tr>
 <td>PHP</td>
+<td>2</td>
+<td>2</td>
+<td>38.79%</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>2</td>
+<td>2</td>
+<td>38.0%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>3</td>
 <td>1</td>
-<td>1</td>
-<td>30.17%</td>
+<td>31.9%</td>
 </tr>
 <tr>
 <td>Ruby</td>
-<td>1</td>
-<td>1</td>
-<td>63.21%</td>
+<td>3</td>
+<td>2</td>
+<td>71.5%</td>
 </tr>
 </tbody>
 </table>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td><code>https://%3d@"</code>  <br></td>
+<td><code>ws://[::]?⍭</code>  <br> <code>https://%3d@"</code>  <br> <code>file://{</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -155,6 +155,10 @@
 <td><code>Host `"` is invalid : the host is not a valid registered name</code></td>
 <td><code>https://%3d@"</code>  <br></td>
 </tr>
+<tr>
+<td><code>Host `{` is invalid : the host is not a valid registered name</code></td>
+<td><code>file://{</code>  <br></td>
+</tr>
 </tbody>
 </table>
 <h3>Java</h3>
@@ -167,8 +171,12 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>java.net.MalformedURLException: unknown protocol: ws</code></td>
+<td><code>ws://[::]?⍭</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: q</code></td>
+<td><code>Q:/h:/ &lt; /</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -182,8 +190,8 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>parse : invalid character "{" in host name</code></td>
+<td><code>file://{</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -242,8 +250,12 @@
 </thead>
 <tbody>
 <tr>
+<td><code>URI must be ascii only "ws://[::]?\u236D"</code></td>
+<td><code>ws://[::]?⍭</code>  <br></td>
+</tr>
+<tr>
 <td><code>bad URI(is not URI?):</code></td>
-<td><code>https://%3d@"</code>  <br></td>
+<td><code>https://%3d@"</code>  <br> <code>file://{</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -257,8 +269,20 @@
 </thead>
 <tbody>
 <tr>
+<td><code>ws://[::]?⍭</code></td>
+<td>C <br>Java <br>Ruby <br></td>
+</tr>
+<tr>
 <td><code>https://%3d@"</code></td>
 <td>firefox <br>C <br>PHP <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>Q:/h:/ &lt; /</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>file://{</code></td>
+<td>C <br>PHP <br>Go <br>Ruby <br></td>
 </tr>
 </tbody>
 </table>
@@ -275,15 +299,15 @@
 <tbody>
 <tr>
 <td>firefox</td>
+<td>3</td>
 <td>1</td>
-<td>1</td>
-<td>0</td>
+<td>2</td>
 </tr>
 <tr>
 <td>chromium</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
-<td>1</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -300,10 +324,16 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><code>ws://[::]?⍭</code></td>
+<td>query</td>
+<td><code>?%E2%8D%AD</code></td>
+<td><code>%E2%8D%AD</code></td>
+</tr>
+<tr>
+<td><code>file://{</code></td>
+<td>host</td>
+<td><code>{</code></td>
+<td><code></code></td>
 </tr>
 </tbody>
 </table>
@@ -318,6 +348,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>file://{</code></td>
+<td>host</td>
+<td><code>{</code></td>
+<td><code>%7B</code></td>
+</tr>
 <tr>
 <td><code>https://%3d@"</code></td>
 <td>host</td>

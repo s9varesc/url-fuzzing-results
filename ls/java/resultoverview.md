@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 1
+Total number of URLs: 2
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 17.59% 
-Cpp | 0 | 0 | 10.4% 
-Java | 0 | 0 | 36.0% 
+JavaScripturijs | 0 | 0 | 22.36% 
+Cpp | 0 | 0 | 23.0% 
 Go | 0 | 0 | 70.2% 
-JavaScriptwhatwg-url | 0 | 0 | 27.72% 
-chromium | 0 | 0 | 22.18% 
-Python | 0 | 0 | 32.0% 
+JavaScriptwhatwg-url | 0 | 0 | 32.49% 
+chromium | 0 | 0 | 33.27% 
+Python | 0 | 0 | 33.0% 
 firefox | 1 | 1 | 57.8% 
-C | 1 | 1 | 15.7% 
-PHP | 1 | 1 | 30.17% 
-Ruby | 1 | 1 | 63.21% 
+C | 1 | 1 | 23.8% 
+PHP | 1 | 1 | 34.48% 
+Java | 1 | 1 | 38.0% 
+Ruby | 1 | 1 | 71.5% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -60,6 +60,7 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
+ ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` Q:/h:/ < / ```  <br> 
 
 
 ### Go
@@ -98,6 +99,7 @@ Ruby | 1 | 1 | 63.21%
  URL | Parsers 
  --- | --- 
  ``` https://%3d@" ```  | firefox <br>C <br>PHP <br>Ruby <br>
+ ``` Q:/h:/ < / ```  | Java <br>
 
 ## Browsers
 

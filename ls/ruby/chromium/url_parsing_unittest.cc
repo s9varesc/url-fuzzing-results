@@ -60,7 +60,8 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 }
 
 //Test inputs
-static URLParseCase parse_cases[]={{"" ,"https://%3d@\"" ,"https" ,"%3d" ,"" ,"\"" ,-1 ,"/" ,"" ,""}};
+static URLParseCase parse_cases[]={{"Q:/h:/" ,"/" ,"q" ,"" ,"" ,"" ,-1 ,"/" ,"" ,""},
+{"" ,"https://%3d@\"" ,"https" ,"%3d" ,"" ,"\"" ,-1 ,"/" ,"" ,""}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {

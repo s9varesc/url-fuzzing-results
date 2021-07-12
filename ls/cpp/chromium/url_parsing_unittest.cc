@@ -60,7 +60,11 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 }
 
 //Test inputs
-static URLParseCase parse_cases[]={{"" ,"https://%3d@\"" ,"https" ,"%3d" ,"" ,"\"" ,-1 ,"/" ,"" ,""}};
+static URLParseCase parse_cases[]={{"e:/" ,"//[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254]" ,"e" ,"" ,"" ,"[eada:fffc:eede:fdeb:adbc:edce:60fe:fafe]" ,-1 ,"/" ,"" ,""},
+{"" ,"file://{" ,"file" ,"" ,"" ,"{" ,-1 ,"/" ,"" ,""},
+{"Q:/h:/" ,"/" ,"q" ,"" ,"" ,"" ,-1 ,"/" ,"" ,""},
+{"" ,"https://%3d@\"" ,"https" ,"%3d" ,"" ,"\"" ,-1 ,"/" ,"" ,""},
+{"" ,"ws://[::]?⍭" ,"ws" ,"" ,"" ,"[::]" ,-1 ,"/" ,"%E2%8D%AD" ,""}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {
