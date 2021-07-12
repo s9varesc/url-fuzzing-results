@@ -9,6 +9,14 @@ Note: Google Test filter = URLParser.Parsing
 [----------] Global test environment set-up.
 [----------] 1 test from URLParser
 [ RUN      ] URLParser.Parsing
+../../url/url_parsing_unittest.cc:32: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"F:/<//M~", "exception":"invalid URL"}
+Stack trace:
+#0 0x55bdb9e8a406 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
   parse_case.host
@@ -17,8 +25,8 @@ Expected equality of these values:
     Which is: ""
 {"url":"file://{</", "error":{"component":"host", "expected":"{", "actual":""}}
 Stack trace:
-#0 0x55b0576b02c5 url::(anonymous namespace)::CheckComponents()
-#1 0x55b0576adfe8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55bdb9e8c845 url::(anonymous namespace)::CheckComponents()
+#1 0x55bdb9e8a568 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -28,8 +36,8 @@ Expected equality of these values:
     Which is: "%7B"
 {"url":"file://{", "error":{"component":"host", "expected":"{", "actual":"%7B"}}
 Stack trace:
-#0 0x55b0576b02c5 url::(anonymous namespace)::CheckComponents()
-#1 0x55b0576adfe8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55bdb9e8c845 url::(anonymous namespace)::CheckComponents()
+#1 0x55bdb9e8a568 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -39,14 +47,14 @@ Expected equality of these values:
     Which is: "%22"
 {"url":"https://%3d@"", "error":{"component":"host", "expected":""", "actual":"%22"}}
 Stack trace:
-#0 0x55b0576b02c5 url::(anonymous namespace)::CheckComponents()
-#1 0x55b0576adfe8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55bdb9e8c845 url::(anonymous namespace)::CheckComponents()
+#1 0x55bdb9e8a568 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 [  FAILED  ] URLParser.Parsing (2 ms)
 [----------] 1 test from URLParser (2 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (2 ms total)
+[==========] 1 test from 1 test suite ran. (3 ms total)
 [  PASSED  ] 0 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] URLParser.Parsing
@@ -54,5 +62,5 @@ Stack trace:
  1 FAILED TEST
 [1/1] URLParser.Parsing (2 ms)
 1 test failed:
-    URLParser.Parsing (../../url/url_parsing_unittest.cc:77)
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:83)
 Tests took 0 seconds.

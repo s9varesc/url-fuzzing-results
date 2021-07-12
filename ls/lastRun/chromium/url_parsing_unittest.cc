@@ -60,8 +60,11 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 }
 
 //Test inputs
-static URLParseCase parse_cases[]={{"" ,"http://[::cafb:dbcb:baaf:b3ae]" ,"http" ,"" ,"" ,"[::cafb:dbcb:baaf:b3ae]" ,-1 ,"/" ,"" ,""},
+static URLParseCase parse_cases[]={{"F:/" ,"//M~" ,"f" ,"" ,"" ,"m~" ,-1 ,"/" ,"" ,""},
+{"" ,"http://[::cafb:dbcb:baaf:b3ae]" ,"http" ,"" ,"" ,"[::cafb:dbcb:baaf:b3ae]" ,-1 ,"/" ,"" ,""},
 {"e:/" ,"//[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254]" ,"e" ,"" ,"" ,"[eada:fffc:eede:fdeb:adbc:edce:60fe:fafe]" ,-1 ,"/" ,"" ,""},
+{"O:/" ,"𿇰" ,"o" ,"" ,"" ,"" ,-1 ,"/%F0%BF%87%B0" ,"" ,""},
+{"" ,"http://[fefe:faaa::cabe:254.253.250.254]" ,"http" ,"" ,"" ,"[fefe:faaa::cabe:fefd:fafe]" ,-1 ,"/" ,"" ,""},
 {"file://{" ,"/" ,"file" ,"" ,"" ,"{" ,-1 ,"/" ,"" ,""},
 {"" ,"file:///+" ,"file" ,"" ,"" ,"" ,-1 ,"/+%EE%B3%97" ,"" ,""},
 {"" ,"file://{" ,"file" ,"" ,"" ,"{" ,-1 ,"/" ,"" ,""},
@@ -70,6 +73,8 @@ static URLParseCase parse_cases[]={{"" ,"http://[::cafb:dbcb:baaf:b3ae]" ,"http"
 {"W:/?" ,"/" ,"w" ,"" ,"" ,"" ,-1 ,"/" ,"" ,""},
 {"" ,"file://ž2" ,"file" ,"" ,"" ,"xn--2-soa" ,-1 ,"/" ,"" ,""},
 {"m:/" ,"/?ｷ" ,"m" ,"" ,"" ,"" ,-1 ,"/" ,"%EF%BD%B7" ,""},
+{"file:///" ,"/%2e/琮" ,"file" ,"" ,"" ,"" ,-1 ,"/%E7%90%AE" ,"" ,""},
+{"W:/" ,"//[7eaf::adfa:bbde:254.253.252.250]" ,"w" ,"" ,"" ,"[7eaf::adfa:bbde:fefd:fcfa]" ,-1 ,"/" ,"" ,""},
 {"file:///" ,"//[cae2:ebaa::feff:fadc:251.254.253.254]" ,"file" ,"" ,"" ,"[cae2:ebaa::feff:fadc:fbfe:fdfe]" ,-1 ,"/" ,"" ,""},
 {"" ,"ws://[::]:65530" ,"ws" ,"" ,"" ,"[::]" ,65530 ,"/" ,"" ,""},
 {"http://[::]?﷎" ,"/" ,"http" ,"" ,"" ,"[::]" ,-1 ,"/" ,"" ,""},
