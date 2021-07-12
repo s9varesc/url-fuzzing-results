@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-12 14:02:14</td>
+            <td class="headerValue">2021-07-12 14:09:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -425,24 +425,24 @@
 <span class="lineNum">     355 </span>            : }
 <a name="356"><span class="lineNum">     356 </span>            : </a>
 <span class="lineNum">     357 </span>            : /* Extract URI-Scheme if possible */
-<span class="lineNum">     358 </span><span class="lineCov">        354 : nsresult net_ExtractURLScheme(const nsACString&amp; inURI, nsACString&amp; scheme) {</span>
-<span class="lineNum">     359 </span><span class="lineCov">        354 :   nsACString::const_iterator start, end;</span>
-<span class="lineNum">     360 </span><span class="lineCov">        354 :   inURI.BeginReading(start);</span>
-<span class="lineNum">     361 </span><span class="lineCov">        354 :   inURI.EndReading(end);</span>
+<span class="lineNum">     358 </span><span class="lineCov">        356 : nsresult net_ExtractURLScheme(const nsACString&amp; inURI, nsACString&amp; scheme) {</span>
+<span class="lineNum">     359 </span><span class="lineCov">        356 :   nsACString::const_iterator start, end;</span>
+<span class="lineNum">     360 </span><span class="lineCov">        356 :   inURI.BeginReading(start);</span>
+<span class="lineNum">     361 </span><span class="lineCov">        356 :   inURI.EndReading(end);</span>
 <span class="lineNum">     362 </span>            : 
 <span class="lineNum">     363 </span>            :   // Strip C0 and space from begining
-<span class="lineNum">     364 </span><span class="lineCov">        708 :   while (start != end) {</span>
-<span class="lineNum">     365 </span><span class="lineCov">        354 :     if ((uint8_t)*start &gt; 0x20) {</span>
-<span class="lineNum">     366 </span><span class="lineCov">        354 :       break;</span>
+<span class="lineNum">     364 </span><span class="lineCov">        712 :   while (start != end) {</span>
+<span class="lineNum">     365 </span><span class="lineCov">        356 :     if ((uint8_t)*start &gt; 0x20) {</span>
+<span class="lineNum">     366 </span><span class="lineCov">        356 :       break;</span>
 <span class="lineNum">     367 </span>            :     }
 <span class="lineNum">     368 </span><span class="lineNoCov">          0 :     start++;</span>
 <span class="lineNum">     369 </span>            :   }
 <span class="lineNum">     370 </span>            : 
-<span class="lineNum">     371 </span><span class="lineCov">        354 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
-<span class="lineNum">     372 </span><span class="lineCov">        354 :   p.Record();</span>
-<span class="lineNum">     373 </span><span class="lineCov">        354 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
+<span class="lineNum">     371 </span><span class="lineCov">        356 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
+<span class="lineNum">     372 </span><span class="lineCov">        356 :   p.Record();</span>
+<span class="lineNum">     373 </span><span class="lineCov">        356 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
 <span class="lineNum">     374 </span>            :     // First char must be alpha
-<span class="lineNum">     375 </span><span class="lineCov">         18 :     return NS_ERROR_MALFORMED_URI;</span>
+<span class="lineNum">     375 </span><span class="lineCov">         20 :     return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     376 </span>            :   }
 <span class="lineNum">     377 </span>            : 
 <span class="lineNum">     378 </span><span class="lineCov">       5766 :   while (p.CheckChar(net_IsValidSchemeChar) || p.CheckWhite()) {</span>
@@ -457,7 +457,7 @@
 <span class="lineNum">     387 </span><span class="lineCov">        246 :   scheme.StripTaggedASCII(ASCIIMask::MaskCRLFTab());</span>
 <span class="lineNum">     388 </span><span class="lineCov">        246 :   ToLowerCase(scheme);</span>
 <span class="lineNum">     389 </span><span class="lineCov">        246 :   return NS_OK;</span>
-<a name="390"><span class="lineNum">     390 </span><span class="lineCov">        354 : }</span></a>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">        356 : }</span></a>
 <span class="lineNum">     391 </span>            : 
 <span class="lineNum">     392 </span><span class="lineCov">        266 : bool net_IsValidScheme(const nsACString&amp; scheme) {</span>
 <span class="lineNum">     393 </span><span class="lineCov">        266 :   return mozilla::net::rust_net_is_valid_scheme(&amp;scheme);</span>
