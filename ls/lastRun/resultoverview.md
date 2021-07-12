@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 96
+Total number of URLs: 100
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScriptwhatwg-url | 0 | 0 | 64.23% 
+JavaScriptwhatwg-url | 0 | 0 | 64.68% 
 Python | 0 | 0 | 45.0% 
 JavaScripturijs | 1 | 1 | 29.2% 
-firefox | 2 | 1 | 72.8% 
 Cpp | 2 | 1 | 37.2% 
-chromium | 3 | 1 | 50.38% 
-Go | 9 | 8 | 77.0% 
-PHP | 13 | 10 | 53.45% 
-C | 39 | 1 | 48.8% 
-Java | 47 | 22 | 39.0% 
-Ruby | 60 | 58 | 72.02% 
+firefox | 3 | 1 | 73.8% 
+chromium | 3 | 1 | 50.94% 
+Go | 9 | 8 | 78.0% 
+PHP | 14 | 10 | 53.45% 
+C | 42 | 1 | 50.9% 
+Java | 48 | 22 | 39.0% 
+Ruby | 64 | 61 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -27,14 +27,14 @@ Ruby | 60 | 58 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` https://%3d@" ```  <br> ``` ws://鸐@" ```  <br> 
+ ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` https://%3d@" ```  <br> ``` ws://鸐@" ```  <br> ``` wss://:%5b@" ```  <br> 
 
 
 ### C
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` ftp://8š ```  <br> ``` file:/// < /%2e//퟾ ```  <br> ``` file:/// < /񧌊 ```  <br> ``` c:/ < /?ﻟ ```  <br> ``` ws://[::]?⍭ ```  <br> ``` file:///#􇇥 ```  <br> ``` H:/ < / ```  <br> ``` https://%3d@" ```  <br> ``` ws://[::] < /?񢰜 ```  <br> ``` wss://[::]?ﹴ ```  <br> ``` file:/// ```  <br> ``` file:/// < /.%2e/￹ ```  <br> ``` L:/ < //` ```  <br> ``` file://ž2 ```  <br> ``` o:/ < /뤠 ```  <br> ``` S:/ < //` ```  <br> ``` file:///+ ```  <br> ``` https://[::] < //[::]/%7bﺗ ```  <br> ``` ws://鸐@" ```  <br> ``` https://[::] < //﹉@~ ```  <br> ``` file://{ ```  <br> ``` file:///#򃣻 ```  <br> ``` file:/// < /%7d﷎ ```  <br> ``` file:/// < /%2e/琮 ```  <br> ``` wss://[::]?񴰅 ```  <br> ``` file:/// < /.%2e// ```  <br> ``` k:/?擩 ```  <br> ``` file:///#｠ ```  <br> ``` file:/// < %' ```  <br> ``` wss://[::] < [ﴙ ```  <br> ``` m:/ < /?ｷ ```  <br> ``` W:/? ```  <br> ``` O:/ < 𿇰 ```  <br> ``` https://[::abdf:206.250.251.251] ```  <br> ``` y:/ < /#򀑫 ```  <br> ``` http://[::]?﷎ ```  <br> ``` file:/// < /#￸ ```  <br> ``` T:/%﹯ ```  <br> ``` F:/ < //{v ```  <br> 
+ ``` 1 ```  |  ``` ftp://8š ```  <br> ``` file:/// < /%2e//퟾ ```  <br> ``` file:/// < /񧌊 ```  <br> ``` c:/ < /?ﻟ ```  <br> ``` ws://[::]?⍭ ```  <br> ``` file:///#􇇥 ```  <br> ``` H:/ < / ```  <br> ``` https://%3d@" ```  <br> ``` ws://[::] < /?񢰜 ```  <br> ``` wss://[::]?ﹴ ```  <br> ``` file:/// ```  <br> ``` file:/// < /.%2e/￹ ```  <br> ``` L:/ < //` ```  <br> ``` file://ž2 ```  <br> ``` o:/ < /뤠 ```  <br> ``` S:/ < //` ```  <br> ``` file:///+ ```  <br> ``` https://[::] < //[::]/%7bﺗ ```  <br> ``` ws://鸐@" ```  <br> ``` https://[::] < //﹉@~ ```  <br> ``` file://{ ```  <br> ``` file:///#򃣻 ```  <br> ``` file:/// < /%7d﷎ ```  <br> ``` file:/// < /%2e/琮 ```  <br> ``` wss://[::]?񴰅 ```  <br> ``` file:/// < /.%2e// ```  <br> ``` k:/?擩 ```  <br> ``` file:///#｠ ```  <br> ``` file:/// < %' ```  <br> ``` wss://[::] < [ﴙ ```  <br> ``` file://ŐB ```  <br> ``` file:/// < /%2e%2e/︷ ```  <br> ``` m:/ < /?ｷ ```  <br> ``` W:/? ```  <br> ``` O:/ < 𿇰 ```  <br> ``` https://[::abdf:206.250.251.251] ```  <br> ``` y:/ < /#򀑫 ```  <br> ``` http://[::]?﷎ ```  <br> ``` file:/// < /#￸ ```  <br> ``` wss://:%5b@" ```  <br> ``` T:/%﹯ ```  <br> ``` F:/ < //{v ```  <br> 
 
 
 ### JavaScripturijs
@@ -56,7 +56,7 @@ Ruby | 60 | 58 | 72.02%
  Exception Type | URLs 
  --- | --- 
  ``` The uri `file:///#%F4%87%87%A5` is invalid for the `file` scheme. ```  |  ``` file:///#􇇥 ```  <br> 
- ``` Host `"` is invalid : the host is not a valid registered name ```  |  ``` https://%3d@" ```  <br> ``` ws://鸐@" ```  <br> 
+ ``` Host `"` is invalid : the host is not a valid registered name ```  |  ``` https://%3d@" ```  <br> ``` ws://鸐@" ```  <br> ``` wss://:%5b@" ```  <br> 
  ``` The uri `file:///?/` is invalid for the `file` scheme. ```  |  ``` file:/// < /?/ ```  <br> 
  ```` Host ``` is invalid : the host is not a valid registered name ````  |  ``` L:/ < //` ```  <br> ``` S:/ < //` ```  <br> 
  ``` Host `%ed` is not a valid IDN host : a label or domain name contains disallowed characters. ```  |  ``` O:/ < //%ed ```  <br> 
@@ -71,7 +71,7 @@ Ruby | 60 | 58 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` java.net.MalformedURLException: unknown protocol: wss ```  |  ``` wss://253.53.252.253 ```  <br> ``` wss://[::]?ﹴ < / ```  <br> ``` wss://[::] < //,k ```  <br> ``` wss://[::]?񴰅 ```  <br> ``` wss://[::] < [ﴙ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: wss ```  |  ``` wss://253.53.252.253 ```  <br> ``` wss://[::]?ﹴ < / ```  <br> ``` wss://[::] < //,k ```  <br> ``` wss://[::]?񴰅 ```  <br> ``` wss://[::] < [ﴙ ```  <br> ``` wss://:%5b@" ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: c ```  |  ``` c:/ < /?ﻟ ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::]?⍭ ```  <br> ``` ws://[::] < //[fdde:acbd:efee:ccea:accf:fdce:242.255.254.251] ```  <br> ``` ws://[::] < //[cce3::fabf:ceba:251.250.253.252] ```  <br> ``` ws://[::dced:ffda:dbea:eebf] ```  <br> ``` ws://[::] < /?񢰜 ```  <br> ``` ws://[::] < //[ba2c:cbdc::fafe:255.254.250.254] ```  <br> ``` ws://[::] < //222.255.255.251 ```  <br> ``` ws://鸐@" ```  <br> ``` ws://[::]:65530 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` H:/ < / ```  <br> ``` H:/ < //[::9bde] ```  <br> 
@@ -140,7 +140,7 @@ Ruby | 60 | 58 | 72.02%
  ``` bad URI(is not URI?): //[fdde:acbd:efee:ccea:accf:fdce:242.255.254.251] ```  |  ``` ws://[::] < //[fdde:acbd:efee:ccea:accf:fdce:242.255.254.251] ```  <br> 
  ``` URI must be ascii only "file:///#\u{1071E5}" ```  |  ``` file:///#􇇥 ```  <br> 
  ``` URI must be ascii only "/\uF862" ```  |  ``` H:/ < / ```  <br> 
- ``` bad URI(is not URI?):  ```  |  ``` https://%3d@" ```  <br> ``` file://{ ```  <br> 
+ ``` bad URI(is not URI?):  ```  |  ``` https://%3d@" ```  <br> ``` file://{ ```  <br> ``` wss://:%5b@" ```  <br> 
  ``` bad URI(is not URI?): //[cce3::fabf:ceba:251.250.253.252] ```  |  ``` ws://[::] < //[cce3::fabf:ceba:251.250.253.252] ```  <br> 
  ``` bad URI(is not URI?): //[::]:4 ```  |  ``` B:/ < //[::]:4 ```  <br> 
  ``` URI must be ascii only "/?\u{62C1C}" ```  |  ``` ws://[::] < /?񢰜 ```  <br> 
@@ -164,6 +164,7 @@ Ruby | 60 | 58 | 72.02%
  ``` bad URI(is not URI?): //[ddcd:dabc:ebba:dabc:fcfc:fdfe:faac:ebaa] ```  |  ``` r:/ < //[ddcd:dabc:ebba:dabc:fcfc:fdfe:faac:ebaa] ```  <br> 
  ``` bad URI(is not URI?): //[a5fa:edee::beae:beeb:252.252.254.253] ```  |  ``` L:/ < //[a5fa:edee::beae:beeb:252.252.254.253] ```  <br> 
  ``` bad URI(is not URI?): //[::fbbf:cfae:250.250.250.7] ```  |  ``` ftp://[::] < //[::fbbf:cfae:250.250.250.7] ```  <br> 
+ ``` bad URI(is not URI?): //[7fbb:dfcf::afff:252.254.252.254] ```  |  ``` file:/// < //[7fbb:dfcf::afff:252.254.252.254] ```  <br> 
  ``` URI must be ascii only "//\uFE49@~" ```  |  ``` https://[::] < //﹉@~ ```  <br> 
  ``` bad URI(is not URI?): //[df9c::254.250.253.255] ```  |  ``` ftp://[::] < //[df9c::254.250.253.255] ```  <br> 
  ``` bad URI(is not URI?): //[ff8d::252.252.253.254] ```  |  ``` ftp://[::] < //[ff8d::252.252.253.254] ```  <br> 
@@ -179,6 +180,8 @@ Ruby | 60 | 58 | 72.02%
  ``` URI must be ascii only "file:///#\uFF60" ```  |  ``` file:///#｠ ```  <br> 
  ``` bad URI(is not URI?): %' ```  |  ``` file:/// < %' ```  <br> 
  ``` URI must be ascii only "[\uFD19" ```  |  ``` wss://[::] < [ﴙ ```  <br> 
+ ``` URI must be ascii only "file://\u0150B" ```  |  ``` file://ŐB ```  <br> 
+ ``` URI must be ascii only "/%2e%2e/\uFE37" ```  |  ``` file:/// < /%2e%2e/︷ ```  <br> 
  ``` URI must be ascii only "/?\uFF77" ```  |  ``` m:/ < /?ｷ ```  <br> 
  ``` URI must be ascii only "W:/?\uE8AC" ```  |  ``` W:/? < / ```  <br> 
  ``` URI must be ascii only "\u{3F1F0}" ```  |  ``` O:/ < 𿇰 ```  <br> 
@@ -241,6 +244,7 @@ Ruby | 60 | 58 | 72.02%
  ``` r:/ < //[ddcd:dabc:ebba:dabc:fcfc:fdfe:faac:ebaa] ```  | Java <br>Ruby <br>
  ``` L:/ < //[a5fa:edee::beae:beeb:252.252.254.253] ```  | Java <br>Ruby <br>
  ``` ftp://[::] < //[::fbbf:cfae:250.250.250.7] ```  | Ruby <br>
+ ``` file:/// < //[7fbb:dfcf::afff:252.254.252.254] ```  | Ruby <br>
  ``` https://[::] < //﹉@~ ```  | C <br>Go <br>chromium <br>Ruby <br>
  ``` file://{ ```  | C <br>PHP <br>Go <br>Ruby <br>
  ``` ftp://[::] < //[df9c::254.250.253.255] ```  | Ruby <br>
@@ -259,6 +263,8 @@ Ruby | 60 | 58 | 72.02%
  ``` file:///#｠ ```  | C <br>PHP <br>Ruby <br>
  ``` file:/// < %' ```  | C <br>JavaScripturijs <br>Cpp <br>Go <br>Ruby <br>
  ``` wss://[::] < [ﴙ ```  | C <br>Java <br>Ruby <br>
+ ``` file://ŐB ```  | C <br>Ruby <br>
+ ``` file:/// < /%2e%2e/︷ ```  | C <br>Ruby <br>
  ``` m:/ < /?ｷ ```  | C <br>Java <br>Ruby <br>
  ``` W:/? < / ```  | Java <br>Ruby <br>
  ``` Mz:/ ```  | Java <br>
@@ -271,6 +277,7 @@ Ruby | 60 | 58 | 72.02%
  ``` http://[::]?﷎ < / ```  | Ruby <br>
  ``` p:/ < //[9acc:eefa:abbf:daac:ccca:fbed:253.250.251.252] ```  | Java <br>Ruby <br>
  ``` file:/// < /#￸ ```  | C <br>PHP <br>Ruby <br>
+ ``` wss://:%5b@" ```  | firefox <br>C <br>PHP <br>Java <br>Ruby <br>
  ``` T:/%﹯ ```  | C <br>Cpp <br>Java <br>Go <br>Ruby <br>
  ``` F:/ < //{v ```  | C <br>PHP <br>Java <br>Go <br>Ruby <br>
 
@@ -278,8 +285,8 @@ Ruby | 60 | 58 | 72.02%
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 39 | 2 | 37
-chromium | 16 | 3 | 13
+firefox | 42 | 3 | 39
+chromium | 17 | 3 | 14
 
 [full browser comparison](./browseroverview.html)
 
@@ -302,11 +309,13 @@ chromium | 16 | 3 | 13
  ``` D:/ < //[::ee1d:255.250.250.253] ```  | host |  ``` ::ee1d:fffa:fafd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://{ ```  | host |  ``` { ```  |  ```  ``` 
  ``` file:/// < //[cae2:ebaa::feff:fadc:251.254.253.254] ```  | host |  ``` cae2:ebaa::feff:fadc:fbfe:fdfe ```  |  ```  ``` 
+ ``` file://ŐB ```  | host |  ``` xn--b-7la ```  |  ```  ``` 
  ``` L:/ < //` ```  | host |  ``` ` ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` W:/ < //[7eaf::adfa:bbde:254.253.252.250] ```  | host |  ``` 7eaf::adfa:bbde:fefd:fcfa ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  | host |  ``` eada:fffc:eede:fdeb:adbc:edce:60fe:fafe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://ž2 ```  | host |  ``` xn--2-soa ```  |  ```  ``` 
  ``` ws://[::] < /?񢰜 ```  | query |  ``` ?%F1%A2%B0%9C ```  |  ``` %F1%A2%B0%9C ``` 
+ ``` file:/// < //[7fbb:dfcf::afff:252.254.252.254] ```  | host |  ``` 7fbb:dfcf::afff:fcfe:fcfe ```  |  ```  ``` 
  ``` T:/ < ///W:/ ```  | filePath |  ``` /W:/ ```  |  ``` //W/ ``` 
  ``` L:/ < //[a5fa:edee::beae:beeb:252.252.254.253] ```  | host |  ``` a5fa:edee::beae:beeb:fcfc:fefd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` R:/ < //[::eded] ```  | host |  ``` ::eded ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
@@ -342,6 +351,7 @@ chromium | 16 | 3 | 13
  ``` file://253.254.253.89 < / ```  | host |  ``` 253.254.253.89 ```  |  ```  ``` 
  ``` F:/ < //{v ```  | host |  ``` {v ```  |  ``` %7Bv ``` 
  ``` ws://鸐@" ```  | host |  ``` " ```  |  ``` %22 ``` 
+ ``` wss://:%5b@" ```  | host |  ``` " ```  |  ``` %22 ``` 
 
 ## Coverage Reports 
 
