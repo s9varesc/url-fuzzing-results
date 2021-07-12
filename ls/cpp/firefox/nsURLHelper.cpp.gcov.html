@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-12 16:09:08</td>
+            <td class="headerValue">2021-07-12 16:32:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">26</td>
@@ -148,19 +148,19 @@
 <span class="lineNum">      78 </span>            : // nsIURLParser getters
 <a name="79"><span class="lineNum">      79 </span>            : //----------------------------------------------------------------------------</a>
 <span class="lineNum">      80 </span>            : 
-<span class="lineNum">      81 </span><span class="lineCov">         32 : nsIURLParser* net_GetAuthURLParser() {</span>
-<span class="lineNum">      82 </span><span class="lineCov">         64 :   if (!gInitialized) InitGlobals();</span>
-<span class="lineNum">      83 </span><span class="lineCov">         32 :   return gAuthURLParser;</span>
+<span class="lineNum">      81 </span><span class="lineCov">         39 : nsIURLParser* net_GetAuthURLParser() {</span>
+<span class="lineNum">      82 </span><span class="lineCov">         78 :   if (!gInitialized) InitGlobals();</span>
+<span class="lineNum">      83 </span><span class="lineCov">         39 :   return gAuthURLParser;</span>
 <a name="84"><span class="lineNum">      84 </span>            : }</a>
 <span class="lineNum">      85 </span>            : 
-<span class="lineNum">      86 </span><span class="lineCov">        230 : nsIURLParser* net_GetNoAuthURLParser() {</span>
-<span class="lineNum">      87 </span><span class="lineCov">        460 :   if (!gInitialized) InitGlobals();</span>
-<span class="lineNum">      88 </span><span class="lineCov">        230 :   return gNoAuthURLParser;</span>
+<span class="lineNum">      86 </span><span class="lineCov">        231 : nsIURLParser* net_GetNoAuthURLParser() {</span>
+<span class="lineNum">      87 </span><span class="lineCov">        462 :   if (!gInitialized) InitGlobals();</span>
+<span class="lineNum">      88 </span><span class="lineCov">        231 :   return gNoAuthURLParser;</span>
 <a name="89"><span class="lineNum">      89 </span>            : }</a>
 <span class="lineNum">      90 </span>            : 
-<span class="lineNum">      91 </span><span class="lineCov">        553 : nsIURLParser* net_GetStdURLParser() {</span>
-<span class="lineNum">      92 </span><span class="lineCov">       1107 :   if (!gInitialized) InitGlobals();</span>
-<span class="lineNum">      93 </span><span class="lineCov">        553 :   return gStdURLParser;</span>
+<span class="lineNum">      91 </span><span class="lineCov">        569 : nsIURLParser* net_GetStdURLParser() {</span>
+<span class="lineNum">      92 </span><span class="lineCov">       1139 :   if (!gInitialized) InitGlobals();</span>
+<span class="lineNum">      93 </span><span class="lineCov">        569 :   return gStdURLParser;</span>
 <span class="lineNum">      94 </span>            : }
 <span class="lineNum">      95 </span>            : 
 <span class="lineNum">      96 </span>            : //---------------------------------------------------------------------------
@@ -275,21 +275,21 @@
 <span class="lineNum">     205 </span>            : 
 <a name="206"><span class="lineNum">     206 </span>            : // Replace all /./ with a / while resolving URLs</a>
 <span class="lineNum">     207 </span>            : // But only till #?
-<span class="lineNum">     208 </span><span class="lineCov">        241 : void net_CoalesceDirs(netCoalesceFlags flags, char* path) {</span>
+<span class="lineNum">     208 </span><span class="lineCov">        242 : void net_CoalesceDirs(netCoalesceFlags flags, char* path) {</span>
 <span class="lineNum">     209 </span>            :   /* Stolen from the old netlib's mkparse.c.
 <span class="lineNum">     210 </span>            :    *
 <span class="lineNum">     211 </span>            :    * modifies a url of the form   /foo/../foo1  -&gt;  /foo1
 <span class="lineNum">     212 </span>            :    *                       and    /foo/./foo1   -&gt;  /foo/foo1
 <span class="lineNum">     213 </span>            :    *                       and    /foo/foo1/..  -&gt;  /foo/
 <span class="lineNum">     214 </span>            :    */
-<span class="lineNum">     215 </span><span class="lineCov">        241 :   char* fwdPtr = path;</span>
-<span class="lineNum">     216 </span><span class="lineCov">        241 :   char* urlPtr = path;</span>
-<span class="lineNum">     217 </span><span class="lineCov">        241 :   char* lastslash = path;</span>
-<span class="lineNum">     218 </span><span class="lineCov">        241 :   uint32_t traversal = 0;</span>
-<span class="lineNum">     219 </span><span class="lineCov">        241 :   uint32_t special_ftp_len = 0;</span>
+<span class="lineNum">     215 </span><span class="lineCov">        242 :   char* fwdPtr = path;</span>
+<span class="lineNum">     216 </span><span class="lineCov">        242 :   char* urlPtr = path;</span>
+<span class="lineNum">     217 </span><span class="lineCov">        242 :   char* lastslash = path;</span>
+<span class="lineNum">     218 </span><span class="lineCov">        242 :   uint32_t traversal = 0;</span>
+<span class="lineNum">     219 </span><span class="lineCov">        242 :   uint32_t special_ftp_len = 0;</span>
 <span class="lineNum">     220 </span>            : 
 <span class="lineNum">     221 </span>            :   /* Remember if this url is a special ftp one: */
-<span class="lineNum">     222 </span><span class="lineCov">        241 :   if (flags &amp; NET_COALESCE_DOUBLE_SLASH_IS_ROOT) {</span>
+<span class="lineNum">     222 </span><span class="lineCov">        242 :   if (flags &amp; NET_COALESCE_DOUBLE_SLASH_IS_ROOT) {</span>
 <span class="lineNum">     223 </span>            :     /* some schemes (for example ftp) have the speciality that
 <span class="lineNum">     224 </span>            :        the path can begin // or /%2F to mark the root of the
 <span class="lineNum">     225 </span>            :        servers filesystem, a simple / only marks the root relative
@@ -301,25 +301,25 @@
 <span class="lineNum">     231 </span><span class="lineNoCov">          0 :   }</span>
 <span class="lineNum">     232 </span>            : 
 <span class="lineNum">     233 </span>            :   /* find the last slash before # or ? */
-<span class="lineNum">     234 </span><span class="lineCov">      82880 :   for (; (*fwdPtr != '\0') &amp;&amp; (*fwdPtr != '?') &amp;&amp; (*fwdPtr != '#'); ++fwdPtr) {</span>
-<span class="lineNum">     235 </span><span class="lineCov">      16431 :   }</span>
+<span class="lineNum">     234 </span><span class="lineCov">      82889 :   for (; (*fwdPtr != '\0') &amp;&amp; (*fwdPtr != '?') &amp;&amp; (*fwdPtr != '#'); ++fwdPtr) {</span>
+<span class="lineNum">     235 </span><span class="lineCov">      16432 :   }</span>
 <span class="lineNum">     236 </span>            : 
 <span class="lineNum">     237 </span>            :   /* found nothing, but go back one only */
 <span class="lineNum">     238 </span>            :   /* if there is something to go back to */
-<span class="lineNum">     239 </span><span class="lineCov">        482 :   if (fwdPtr != path &amp;&amp; *fwdPtr == '\0') {</span>
+<span class="lineNum">     239 </span><span class="lineCov">        484 :   if (fwdPtr != path &amp;&amp; *fwdPtr == '\0') {</span>
 <span class="lineNum">     240 </span><span class="lineCov">        240 :     --fwdPtr;</span>
 <span class="lineNum">     241 </span><span class="lineCov">        240 :   }</span>
 <span class="lineNum">     242 </span>            : 
 <span class="lineNum">     243 </span>            :   /* search the slash */
-<span class="lineNum">     244 </span><span class="lineCov">      11405 :   for (; (fwdPtr != path) &amp;&amp; (*fwdPtr != '/'); --fwdPtr) {</span>
-<span class="lineNum">     245 </span><span class="lineCov">       2612 :   }</span>
-<span class="lineNum">     246 </span><span class="lineCov">        241 :   lastslash = fwdPtr;</span>
-<span class="lineNum">     247 </span><span class="lineCov">        241 :   fwdPtr = path;</span>
+<span class="lineNum">     244 </span><span class="lineCov">      11412 :   for (; (fwdPtr != path) &amp;&amp; (*fwdPtr != '/'); --fwdPtr) {</span>
+<span class="lineNum">     245 </span><span class="lineCov">       2613 :   }</span>
+<span class="lineNum">     246 </span><span class="lineCov">        242 :   lastslash = fwdPtr;</span>
+<span class="lineNum">     247 </span><span class="lineCov">        242 :   fwdPtr = path;</span>
 <span class="lineNum">     248 </span>            : 
 <span class="lineNum">     249 </span>            :   /* replace all %2E or %2e with . in the path */
 <span class="lineNum">     250 </span>            :   /* but stop at lastchar if non null */
-<span class="lineNum">     251 </span><span class="lineCov">      69060 :   for (; (*fwdPtr != '\0') &amp;&amp; (*fwdPtr != '?') &amp;&amp; (*fwdPtr != '#') &amp;&amp;</span>
-<span class="lineNum">     252 </span><span class="lineCov">      27624 :          (*lastslash == '\0' || fwdPtr != lastslash);</span>
+<span class="lineNum">     251 </span><span class="lineCov">      69065 :   for (; (*fwdPtr != '\0') &amp;&amp; (*fwdPtr != '?') &amp;&amp; (*fwdPtr != '#') &amp;&amp;</span>
+<span class="lineNum">     252 </span><span class="lineCov">      27626 :          (*lastslash == '\0' || fwdPtr != lastslash);</span>
 <span class="lineNum">     253 </span><span class="lineCov">      13571 :        ++fwdPtr) {</span>
 <span class="lineNum">     254 </span><span class="lineCov">      13579 :     if (*fwdPtr == '%' &amp;&amp; *(fwdPtr + 1) == '2' &amp;&amp;</span>
 <span class="lineNum">     255 </span><span class="lineCov">          8 :         (*(fwdPtr + 2) == 'E' || *(fwdPtr + 2) == 'e')) {</span>
@@ -331,20 +331,20 @@
 <span class="lineNum">     261 </span>            :     }
 <span class="lineNum">     262 </span><span class="lineCov">      13571 :   }</span>
 <span class="lineNum">     263 </span>            :   // Copy remaining stuff past the #?;
-<span class="lineNum">     264 </span><span class="lineCov">       6194 :   for (; *fwdPtr != '\0'; ++fwdPtr) {</span>
-<span class="lineNum">     265 </span><span class="lineCov">       2856 :     *urlPtr++ = *fwdPtr;</span>
-<span class="lineNum">     266 </span><span class="lineCov">       2856 :   }</span>
-<span class="lineNum">     267 </span><span class="lineCov">        241 :   *urlPtr = '\0';  // terminate the url</span>
+<span class="lineNum">     264 </span><span class="lineCov">       6208 :   for (; *fwdPtr != '\0'; ++fwdPtr) {</span>
+<span class="lineNum">     265 </span><span class="lineCov">       2862 :     *urlPtr++ = *fwdPtr;</span>
+<span class="lineNum">     266 </span><span class="lineCov">       2862 :   }</span>
+<span class="lineNum">     267 </span><span class="lineCov">        242 :   *urlPtr = '\0';  // terminate the url</span>
 <span class="lineNum">     268 </span>            : 
 <span class="lineNum">     269 </span>            :   // start again, this time for real
-<span class="lineNum">     270 </span><span class="lineCov">        241 :   fwdPtr = path;</span>
-<span class="lineNum">     271 </span><span class="lineCov">        241 :   urlPtr = path;</span>
+<span class="lineNum">     270 </span><span class="lineCov">        242 :   fwdPtr = path;</span>
+<span class="lineNum">     271 </span><span class="lineCov">        242 :   urlPtr = path;</span>
 <span class="lineNum">     272 </span>            : 
-<span class="lineNum">     273 </span><span class="lineCov">      82760 :   for (; (*fwdPtr != '\0') &amp;&amp; (*fwdPtr != '?') &amp;&amp; (*fwdPtr != '#'); ++fwdPtr) {</span>
-<span class="lineNum">     274 </span><span class="lineCov">      18133 :     if (*fwdPtr == '/' &amp;&amp; *(fwdPtr + 1) == '.' &amp;&amp; *(fwdPtr + 2) == '/') {</span>
+<span class="lineNum">     273 </span><span class="lineCov">      82769 :   for (; (*fwdPtr != '\0') &amp;&amp; (*fwdPtr != '?') &amp;&amp; (*fwdPtr != '#'); ++fwdPtr) {</span>
+<span class="lineNum">     274 </span><span class="lineCov">      18135 :     if (*fwdPtr == '/' &amp;&amp; *(fwdPtr + 1) == '.' &amp;&amp; *(fwdPtr + 2) == '/') {</span>
 <span class="lineNum">     275 </span>            :       // remove . followed by slash
 <span class="lineNum">     276 </span><span class="lineCov">         12 :       ++fwdPtr;</span>
-<span class="lineNum">     277 </span><span class="lineCov">      18109 :     } else if (*fwdPtr == '/' &amp;&amp; *(fwdPtr + 1) == '.' &amp;&amp; *(fwdPtr + 2) == '.' &amp;&amp;</span>
+<span class="lineNum">     277 </span><span class="lineCov">      18111 :     } else if (*fwdPtr == '/' &amp;&amp; *(fwdPtr + 1) == '.' &amp;&amp; *(fwdPtr + 2) == '.' &amp;&amp;</span>
 <span class="lineNum">     278 </span><span class="lineCov">          2 :                (*(fwdPtr + 3) == '/' ||</span>
 <span class="lineNum">     279 </span><span class="lineNoCov">          0 :                 *(fwdPtr + 3) == '\0' ||  // This will take care of</span>
 <span class="lineNum">     280 </span><span class="lineNoCov">          0 :                 *(fwdPtr + 3) == '?' ||   // something like foo/bar/..#sometag</span>
@@ -393,94 +393,94 @@
 <span class="lineNum">     323 </span><span class="lineCov">          2 :     } else {</span>
 <span class="lineNum">     324 </span>            :       // count the hierachie, but only if we do not have reached
 <span class="lineNum">     325 </span>            :       // the root of some special urls with a special root marker
-<span class="lineNum">     326 </span><span class="lineCov">      18091 :       if (*fwdPtr == '/' &amp;&amp; *(fwdPtr + 1) != '.' &amp;&amp;</span>
-<span class="lineNum">     327 </span><span class="lineCov">       1698 :           (special_ftp_len != 2 || *(fwdPtr + 1) != '/'))</span>
-<span class="lineNum">     328 </span><span class="lineCov">       1698 :         traversal++;</span>
+<span class="lineNum">     326 </span><span class="lineCov">      18093 :       if (*fwdPtr == '/' &amp;&amp; *(fwdPtr + 1) != '.' &amp;&amp;</span>
+<span class="lineNum">     327 </span><span class="lineCov">       1699 :           (special_ftp_len != 2 || *(fwdPtr + 1) != '/'))</span>
+<span class="lineNum">     328 </span><span class="lineCov">       1699 :         traversal++;</span>
 <span class="lineNum">     329 </span>            :       // copy the url incrementaly
-<span class="lineNum">     330 </span><span class="lineCov">      16393 :       *urlPtr++ = *fwdPtr;</span>
+<span class="lineNum">     330 </span><span class="lineCov">      16394 :       *urlPtr++ = *fwdPtr;</span>
 <span class="lineNum">     331 </span>            :     }
-<span class="lineNum">     332 </span><span class="lineCov">      16407 :   }</span>
+<span class="lineNum">     332 </span><span class="lineCov">      16408 :   }</span>
 <span class="lineNum">     333 </span>            : 
 <span class="lineNum">     334 </span>            :   /*
 <span class="lineNum">     335 </span>            :    *  Now lets remove trailing . case
 <span class="lineNum">     336 </span>            :    *     /foo/foo1/.   -&gt;  /foo/foo1/
 <span class="lineNum">     337 </span>            :    */
 <span class="lineNum">     338 </span>            : 
-<span class="lineNum">     339 </span><span class="lineCov">        478 :   if ((urlPtr &gt; (path + 1)) &amp;&amp; (*(urlPtr - 1) == '.') &amp;&amp; (*(urlPtr - 2) == '/'))</span>
+<span class="lineNum">     339 </span><span class="lineCov">        479 :   if ((urlPtr &gt; (path + 1)) &amp;&amp; (*(urlPtr - 1) == '.') &amp;&amp; (*(urlPtr - 2) == '/'))</span>
 <span class="lineNum">     340 </span><span class="lineNoCov">          0 :     urlPtr--;</span>
 <span class="lineNum">     341 </span>            : 
 <span class="lineNum">     342 </span>            :   // Copy remaining stuff past the #?;
-<span class="lineNum">     343 </span><span class="lineCov">        490 :   for (; *fwdPtr != '\0'; ++fwdPtr) {</span>
-<span class="lineNum">     344 </span><span class="lineCov">          4 :     *urlPtr++ = *fwdPtr;</span>
-<span class="lineNum">     345 </span><span class="lineCov">          4 :   }</span>
-<span class="lineNum">     346 </span><span class="lineCov">        241 :   *urlPtr = '\0';  // terminate the url</span>
-<span class="lineNum">     347 </span><span class="lineCov">        241 : }</span>
+<span class="lineNum">     343 </span><span class="lineCov">        502 :   for (; *fwdPtr != '\0'; ++fwdPtr) {</span>
+<span class="lineNum">     344 </span><span class="lineCov">          9 :     *urlPtr++ = *fwdPtr;</span>
+<span class="lineNum">     345 </span><span class="lineCov">          9 :   }</span>
+<span class="lineNum">     346 </span><span class="lineCov">        242 :   *urlPtr = '\0';  // terminate the url</span>
+<span class="lineNum">     347 </span><span class="lineCov">        242 : }</span>
 <span class="lineNum">     348 </span>            : 
 <span class="lineNum">     349 </span>            : //----------------------------------------------------------------------------
 <span class="lineNum">     350 </span>            : // scheme fu
 <a name="351"><span class="lineNum">     351 </span>            : //----------------------------------------------------------------------------</a>
 <span class="lineNum">     352 </span>            : 
-<span class="lineNum">     353 </span><span class="lineCov">       2464 : static bool net_IsValidSchemeChar(const char aChar) {</span>
-<span class="lineNum">     354 </span><span class="lineCov">       2464 :   return mozilla::net::rust_net_is_valid_scheme_char(aChar);</span>
+<span class="lineNum">     353 </span><span class="lineCov">       2488 : static bool net_IsValidSchemeChar(const char aChar) {</span>
+<span class="lineNum">     354 </span><span class="lineCov">       2488 :   return mozilla::net::rust_net_is_valid_scheme_char(aChar);</span>
 <span class="lineNum">     355 </span>            : }
 <a name="356"><span class="lineNum">     356 </span>            : </a>
 <span class="lineNum">     357 </span>            : /* Extract URI-Scheme if possible */
-<span class="lineNum">     358 </span><span class="lineCov">        528 : nsresult net_ExtractURLScheme(const nsACString&amp; inURI, nsACString&amp; scheme) {</span>
-<span class="lineNum">     359 </span><span class="lineCov">        528 :   nsACString::const_iterator start, end;</span>
-<span class="lineNum">     360 </span><span class="lineCov">        528 :   inURI.BeginReading(start);</span>
-<span class="lineNum">     361 </span><span class="lineCov">        528 :   inURI.EndReading(end);</span>
+<span class="lineNum">     358 </span><span class="lineCov">        551 : nsresult net_ExtractURLScheme(const nsACString&amp; inURI, nsACString&amp; scheme) {</span>
+<span class="lineNum">     359 </span><span class="lineCov">        551 :   nsACString::const_iterator start, end;</span>
+<span class="lineNum">     360 </span><span class="lineCov">        551 :   inURI.BeginReading(start);</span>
+<span class="lineNum">     361 </span><span class="lineCov">        551 :   inURI.EndReading(end);</span>
 <span class="lineNum">     362 </span>            : 
 <span class="lineNum">     363 </span>            :   // Strip C0 and space from begining
-<span class="lineNum">     364 </span><span class="lineCov">       1056 :   while (start != end) {</span>
-<span class="lineNum">     365 </span><span class="lineCov">        528 :     if ((uint8_t)*start &gt; 0x20) {</span>
-<span class="lineNum">     366 </span><span class="lineCov">        528 :       break;</span>
+<span class="lineNum">     364 </span><span class="lineCov">       1102 :   while (start != end) {</span>
+<span class="lineNum">     365 </span><span class="lineCov">        551 :     if ((uint8_t)*start &gt; 0x20) {</span>
+<span class="lineNum">     366 </span><span class="lineCov">        551 :       break;</span>
 <span class="lineNum">     367 </span>            :     }
 <span class="lineNum">     368 </span><span class="lineNoCov">          0 :     start++;</span>
 <span class="lineNum">     369 </span>            :   }
 <span class="lineNum">     370 </span>            : 
-<span class="lineNum">     371 </span><span class="lineCov">        528 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
-<span class="lineNum">     372 </span><span class="lineCov">        528 :   p.Record();</span>
-<span class="lineNum">     373 </span><span class="lineCov">        528 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
+<span class="lineNum">     371 </span><span class="lineCov">        551 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
+<span class="lineNum">     372 </span><span class="lineCov">        551 :   p.Record();</span>
+<span class="lineNum">     373 </span><span class="lineCov">        551 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
 <span class="lineNum">     374 </span>            :     // First char must be alpha
-<span class="lineNum">     375 </span><span class="lineCov">         86 :     return NS_ERROR_MALFORMED_URI;</span>
+<span class="lineNum">     375 </span><span class="lineCov">         96 :     return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     376 </span>            :   }
 <span class="lineNum">     377 </span>            : 
-<span class="lineNum">     378 </span><span class="lineCov">       6520 :   while (p.CheckChar(net_IsValidSchemeChar) || p.CheckWhite()) {</span>
+<span class="lineNum">     378 </span><span class="lineCov">       6605 :   while (p.CheckChar(net_IsValidSchemeChar) || p.CheckWhite()) {</span>
 <span class="lineNum">     379 </span>            :     // Skip valid scheme characters or \r\n\t
 <span class="lineNum">     380 </span>            :   }
 <span class="lineNum">     381 </span>            : 
-<span class="lineNum">     382 </span><span class="lineCov">        442 :   if (!p.CheckChar(':')) {</span>
+<span class="lineNum">     382 </span><span class="lineCov">        455 :   if (!p.CheckChar(':')) {</span>
 <span class="lineNum">     383 </span><span class="lineCov">         90 :     return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     384 </span>            :   }
 <span class="lineNum">     385 </span>            : 
-<span class="lineNum">     386 </span><span class="lineCov">        352 :   p.Claim(scheme);</span>
-<span class="lineNum">     387 </span><span class="lineCov">        352 :   scheme.StripTaggedASCII(ASCIIMask::MaskCRLFTab());</span>
-<span class="lineNum">     388 </span><span class="lineCov">        352 :   ToLowerCase(scheme);</span>
-<span class="lineNum">     389 </span><span class="lineCov">        352 :   return NS_OK;</span>
-<a name="390"><span class="lineNum">     390 </span><span class="lineCov">        528 : }</span></a>
+<span class="lineNum">     386 </span><span class="lineCov">        365 :   p.Claim(scheme);</span>
+<span class="lineNum">     387 </span><span class="lineCov">        365 :   scheme.StripTaggedASCII(ASCIIMask::MaskCRLFTab());</span>
+<span class="lineNum">     388 </span><span class="lineCov">        365 :   ToLowerCase(scheme);</span>
+<span class="lineNum">     389 </span><span class="lineCov">        365 :   return NS_OK;</span>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">        551 : }</span></a>
 <span class="lineNum">     391 </span>            : 
-<span class="lineNum">     392 </span><span class="lineCov">        325 : bool net_IsValidScheme(const nsACString&amp; scheme) {</span>
-<span class="lineNum">     393 </span><span class="lineCov">        325 :   return mozilla::net::rust_net_is_valid_scheme(&amp;scheme);</span>
+<span class="lineNum">     392 </span><span class="lineCov">        333 : bool net_IsValidScheme(const nsACString&amp; scheme) {</span>
+<span class="lineNum">     393 </span><span class="lineCov">        333 :   return mozilla::net::rust_net_is_valid_scheme(&amp;scheme);</span>
 <a name="394"><span class="lineNum">     394 </span>            : }</a>
 <span class="lineNum">     395 </span>            : 
-<span class="lineNum">     396 </span><span class="lineCov">         82 : bool net_IsAbsoluteURL(const nsACString&amp; uri) {</span>
-<span class="lineNum">     397 </span><span class="lineCov">         82 :   nsACString::const_iterator start, end;</span>
-<span class="lineNum">     398 </span><span class="lineCov">         82 :   uri.BeginReading(start);</span>
-<span class="lineNum">     399 </span><span class="lineCov">         82 :   uri.EndReading(end);</span>
+<span class="lineNum">     396 </span><span class="lineCov">         85 : bool net_IsAbsoluteURL(const nsACString&amp; uri) {</span>
+<span class="lineNum">     397 </span><span class="lineCov">         85 :   nsACString::const_iterator start, end;</span>
+<span class="lineNum">     398 </span><span class="lineCov">         85 :   uri.BeginReading(start);</span>
+<span class="lineNum">     399 </span><span class="lineCov">         85 :   uri.EndReading(end);</span>
 <span class="lineNum">     400 </span>            : 
 <span class="lineNum">     401 </span>            :   // Strip C0 and space from begining
-<span class="lineNum">     402 </span><span class="lineCov">        164 :   while (start != end) {</span>
-<span class="lineNum">     403 </span><span class="lineCov">         82 :     if ((uint8_t)*start &gt; 0x20) {</span>
-<span class="lineNum">     404 </span><span class="lineCov">         82 :       break;</span>
+<span class="lineNum">     402 </span><span class="lineCov">        170 :   while (start != end) {</span>
+<span class="lineNum">     403 </span><span class="lineCov">         85 :     if ((uint8_t)*start &gt; 0x20) {</span>
+<span class="lineNum">     404 </span><span class="lineCov">         85 :       break;</span>
 <span class="lineNum">     405 </span>            :     }
 <span class="lineNum">     406 </span><span class="lineNoCov">          0 :     start++;</span>
 <span class="lineNum">     407 </span>            :   }
 <span class="lineNum">     408 </span>            : 
-<span class="lineNum">     409 </span><span class="lineCov">         82 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
+<span class="lineNum">     409 </span><span class="lineCov">         85 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
 <span class="lineNum">     410 </span>            : 
 <span class="lineNum">     411 </span>            :   // First char must be alpha
-<span class="lineNum">     412 </span><span class="lineCov">         82 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
-<span class="lineNum">     413 </span><span class="lineCov">         19 :     return false;</span>
+<span class="lineNum">     412 </span><span class="lineCov">         85 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
+<span class="lineNum">     413 </span><span class="lineCov">         22 :     return false;</span>
 <span class="lineNum">     414 </span>            :   }
 <span class="lineNum">     415 </span>            : 
 <span class="lineNum">     416 </span><span class="lineCov">       1422 :   while (p.CheckChar(net_IsValidSchemeChar) || p.CheckWhite()) {</span>
@@ -501,66 +501,66 @@
 <span class="lineNum">     431 </span><span class="lineCov">         18 :     return true;</span>
 <span class="lineNum">     432 </span>            :   }
 <span class="lineNum">     433 </span><span class="lineNoCov">          0 :   return false;</span>
-<a name="434"><span class="lineNum">     434 </span><span class="lineCov">         82 : }</span></a>
+<a name="434"><span class="lineNum">     434 </span><span class="lineCov">         85 : }</span></a>
 <span class="lineNum">     435 </span>            : 
-<span class="lineNum">     436 </span><span class="lineCov">        311 : void net_FilterURIString(const nsACString&amp; input, nsACString&amp; result) {</span>
-<span class="lineNum">     437 </span><span class="lineCov">        311 :   result.Truncate();</span>
+<span class="lineNum">     436 </span><span class="lineCov">        322 : void net_FilterURIString(const nsACString&amp; input, nsACString&amp; result) {</span>
+<span class="lineNum">     437 </span><span class="lineCov">        322 :   result.Truncate();</span>
 <span class="lineNum">     438 </span>            : 
-<span class="lineNum">     439 </span><span class="lineCov">        311 :   auto start = input.BeginReading();</span>
-<span class="lineNum">     440 </span><span class="lineCov">        311 :   auto end = input.EndReading();</span>
+<span class="lineNum">     439 </span><span class="lineCov">        322 :   auto start = input.BeginReading();</span>
+<span class="lineNum">     440 </span><span class="lineCov">        322 :   auto end = input.EndReading();</span>
 <a name="441"><span class="lineNum">     441 </span>            : </a>
 <span class="lineNum">     442 </span>            :   // Trim off leading and trailing invalid chars.
-<span class="lineNum">     443 </span><span class="lineCov">       1555 :   auto charFilter = [](char c) { return static_cast&lt;uint8_t&gt;(c) &gt; 0x20; };</span>
-<span class="lineNum">     444 </span><span class="lineCov">        311 :   auto newStart = std::find_if(start, end, charFilter);</span>
-<span class="lineNum">     445 </span><span class="lineCov">        622 :   auto newEnd =</span>
-<span class="lineNum">     446 </span><span class="lineCov">        933 :       std::find_if(std::reverse_iterator&lt;decltype(end)&gt;(end),</span>
-<span class="lineNum">     447 </span><span class="lineCov">        311 :                    std::reverse_iterator&lt;decltype(newStart)&gt;(newStart),</span>
+<span class="lineNum">     443 </span><span class="lineCov">       1610 :   auto charFilter = [](char c) { return static_cast&lt;uint8_t&gt;(c) &gt; 0x20; };</span>
+<span class="lineNum">     444 </span><span class="lineCov">        322 :   auto newStart = std::find_if(start, end, charFilter);</span>
+<span class="lineNum">     445 </span><span class="lineCov">        644 :   auto newEnd =</span>
+<span class="lineNum">     446 </span><span class="lineCov">        966 :       std::find_if(std::reverse_iterator&lt;decltype(end)&gt;(end),</span>
+<span class="lineNum">     447 </span><span class="lineCov">        322 :                    std::reverse_iterator&lt;decltype(newStart)&gt;(newStart),</span>
 <span class="lineNum">     448 </span>            :                    charFilter)
-<span class="lineNum">     449 </span><span class="lineCov">        311 :           .base();</span>
+<span class="lineNum">     449 </span><span class="lineCov">        322 :           .base();</span>
 <span class="lineNum">     450 </span>            : 
 <span class="lineNum">     451 </span>            :   // Check if chars need to be stripped.
-<span class="lineNum">     452 </span><span class="lineCov">        311 :   bool needsStrip = false;</span>
-<span class="lineNum">     453 </span><span class="lineCov">        311 :   const ASCIIMaskArray&amp; mask = ASCIIMask::MaskCRLFTab();</span>
-<span class="lineNum">     454 </span><span class="lineCov">      32760 :   for (auto itr = start; itr != end; ++itr) {</span>
-<span class="lineNum">     455 </span><span class="lineCov">      15758 :     if (ASCIIMask::IsMasked(mask, *itr)) {</span>
+<span class="lineNum">     452 </span><span class="lineCov">        322 :   bool needsStrip = false;</span>
+<span class="lineNum">     453 </span><span class="lineCov">        322 :   const ASCIIMaskArray&amp; mask = ASCIIMask::MaskCRLFTab();</span>
+<span class="lineNum">     454 </span><span class="lineCov">      32998 :   for (auto itr = start; itr != end; ++itr) {</span>
+<span class="lineNum">     455 </span><span class="lineCov">      15855 :     if (ASCIIMask::IsMasked(mask, *itr)) {</span>
 <span class="lineNum">     456 </span><span class="lineNoCov">          0 :       needsStrip = true;</span>
 <span class="lineNum">     457 </span><span class="lineNoCov">          0 :       break;</span>
 <span class="lineNum">     458 </span>            :     }
-<span class="lineNum">     459 </span><span class="lineCov">      15758 :   }</span>
+<span class="lineNum">     459 </span><span class="lineCov">      15855 :   }</span>
 <span class="lineNum">     460 </span>            : 
 <span class="lineNum">     461 </span>            :   // Just use the passed in string rather than creating new copies if no
 <span class="lineNum">     462 </span>            :   // changes are necessary.
-<span class="lineNum">     463 </span><span class="lineCov">        933 :   if (newStart == start &amp;&amp; newEnd == end &amp;&amp; !needsStrip) {</span>
-<span class="lineNum">     464 </span><span class="lineCov">        311 :     result = input;</span>
-<span class="lineNum">     465 </span><span class="lineCov">        311 :     return;</span>
+<span class="lineNum">     463 </span><span class="lineCov">        966 :   if (newStart == start &amp;&amp; newEnd == end &amp;&amp; !needsStrip) {</span>
+<span class="lineNum">     464 </span><span class="lineCov">        322 :     result = input;</span>
+<span class="lineNum">     465 </span><span class="lineCov">        322 :     return;</span>
 <span class="lineNum">     466 </span>            :   }
 <span class="lineNum">     467 </span>            : 
 <span class="lineNum">     468 </span><span class="lineNoCov">          0 :   result.Assign(Substring(newStart, newEnd));</span>
 <span class="lineNum">     469 </span><span class="lineNoCov">          0 :   if (needsStrip) {</span>
 <span class="lineNum">     470 </span><span class="lineNoCov">          0 :     result.StripTaggedASCII(mask);</span>
 <span class="lineNum">     471 </span><span class="lineNoCov">          0 :   }</span>
-<a name="472"><span class="lineNum">     472 </span><span class="lineCov">        622 : }</span></a>
+<a name="472"><span class="lineNum">     472 </span><span class="lineCov">        644 : }</span></a>
 <span class="lineNum">     473 </span>            : 
-<span class="lineNum">     474 </span><span class="lineCov">         40 : nsresult net_FilterAndEscapeURI(const nsACString&amp; aInput, uint32_t aFlags,</span>
+<span class="lineNum">     474 </span><span class="lineCov">         44 : nsresult net_FilterAndEscapeURI(const nsACString&amp; aInput, uint32_t aFlags,</span>
 <span class="lineNum">     475 </span>            :                                 nsACString&amp; aResult) {
-<span class="lineNum">     476 </span><span class="lineCov">         40 :   aResult.Truncate();</span>
+<span class="lineNum">     476 </span><span class="lineCov">         44 :   aResult.Truncate();</span>
 <span class="lineNum">     477 </span>            : 
-<span class="lineNum">     478 </span><span class="lineCov">         40 :   auto start = aInput.BeginReading();</span>
-<span class="lineNum">     479 </span><span class="lineCov">         40 :   auto end = aInput.EndReading();</span>
+<span class="lineNum">     478 </span><span class="lineCov">         44 :   auto start = aInput.BeginReading();</span>
+<span class="lineNum">     479 </span><span class="lineCov">         44 :   auto end = aInput.EndReading();</span>
 <a name="480"><span class="lineNum">     480 </span>            : </a>
 <span class="lineNum">     481 </span>            :   // Trim off leading and trailing invalid chars.
-<span class="lineNum">     482 </span><span class="lineCov">        200 :   auto charFilter = [](char c) { return static_cast&lt;uint8_t&gt;(c) &gt; 0x20; };</span>
-<span class="lineNum">     483 </span><span class="lineCov">         40 :   auto newStart = std::find_if(start, end, charFilter);</span>
-<span class="lineNum">     484 </span><span class="lineCov">         80 :   auto newEnd =</span>
-<span class="lineNum">     485 </span><span class="lineCov">        120 :       std::find_if(std::reverse_iterator&lt;decltype(end)&gt;(end),</span>
-<span class="lineNum">     486 </span><span class="lineCov">         40 :                    std::reverse_iterator&lt;decltype(newStart)&gt;(newStart),</span>
+<span class="lineNum">     482 </span><span class="lineCov">        220 :   auto charFilter = [](char c) { return static_cast&lt;uint8_t&gt;(c) &gt; 0x20; };</span>
+<span class="lineNum">     483 </span><span class="lineCov">         44 :   auto newStart = std::find_if(start, end, charFilter);</span>
+<span class="lineNum">     484 </span><span class="lineCov">         88 :   auto newEnd =</span>
+<span class="lineNum">     485 </span><span class="lineCov">        132 :       std::find_if(std::reverse_iterator&lt;decltype(end)&gt;(end),</span>
+<span class="lineNum">     486 </span><span class="lineCov">         44 :                    std::reverse_iterator&lt;decltype(newStart)&gt;(newStart),</span>
 <span class="lineNum">     487 </span>            :                    charFilter)
-<span class="lineNum">     488 </span><span class="lineCov">         40 :           .base();</span>
+<span class="lineNum">     488 </span><span class="lineCov">         44 :           .base();</span>
 <span class="lineNum">     489 </span>            : 
-<span class="lineNum">     490 </span><span class="lineCov">         40 :   const ASCIIMaskArray&amp; mask = ASCIIMask::MaskCRLFTab();</span>
-<span class="lineNum">     491 </span><span class="lineCov">        120 :   return NS_EscapeAndFilterURL(Substring(newStart, newEnd), aFlags, &amp;mask,</span>
-<span class="lineNum">     492 </span><span class="lineCov">         40 :                                aResult, fallible);</span>
-<span class="lineNum">     493 </span><span class="lineCov">         40 : }</span>
+<span class="lineNum">     490 </span><span class="lineCov">         44 :   const ASCIIMaskArray&amp; mask = ASCIIMask::MaskCRLFTab();</span>
+<span class="lineNum">     491 </span><span class="lineCov">        132 :   return NS_EscapeAndFilterURL(Substring(newStart, newEnd), aFlags, &amp;mask,</span>
+<span class="lineNum">     492 </span><span class="lineCov">         44 :                                aResult, fallible);</span>
+<span class="lineNum">     493 </span><span class="lineCov">         44 : }</span>
 <span class="lineNum">     494 </span>            : 
 <span class="lineNum">     495 </span>            : #if defined(XP_WIN)
 <span class="lineNum">     496 </span>            : bool net_NormalizeFileURL(const nsACString&amp; aURL, nsCString&amp; aResultBuf) {
@@ -590,13 +590,13 @@
 <span class="lineNum">     520 </span>            : // miscellaneous (i.e., stuff that should really be elsewhere)
 <a name="521"><span class="lineNum">     521 </span>            : //----------------------------------------------------------------------------</a>
 <span class="lineNum">     522 </span>            : 
-<span class="lineNum">     523 </span><span class="lineCov">       1850 : static inline void ToLower(char&amp; c) {</span>
-<span class="lineNum">     524 </span><span class="lineCov">       1850 :   if ((unsigned)(c - 'A') &lt;= (unsigned)('Z' - 'A')) c += 'a' - 'A';</span>
-<a name="525"><span class="lineNum">     525 </span><span class="lineCov">       1850 : }</span></a>
+<span class="lineNum">     523 </span><span class="lineCov">       1894 : static inline void ToLower(char&amp; c) {</span>
+<span class="lineNum">     524 </span><span class="lineCov">       1894 :   if ((unsigned)(c - 'A') &lt;= (unsigned)('Z' - 'A')) c += 'a' - 'A';</span>
+<a name="525"><span class="lineNum">     525 </span><span class="lineCov">       1894 : }</span></a>
 <span class="lineNum">     526 </span>            : 
-<span class="lineNum">     527 </span><span class="lineCov">        330 : void net_ToLowerCase(char* str, uint32_t length) {</span>
-<span class="lineNum">     528 </span><span class="lineCov">       6540 :   for (char* end = str + length; str &lt; end; ++str) ToLower(*str);</span>
-<a name="529"><span class="lineNum">     529 </span><span class="lineCov">        330 : }</span></a>
+<span class="lineNum">     527 </span><span class="lineCov">        343 : void net_ToLowerCase(char* str, uint32_t length) {</span>
+<span class="lineNum">     528 </span><span class="lineCov">       6711 :   for (char* end = str + length; str &lt; end; ++str) ToLower(*str);</span>
+<a name="529"><span class="lineNum">     529 </span><span class="lineCov">        343 : }</span></a>
 <span class="lineNum">     530 </span>            : 
 <span class="lineNum">     531 </span><span class="lineNoCov">          0 : void net_ToLowerCase(char* str) {</span>
 <span class="lineNum">     532 </span><span class="lineNoCov">          0 :   for (; *str; ++str) ToLower(*str);</span>
@@ -967,8 +967,8 @@
 <span class="lineNum">     897 </span><span class="lineNoCov">          0 :   return mozilla::net::rust_net_is_valid_ipv4_addr(&amp;aAddr);</span>
 <a name="898"><span class="lineNum">     898 </span>            : }</a>
 <span class="lineNum">     899 </span>            : 
-<span class="lineNum">     900 </span><span class="lineCov">         75 : bool net_IsValidIPv6Addr(const nsACString&amp; aAddr) {</span>
-<span class="lineNum">     901 </span><span class="lineCov">         75 :   return mozilla::net::rust_net_is_valid_ipv6_addr(&amp;aAddr);</span>
+<span class="lineNum">     900 </span><span class="lineCov">         87 : bool net_IsValidIPv6Addr(const nsACString&amp; aAddr) {</span>
+<span class="lineNum">     901 </span><span class="lineCov">         87 :   return mozilla::net::rust_net_is_valid_ipv6_addr(&amp;aAddr);</span>
 <span class="lineNum">     902 </span>            : }
 <a name="903"><span class="lineNum">     903 </span>            : </a>
 <a name="904"><span class="lineNum">     904 </span>            : namespace mozilla {</a>
