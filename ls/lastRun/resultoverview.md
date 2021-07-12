@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 31
+Total number of URLs: 36
 
 Total number of Parsers: 11
 
@@ -8,7 +8,7 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 28.42% 
+JavaScripturijs | 0 | 0 | 28.51% 
 JavaScriptwhatwg-url | 0 | 0 | 59.61% 
 Python | 0 | 0 | 43.0% 
 firefox | 1 | 1 | 70.6% 
@@ -17,7 +17,7 @@ chromium | 1 | 1 | 47.37%
 PHP | 4 | 3 | 47.41% 
 Go | 4 | 4 | 75.8% 
 C | 13 | 1 | 46.4% 
-Java | 16 | 12 | 38.0% 
+Java | 17 | 12 | 38.0% 
 Ruby | 21 | 20 | 72.02% 
 
 
@@ -67,8 +67,8 @@ Ruby | 21 | 20 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` F:/ < //M~ ```  <br> ``` F:/ < //{v ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: e ```  |  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` Q:/h:/ < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: r ```  |  ``` R:/ < /c:/ ```  <br> ``` R:/ < //[::eded] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: l ```  |  ``` L:/ < //[a5fa:edee::beae:beeb:252.252.254.253] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: r ```  |  ``` R:/ < //[::eded] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` N:/ < //+ ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: wss ```  |  ``` wss://[::]?񴰅 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: m ```  |  ``` m:/ < /?ｷ ```  <br> 
@@ -142,6 +142,7 @@ Ruby | 21 | 20 | 72.02%
  ``` ws://[::dced:ffda:dbea:eebf] ```  | Java <br>
  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  | Java <br>Ruby <br>
  ``` Q:/h:/ < / ```  | Java <br>
+ ``` R:/ < /c:/ ```  | Java <br>
  ``` file://ž2 ```  | C <br>Ruby <br>
  ``` file:/// < //[cae2:ebaa::feff:fadc:251.254.253.254] ```  | Ruby <br>
  ``` file:///+ ```  | C <br>Ruby <br>
@@ -167,8 +168,8 @@ Ruby | 21 | 20 | 72.02%
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 16 | 1 | 15
-chromium | 5 | 1 | 4
+firefox | 17 | 1 | 16
+chromium | 6 | 1 | 5
 
 [full browser comparison](./browseroverview.html)
 
@@ -177,6 +178,7 @@ chromium | 5 | 1 | 4
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
  ``` file:/// < //250.253.252.6 ```  | host |  ``` 250.253.252.6 ```  |  ```  ``` 
+ ``` file://250.253.251.250 < / ```  | host |  ``` 250.253.251.250 ```  |  ```  ``` 
  ``` F:/ < //{v ```  | host |  ``` {v ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` ws://[::]?⍭ ```  | query |  ``` ?%E2%8D%AD ```  |  ``` %E2%8D%AD ``` 
  ``` file://{ < / ```  | host |  ``` { ```  |  ```  ``` 
@@ -199,6 +201,7 @@ chromium | 5 | 1 | 4
  ``` file://{ < / ```  | host |  ``` { ```  |  ```  ``` 
  ``` file://{ ```  | host |  ``` { ```  |  ``` %7B ``` 
  ``` https://%3d@" ```  | host |  ``` " ```  |  ``` %22 ``` 
+ ``` file://250.253.251.250 < / ```  | host |  ``` 250.253.251.250 ```  |  ```  ``` 
  ``` F:/ < //{v ```  | host |  ``` {v ```  |  ``` %7Bv ``` 
 
 ## Coverage Reports 
