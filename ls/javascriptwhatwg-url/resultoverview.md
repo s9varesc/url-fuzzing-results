@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 6
+Total number of URLs: 11
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-JavaScripturijs | 0 | 0 | 23.74% 
-Cpp | 0 | 0 | 26.6% 
-JavaScriptwhatwg-url | 0 | 0 | 49.48% 
-chromium | 0 | 0 | 42.29% 
-Python | 0 | 0 | 38.0% 
-firefox | 1 | 1 | 66.6% 
-Go | 2 | 2 | 72.9% 
-C | 3 | 1 | 39.8% 
-PHP | 3 | 2 | 38.79% 
-Java | 3 | 3 | 38.0% 
-Ruby | 5 | 4 | 71.5% 
+JavaScripturijs | 0 | 0 | 25.39% 
+Cpp | 0 | 0 | 27.8% 
+JavaScriptwhatwg-url | 0 | 0 | 52.91% 
+chromium | 0 | 0 | 47.18% 
+Python | 0 | 0 | 40.0% 
+firefox | 1 | 1 | 70.6% 
+Go | 2 | 2 | 73.4% 
+PHP | 3 | 2 | 45.69% 
+Java | 6 | 5 | 38.0% 
+C | 7 | 1 | 42.0% 
+Ruby | 9 | 8 | 71.5% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -34,7 +34,7 @@ Ruby | 5 | 4 | 71.5%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` ws://[::]?⍭ ```  <br> ``` https://%3d@" ```  <br> ``` file://{ ```  <br> 
+ ``` 1 ```  |  ``` ws://[::]?⍭ ```  <br> ``` https://%3d@" ```  <br> ``` file://ž2 ```  <br> ``` file:///+ ```  <br> ``` file://{ ```  <br> ``` m:/ < /?ｷ ```  <br> ``` W:/? ```  <br> 
 
 
 ### JavaScripturijs
@@ -61,9 +61,11 @@ Ruby | 5 | 4 | 71.5%
 
  Exception Type | URLs 
  --- | --- 
- ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::]?⍭ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::]?⍭ ```  <br> ``` ws://[::]:65530 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: e ```  |  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` Q:/h:/ < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: m ```  |  ``` m:/ < /?ｷ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: w ```  |  ``` W:/? < / ```  <br> 
 
 
 ### Go
@@ -99,7 +101,11 @@ Ruby | 5 | 4 | 71.5%
  ``` URI must be ascii only "ws://[::]?\u236D" ```  |  ``` ws://[::]?⍭ ```  <br> 
  ``` bad URI(is not URI?):  ```  |  ``` https://%3d@" ```  <br> ``` file://{ ```  <br> 
  ``` bad URI(is not URI?): //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  |  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  <br> 
+ ``` URI must be ascii only "file://\u017E2" ```  |  ``` file://ž2 ```  <br> 
+ ``` URI must be ascii only "file:///+\uECD7" ```  |  ``` file:///+ ```  <br> 
  ``` bad URI(is not URI?): file://{ ```  |  ``` file://{ < / ```  <br> 
+ ``` URI must be ascii only "/?\uFF77" ```  |  ``` m:/ < /?ｷ ```  <br> 
+ ``` URI must be ascii only "W:/?\uE8AC" ```  |  ``` W:/? < / ```  <br> 
 
 
 ## URL Comparison 
@@ -110,14 +116,19 @@ Ruby | 5 | 4 | 71.5%
  ``` https://%3d@" ```  | firefox <br>C <br>PHP <br>Ruby <br>
  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  | Java <br>Ruby <br>
  ``` Q:/h:/ < / ```  | Java <br>
+ ``` file://ž2 ```  | C <br>Ruby <br>
+ ``` file:///+ ```  | C <br>Ruby <br>
  ``` file://{ ```  | C <br>PHP <br>Go <br>Ruby <br>
  ``` file://{ < / ```  | PHP <br>Go <br>Ruby <br>
+ ``` m:/ < /?ｷ ```  | C <br>Java <br>Ruby <br>
+ ``` W:/? < / ```  | Java <br>Ruby <br>
+ ``` ws://[::]:65530 ```  | Java <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 5 | 1 | 4
+firefox | 7 | 1 | 6
 chromium | 3 | 0 | 3
 
 [full browser comparison](./browseroverview.html)
@@ -130,6 +141,8 @@ chromium | 3 | 0 | 3
  ``` file://{ < / ```  | host |  ``` { ```  |  ```  ``` 
  ``` file://{ ```  | host |  ``` { ```  |  ```  ``` 
  ``` e:/ < //[eada:fffc:eede:fdeb:adbc:edce:96.254.250.254] ```  | host |  ``` eada:fffc:eede:fdeb:adbc:edce:60fe:fafe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://ž2 ```  | host |  ``` xn--2-soa ```  |  ```  ``` 
+ ``` m:/ < /?ｷ ```  | query |  ``` ?%EF%BD%B7 ```  |  ``` %EF%BD%B7 ``` 
 
 ### chromium
 
