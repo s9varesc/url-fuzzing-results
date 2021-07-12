@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 1
+Total number of URLs: 4
 
 Total number of Parsers: 11
 
@@ -8,17 +8,17 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 48.1% 
-JavaScripturijs | 0 | 0 | 17.07% 
-Cpp | 0 | 0 | 10.6% 
+JavaScripturijs | 0 | 0 | 17.33% 
+Cpp | 0 | 0 | 16.0% 
 Go | 0 | 0 | 68.5% 
-chromium | 0 | 0 | 13.53% 
 Python | 0 | 0 | 32.0% 
-C | 1 | 1 | 19.2% 
-PHP | 1 | 1 | 34.48% 
-Java | 1 | 1 | 36.0% 
-JavaScriptwhatwg-url | 1 | 1 | 25.78% 
-Ruby | 1 | 1 | 63.21% 
+firefox | 2 | 1 | 48.1% 
+C | 2 | 1 | 24.7% 
+PHP | 2 | 2 | 41.38% 
+chromium | 2 | 1 | 13.53% 
+JavaScriptwhatwg-url | 3 | 1 | 29.66% 
+Ruby | 3 | 1 | 67.88% 
+Java | 4 | 3 | 36.0% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -27,13 +27,14 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
+ ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[::deca:eabe:bbdc:251.252.90.251] ```  <br> ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  <br> 
 
 
 ### C
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` 1 ```  |  ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  <br> ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
 
 
 ### JavaScripturijs
@@ -52,6 +53,7 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
+ ``` Host `[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]` is invalid : the IP host is malformed ```  |  ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  <br> 
  ``` Host `[::dbca:eafc:acca:255.255.254.243%25_]` is invalid : the IP host is malformed ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
 
 
@@ -59,7 +61,9 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
+ ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[::deca:eabe:bbdc:251.252.90.251] ```  <br> ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: l ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` d://[::8ceb:cfcd] ```  <br> 
 
 
 ### Go
@@ -72,13 +76,14 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` Invalid URL:  ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` Invalid URL:  ```  |  ``` //[::deca:eabe:bbdc:251.252.90.251] ```  <br> ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  <br> ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
 
 
 ### chromium
 
  Exception Type | URLs 
  --- | --- 
+ ``` invalid URL ```  |  ``` //[::deca:eabe:bbdc:251.252.90.251] ```  <br> ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  <br> 
 
 
 ### Python
@@ -91,21 +96,24 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` bad URI(is not URI?):  ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` bad URI(is not URI?):  ```  |  ``` //[::deca:eabe:bbdc:251.252.90.251] ```  <br> ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  <br> ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
 
 
 ## URL Comparison 
 
  URL | Parsers 
  --- | --- 
+ ``` //[::deca:eabe:bbdc:251.252.90.251] ```  | firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
+ ``` //[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  | C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br>
+ ``` d://[::8ceb:cfcd] ```  | Java <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 0 | 0 | 0
-chromium | 0 | 0 | 0
+firefox | 2 | 2 | 0
+chromium | 2 | 2 | 0
 
 [full browser comparison](./browseroverview.html)
 
