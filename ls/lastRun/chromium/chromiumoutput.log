@@ -17,8 +17,8 @@ Expected equality of these values:
     Which is: ""
 {"url":"file://,=</", "error":{"component":"host", "expected":",=", "actual":""}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:32: Failure
 Value of: parsed_url.is_valid()
@@ -26,7 +26,15 @@ Value of: parsed_url.is_valid()
 Expected: true
 {"url":"F:/<//~!", "exception":"invalid URL"}
 Stack trace:
-#0 0x55d8462d5bc6 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:32: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"J:/<//;", "exception":"invalid URL"}
+Stack trace:
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -36,8 +44,8 @@ Expected equality of these values:
     Which is: ""
 {"url":"file://[::]/酜</", "error":{"component":"host", "expected":"[::]", "actual":""}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -47,8 +55,8 @@ Expected equality of these values:
     Which is: ""
 {"url":"R://[dfaa::]", "error":{"component":"host", "expected":"[dfaa::]", "actual":""}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -58,8 +66,19 @@ Expected equality of these values:
     Which is: ""
 {"url":"n://[::255.250.241.250]", "error":{"component":"host", "expected":"[::fffa:f1fa]", "actual":""}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: "[::bdbc:dffe:fffe]"
+  parsed_url.host()
+    Which is: ""
+{"url":"file://[::bdbc:223.254.255.254]</", "error":{"component":"host", "expected":"[::bdbc:dffe:fffe]", "actual":""}}
+Stack trace:
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -69,8 +88,30 @@ Expected equality of these values:
     Which is: ""
 {"url":"d://[fdbe:ccab::acdf:daef:253.251.251.255]", "error":{"component":"host", "expected":"[fdbe:ccab::acdf:daef:fdfb:fbff]", "actual":""}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: "[3eec:bdec::fcfa:fffc]"
+  parsed_url.host()
+    Which is: ""
+{"url":"file://[3eec:bdec::252.250.255.252]</", "error":{"component":"host", "expected":"[3eec:bdec::fcfa:fffc]", "actual":""}}
+Stack trace:
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: ",p"
+  parsed_url.host()
+    Which is: "%2Cp"
+{"url":"n:/<//,p", "error":{"component":"host", "expected":",p", "actual":"%2Cp"}}
+Stack trace:
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -80,8 +121,8 @@ Expected equality of these values:
     Which is: "%24"
 {"url":"wss://$</", "error":{"component":"host", "expected":"$", "actual":"%24"}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -91,8 +132,16 @@ Expected equality of these values:
     Which is: "%295"
 {"url":"file://)5", "error":{"component":"host", "expected":")5", "actual":"%295"}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:32: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"v://[ceda:eaab:cafc:afbb:bfac:fdaf:254.253.253.253]</", "exception":"invalid URL"}
+Stack trace:
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:32: Failure
 Value of: parsed_url.is_valid()
@@ -100,7 +149,18 @@ Value of: parsed_url.is_valid()
 Expected: true
 {"url":"B://[::deee:202.255.253.255]</", "exception":"invalid URL"}
 Stack trace:
-#0 0x55d8462d5bc6 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: "[e5da:febd::fcad:fcfb:fcfe]"
+  parsed_url.host()
+    Which is: ""
+{"url":"X://[e5da:febd::fcad:252.251.252.254]", "error":{"component":"host", "expected":"[e5da:febd::fcad:fcfb:fcfe]", "actual":""}}
+Stack trace:
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -110,8 +170,8 @@ Expected equality of these values:
     Which is: "%2C"
 {"url":"https://.@,", "error":{"component":"host", "expected":",", "actual":"%2C"}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -121,8 +181,8 @@ Expected equality of these values:
     Which is: "%22"
 {"url":"file://"", "error":{"component":"host", "expected":""", "actual":"%22"}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -132,8 +192,24 @@ Expected equality of these values:
     Which is: "%29"
 {"url":"https://[::]<//%@)", "error":{"component":"host", "expected":")", "actual":"%29"}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:32: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"d:/<///􏾐", "exception":"invalid URL"}
+Stack trace:
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:35: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"https://;~", "exception":"invalid URL"}
+Stack trace:
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -143,8 +219,27 @@ Expected equality of these values:
     Which is: "%60"
 {"url":"https://[::]<//M@`", "error":{"component":"host", "expected":"`", "actual":"%60"}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: "`$"
+  parsed_url.host()
+    Which is: "%60%24"
+{"url":"file://`$", "error":{"component":"host", "expected":"`$", "actual":"%60%24"}}
+Stack trace:
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:32: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"z://[abce::]</", "exception":"invalid URL"}
+Stack trace:
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -154,8 +249,8 @@ Expected equality of these values:
     Which is: ""
 {"url":"X://[d1db:aace::]", "error":{"component":"host", "expected":"[d1db:aace::]", "actual":""}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -165,8 +260,8 @@ Expected equality of these values:
     Which is: "b%24"
 {"url":"http://b$", "error":{"component":"host", "expected":"b$", "actual":"b%24"}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:32: Failure
 Value of: parsed_url.is_valid()
@@ -174,7 +269,7 @@ Value of: parsed_url.is_valid()
 Expected: true
 {"url":"o://[::5bde]</", "exception":"invalid URL"}
 Stack trace:
-#0 0x55d8462d5bc6 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8e8b86 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -184,20 +279,20 @@ Expected equality of these values:
     Which is: ""
 {"url":"o://[dcbb:ddbb::ddbb]", "error":{"component":"host", "expected":"[dcbb:ddbb::ddbb]", "actual":""}}
 Stack trace:
-#0 0x55d8462d8005 url::(anonymous namespace)::CheckComponents()
-#1 0x55d8462d5d28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55794d8eafc5 url::(anonymous namespace)::CheckComponents()
+#1 0x55794d8e8ce8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
-[  FAILED  ] URLParser.Parsing (8 ms)
-[----------] 1 test from URLParser (8 ms total)
+[  FAILED  ] URLParser.Parsing (13 ms)
+[----------] 1 test from URLParser (14 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (9 ms total)
+[==========] 1 test from 1 test suite ran. (14 ms total)
 [  PASSED  ] 0 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] URLParser.Parsing
 
  1 FAILED TEST
-[1/1] URLParser.Parsing (8 ms)
+[1/1] URLParser.Parsing (13 ms)
 1 test failed:
-    URLParser.Parsing (../../url/url_parsing_unittest.cc:124)
-Tests took 1 seconds.
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:174)
+Tests took 0 seconds.
