@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 10</p>
+<p>Total number of URLs: 30</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -17,66 +17,66 @@
 <td>firefox</td>
 <td>0</td>
 <td>0</td>
-<td>66.6%</td>
+<td>70.9%</td>
 </tr>
 <tr>
 <td>JavaScripturijs</td>
 <td>0</td>
 <td>0</td>
-<td>23.74%</td>
+<td>27.9%</td>
 </tr>
 <tr>
 <td>Cpp</td>
 <td>0</td>
 <td>0</td>
-<td>28.9%</td>
+<td>34.6%</td>
 </tr>
 <tr>
 <td>JavaScriptwhatwg-url</td>
 <td>0</td>
 <td>0</td>
-<td>52.76%</td>
+<td>61.7%</td>
 </tr>
 <tr>
 <td>Python</td>
 <td>0</td>
 <td>0</td>
-<td>41.0%</td>
-</tr>
-<tr>
-<td>C</td>
-<td>1</td>
-<td>1</td>
-<td>42.9%</td>
+<td>42.0%</td>
 </tr>
 <tr>
 <td>Go</td>
 <td>1</td>
 <td>1</td>
-<td>69.5%</td>
+<td>70.0%</td>
 </tr>
 <tr>
 <td>chromium</td>
 <td>1</td>
 <td>1</td>
-<td>42.29%</td>
+<td>47.74%</td>
 </tr>
 <tr>
 <td>PHP</td>
-<td>3</td>
-<td>3</td>
-<td>41.38%</td>
+<td>4</td>
+<td>4</td>
+<td>43.1%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>5</td>
+<td>1</td>
+<td>46.8%</td>
 </tr>
 <tr>
 <td>Ruby</td>
-<td>4</td>
-<td>4</td>
+<td>13</td>
+<td>13</td>
 <td>72.02%</td>
 </tr>
 <tr>
 <td>Java</td>
-<td>5</td>
-<td>3</td>
+<td>16</td>
+<td>10</td>
 <td>39.0%</td>
 </tr>
 </tbody>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td><code>https://[::] &lt; //M@`</code>  <br></td>
+<td><code>wss://[::]/./</code>  <br> <code>file:///#󥓈</code>  <br> <code>file://[::]/%2e%2e/󬱰</code>  <br> <code>file:/// &lt; 햐</code>  <br> <code>https://[::] &lt; //M@`</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -152,6 +152,10 @@
 </thead>
 <tbody>
 <tr>
+<td><code>The uri `file:///#%F3%A5%93%88` is invalid for the `file` scheme.</code></td>
+<td><code>file:///#󥓈 &lt; /</code>  <br></td>
+</tr>
+<tr>
 <td><code>The uri `` is invalid for the `file` scheme.</code></td>
 <td><code>file:///#@</code>  <br></td>
 </tr>
@@ -176,11 +180,39 @@
 <tbody>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: wss</code></td>
-<td><code>wss://[c6fe::252.251.250.250]</code>  <br> <code>wss://[::7cbc:253.250.252.255] &lt; /</code>  <br></td>
+<td><code>wss://[::]/./</code>  <br> <code>wss://[c6fe::252.251.250.250]</code>  <br> <code>wss://[::7cbc:253.250.252.255] &lt; /</code>  <br> <code>wss://[::] &lt; //254.255.177.255</code>  <br> <code>wss://[::]:65341</code>  <br> <code>wss://[::] &lt; /B:/</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: x</code></td>
+<td><code>X://[d1db:aace::]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: t</code></td>
+<td><code>t:/ &lt; //T</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: f</code></td>
 <td><code>F:/ &lt; //~!</code>  <br> <code>f:/ &lt; //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: p</code></td>
+<td><code>P:/ &lt; //[::fbaa:ceec:250.254.149.251]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: e</code></td>
+<td><code>e:/ &lt; %2e////=</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: ws</code></td>
+<td><code>ws://[::] &lt; //[::babe:dcfb:ed7d:abbd]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: j</code></td>
+<td><code>j:/ &lt; //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: d</code></td>
+<td><code>d://[fdbe:ccab::acdf:daef:253.251.251.255]</code>  <br></td>
 </tr>
 <tr>
 <td><code>java.net.MalformedURLException: unknown protocol: r</code></td>
@@ -258,12 +290,48 @@
 </thead>
 <tbody>
 <tr>
+<td><code>URI must be ascii only "wss://[::]/./\uEB09"</code></td>
+<td><code>wss://[::]/./</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "file:///#\u{E54C8}"</code></td>
+<td><code>file:///#󥓈 &lt; /</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::3eae:befd:250.255.253.253]</code></td>
+<td><code>file:/// &lt; //[::3eae:befd:250.255.253.253]</code>  <br></td>
+</tr>
+<tr>
 <td><code>bad URI(is not URI?): //[::feeb]</code></td>
 <td><code>file:/// &lt; //[::feeb]</code>  <br></td>
 </tr>
 <tr>
+<td><code>bad URI(is not URI?): //[::fbaa:ceec:250.254.149.251]</code></td>
+<td><code>P:/ &lt; //[::fbaa:ceec:250.254.149.251]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::babe:dcfb:ed7d:abbd]</code></td>
+<td><code>ws://[::] &lt; //[::babe:dcfb:ed7d:abbd]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251]</code></td>
+<td><code>j:/ &lt; //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251]</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "file://[::]/%2e%2e/\u{ECC70}"</code></td>
+<td><code>file://[::]/%2e%2e/󬱰</code>  <br></td>
+</tr>
+<tr>
+<td><code>URI must be ascii only "\uD590"</code></td>
+<td><code>file:/// &lt; 햐</code>  <br></td>
+</tr>
+<tr>
 <td><code>bad URI(is not URI?): //[::fccf:edda:cceb:a2ff]</code></td>
 <td><code>http://[::] &lt; //[::fccf:edda:cceb:a2ff]</code>  <br></td>
+</tr>
+<tr>
+<td><code>bad URI(is not URI?): //[::165.255.253.255]</code></td>
+<td><code>https://[::] &lt; //[::165.255.253.255]</code>  <br></td>
 </tr>
 <tr>
 <td><code>bad URI(is not URI?): //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]</code></td>
@@ -285,6 +353,22 @@
 </thead>
 <tbody>
 <tr>
+<td><code>wss://[::]/./</code></td>
+<td>C <br>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>X://[d1db:aace::]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>file:///#󥓈 &lt; /</code></td>
+<td>PHP <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>t:/ &lt; //T</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
 <td><code>wss://[c6fe::252.251.250.250]</code></td>
 <td>Java <br></td>
 </tr>
@@ -293,8 +377,28 @@
 <td>Java <br>chromium <br></td>
 </tr>
 <tr>
+<td><code>file:/// &lt; //[::3eae:befd:250.255.253.253]</code></td>
+<td>Ruby <br></td>
+</tr>
+<tr>
 <td><code>file:/// &lt; //[::feeb]</code></td>
 <td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>P:/ &lt; //[::fbaa:ceec:250.254.149.251]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>e:/ &lt; %2e////=</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>ws://[::] &lt; //[::babe:dcfb:ed7d:abbd]</code></td>
+<td>Java <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>j:/ &lt; //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251]</code></td>
+<td>Java <br>Ruby <br></td>
 </tr>
 <tr>
 <td><code>file:///#@</code></td>
@@ -305,8 +409,32 @@
 <td>Java <br></td>
 </tr>
 <tr>
+<td><code>file://[::]/%2e%2e/󬱰</code></td>
+<td>C <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; 햐</code></td>
+<td>C <br>Ruby <br></td>
+</tr>
+<tr>
 <td><code>http://[::] &lt; //[::fccf:edda:cceb:a2ff]</code></td>
 <td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>https://[::] &lt; //[::165.255.253.255]</code></td>
+<td>Ruby <br></td>
+</tr>
+<tr>
+<td><code>wss://[::] &lt; //254.255.177.255</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>wss://[::]:65341</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>wss://[::] &lt; /B:/</code></td>
+<td>Java <br></td>
 </tr>
 <tr>
 <td><code>f:/ &lt; //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]</code></td>
@@ -319,6 +447,10 @@
 <tr>
 <td><code>file:/// &lt; /./////%2e%2e</code></td>
 <td>PHP <br></td>
+</tr>
+<tr>
+<td><code>d://[fdbe:ccab::acdf:daef:253.251.251.255]</code></td>
+<td>Java <br></td>
 </tr>
 <tr>
 <td><code>R://[dfaa::]</code></td>
@@ -339,15 +471,15 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>5</td>
+<td>13</td>
 <td>0</td>
-<td>5</td>
+<td>13</td>
 </tr>
 <tr>
 <td>chromium</td>
-<td>3</td>
+<td>6</td>
 <td>1</td>
-<td>2</td>
+<td>5</td>
 </tr>
 </tbody>
 </table>
@@ -363,6 +495,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>t:/ &lt; //T</code></td>
+<td>host</td>
+<td><code>t</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>d://[fdbe:ccab::acdf:daef:253.251.251.255]</code></td>
+<td>host</td>
+<td><code>fdbe:ccab::acdf:daef:fdfb:fbff</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
 <tr>
 <td><code>file:/// &lt; //[::feeb]</code></td>
 <td>host</td>
@@ -382,9 +526,45 @@
 <td><code>NS_ERROR_FAILURE 2147500037</code></td>
 </tr>
 <tr>
+<td><code>file://,= &lt; /</code></td>
+<td>host</td>
+<td><code>,=</code></td>
+<td><code></code></td>
+</tr>
+<tr>
 <td><code>f:/ &lt; //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]</code></td>
 <td>host</td>
 <td><code>acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //[::3eae:befd:250.255.253.253]</code></td>
+<td>host</td>
+<td><code>::3eae:befd:faff:fdfd</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>file://[::]/%2e%2e/󬱰</code></td>
+<td>host</td>
+<td><code>::</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>P:/ &lt; //[::fbaa:ceec:250.254.149.251]</code></td>
+<td>host</td>
+<td><code>::fbaa:ceec:fafe:95fb</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>X://[d1db:aace::]</code></td>
+<td>host</td>
+<td><code>d1db:aace::</code></td>
+<td><code>NS_ERROR_FAILURE 2147500037</code></td>
+</tr>
+<tr>
+<td><code>j:/ &lt; //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251]</code></td>
+<td>host</td>
+<td><code>efbb:efbc:eaff:cbaa:aebf:cada:fe43:fffb</code></td>
 <td><code>NS_ERROR_FAILURE 2147500037</code></td>
 </tr>
 <tr>
@@ -407,9 +587,21 @@
 </thead>
 <tbody>
 <tr>
+<td><code>file://,= &lt; /</code></td>
+<td>host</td>
+<td><code>,=</code></td>
+<td><code></code></td>
+</tr>
+<tr>
 <td><code>R://[dfaa::]</code></td>
 <td>host</td>
 <td><code>[dfaa::]</code></td>
+<td><code></code></td>
+</tr>
+<tr>
+<td><code>d://[fdbe:ccab::acdf:daef:253.251.251.255]</code></td>
+<td>host</td>
+<td><code>[fdbe:ccab::acdf:daef:fdfb:fbff]</code></td>
 <td><code></code></td>
 </tr>
 <tr>
@@ -417,6 +609,12 @@
 <td>host</td>
 <td><code>`</code></td>
 <td><code>%60</code></td>
+</tr>
+<tr>
+<td><code>X://[d1db:aace::]</code></td>
+<td>host</td>
+<td><code>[d1db:aace::]</code></td>
+<td><code></code></td>
 </tr>
 </tbody>
 </table>
