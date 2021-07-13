@@ -12,15 +12,15 @@
 <tbody>
 <tr>
 <td>parsed successfully</td>
-<td>(218/430)</td>
-<td>(232/430)</td>
-<td>(347/430)</td>
+<td>(236/460)</td>
+<td>(251/460)</td>
+<td>(372/460)</td>
 </tr>
 <tr>
 <td>rejected</td>
-<td>(0/430)</td>
-<td>(1/430)</td>
-<td>(19/430)</td>
+<td>(0/460)</td>
+<td>(1/460)</td>
+<td>(21/460)</td>
 </tr>
 <tr>
 <td>also rejected by whatwg</td>
@@ -31,18 +31,18 @@
 <tr>
 <td>component errors</td>
 <td></td>
-<td>(197/430)</td>
-<td>(64/430)</td>
+<td>(208/460)</td>
+<td>(67/460)</td>
 </tr>
 <tr>
 <td>equal component errors</td>
-<td>(44/430)</td>
+<td>(47/460)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>unequal component errors</td>
-<td>(7/430)</td>
+<td>(7/460)</td>
 <td></td>
 <td></td>
 </tr>
@@ -54,13 +54,13 @@
 </tr>
 <tr>
 <td>overall equal results</td>
-<td>(262/430)</td>
+<td>(283/460)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>overall unequal results</td>
-<td>(168/430)</td>
+<td>(177/460)</td>
 <td></td>
 <td></td>
 </tr>
@@ -103,6 +103,16 @@
 </tr>
 <tr>
 <td><code>http://[::] &lt; @𸻾</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //!_</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>!_</code>"</td>
+<td class="cfail"> host is "<code>%21_</code>" != "<code>!_</code>"</td>
+</tr>
+<tr>
+<td><code>G0:/</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -197,7 +207,17 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>S:/ &lt; %2e////&amp;</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>wss://[::] &lt; //[::5bfa:eeec]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file:/// &lt; /#%60</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -249,6 +269,11 @@
 <tr>
 <td><code>https://[::]/./%2e%2e</code></td>
 <td class="cfail"> filePath is "<code>/%2e%2e</code>" != "<code>/</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file:/// &lt; //y3</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>y3</code>"</td>
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
@@ -338,6 +363,11 @@
 </tr>
 <tr>
 <td><code>file:///%7b￧</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>https://[::] &lt; //255.32.252.254</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -498,6 +528,11 @@
 </tr>
 <tr>
 <td><code>https://[::] &lt; //[fc5b::facf]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>https://[::] &lt; //[dcf4:dfdf::bccb]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -817,6 +852,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>t:/? &lt; /</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>ws://[::] &lt; //[::babe:dcfb:ed7d:abbd]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -880,6 +920,11 @@
 <td><code>s:/ &lt; //D</code></td>
 <td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>d</code>"</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>https://[::] &lt; //:S@~</code></td>
+<td class="psucc"> PASS</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td><code>file:///#@</code></td>
@@ -1007,6 +1052,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>http://[::] &lt; </code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>ws://[::] &lt; //[::daaf:cfca:255.22.254.252]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -1072,6 +1122,11 @@
 <td class="pfail"> invalid URL</td>
 </tr>
 <tr>
+<td><code>A:/ &lt; //[::e9cf:cdce]</code></td>
+<td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>::e9cf:cdce</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>file://[::9dff:afda:251.255.250.252]</code></td>
 <td class="cfail"> host is "<code></code>" != "<code>::9dff:afda:fbff:fafc</code>"</td>
 <td class="psucc"> PASS</td>
@@ -1089,6 +1144,11 @@
 <tr>
 <td><code>https://[::]?㡑</code></td>
 <td class="cfail"> query is "<code>%E3%A1%91</code>" != "<code>?%E3%A1%91</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>G:/ &lt; //[::fdfa:efbf:caab:1dea]</code></td>
+<td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>::fdfa:efbf:caab:1dea</code>"</td>
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
@@ -1242,6 +1302,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>file:/// &lt; /%2e/%</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>ws://[::] &lt; V</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -1293,6 +1358,11 @@
 </tr>
 <tr>
 <td><code>P:/../[</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>wss://[::] &lt; //251.254.2.251</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -1407,9 +1477,19 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>q:/ &lt; ..//󜐢</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>https://[::] &lt; //[e2ae:cddc::250.255.252.255]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file://[dac2:dadf::eadd:251.255.253.254] &lt; /</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>dac2:dadf::eadd:fbff:fdfe</code>"</td>
+<td class="cfail"> host is "<code></code>" != "<code>[dac2:dadf::eadd:fbff:fdfe]</code>"</td>
 </tr>
 <tr>
 <td><code>https://[::] &lt; //[::165.255.253.255]</code></td>
@@ -1447,8 +1527,23 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>https://[d7ef:eadb::253.255.250.254]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>t:/ &lt; /$񳗓</code></td>
 <td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file://[::]/%2e.//ﻍ</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>::</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file://[bddc:ceda:eaab:cdaf:eeee:bdec:ad6f:cdeb]</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>bddc:ceda:eaab:cdaf:eeee:bdec:ad6f:cdeb</code>"</td>
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
@@ -1492,6 +1587,11 @@
 <td class="cfail"> host is "<code>%7D</code>" != "<code>%7d</code>"</td>
 </tr>
 <tr>
+<td><code>file://255.250.250.57</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>255.250.250.57</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>https://[::]?:</code></td>
 <td class="cfail"> query is "<code>:</code>" != "<code>?:</code>"</td>
 <td class="psucc"> PASS</td>
@@ -1517,6 +1617,11 @@
 <td class="cfail"> host is "<code>%29</code>" != "<code>)</code>"</td>
 </tr>
 <tr>
+<td><code>file:///#鵩</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>I:/ &lt; /%60*</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -1538,6 +1643,11 @@
 </tr>
 <tr>
 <td><code>Z:///,􏛖</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>https://[::] &lt; //[cc6f:ecba::253.254.253.254]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -1602,6 +1712,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>http://[::] &lt; //[dbac::]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>ws://[::cfed:254.251.89.255]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -1657,6 +1772,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>file://[a6be:ffea::aeac:253.254.251.252]</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>a6be:ffea::aeac:fdfe:fbfc</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>https://[::fba8:cabf]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -1680,6 +1800,11 @@
 <td><code>z:/ &lt; /ﾚ</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>file://&amp;!</code></td>
+<td class="cfail"> host is "<code></code>" != "<code>&amp;!</code>"</td>
+<td class="cfail"> host is "<code>%26%21</code>" != "<code>&amp;!</code>"</td>
 </tr>
 <tr>
 <td><code>https://[::] &lt; //[::252.252.215.252]</code></td>
@@ -1762,6 +1887,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>ftp://[c7ce:cbed::acfd:252.252.254.252]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>file:///^</code></td>
 <td class="cfail"> filePath is "<code>/%5E</code>" != "<code>/^</code>"</td>
 <td class="cfail"> path is "<code>/%5E</code>" != "<code>/^</code>"</td>
@@ -1775,6 +1905,11 @@
 <td><code>a:/ &lt; //[::251.253.251.215]</code></td>
 <td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>::fbfd:fbd7</code>"</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>L:/ &lt; ///^.</code></td>
+<td class="cfail"> filePath is "<code>//^./</code>" != "<code>/^.</code>"</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td><code>file://U</code></td>
@@ -1824,6 +1959,11 @@
 <tr>
 <td><code>file://[ffef:bfbd:ebfa:dcba:fcae:afff:befe:bdc5]</code></td>
 <td class="cfail"> host is "<code></code>" != "<code>ffef:bfbd:ebfa:dcba:fcae:afff:befe:bdc5</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>ws://[::] &lt; //[ba5b:ebad::fceb:255.252.251.250]</code></td>
+<td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
@@ -2002,6 +2142,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>ftp://[a9ca:eeee:eadd:fffc:dafe:ccdd:252.252.255.251]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>https://[::] &lt; //M@`</code></td>
 <td class="psucc"> PASS</td>
 <td class="cfail"> host is "<code>%60</code>" != "<code>`</code>"</td>
@@ -2154,6 +2299,11 @@
 <tr>
 <td><code>w:/ &lt; //[::aeae:fcae:86.253.250.253]</code></td>
 <td class="cfail"> host is "<code>NS_ERROR_FAILURE 2147500037</code>" != "<code>::aeae:fcae:56fd:fafd</code>"</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>ws://[fc3b::]</code></td>
+<td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
