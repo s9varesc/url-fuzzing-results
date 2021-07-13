@@ -1,0 +1,412 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
+<h1>Results</h1>
+<p>Total number of URLs: 10</p>
+<p>Total number of Parsers: 11</p>
+<h2>Parser Comparison</h2>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Parsername</th>
+<th>Number of Exceptions</th>
+<th>Number of Different Exceptions</th>
+<th>Code Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScripturijs</td>
+<td>0</td>
+<td>0</td>
+<td>18.63%</td>
+</tr>
+<tr>
+<td>Cpp</td>
+<td>0</td>
+<td>0</td>
+<td>18.5%</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>0</td>
+<td>0</td>
+<td>32.0%</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>1</td>
+<td>1</td>
+<td>72.9%</td>
+</tr>
+<tr>
+<td>firefox</td>
+<td>5</td>
+<td>1</td>
+<td>48.1%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>5</td>
+<td>1</td>
+<td>37.9%</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>5</td>
+<td>1</td>
+<td>13.72%</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>6</td>
+<td>6</td>
+<td>50.0%</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>6</td>
+<td>1</td>
+<td>68.91%</td>
+</tr>
+<tr>
+<td>JavaScriptwhatwg-url</td>
+<td>9</td>
+<td>1</td>
+<td>29.51%</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>10</td>
+<td>6</td>
+<td>36.0%</td>
+</tr>
+</tbody>
+</table>
+<p><em>note:</em>  base and relative URLs are represented as "base&lt;relative" in this document for readabilty, the actually parsed inputs do not contain "&lt;" </p>
+<h3>firefox</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NS_ERROR_MALFORMED_URI 2152398858</code></td>
+<td><code>//%2f</code>  <br> <code>//[::aada:255.255.255.214%25_]</code>  <br> <code>//#m</code>  <br> <code>//@/%cd</code>  <br> <code>//[cfde::dbbc:beec:ffec:beda:252.251.0.254]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>C</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td><code>Q://[::250.251.52.254%25-]</code>  <br> <code>F://[::efca:adcf:227.251.252.254%25-]</code>  <br> <code>D://[debc::eebc:dadd:defe:adec:255.252.128.250%25~]</code>  <br> <code>P://[::175.255.252.251%25~]</code>  <br> <code>//[::aada:255.255.255.214%25_]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>JavaScripturijs</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Cpp</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>PHP</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Host `[::250.251.52.254%25-]` is invalid : the IP host is malformed</code></td>
+<td><code>Q://[::250.251.52.254%25-]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::efca:adcf:227.251.252.254%25-]` is invalid : the IP host is malformed</code></td>
+<td><code>F://[::efca:adcf:227.251.252.254%25-]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[debc::eebc:dadd:defe:adec:255.252.128.250%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>D://[debc::eebc:dadd:defe:adec:255.252.128.250%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `%2f` is invalid : the host is not a valid registered name</code></td>
+<td><code>//%2f</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::175.255.252.251%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>P://[::175.255.252.251%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::aada:255.255.255.214%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>//[::aada:255.255.255.214%25_]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>Java</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: q</code></td>
+<td><code>Q://[::250.251.52.254%25-]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: f</code></td>
+<td><code>F://[::efca:adcf:227.251.252.254%25-]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: d</code></td>
+<td><code>D://[debc::eebc:dadd:defe:adec:255.252.128.250%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: no protocol:</code></td>
+<td><code>//%2f</code>  <br> <code>//[::aada:255.255.255.214%25_]</code>  <br> <code>//#m</code>  <br> <code>//@/%cd</code>  <br> <code>//[cfde::dbbc:beec:ffec:beda:252.251.0.254]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: p</code></td>
+<td><code>P://[::175.255.252.251%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: t</code></td>
+<td><code>t://-</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>Go</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>parse : invalid URL escape "%2f"</code></td>
+<td><code>//%2f</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>JavaScriptwhatwg-url</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Invalid URL:</code></td>
+<td><code>Q://[::250.251.52.254%25-]</code>  <br> <code>F://[::efca:adcf:227.251.252.254%25-]</code>  <br> <code>D://[debc::eebc:dadd:defe:adec:255.252.128.250%25~]</code>  <br> <code>//%2f</code>  <br> <code>P://[::175.255.252.251%25~]</code>  <br> <code>//[::aada:255.255.255.214%25_]</code>  <br> <code>//#m</code>  <br> <code>//@/%cd</code>  <br> <code>//[cfde::dbbc:beec:ffec:beda:252.251.0.254]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>chromium</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invalid URL</code></td>
+<td><code>//%2f</code>  <br> <code>//[::aada:255.255.255.214%25_]</code>  <br> <code>//#m</code>  <br> <code>//@/%cd</code>  <br> <code>//[cfde::dbbc:beec:ffec:beda:252.251.0.254]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>Python</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Ruby</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bad URI(is not URI?):</code></td>
+<td><code>Q://[::250.251.52.254%25-]</code>  <br> <code>F://[::efca:adcf:227.251.252.254%25-]</code>  <br> <code>D://[debc::eebc:dadd:defe:adec:255.252.128.250%25~]</code>  <br> <code>P://[::175.255.252.251%25~]</code>  <br> <code>//[::aada:255.255.255.214%25_]</code>  <br> <code>//[cfde::dbbc:beec:ffec:beda:252.251.0.254]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2>URL Comparison</h2>
+<table class="simpletable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Parsers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Q://[::250.251.52.254%25-]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>F://[::efca:adcf:227.251.252.254%25-]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>D://[debc::eebc:dadd:defe:adec:255.252.128.250%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//%2f</code></td>
+<td>firefox <br>PHP <br>Java <br>Go <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>P://[::175.255.252.251%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::aada:255.255.255.214%25_]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>t://-</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//#m</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>//@/%cd</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>//[cfde::dbbc:beec:ffec:beda:252.251.0.254]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+</tbody>
+</table>
+<h2>Browsers</h2>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Browser</th>
+<th>Overall Failures</th>
+<th>Parsing Exceptions</th>
+<th>Verification Errors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firefox</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>5</td>
+<td>5</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><a href="./browseroverview.html">full browser comparison</a></p>
+<h3>firefox</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Component</th>
+<th>Expected Value</th>
+<th>Actual Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>chromium</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Component</th>
+<th>Expected Value</th>
+<th>Actual Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Coverage Reports</h2>
+<h3>Browsers</h3>
+<h4>Chromium</h4>
+<p><a href="./chromium/report.html">Overview</a></p>
+<p><a href="./chromium/url_parse.cc.html">Source File Report</a></p>
+<h4>Firefox</h4>
+<p><a href="./firefox/index.html">Overview</a></p>
+<p><a href="./firefox/nsURLParsers.cpp.gcov.html">Source File Report</a></p></body></html>
