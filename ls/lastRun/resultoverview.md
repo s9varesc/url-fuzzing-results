@@ -1,6 +1,6 @@
 # Results 
 
-Total number of URLs: 560
+Total number of URLs: 610
 
 Total number of Parsers: 11
 
@@ -11,14 +11,14 @@ Total number of Parsers: 11
 JavaScriptwhatwg-url | 0 | 0 | 65.72% 
 Python | 0 | 0 | 46.0% 
 firefox | 1 | 1 | 74.7% 
-JavaScripturijs | 1 | 1 | 29.72% 
-Cpp | 7 | 1 | 37.9% 
-Go | 21 | 19 | 79.9% 
+JavaScripturijs | 1 | 1 | 29.81% 
+Cpp | 8 | 1 | 37.9% 
+Go | 23 | 21 | 79.9% 
 chromium | 24 | 1 | 52.63% 
-PHP | 48 | 43 | 47.41% 
-C | 156 | 1 | 57.8% 
-Java | 241 | 31 | 39.0% 
-Ruby | 287 | 276 | 72.02% 
+PHP | 49 | 44 | 47.41% 
+C | 169 | 1 | 57.8% 
+Java | 262 | 31 | 39.0% 
+Ruby | 314 | 303 | 72.02% 
 
 
 *note:*  base and relative URLs are represented as "base<relative" in this document for readabilty, the actually parsed inputs do not contain "<" 
@@ -34,7 +34,7 @@ Ruby | 287 | 276 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` http://[::] < @𸻾 ```  <br> ``` file:/// < /#Ｓ ```  <br> ``` f:/ < ///@垳 ```  <br> ``` ftp://[::] < /?򯹨 ```  <br> ``` B://[::deee:202.255.253.255] ```  <br> ``` file://[::]/񘃚 ```  <br> ``` https://[::] < /#[ ```  <br> ``` G:/ < //[edbd:fefa:ebab:ebde:cdac:bdba:250.252.201.252] ```  <br> ``` Z:/ < /#% ```  <br> ``` file:///? ```  <br> ``` wss://[::]/./ ```  <br> ``` V:/ < /[ ```  <br> ``` file:/// < /% ```  <br> ``` file:/// < //{y ```  <br> ``` file:///#^ ```  <br> ``` ftp://[::] < //[::]/;﹨ ```  <br> ``` F:/ < 쵖 ```  <br> ``` ws://[::]/;횘 ```  <br> ``` file:/// < /&ఒ ```  <br> ``` N:/ < /&￠ ```  <br> ``` o:/ < ￹ ```  <br> ``` file:///%7b￧ ```  <br> ``` https://[::]#ﾛ ```  <br> ``` file:/// < /?朣 ```  <br> ``` http://[::] < / ```  <br> ``` file://[::]/ꪸ ```  <br> ``` file:///#󥓈 ```  <br> ``` file:/// < /%2e//[ ```  <br> ``` file:/// < /? ```  <br> ``` file://`$ ```  <br> ``` file:/// < //[::]/󄐕 ```  <br> ``` ws://[::] < //:K@" ```  <br> ``` file:/// < /.%2e//// ```  <br> ``` file:///鍕 ```  <br> ``` https://[::]/﫞 ```  <br> ``` file:/// < //"* ```  <br> ``` file:/// < ///|񁣀 ```  <br> ``` file:/// < ︢ ```  <br> ``` b:/ < %2e.//铕 ```  <br> ``` ws://[::] < /|, ```  <br> ``` ftp://[::] < / ```  <br> ``` wss://􀕻@+ ```  <br> ``` file:///%7b􏕒 ```  <br> ``` R:/[񂗉 ```  <br> ``` file:/// < / ```  <br> ``` http://[::] < /?텫 ```  <br> ``` ws://[::] < //[::acef:deac:203.253.252.251] ```  <br> ``` L:/ < ///.// ```  <br> ``` j:/ﺱ ```  <br> ``` file://[::]/../􏳁 ```  <br> ``` ws://[::] < /!އ ```  <br> ``` t:/? ```  <br> ``` file:/// < %7dＥ ```  <br> ``` O:/ < %2e%2e/// ```  <br> ``` file:///#欳 ```  <br> ``` file:///%%22 ```  <br> ``` file:/// < //ċz ```  <br> ``` wss://Gſ ```  <br> ``` file:/// < //[::]/./鹷 ```  <br> ``` ftp://[::] < /?򸛱 ```  <br> ``` d:/ < ///􏾐 ```  <br> ``` http://[::] < //[::]/%60ａ ```  <br> ``` file://[::]/%2e%2e/󬱰 ```  <br> ``` ws://[::]/,% ```  <br> ``` http://[::] <  ```  <br> ``` file:/// < 햐 ```  <br> ``` b:///󞘏 ```  <br> ``` H:/#􏨊 ```  <br> ``` ftp://[::]/&^ ```  <br> ``` file:/// < .%2e///[ ```  <br> ``` https://[::]?㡑 ```  <br> ``` file:/// < /../ ```  <br> ``` http://[::] < /?ퟻ ```  <br> ``` file:/// < /.///ᶓ ```  <br> ``` http://[::] < ./ￚ ```  <br> ``` ftp://[::] < /#﷏ ```  <br> ``` ftp://[::] < ./񾣩 ```  <br> ``` K://`= ```  <br> ``` file://" ```  <br> ``` r:/ < /# ```  <br> ``` file:/// < /%2e/% ```  <br> ``` file:///#틣 ```  <br> ``` http://[::] < ퟺ ```  <br> ``` x:/ < ///'￪ ```  <br> ``` file:/// < /.////쇕 ```  <br> ``` P:/../[ ```  <br> ``` ftp://[::] < /#﮿ ```  <br> ``` wss://[::]#㽫 ```  <br> ``` A:/#隤 ```  <br> ``` ws://[::] < /# ```  <br> ``` W:/ < /// ```  <br> ``` q:/ < ..//󜐢 ```  <br> ``` https://[::] < 放 ```  <br> ``` S:/(ﻴ ```  <br> ``` t:/ < /$񳗓 ```  <br> ``` file://[::]/%2e.//ﻍ ```  <br> ``` file:/// < //[::]/.//㶭 ```  <br> ``` file:/// < /崍 ```  <br> ``` file:///^ ```  <br> ``` https://[::] < ퟾ ```  <br> ``` file:/// < ///=ｿ ```  <br> ``` ftp://[::eecc:255.252.255.207] ```  <br> ``` https://[::] < //%@) ```  <br> ``` file:///#鵩 ```  <br> ``` H:/ < %2e%2e/𧀷 ```  <br> ``` Z:///,􏛖 ```  <br> ``` file:///?퟼ ```  <br> ``` h:/񻿼 ```  <br> ``` ws://[::]/)︒ ```  <br> ``` J:/ ```  <br> ``` file:/// < /# ```  <br> ``` Y:/ < %7b￸ ```  <br> ``` z:/ < /ﾚ ```  <br> ``` M:/ < /+ ```  <br> ``` file:/// < /[ ```  <br> ``` ws://[::]/|% ```  <br> ``` wss://[::]?Ҽ ```  <br> ``` wss://[::] < /𰵮 ```  <br> ``` L:/ < ///^. ```  <br> ``` http://[::]?򅴄 ```  <br> ``` b:/? ```  <br> ``` https://[::] < 􌧄 ```  <br> ``` file:/// <  ```  <br> ``` V:///]! ```  <br> ``` file:/// < //[::]/ﺑ ```  <br> ``` ws://@~ ```  <br> ``` H://" ```  <br> ``` http://[::] < %2e//󠱎 ```  <br> ``` B:/ < /#︓ ```  <br> ``` c:/ < /ﮢ ```  <br> ``` http://[::] < //󢯼@= ```  <br> ``` s:/ < /?啁 ```  <br> ``` https://[::] < //M@` ```  <br> ``` file:///# ```  <br> ``` Y:///%2e./| ```  <br> ``` G:/%7bᡚ ```  <br> ``` http://[::]?ퟻ ```  <br> ``` F:/ < %2e%2e/򀒉 ```  <br> ``` http://[::]/%60𓜎 ```  <br> ``` ftp://[::] < ﹐ ```  <br> ``` z:/ < //$} ```  <br> ``` file:///#򮠱 ```  <br> ``` https://[::]?ﾭ ```  <br> ``` http://[::]?沫 ```  <br> ``` ws://[::] < /[풂 ```  <br> ``` ftp://[::] < 􏟃 ```  <br> ``` file:///#⮃ ```  <br> ``` p:/?ﺖ ```  <br> ``` wss://[::] < //ſ3 ```  <br> ``` file:///'＿ ```  <br> ``` file://}a ```  <br> ``` file://[::]/酜 ```  <br> ``` file:/// < //}` ```  <br> ``` file://Cċ ```  <br> ``` file:/// < //[::]/%2e.//痁 ```  <br> ``` r:/| ```  <br> 
+ ``` 1 ```  |  ``` http://[::] < @𸻾 ```  <br> ``` file:/// < /#Ｓ ```  <br> ``` f:/ < ///@垳 ```  <br> ``` ftp://[::] < /?򯹨 ```  <br> ``` B://[::deee:202.255.253.255] ```  <br> ``` file://[::]/񘃚 ```  <br> ``` https://[::] < /#[ ```  <br> ``` G:/ < //[edbd:fefa:ebab:ebde:cdac:bdba:250.252.201.252] ```  <br> ``` Z:/ < /#% ```  <br> ``` file:///? ```  <br> ``` wss://[::]/./ ```  <br> ``` V:/ < /[ ```  <br> ``` file:/// < /% ```  <br> ``` S:/ < ｦ ```  <br> ``` file:/// < //{y ```  <br> ``` file:///#^ ```  <br> ``` ftp://[::] < //[::]/;﹨ ```  <br> ``` F:/ < 쵖 ```  <br> ``` ws://[::]/;횘 ```  <br> ``` file:/// < /&ఒ ```  <br> ``` N:/ < /&￠ ```  <br> ``` o:/ < ￹ ```  <br> ``` K:/ < /%7d% ```  <br> ``` file:///%7b￧ ```  <br> ``` q:/ < 񠖨 ```  <br> ``` https://[::]#ﾛ ```  <br> ``` file:/// < /?朣 ```  <br> ``` http://[::] < / ```  <br> ``` file://[::]/ꪸ ```  <br> ``` file:///#󥓈 ```  <br> ``` file:/// < /%2e//[ ```  <br> ``` file:/// < /? ```  <br> ``` file://`$ ```  <br> ``` file:/// < //[::]/󄐕 ```  <br> ``` ws://[::] < //:K@" ```  <br> ``` file:/// < /.%2e//// ```  <br> ``` file:///鍕 ```  <br> ``` https://[::]/﫞 ```  <br> ``` file:/// < //"* ```  <br> ``` file:/// < ///|񁣀 ```  <br> ``` file:/// < ︢ ```  <br> ``` b:/ < %2e.//铕 ```  <br> ``` ws://[::] < /|, ```  <br> ``` ftp://[::] < / ```  <br> ``` wss://􀕻@+ ```  <br> ``` file:///%7b􏕒 ```  <br> ``` https://[::] < /ꚿ ```  <br> ``` R:/[񂗉 ```  <br> ``` file:/// < / ```  <br> ``` http://[::] < /?텫 ```  <br> ``` P:/#︆ ```  <br> ``` ws://[::] < //[::acef:deac:203.253.252.251] ```  <br> ``` L:/ < ///.// ```  <br> ``` j:/ﺱ ```  <br> ``` file://[::]/../􏳁 ```  <br> ``` file:/// < %60퟼ ```  <br> ``` ws://[::] < /!އ ```  <br> ``` t:/? ```  <br> ``` file:/// < %7dＥ ```  <br> ``` wss://[::] < //} ```  <br> ``` ftp://[::254.251.253.203] ```  <br> ``` O:/ < %2e%2e/// ```  <br> ``` file:///#欳 ```  <br> ``` file:///%%22 ```  <br> ``` file:/// < //ċz ```  <br> ``` wss://Gſ ```  <br> ``` file:/// < //[::]/./鹷 ```  <br> ``` https://[::] < /#ｰ ```  <br> ``` ftp://[::] < /?򸛱 ```  <br> ``` file://[::]/ﻘ ```  <br> ``` d:/ < ///􏾐 ```  <br> ``` http://[::] < //[::]/%60ａ ```  <br> ``` file://[::]/%2e%2e/󬱰 ```  <br> ``` ws://[::]/,% ```  <br> ``` http://[::] <  ```  <br> ``` file:/// < 햐 ```  <br> ``` b:///󞘏 ```  <br> ``` H:/#􏨊 ```  <br> ``` ftp://[::]/&^ ```  <br> ``` file:/// < .%2e///[ ```  <br> ``` https://[::]?㡑 ```  <br> ``` file:/// < /../ ```  <br> ``` http://[::] < /?ퟻ ```  <br> ``` file:/// < /.///ᶓ ```  <br> ``` http://[::] < ./ￚ ```  <br> ``` ftp://[::] < /#﷏ ```  <br> ``` ftp://[::] < ./񾣩 ```  <br> ``` K://`= ```  <br> ``` file://" ```  <br> ``` r:/ < /# ```  <br> ``` file:/// < /%2e/% ```  <br> ``` file:///#틣 ```  <br> ``` http://[::] < ퟺ ```  <br> ``` x:/ < ///'￪ ```  <br> ``` file:/// < /.////쇕 ```  <br> ``` P:/../[ ```  <br> ``` ftp://[::] < /#﮿ ```  <br> ``` wss://[::]#㽫 ```  <br> ``` A:/#隤 ```  <br> ``` ws://[::] < /# ```  <br> ``` W:/ < /// ```  <br> ``` q:/ < ..//󜐢 ```  <br> ``` https://[::] < 放 ```  <br> ``` S:/(ﻴ ```  <br> ``` t:/ < /$񳗓 ```  <br> ``` file://[::]/%2e.//ﻍ ```  <br> ``` file:/// < //[::]/.//㶭 ```  <br> ``` file:/// < /崍 ```  <br> ``` file:///^ ```  <br> ``` https://[::] < ퟾ ```  <br> ``` file:/// < ///=ｿ ```  <br> ``` ftp://[::eecc:255.252.255.207] ```  <br> ``` https://[::] < //%@) ```  <br> ``` file:///#鵩 ```  <br> ``` H:/ < %2e%2e/𧀷 ```  <br> ``` file:/// < /^򟜈 ```  <br> ``` Z:///,􏛖 ```  <br> ``` file:///?퟼ ```  <br> ``` h:/񻿼 ```  <br> ``` ws://[::]/)︒ ```  <br> ``` J:/ ```  <br> ``` file:/// < /# ```  <br> ``` Y:/ < %7b￸ ```  <br> ``` z:/ < /ﾚ ```  <br> ``` M:/ < /+ ```  <br> ``` file:/// < /[ ```  <br> ``` ws://[::]/|% ```  <br> ``` wss://[::]?Ҽ ```  <br> ``` wss://[::] < /𰵮 ```  <br> ``` L:/ < ///^. ```  <br> ``` http://[::]?򅴄 ```  <br> ``` b:/? ```  <br> ``` https://[::] < 􌧄 ```  <br> ``` file:/// <  ```  <br> ``` V:///]! ```  <br> ``` file:/// < //[::]/ﺑ ```  <br> ``` ws://@~ ```  <br> ``` H://" ```  <br> ``` http://[::] < %2e//󠱎 ```  <br> ``` B:/ < /#︓ ```  <br> ``` c:/ < /ﮢ ```  <br> ``` http://[::] < //󢯼@= ```  <br> ``` s:/ < /?啁 ```  <br> ``` ftp://[::] < //[::]/,^ ```  <br> ``` https://[::] < //M@` ```  <br> ``` file:///# ```  <br> ``` Y:///%2e./| ```  <br> ``` G:/%7bᡚ ```  <br> ``` http://[::]?ퟻ ```  <br> ``` F:/ < %2e%2e/򀒉 ```  <br> ``` http://[::]/%60𓜎 ```  <br> ``` ftp://[::] < ﹐ ```  <br> ``` z:/ < //$} ```  <br> ``` file:///#򮠱 ```  <br> ``` https://[::]?ﾭ ```  <br> ``` http://[::]?沫 ```  <br> ``` ws://[::] < /[풂 ```  <br> ``` ftp://[::] < 􏟃 ```  <br> ``` file:///#⮃ ```  <br> ``` p:/?ﺖ ```  <br> ``` wss://[::] < //ſ3 ```  <br> ``` file:///|羏 ```  <br> ``` file:///'＿ ```  <br> ``` file://}a ```  <br> ``` file://[::]/酜 ```  <br> ``` file:/// < //}` ```  <br> ``` file://Cċ ```  <br> ``` file:/// < //[::]/%2e.//痁 ```  <br> ``` r:/| ```  <br> 
 
 
 ### JavaScripturijs
@@ -48,7 +48,7 @@ Ruby | 287 | 276 | 72.02%
 
  Exception Type | URLs 
  --- | --- 
- ``` Bad URI syntax ```  |  ``` Z:/ < /#% ```  <br> ``` file:/// < /% ```  <br> ``` file:///%%22 < / ```  <br> ``` ws://[::]/,% < / ```  <br> ``` file:/// < /%2e/% ```  <br> ``` https://[::] < //%@) ```  <br> ``` ws://[::]/|% ```  <br> 
+ ``` Bad URI syntax ```  |  ``` Z:/ < /#% ```  <br> ``` file:/// < /% ```  <br> ``` K:/ < /%7d% ```  <br> ``` file:///%%22 < / ```  <br> ``` ws://[::]/,% < / ```  <br> ``` file:/// < /%2e/% ```  <br> ``` https://[::] < //%@) ```  <br> ``` ws://[::]/|% ```  <br> 
 
 
 ### PHP
@@ -71,6 +71,7 @@ Ruby | 287 | 276 | 72.02%
  ``` Host `"*` is invalid : the host is not a valid registered name ```  |  ``` file:/// < //"* ```  <br> 
  ``` The uri `file:///??` is invalid for the `file` scheme. ```  |  ``` file:/// < /?? ```  <br> 
  ``` The uri `file:///?+` is invalid for the `file` scheme. ```  |  ``` file:///?+ < / ```  <br> 
+ ``` Host `}` is invalid : the host is not a valid registered name ```  |  ``` wss://[::] < //} ```  <br> 
  ``` The uri `file:///#%E6%AC%B3` is invalid for the `file` scheme. ```  |  ``` file:///#欳 < / ```  <br> 
  ``` The uri `ftp://[::]/?%F2%B8%9B%B1` is invalid for the `ftp` scheme. ```  |  ``` ftp://[::] < /?򸛱 ```  <br> 
  ``` Host `%5d` is invalid : the host is not a valid registered name ```  |  ``` w:/ < //%5d ```  <br> 
@@ -105,25 +106,26 @@ Ruby | 287 | 276 | 72.02%
  Exception Type | URLs 
  --- | --- 
  ``` java.net.MalformedURLException: unknown protocol: g0 ```  |  ``` G0:/ ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: e ```  |  ``` E:/ < //[::5dcc] ```  <br> ``` e:/ < //[::7bce:fdcc] ```  <br> ``` e:/ < %2e////= ```  <br> ``` E:/%60( ```  <br> ``` e:/ < //[::250.216.255.250] ```  <br> ``` E:/N:/ ```  <br> ``` e:/ < //[::253.254.44.255] ```  <br> ``` e:/ < //[fafe:cacb:edff:faea:defa:bddc:85.252.250.251] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` f:/ < ///@垳 ```  <br> ``` F:/ < 쵖 ```  <br> ``` F:/ < //~! ```  <br> ``` F:/#= < / ```  <br> ``` f:/ < //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae] ```  <br> ``` F:/ < %2e%2e/򀒉 ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: e ```  |  ``` E:/ < //[::5dcc] ```  <br> ``` e:/ < //[::7bce:fdcc] ```  <br> ``` E:/ < //[caa2:bafa::] ```  <br> ``` e:/ < %2e////= ```  <br> ``` E:/%60( ```  <br> ``` e:/ < //[::250.216.255.250] ```  <br> ``` E:/N:/ ```  <br> ``` e:/ < //[::253.254.44.255] ```  <br> ``` e:/ < //[fafe:cacb:edff:faea:defa:bddc:85.252.250.251] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: wss ```  |  ``` wss://[3cfe::fefd] ```  <br> ``` wss://[::]/./ ```  <br> ``` wss://[::] < //[::5bfa:eeec] ```  <br> ``` wss://[::fddb:37.255.250.251] ```  <br> ``` wss://$ < / ```  <br> ``` wss://[::] < //f ```  <br> ``` wss://250.104.255.254 ```  <br> ``` wss://[c6fe::252.251.250.250] ```  <br> ``` wss://( < / ```  <br> ``` wss://􀕻@+ ```  <br> ``` wss://[::] < //} ```  <br> ``` wss://222.252.254.253 ```  <br> ``` wss://[::] < //[befa::254.251.253.254] ```  <br> ``` wss://Gſ ```  <br> ``` wss://[::7cbc:253.250.252.255] < / ```  <br> ``` wss://[::] < //[fdcf:dfdc:aafc:dfdd:eaae:bdfa:baca:c6ad] ```  <br> ``` wss://[::] < //[0dca:efef::ebed:efad:253.251.253.253] ```  <br> ``` wss://[adac:abbc:abac:cbbe:cdba:cfea:df9a:fcbc] ```  <br> ``` wss://[::] < //251.254.2.251 ```  <br> ``` wss://[::]#㽫 < / ```  <br> ``` wss://[::] < //254.255.177.255 ```  <br> ``` wss://[::] < //[b4ca::eedf:ceac:253.254.254.254] ```  <br> ``` wss://[::]:65341 ```  <br> ``` wss://R ```  <br> ``` wss://[::] < /B:/ ```  <br> ``` wss://[::44.252.252.251] ```  <br> ``` wss://[::]?Ҽ < / ```  <br> ``` wss://[::] < /𰵮 ```  <br> ``` wss://[::cbac:efdf:aaeb:7dab] ```  <br> ``` wss://[::]/%2e/%3e ```  <br> ``` wss://[::] < //[::ddde:dbcb:cff7] ```  <br> ``` wss://[::] < //[::255.252.223.251] ```  <br> ``` wss://[::] < //[ae1e:cfee::bdda:252.252.254.251] ```  <br> ``` wss://[4aab:ebad::edfb:ffdd:254.254.252.253] < / ```  <br> ``` wss://[::] < //ſ3 ```  <br> ``` wss://:@+ < / ```  <br> ``` wss://=8 ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: f ```  |  ``` f:/ < ///@垳 ```  <br> ``` F:/ < 쵖 ```  <br> ``` F:/ < //~! ```  <br> ``` F://[::fabe:254.251.254.57] ```  <br> ``` F:/#= < / ```  <br> ``` f:/ < //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae] ```  <br> ``` F:/ < %2e%2e/򀒉 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: d ```  |  ``` d:/%3f%22 ```  <br> ``` d:/ < ///􏾐 ```  <br> ``` d:/ < //[::cfdc:cc8c] ```  <br> ``` d://[fdbe:ccab::acdf:daef:253.251.251.255] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: b ```  |  ``` B://[::deee:202.255.253.255] < / ```  <br> ``` b:/ < %2e.//铕 ```  <br> ``` b://s ```  <br> ``` b:///󞘏 ```  <br> ``` b:/ < 3 ```  <br> ``` b:/ < ///) ```  <br> ``` b:/ < //[fcbf:cbfa::eceb:252.251.253.251] ```  <br> ``` b:/? < / ```  <br> ``` B:/ < /#︓ ```  <br> ``` b:/ < //[::ddbc:dede:debf] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: g ```  |  ``` G:/ < //[edbd:fefa:ebab:ebde:cdac:bdba:250.252.201.252] ```  <br> ``` G:/ < //[::fdfa:efbf:caab:1dea] ```  <br> ``` g:/ < //[::acbe:bece:252.99.251.254] ```  <br> ``` G:/%7bᡚ ```  <br> ``` G:/ < //[::252.250.250.45] ```  <br> ``` G:/ < //[::abce:eabd:252.6.250.252] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: g ```  |  ``` G:/ < //[edbd:fefa:ebab:ebde:cdac:bdba:250.252.201.252] ```  <br> ``` G:/ < //[::fdfa:efbf:caab:1dea] ```  <br> ``` g:/ < //[e5cc:dadf::250.252.254.252] ```  <br> ``` g:/ < //[::acbe:bece:252.99.251.254] ```  <br> ``` G:/%7bᡚ ```  <br> ``` G:/ < //[::252.250.250.45] ```  <br> ``` G:/ < //[::abce:eabd:252.6.250.252] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: n ```  |  ``` n:/#, < / ```  <br> ``` n://[::255.250.241.250] ```  <br> ``` N:/ < /&￠ ```  <br> ``` n:/ < //[bcae:ecfa:cacf:fddc:bfab:acbd:eafd:bb6b] ```  <br> ``` N:/ < //*& ```  <br> ``` n:/?/ < / ```  <br> ``` n:/ < //,p ```  <br> ``` n://[::bbfd:ccae:255.252.90.254] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: z ```  |  ``` Z:/ < /#% ```  <br> ``` z:/ < //[eede:bdbe::afdf:bcfb:250.254.251.253] ```  <br> ``` z:/ < //(W ```  <br> ``` z:/ < //[::cbda:254.49.252.252] ```  <br> ``` z://[::dfbe:afea:251.254.251.254] < / ```  <br> ``` Z:///,􏛖 ```  <br> ``` z:/ < /ﾚ ```  <br> ``` z:/ < //$} ```  <br> ``` z://[abce::] < / ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: c ```  |  ``` C://[::ddcc:81.252.254.253] ```  <br> ``` c://~Q ```  <br> ``` c:/ < //m ```  <br> ``` C:/ < //;0 ```  <br> ``` c:/ < /ﮢ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: z ```  |  ``` Z:/ < /#% ```  <br> ``` z:/ < //[eede:bdbe::afdf:bcfb:250.254.251.253] ```  <br> ``` z:/ < //(W ```  <br> ``` z:/ < //[::cbda:254.49.252.252] ```  <br> ``` z://[::dfbe:afea:251.254.251.254] < / ```  <br> ``` Z://+& ```  <br> ``` Z:///,􏛖 ```  <br> ``` z:/ < /ﾚ ```  <br> ``` z:/ < //$} ```  <br> ``` z://[abce::] < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: c ```  |  ``` C://[::ddcc:81.252.254.253] ```  <br> ``` c://~Q ```  <br> ``` c:/ < //m ```  <br> ``` C:/ < //;0 ```  <br> ``` c:/ < ./%7d ```  <br> ``` c:/ < //[ffa7::dcba:253.252.254.252] ```  <br> ``` c:/ < /ﮢ ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: a ```  |  ``` A:/ < //[::aafe:d3dc:bddf] ```  <br> ``` a:/ < .///= ```  <br> ``` a:/ < //[aebb:cfee:ddba:cbda:fbca:aebc:b6cd:dcba] ```  <br> ``` A:/ < //[::adbf:dedc:252.254.44.255] ```  <br> ``` A:/ < ///%2e%2e//%2e ```  <br> ``` A:/ < //[::e9cf:cdce] ```  <br> ``` A:/P:/ < / ```  <br> ``` A:/#隤 < / ```  <br> ``` a:/ < //%6f ```  <br> ``` a:/ < //[::251.253.251.215] ```  <br> ``` A:/ < //[::aeb6] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: wss ```  |  ``` wss://[::]/./ ```  <br> ``` wss://[::] < //[::5bfa:eeec] ```  <br> ``` wss://[::fddb:37.255.250.251] ```  <br> ``` wss://$ < / ```  <br> ``` wss://[::] < //f ```  <br> ``` wss://250.104.255.254 ```  <br> ``` wss://[c6fe::252.251.250.250] ```  <br> ``` wss://( < / ```  <br> ``` wss://􀕻@+ ```  <br> ``` wss://222.252.254.253 ```  <br> ``` wss://[::] < //[befa::254.251.253.254] ```  <br> ``` wss://Gſ ```  <br> ``` wss://[::7cbc:253.250.252.255] < / ```  <br> ``` wss://[::] < //[fdcf:dfdc:aafc:dfdd:eaae:bdfa:baca:c6ad] ```  <br> ``` wss://[::] < //[0dca:efef::ebed:efad:253.251.253.253] ```  <br> ``` wss://[::] < //251.254.2.251 ```  <br> ``` wss://[::]#㽫 < / ```  <br> ``` wss://[::] < //254.255.177.255 ```  <br> ``` wss://[::] < //[b4ca::eedf:ceac:253.254.254.254] ```  <br> ``` wss://[::]:65341 ```  <br> ``` wss://R ```  <br> ``` wss://[::] < /B:/ ```  <br> ``` wss://[::44.252.252.251] ```  <br> ``` wss://[::]?Ҽ < / ```  <br> ``` wss://[::] < /𰵮 ```  <br> ``` wss://[::cbac:efdf:aaeb:7dab] ```  <br> ``` wss://[::]/%2e/%3e ```  <br> ``` wss://[::] < //[::ddde:dbcb:cff7] ```  <br> ``` wss://[::] < //[::255.252.223.251] ```  <br> ``` wss://[::] < //[ae1e:cfee::bdda:252.252.254.251] ```  <br> ``` wss://[4aab:ebad::edfb:ffdd:254.254.252.253] < / ```  <br> ``` wss://[::] < //ſ3 ```  <br> ``` wss://:@+ < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: v ```  |  ``` V:/ < /[ ```  <br> ``` v:/ < //[::babd:244.252.253.254] ```  <br> ``` V://[::afab:bc8d:bbdc] ```  <br> ``` V:/%23 < / ```  <br> ``` V:/ < //( ```  <br> ``` V:///]! ```  <br> ``` v://[ceda:eaab:cafc:afbb:bfac:fdaf:254.253.253.253] < / ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::] < //[::fbbd:1fad:fbdb] ```  <br> ``` ws://[::]/;횘 < / ```  <br> ``` ws://[::] < //:K@" ```  <br> ``` ws://[::] < //[::251.250.254.31] ```  <br> ``` ws://[::]/.%2e < / ```  <br> ``` ws://[9eba::bdcc] < / ```  <br> ``` ws://[::] < /|, ```  <br> ``` ws://[::] < //[::acef:deac:203.253.252.251] ```  <br> ``` ws://[::] < //[b4ed::ecdc:dfba:254.254.250.255] ```  <br> ``` ws://[::] < /!އ ```  <br> ``` ws://[::] < //[::babe:dcfb:ed7d:abbd] ```  <br> ``` ws://O ```  <br> ``` ws://[::]/,% < / ```  <br> ``` ws://[::] < //[::daaf:cfca:255.22.254.252] ```  <br> ``` ws://[::aa2b] ```  <br> ``` ws://[::be1c:252.254.250.252] < / ```  <br> ``` ws://[::] < V ```  <br> ``` ws://[caf7::255.252.252.251] ```  <br> ``` ws://[::] < /# ```  <br> ``` ws://[::fdca:251.251.254.83] < / ```  <br> ``` ws://[::]?! < / ```  <br> ``` ws://[::]/)︒ ```  <br> ``` ws://[::cfed:254.251.89.255] ```  <br> ``` ws://[::] < //250.236.252.255 ```  <br> ``` ws://[::]/|% ```  <br> ``` ws://[::] < //[ba5b:ebad::fceb:255.252.251.250] ```  <br> ``` ws://[::bada:aecd:250.78.252.252] ```  <br> ``` ws://@~ ```  <br> ``` ws://[::]:65511 < / ```  <br> ``` ws://[::] < /[풂 ```  <br> ``` ws://[::] < U ```  <br> ``` ws://[fc3b::] ```  <br> ``` ws://[::dcfd:250.51.254.252] < / ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: s ```  |  ``` S:/ < %2e////& ```  <br> ``` S:/ < //[::dae9] ```  <br> ``` S:/y:/ ```  <br> ``` S://a2 ```  <br> ``` S:/ < //[::bcc6] ```  <br> ``` s:/ < //D ```  <br> ``` S:/q:/ < / ```  <br> ``` s:/ < /?= ```  <br> ``` s:/a:/ < / ```  <br> ``` S:/(ﻴ ```  <br> ``` s://' ```  <br> ``` s:/ < /?啁 ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: ws ```  |  ``` ws://[::] < //[::fbbd:1fad:fbdb] ```  <br> ``` ws://[::]/;횘 < / ```  <br> ``` ws://[cebe:ffff:eada:aeaa:bfdc:ceab:251.42.253.250] ```  <br> ``` ws://[::] < //:K@" ```  <br> ``` ws://[::] < //[::251.250.254.31] ```  <br> ``` ws://[::]/.%2e < / ```  <br> ``` ws://[9eba::bdcc] < / ```  <br> ``` ws://[::] < /|, ```  <br> ``` ws://[::] < //[::acef:deac:203.253.252.251] ```  <br> ``` ws://[::] < //[b4ed::ecdc:dfba:254.254.250.255] ```  <br> ``` ws://[::] < /!އ ```  <br> ``` ws://[::] < //[::babe:dcfb:ed7d:abbd] ```  <br> ``` ws://O ```  <br> ``` ws://[::]/,% < / ```  <br> ``` ws://[::] < //[::daaf:cfca:255.22.254.252] ```  <br> ``` ws://[::aa2b] ```  <br> ``` ws://254.255.253.218 ```  <br> ``` ws://[::be1c:252.254.250.252] < / ```  <br> ``` ws://[::] < V ```  <br> ``` ws://[caf7::255.252.252.251] ```  <br> ``` ws://[::] < //[6dae::cdff:dedd:253.252.251.254] ```  <br> ``` ws://[::] < /# ```  <br> ``` ws://[::fdca:251.251.254.83] < / ```  <br> ``` ws://[::]?! < / ```  <br> ``` ws://[::]/)︒ ```  <br> ``` ws://[::cfed:254.251.89.255] ```  <br> ``` ws://[::] < //250.236.252.255 ```  <br> ``` ws://[::]/|% ```  <br> ``` ws://[::] < //[ba5b:ebad::fceb:255.252.251.250] ```  <br> ``` ws://[::bada:aecd:250.78.252.252] ```  <br> ``` ws://@~ ```  <br> ``` ws://[::]:65511 < / ```  <br> ``` ws://[::] < /[풂 ```  <br> ``` ws://[::] < U ```  <br> ``` ws://[fc3b::] ```  <br> ``` ws://[::dcfd:250.51.254.252] < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: s ```  |  ``` S:/ < %2e////& ```  <br> ``` S:/ < ｦ ```  <br> ``` S:/ < //[::dae9] ```  <br> ``` S:/y:/ ```  <br> ``` S://a2 ```  <br> ``` S:/ < //[::bcc6] ```  <br> ``` s:/ < //D ```  <br> ``` S:/q:/ < / ```  <br> ``` s:/ < /?= ```  <br> ``` s:/a:/ < / ```  <br> ``` S:/(ﻴ ```  <br> ``` s://' ```  <br> ``` s:/ < /?啁 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: x ```  |  ``` X://[d1db:aace::] ```  <br> ``` X://[e5da:febd::fcad:252.251.252.254] ```  <br> ``` X://M < / ```  <br> ``` x:/ < ///'￪ ```  <br> ``` X://r < / ```  <br> ``` x:/ < //C ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: j ```  |  ``` J:/ < //; ```  <br> ``` j:/ﺱ < / ```  <br> ``` j:/ < //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251] ```  <br> ``` j:/ < //[::efec:8ddc] ```  <br> ``` J:/ < / ```  <br> ``` j:/ < /.%2e//@ ```  <br> ``` j:/ < ///X:/ ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: j ```  |  ``` J:/ < //; ```  <br> ``` j:/ﺱ < / ```  <br> ``` j:/ < //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251] ```  <br> ``` j:/ < //[::efec:8ddc] ```  <br> ``` J:/ < / ```  <br> ``` j:/ < /%7b%22 ```  <br> ``` j:/ < /.%2e//@ ```  <br> ``` j:/ < ///X:/ ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: u ```  |  ``` U:/ < //[::dbae:acfd:251.254.8.252] ```  <br> ``` U:/ < //[::e4da:253.255.255.252] ```  <br> ``` U:/ < //[::badd:255.251.255.138] ```  <br> ``` U://[::ecea:cdbd:ccdd:afdb] ```  <br> ``` U://-p ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: o ```  |  ``` o:/ < ￹ ```  <br> ``` o:/// < / ```  <br> ``` O:/ < %2e%2e/// ```  <br> ``` o://[::5bde] < / ```  <br> ``` o:/ < /r:/ ```  <br> ``` O:/%2e./$ ```  <br> ``` o://[dcbb:ddbb::ddbb] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` q:/ < //$ ```  <br> ``` q://[daf9:dcce::dbcf:fbdc:255.250.254.252] < / ```  <br> ``` q:/ < ..//󜐢 ```  <br> ``` q:/ < //[::fcaa:fddb:255.251.250.52] ```  <br> ``` q:/ < //[::bedc:bbde:df8c] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: p ```  |  ``` P:/ < //;( ```  <br> ``` p:/ < //1, ```  <br> ``` P:/ < //[::cfcc:253.88.251.253] ```  <br> ``` P:/. ```  <br> ``` P:/ < //[::fbaa:ceec:250.254.149.251] ```  <br> ``` P:/../[ ```  <br> ``` p:///G:/ ```  <br> ``` p:/ < //%7d ```  <br> ``` p:/ < //[::]:4 ```  <br> ``` p:/?ﺖ < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: o ```  |  ``` o:/ < ￹ ```  <br> ``` O:/ < //Z ```  <br> ``` o:/// < / ```  <br> ``` O:/ < %2e%2e/// ```  <br> ``` o://[::5bde] < / ```  <br> ``` o:/ < /r:/ ```  <br> ``` O:/%2e./$ ```  <br> ``` o://[dcbb:ddbb::ddbb] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: q ```  |  ``` q:/ < //$ ```  <br> ``` q:/ < 񠖨 ```  <br> ``` q:/ < //[::251.252.251.85] ```  <br> ``` q://[daf9:dcce::dbcf:fbdc:255.250.254.252] < / ```  <br> ``` q:/ < ..//󜐢 ```  <br> ``` q:/ < //[::fcaa:fddb:255.251.250.52] ```  <br> ``` q:/ < //[::bedc:bbde:df8c] ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: p ```  |  ``` P:/ < //;( ```  <br> ``` p:/ < //1, ```  <br> ``` P:/ < //[::cfcc:253.88.251.253] ```  <br> ``` P:/. ```  <br> ``` P:/ < //[::fbaa:ceec:250.254.149.251] ```  <br> ``` P:/#︆ < / ```  <br> ``` P:/../[ ```  <br> ``` p:///G:/ ```  <br> ``` p:/ < //%7d ```  <br> ``` p:/ < //[::]:4 ```  <br> ``` p:/?ﺖ < / ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: k ```  |  ``` K:/ < /%7d% ```  <br> ``` K://`= ```  <br> ``` K:/ < //U ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: t ```  |  ``` t:/ < //T ```  <br> ``` T:/ < //%2e ```  <br> ``` t:/? < / ```  <br> ``` T:/ < //[::4aba:251.250.254.255] ```  <br> ``` t:/ < //[cfae::dbff] ```  <br> ``` t:/ < /$񳗓 ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: de ```  |  ``` De:/ < / ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: y ```  |  ``` y://[::fdde:223.252.254.253] ```  <br> ``` Y:/ < //O ```  <br> ``` Y:/ < ///S:/ ```  <br> ``` Y:/ < %7b￸ ```  <br> ``` y:/ < //[aaf3:ccdc:cfbd:ecef:acfe:efdb:251.254.252.251] ```  <br> ``` Y:///%2e./| ```  <br> 
@@ -132,8 +134,7 @@ Ruby | 287 | 276 | 72.02%
  ``` java.net.MalformedURLException: unknown protocol: w ```  |  ``` W:/ < ///./! ```  <br> ``` w:/ < //%5d ```  <br> ``` w://[::]:65516 ```  <br> ``` W:/ < /// ```  <br> ``` W:/ < //[db4d::fdfd:cecb:250.254.251.254] ```  <br> ``` w:/ < //[::aeae:fcae:86.253.250.253] ```  <br> ``` W:/ < /.//%2e%2e ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: i ```  |  ``` i:/ < //[::f7fa:dafa] ```  <br> ``` i:///b:/ ```  <br> ``` i:/ < //[::5fbf:bdbc] ```  <br> ``` I:/ < /%60* ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: l ```  |  ``` L:/ < ///.// ```  <br> ``` L:/ < //[cefd:feeb:cbcf:eabb:ffca:bdee:253.199.251.254] ```  <br> ``` l://[bffb:ddcd::cbae:dffb:253.250.251.252] < / ```  <br> ``` L://[e8ac:aaeb::252.251.255.253] < / ```  <br> ``` L:/ < ///^. ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` H:/#􏨊 < / ```  <br> ``` H:/ < %2e%2e/𧀷 ```  <br> ``` h:/񻿼 ```  <br> ``` H:/ < //[::7afa:254.250.252.253] ```  <br> ``` H://" ```  <br> ``` h:/ < //[fa0f:bbab::fbfc] ```  <br> ``` h:/ < //[::eca2] ```  <br> 
- ``` java.net.MalformedURLException: unknown protocol: k ```  |  ``` K://`= ```  <br> ``` K:/ < //U ```  <br> 
+ ``` java.net.MalformedURLException: unknown protocol: h ```  |  ``` H:/#􏨊 < / ```  <br> ``` h:/ < //[efd2:dade::] ```  <br> ``` H:/ < %2e%2e/𧀷 ```  <br> ``` h:/񻿼 ```  <br> ``` H:/ < //[::7afa:254.250.252.253] ```  <br> ``` H://" ```  <br> ``` h:/ < //[fa0f:bbab::fbfc] ```  <br> ``` h:/ < //[::eca2] ```  <br> 
  ``` java.net.MalformedURLException: unknown protocol: m ```  |  ``` M:/ < ///h:/ ```  <br> ``` M:/ < /+ ```  <br> 
 
 
@@ -144,9 +145,11 @@ Ruby | 287 | 276 | 72.02%
  ``` parse /#%: invalid URL escape "%" ```  |  ``` Z:/ < /#% ```  <br> 
  ``` parse /%: invalid URL escape "%\xee\xae" ```  |  ``` file:/// < /% ```  <br> 
  ``` parse //{y: invalid character "{" in host name ```  |  ``` file:/// < //{y ```  <br> 
+ ``` parse /%7d%: invalid URL escape "%" ```  |  ``` K:/ < /%7d% ```  <br> 
  ``` parse : invalid character "`" in host name ```  |  ``` file://`$ ```  <br> ``` K://`= ```  <br> 
  ``` parse : net/url: invalid userinfo ```  |  ``` wss://􀕻@+ ```  <br> ``` ws://@~ ```  <br> 
  ``` parse //%2e: invalid URL escape "%2e" ```  |  ``` T:/ < //%2e ```  <br> 
+ ``` parse //}: invalid character "}" in host name ```  |  ``` wss://[::] < //} ```  <br> 
  ``` parse file:///%%22: invalid URL escape "%%2" ```  |  ``` file:///%%22 < / ```  <br> 
  ``` parse ws://[::]/,%: invalid URL escape "%" ```  |  ``` ws://[::]/,% < / ```  <br> 
  ``` parse //%5d: invalid URL escape "%5d" ```  |  ``` w:/ < //%5d ```  <br> 
@@ -206,6 +209,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::fbbd:1fad:fbdb] ```  |  ``` ws://[::] < //[::fbbd:1fad:fbdb] ```  <br> 
  ``` bad URI(is not URI?): //[eede:bdbe::afdf:bcfb:250.254.251.253] ```  |  ``` z:/ < //[eede:bdbe::afdf:bcfb:250.254.251.253] ```  <br> 
  ``` bad URI(is not URI?): //[::5bfa:eeec] ```  |  ``` wss://[::] < //[::5bfa:eeec] ```  <br> 
+ ``` URI must be ascii only "\uFF66" ```  |  ``` S:/ < ｦ ```  <br> 
  ``` bad URI(is not URI?): //[bbcd:beca:ccdc:bcac:fbef:bced:255.252.236.253] ```  |  ``` file:/// < //[bbcd:beca:ccdc:bcac:fbef:bced:255.252.236.253] ```  <br> 
  ``` bad URI(is not URI?): //{y ```  |  ``` file:/// < //{y ```  <br> 
  ``` bad URI(is not URI?): //[::dae9] ```  |  ``` S:/ < //[::dae9] ```  <br> 
@@ -221,17 +225,21 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::dbae:acfd:251.254.8.252] ```  |  ``` U:/ < //[::dbae:acfd:251.254.8.252] ```  <br> 
  ``` bad URI(is not URI?): //[::]/- ```  |  ``` file:/// < //[::]/- ```  <br> 
  ``` URI must be ascii only "\uFFF9" ```  |  ``` o:/ < ￹ ```  <br> 
+ ``` bad URI(is not URI?): /%7d% ```  |  ``` K:/ < /%7d% ```  <br> 
  ``` URI must be ascii only "file:///%7b\uFFE7" ```  |  ``` file:///%7b￧ ```  <br> 
+ ``` URI must be ascii only "\u{605A8}" ```  |  ``` q:/ < 񠖨 ```  <br> 
  ``` URI must be ascii only "https://[::]#\uFF9B" ```  |  ``` https://[::]#ﾛ < / ```  <br> 
  ``` bad URI(is not URI?): //[ebee:fceb:adfe:ffeb:cfce:adce:8.252.255.255] ```  |  ``` ftp://[::] < //[ebee:fceb:adfe:ffeb:cfce:adce:8.252.255.255] ```  <br> 
  ``` URI must be ascii only "/?\u6723" ```  |  ``` file:/// < /?朣 ```  <br> 
  ``` URI must be ascii only "/\uF013" ```  |  ``` http://[::] < / ```  <br> 
  ``` URI must be ascii only "file://[::]/\uAAB8" ```  |  ``` file://[::]/ꪸ ```  <br> 
  ``` URI must be ascii only "file:///#\u{E54C8}" ```  |  ``` file:///#󥓈 < / ```  <br> 
+ ``` bad URI(is not URI?): //[dbdb:eecc:cdca:ddbd:dabe:bbef:253.254.255.238] ```  |  ``` file:/// < //[dbdb:eecc:cdca:ddbd:dabe:bbef:253.254.255.238] ```  <br> 
  ``` bad URI(is not URI?): /%2e//[ ```  |  ``` file:/// < /%2e//[ ```  <br> 
  ``` URI must be ascii only "/?\uEE87" ```  |  ``` file:/// < /? ```  <br> 
  ``` bad URI(is not URI?): //[::e4da:253.255.255.252] ```  |  ``` U:/ < //[::e4da:253.255.255.252] ```  <br> 
  ``` bad URI(is not URI?):  ```  |  ``` file://`$ ```  <br> ``` ftp://[::]/&^ ```  <br> ``` K://`= ```  <br> ``` file://" ```  <br> ``` P:/../[ ```  <br> ``` ws://[::]/|% ```  <br> ``` file:///^ ```  <br> ``` V:///]! ```  <br> ``` H://" ```  <br> ``` Y:///%2e./| ```  <br> ``` file://}a ```  <br> 
+ ``` bad URI(is not URI?): //[::251.252.251.85] ```  |  ``` q:/ < //[::251.252.251.85] ```  <br> 
  ``` URI must be ascii only "//[::]/\u{C4415}" ```  |  ``` file:/// < //[::]/󄐕 ```  <br> 
  ``` bad URI(is not URI?): //[::babd:244.252.253.254] ```  |  ``` v:/ < //[::babd:244.252.253.254] ```  <br> 
  ``` bad URI(is not URI?): //[::ccea:254.253.254.121] ```  |  ``` ftp://[::] < //[::ccea:254.253.254.121] ```  <br> 
@@ -251,6 +259,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[aebb:cfee:ddba:cbda:fbca:aebc:b6cd:dcba] ```  |  ``` a:/ < //[aebb:cfee:ddba:cbda:fbca:aebc:b6cd:dcba] ```  <br> 
  ``` bad URI(is not URI?): //[::feeb] ```  |  ``` file:/// < //[::feeb] ```  <br> 
  ``` bad URI(is not URI?): //"* ```  |  ``` file:/// < //"* ```  <br> 
+ ``` bad URI(is not URI?): //[caa2:bafa::] ```  |  ``` E:/ < //[caa2:bafa::] ```  <br> 
  ``` bad URI(is not URI?): //[::cbda:254.49.252.252] ```  |  ``` z:/ < //[::cbda:254.49.252.252] ```  <br> 
  ``` URI must be ascii only "///|\u{418C0}" ```  |  ``` file:/// < ///|񁣀 ```  <br> 
  ``` URI must be ascii only "\uFE22" ```  |  ``` file:/// < ︢ ```  <br> 
@@ -261,6 +270,7 @@ Ruby | 287 | 276 | 72.02%
  ``` URI must be ascii only "wss://\u{10057B}@+" ```  |  ``` wss://􀕻@+ ```  <br> 
  ``` bad URI(is not URI?): //[::bcc6] ```  |  ``` S:/ < //[::bcc6] ```  <br> 
  ``` URI must be ascii only "file:///%7b\u{10F552}" ```  |  ``` file:///%7b􏕒 ```  <br> 
+ ``` URI must be ascii only "/\uA6BF" ```  |  ``` https://[::] < /ꚿ ```  <br> 
  ``` bad URI(is not URI?): //[::bcbf:10.254.255.252] ```  |  ``` file:/// < //[::bcbf:10.254.255.252] ```  <br> 
  ``` bad URI(is not URI?): //[::adbf:dedc:252.254.44.255] ```  |  ``` A:/ < //[::adbf:dedc:252.254.44.255] ```  <br> 
  ``` bad URI(is not URI?): //[::253.2.254.254] ```  |  ``` R:/ < //[::253.2.254.254] ```  <br> 
@@ -269,6 +279,7 @@ Ruby | 287 | 276 | 72.02%
  ``` URI must be ascii only "/\uEEC6" ```  |  ``` file:/// < / ```  <br> 
  ``` URI must be ascii only "/?\uD16B" ```  |  ``` http://[::] < /?텫 ```  <br> 
  ``` bad URI(is not URI?): //[bee7:fcfe::] ```  |  ``` https://[::] < //[bee7:fcfe::] ```  <br> 
+ ``` URI must be ascii only "P:/#\uFE06" ```  |  ``` P:/#︆ < / ```  <br> 
  ``` bad URI(is not URI?): //[::acef:deac:203.253.252.251] ```  |  ``` ws://[::] < //[::acef:deac:203.253.252.251] ```  <br> 
  ``` URI must be ascii only "///.//\uE2E5" ```  |  ``` L:/ < ///.// ```  <br> 
  ``` URI must be ascii only "j:/\uFEB1" ```  |  ``` j:/ﺱ < / ```  <br> 
@@ -276,6 +287,7 @@ Ruby | 287 | 276 | 72.02%
  ``` URI must be ascii only "file://[::]/../\u{10FCC1}" ```  |  ``` file://[::]/../􏳁 ```  <br> 
  ``` bad URI(is not URI?): //[cefd:feeb:cbcf:eabb:ffca:bdee:253.199.251.254] ```  |  ``` L:/ < //[cefd:feeb:cbcf:eabb:ffca:bdee:253.199.251.254] ```  <br> 
  ``` bad URI(is not URI?): //[::daab:becd:ecde:db4d] ```  |  ``` ftp://[::] < //[::daab:becd:ecde:db4d] ```  <br> 
+ ``` URI must be ascii only "%60\uD7FC" ```  |  ``` file:/// < %60퟼ ```  <br> 
  ``` bad URI(is not URI?): //[b4ed::ecdc:dfba:254.254.250.255] ```  |  ``` ws://[::] < //[b4ed::ecdc:dfba:254.254.250.255] ```  <br> 
  ``` URI must be ascii only "/!\u0787" ```  |  ``` ws://[::] < /!އ ```  <br> 
  ``` bad URI(is not URI?): //[e1ae:bddc:dcfe:caad:bcde:eedc:253.250.250.252] ```  |  ``` http://[::] < //[e1ae:bddc:dcfe:caad:bcde:eedc:253.250.250.252] ```  <br> 
@@ -285,6 +297,8 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[9eed:bafe:dada:cecd:abca:fbec:250.252.255.253] ```  |  ``` file:/// < //[9eed:bafe:dada:cecd:abca:fbec:250.252.255.253] ```  <br> 
  ``` bad URI(is not URI?): //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251] ```  |  ``` j:/ < //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251] ```  <br> 
  ``` bad URI(is not URI?): //[0fef:badc::253.251.253.250] ```  |  ``` http://[::] < //[0fef:badc::253.251.253.250] ```  <br> 
+ ``` bad URI(is not URI?): //[::d0bc:afbb:254.255.253.251] ```  |  ``` file:/// < //[::d0bc:afbb:254.255.253.251] ```  <br> 
+ ``` bad URI(is not URI?): //} ```  |  ``` wss://[::] < //} ```  <br> 
  ``` bad URI(is not URI?): //[::5fbf:bdbc] ```  |  ``` i:/ < //[::5fbf:bdbc] ```  <br> 
  ``` URI must be ascii only "%2e%2e///\uE305" ```  |  ``` O:/ < %2e%2e/// ```  <br> 
  ``` URI must be ascii only "file:///#\u6B33" ```  |  ``` file:///#欳 < / ```  <br> 
@@ -296,14 +310,17 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::eeda:cbcf:4dbe] ```  |  ``` file:/// < //[::eeda:cbcf:4dbe] ```  <br> 
  ``` URI must be ascii only "wss://G\u017F" ```  |  ``` wss://Gſ ```  <br> 
  ``` URI must be ascii only "//[::]/./\u9E77" ```  |  ``` file:/// < //[::]/./鹷 ```  <br> 
+ ``` URI must be ascii only "/#\uFF70" ```  |  ``` https://[::] < /#ｰ ```  <br> 
  ``` bad URI(is not URI?): //[::babe:250.251.40.254] ```  |  ``` ftp://[::] < //[::babe:250.251.40.254] ```  <br> 
  ``` URI must be ascii only "/?\u{B86F1}" ```  |  ``` ftp://[::] < /?򸛱 ```  <br> 
+ ``` URI must be ascii only "file://[::]/\uFED8" ```  |  ``` file://[::]/ﻘ ```  <br> 
  ``` URI must be ascii only "///\u{10FF90}" ```  |  ``` d:/ < ///􏾐 ```  <br> 
  ``` URI must be ascii only "//[::]/%60\uFF41" ```  |  ``` http://[::] < //[::]/%60ａ ```  <br> 
  ``` bad URI(is not URI?): //[ed7c:cabe::252.251.253.254] ```  |  ``` file:/// < //[ed7c:cabe::252.251.253.254] ```  <br> 
  ``` URI must be ascii only "file://[::]/%2e%2e/\u{ECC70}" ```  |  ``` file://[::]/%2e%2e/󬱰 ```  <br> 
  ``` bad URI(is not URI?): //[fdcf:dfdc:aafc:dfdd:eaae:bdfa:baca:c6ad] ```  |  ``` wss://[::] < //[fdcf:dfdc:aafc:dfdd:eaae:bdfa:baca:c6ad] ```  <br> 
  ``` bad URI(is not URI?): ws://[::]/,% ```  |  ``` ws://[::]/,% < / ```  <br> 
+ ``` bad URI(is not URI?): //[::acbb:aade:bfd9] ```  |  ``` ftp://[::] < //[::acbb:aade:bfd9] ```  <br> 
  ``` URI must be ascii only "\uF657" ```  |  ``` http://[::] <  ```  <br> 
  ``` bad URI(is not URI?): //[::daaf:cfca:255.22.254.252] ```  |  ``` ws://[::] < //[::daaf:cfca:255.22.254.252] ```  <br> 
  ``` bad URI(is not URI?): //[::4aba:251.250.254.255] ```  |  ``` T:/ < //[::4aba:251.250.254.255] ```  <br> 
@@ -313,6 +330,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::badd:255.251.255.138] ```  |  ``` U:/ < //[::badd:255.251.255.138] ```  <br> 
  ``` bad URI(is not URI?): //[0dca:efef::ebed:efad:253.251.253.253] ```  |  ``` wss://[::] < //[0dca:efef::ebed:efad:253.251.253.253] ```  <br> 
  ``` URI must be ascii only "H:/#\u{10FA0A}" ```  |  ``` H:/#􏨊 < / ```  <br> 
+ ``` bad URI(is not URI?): //[::4fef:254.252.255.254] ```  |  ``` file:/// < //[::4fef:254.252.255.254] ```  <br> 
  ``` bad URI(is not URI?): //[::e9cf:cdce] ```  |  ``` A:/ < //[::e9cf:cdce] ```  <br> 
  ``` bad URI(is not URI?): .%2e///[ ```  |  ``` file:/// < .%2e///[ ```  <br> 
  ``` URI must be ascii only "https://[::]?\u3851" ```  |  ``` https://[::]?㡑 ```  <br> 
@@ -323,6 +341,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::fccf:edda:cceb:a2ff] ```  |  ``` http://[::] < //[::fccf:edda:cceb:a2ff] ```  <br> 
  ``` bad URI(is not URI?): //[cfae::dbff] ```  |  ``` t:/ < //[cfae::dbff] ```  <br> 
  ``` URI must be ascii only "/.///\u1D93" ```  |  ``` file:/// < /.///ᶓ ```  <br> 
+ ``` bad URI(is not URI?): //[::abfb:afdb:5eeb:adaf] ```  |  ``` ftp://[::] < //[::abfb:afdb:5eeb:adaf] ```  <br> 
  ``` URI must be ascii only "./\uFFDA" ```  |  ``` http://[::] < ./ￚ ```  <br> 
  ``` URI must be ascii only "/#\uFDCF" ```  |  ``` ftp://[::] < /#﷏ ```  <br> 
  ``` URI must be ascii only "./\u{7E8E9}" ```  |  ``` ftp://[::] < ./񾣩 ```  <br> 
@@ -331,6 +350,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::]/%7d ```  |  ``` ftp://[::] < //[::]/%7d ```  <br> 
  ``` bad URI(is not URI?): //[::aadb:defe:bf9d:ccad] ```  |  ``` file:/// < //[::aadb:defe:bf9d:ccad] ```  <br> 
  ``` bad URI(is not URI?): //[ac5e:bdbd::dcaa:cfdc:252.250.252.252] ```  |  ``` ftp://[::] < //[ac5e:bdbd::dcaa:cfdc:252.250.252.252] ```  <br> 
+ ``` bad URI(is not URI?): //[::cdec:3abe:bfcc] ```  |  ``` file:/// < //[::cdec:3abe:bfcc] ```  <br> 
  ``` URI must be ascii only "/#\uED43" ```  |  ``` r:/ < /# ```  <br> 
  ``` bad URI(is not URI?): //[::252.251.181.253] ```  |  ``` https://[::] < //[::252.251.181.253] ```  <br> 
  ``` bad URI(is not URI?): //[::b2ca:cdfa] ```  |  ``` R:/ < //[::b2ca:cdfa] ```  <br> 
@@ -342,6 +362,7 @@ Ruby | 287 | 276 | 72.02%
  ``` URI must be ascii only "/.////\uC1D5" ```  |  ``` file:/// < /.////쇕 ```  <br> 
  ``` bad URI(is not URI?): //[::2dad] ```  |  ``` ftp://[::] < //[::2dad] ```  <br> 
  ``` bad URI(is not URI?): //[::250.216.255.250] ```  |  ``` e:/ < //[::250.216.255.250] ```  <br> 
+ ``` bad URI(is not URI?): //[6dae::cdff:dedd:253.252.251.254] ```  |  ``` ws://[::] < //[6dae::cdff:dedd:253.252.251.254] ```  <br> 
  ``` URI must be ascii only "/#\uFBBF" ```  |  ``` ftp://[::] < /#﮿ ```  <br> 
  ``` bad URI(is not URI?): //[::cfdc:cc8c] ```  |  ``` d:/ < //[::cfdc:cc8c] ```  <br> 
  ``` URI must be ascii only "wss://[::]#\u3F6B" ```  |  ``` wss://[::]#㽫 < / ```  <br> 
@@ -356,6 +377,7 @@ Ruby | 287 | 276 | 72.02%
  ``` URI must be ascii only "\u653E" ```  |  ``` https://[::] < 放 ```  <br> 
  ``` undefined method `typecode' for "//251.252.89.251":String ```  |  ``` ftp://[::] < //251.252.89.251 ```  <br> 
  ``` URI must be ascii only "S:/(\uFEF4" ```  |  ``` S:/(ﻴ ```  <br> 
+ ``` bad URI(is not URI?): //[efd2:dade::] ```  |  ``` h:/ < //[efd2:dade::] ```  <br> 
  ``` bad URI(is not URI?): //[::caa8:254.250.250.250] ```  |  ``` file:/// < //[::caa8:254.250.250.250] ```  <br> 
  ``` URI must be ascii only "/$\u{735D3}" ```  |  ``` t:/ < /$񳗓 ```  <br> 
  ``` URI must be ascii only "file://[::]/%2e.//\uFECD" ```  |  ``` file://[::]/%2e.//ﻍ ```  <br> 
@@ -368,9 +390,11 @@ Ruby | 287 | 276 | 72.02%
  ``` URI must be ascii only "file:///#\u9D69" ```  |  ``` file:///#鵩 ```  <br> 
  ``` undefined method `typecode' for "//252.250.90.251":String ```  |  ``` ftp://[::] < //252.250.90.251 ```  <br> 
  ``` bad URI(is not URI?): //[b4ca::eedf:ceac:253.254.254.254] ```  |  ``` wss://[::] < //[b4ca::eedf:ceac:253.254.254.254] ```  <br> 
+ ``` bad URI(is not URI?): //[::abcf:ffec:5add] ```  |  ``` https://[::] < //[::abcf:ffec:5add] ```  <br> 
  ``` URI must be ascii only "%2e%2e/\u{27037}" ```  |  ``` H:/ < %2e%2e/𧀷 ```  <br> 
  ``` bad URI(is not URI?): //[::dfb6:efda] ```  |  ``` https://[::] < //[::dfb6:efda] ```  <br> 
  ``` bad URI(is not URI?): //[::efec:8ddc] ```  |  ``` j:/ < //[::efec:8ddc] ```  <br> 
+ ``` URI must be ascii only "/^\u{9F708}" ```  |  ``` file:/// < /^򟜈 ```  <br> 
  ``` URI must be ascii only "Z:///,\u{10F6D6}" ```  |  ``` Z:///,􏛖 ```  <br> 
  ``` URI must be ascii only "file:///?\uD7FC" ```  |  ``` file:///?퟼ ```  <br> 
  ``` bad URI(is not URI?): //[cc6f:ecba::253.254.253.254] ```  |  ``` https://[::] < //[cc6f:ecba::253.254.253.254] ```  <br> 
@@ -390,8 +414,10 @@ Ruby | 287 | 276 | 72.02%
  ``` URI must be ascii only "/\uFF9A" ```  |  ``` z:/ < /ﾚ ```  <br> 
  ``` bad URI(is not URI?): //[::252.252.215.252] ```  |  ``` https://[::] < //[::252.252.215.252] ```  <br> 
  ``` URI must be ascii only "/+\uE749" ```  |  ``` M:/ < /+ ```  <br> 
+ ``` bad URI(is not URI?): //[faf1:bbab::bbdd] ```  |  ``` https://[::] < //[faf1:bbab::bbdd] ```  <br> 
  ``` bad URI(is not URI?): //[::250.56.254.253] ```  |  ``` file:/// < //[::250.56.254.253] ```  <br> 
  ``` undefined method `typecode' for "//'S":String ```  |  ``` ftp://[::] < //'S ```  <br> 
+ ``` bad URI(is not URI?): //[::aefe:aafb:252.254.2.254] ```  |  ``` https://[::] < //[::aefe:aafb:252.254.2.254] ```  <br> 
  ``` bad URI(is not URI?): //[db4d::fdfd:cecb:250.254.251.254] ```  |  ``` W:/ < //[db4d::fdfd:cecb:250.254.251.254] ```  <br> 
  ``` bad URI(is not URI?): //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae] ```  |  ``` f:/ < //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae] ```  <br> 
  ``` URI must be ascii only "wss://[::]?\u04BC" ```  |  ``` wss://[::]?Ҽ < / ```  <br> 
@@ -400,6 +426,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::]:4 ```  |  ``` p:/ < //[::]:4 ```  <br> 
  ``` bad URI(is not URI?): //[aaf3:ccdc:cfbd:ecef:acfe:efdb:251.254.252.251] ```  |  ``` y:/ < //[aaf3:ccdc:cfbd:ecef:acfe:efdb:251.254.252.251] ```  <br> 
  ``` bad URI(is not URI?): //[::251.253.251.215] ```  |  ``` a:/ < //[::251.253.251.215] ```  <br> 
+ ``` bad URI(is not URI?): //[e5cc:dadf::250.252.254.252] ```  |  ``` g:/ < //[e5cc:dadf::250.252.254.252] ```  <br> 
  ``` bad URI(is not URI?): ///^. ```  |  ``` L:/ < ///^. ```  <br> 
  ``` URI must be ascii only "http://[::]?\u{85D04}" ```  |  ``` http://[::]?򅴄 ```  <br> 
  ``` bad URI(is not URI?): //[aefa:abfb:bebc:fbbd:cffc:dedb:6bfe:acbf] ```  |  ``` https://[::] < //[aefa:abfb:bebc:fbbd:cffc:dedb:6bfe:acbf] ```  <br> 
@@ -417,6 +444,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::efac:cfbc:ddef] ```  |  ``` file:/// < //[::efac:cfbc:ddef] ```  <br> 
  ``` URI must be ascii only "/#\uFE13" ```  |  ``` B:/ < /#︓ ```  <br> 
  ``` bad URI(is not URI?): //[fa0f:bbab::fbfc] ```  |  ``` h:/ < //[fa0f:bbab::fbfc] ```  <br> 
+ ``` bad URI(is not URI?): //[ffa7::dcba:253.252.254.252] ```  |  ``` c:/ < //[ffa7::dcba:253.252.254.252] ```  <br> 
  ``` URI must be ascii only "/\uFBA2" ```  |  ``` c:/ < /ﮢ ```  <br> 
  ``` bad URI(is not URI?): //[::aeb6] ```  |  ``` A:/ < //[::aeb6] ```  <br> 
  ``` bad URI(is not URI?): //[::acbe:bece:252.99.251.254] ```  |  ``` g:/ < //[::acbe:bece:252.99.251.254] ```  <br> 
@@ -426,6 +454,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::eca2] ```  |  ``` h:/ < //[::eca2] ```  <br> 
  ``` bad URI(is not URI?): //[1fef:fbaa::aeeb:fcbb:252.254.251.251] ```  |  ``` http://[::] < //[1fef:fbaa::aeeb:fcbb:252.254.251.251] ```  <br> 
  ``` bad URI(is not URI?): //[fafe:cacb:edff:faea:defa:bddc:85.252.250.251] ```  |  ``` e:/ < //[fafe:cacb:edff:faea:defa:bddc:85.252.250.251] ```  <br> 
+ ``` bad URI(is not URI?): //[::]/,^ ```  |  ``` ftp://[::] < //[::]/,^ ```  <br> 
  ``` bad URI(is not URI?): //M@` ```  |  ``` https://[::] < //M@` ```  <br> 
  ``` URI must be ascii only "file:///#\uF390" ```  |  ``` file:///# ```  <br> 
  ``` bad URI(is not URI?): //[::ddde:dbcb:cff7] ```  |  ``` wss://[::] < //[::ddde:dbcb:cff7] ```  <br> 
@@ -451,6 +480,7 @@ Ruby | 287 | 276 | 72.02%
  ``` bad URI(is not URI?): //[::bedc:bbde:df8c] ```  |  ``` q:/ < //[::bedc:bbde:df8c] ```  <br> 
  ``` URI must be ascii only "p:/?\uFE96" ```  |  ``` p:/?ﺖ < / ```  <br> 
  ``` URI must be ascii only "//\u017F3" ```  |  ``` wss://[::] < //ſ3 ```  <br> 
+ ``` URI must be ascii only "file:///|\u7F8F" ```  |  ``` file:///|羏 ```  <br> 
  ``` bad URI(is not URI?): //[::aeae:fcae:86.253.250.253] ```  |  ``` w:/ < //[::aeae:fcae:86.253.250.253] ```  <br> 
  ``` URI must be ascii only "file:///'\uFF3F" ```  |  ``` file:///'＿ < / ```  <br> 
  ``` bad URI(is not URI?): //[::abce:eabd:252.6.250.252] ```  |  ``` G:/ < //[::abce:eabd:252.6.250.252] ```  <br> 
@@ -474,6 +504,7 @@ Ruby | 287 | 276 | 72.02%
  ``` G0:/ ```  | Java <br>
  ``` E:/ < //[::5dcc] ```  | Java <br>Ruby <br>
  ``` file:/// < /#Ｓ ```  | C <br>PHP <br>Ruby <br>
+ ``` wss://[3cfe::fefd] ```  | Java <br>
  ``` f:/ < ///@垳 ```  | C <br>Java <br>Ruby <br>
  ``` ftp://[::] < /?򯹨 ```  | C <br>PHP <br>Ruby <br>
  ``` ftp://[::] < //[eeff:aeca:adad:fbce:adca:faec:246.250.253.252] ```  | Ruby <br>
@@ -495,6 +526,7 @@ Ruby | 287 | 276 | 72.02%
  ``` z:/ < //[eede:bdbe::afdf:bcfb:250.254.251.253] ```  | Java <br>Ruby <br>
  ``` S:/ < %2e////& ```  | Java <br>
  ``` wss://[::] < //[::5bfa:eeec] ```  | Java <br>Ruby <br>
+ ``` S:/ < ｦ ```  | C <br>Java <br>Ruby <br>
  ``` file:/// < /#%60 ```  | PHP <br>
  ``` file:/// < //[bbcd:beca:ccdc:bcac:fbef:bced:255.252.236.253] ```  | Ruby <br>
  ``` file:/// < //{y ```  | C <br>PHP <br>Go <br>Ruby <br>
@@ -519,10 +551,13 @@ Ruby | 287 | 276 | 72.02%
  ``` U:/ < //[::dbae:acfd:251.254.8.252] ```  | Java <br>Ruby <br>
  ``` file:/// < //[::]/- ```  | Ruby <br>
  ``` o:/ < ￹ ```  | C <br>Java <br>Ruby <br>
+ ``` O:/ < //Z ```  | Java <br>
  ``` q:/ < //$ ```  | Java <br>
  ``` P:/ < //;( ```  | Java <br>chromium <br>
+ ``` K:/ < /%7d% ```  | C <br>Cpp <br>Java <br>Go <br>Ruby <br>
  ``` file:///%7b￧ ```  | C <br>Ruby <br>
  ``` p:/ < //1, ```  | Java <br>
+ ``` q:/ < 񠖨 ```  | C <br>Java <br>Ruby <br>
  ``` https://[::]#ﾛ < / ```  | Ruby <br>
  ``` ftp://[::] < //[ebee:fceb:adfe:ffeb:cfce:adce:8.252.255.255] ```  | Ruby <br>
  ``` file:/// < /?朣 ```  | C <br>PHP <br>Ruby <br>
@@ -531,6 +566,7 @@ Ruby | 287 | 276 | 72.02%
  ``` file:///#󥓈 < / ```  | PHP <br>Ruby <br>
  ``` S://a2 ```  | Java <br>
  ``` c://~Q ```  | Java <br>
+ ``` file:/// < //[dbdb:eecc:cdca:ddbd:dabe:bbef:253.254.255.238] ```  | Ruby <br>
  ``` t:/ < //T ```  | Java <br>
  ``` De:/ < / ```  | Java <br>
  ``` file:/// < /%2e//[ ```  | C <br>Ruby <br>
@@ -538,9 +574,11 @@ Ruby | 287 | 276 | 72.02%
  ``` U:/ < //[::e4da:253.255.255.252] ```  | Java <br>Ruby <br>
  ``` file://`$ ```  | C <br>PHP <br>Go <br>Ruby <br>
  ``` N:/ < //*& ```  | Java <br>
+ ``` q:/ < //[::251.252.251.85] ```  | Java <br>Ruby <br>
  ``` file:/// < //[::]/󄐕 ```  | C <br>Ruby <br>
  ``` v:/ < //[::babd:244.252.253.254] ```  | Java <br>Ruby <br>
  ``` z:/ < //(W ```  | Java <br>
+ ``` ws://[cebe:ffff:eada:aeaa:bfdc:ceab:251.42.253.250] ```  | Java <br>
  ``` wss://[c6fe::252.251.250.250] ```  | Java <br>
  ``` ftp://[::] < //[::ccea:254.253.254.121] ```  | Ruby <br>
  ``` F:/ < //~! ```  | Java <br>chromium <br>
@@ -570,6 +608,7 @@ Ruby | 287 | 276 | 72.02%
  ``` ws://[9eba::bdcc] < / ```  | Java <br>
  ``` gi:/ < / ```  | Java <br>
  ``` Y:/ < //O ```  | Java <br>
+ ``` E:/ < //[caa2:bafa::] ```  | Java <br>Ruby <br>
  ``` P:/. ```  | Java <br>
  ``` z:/ < //[::cbda:254.49.252.252] ```  | Java <br>Ruby <br>
  ``` file:/// < ///|񁣀 ```  | C <br>Ruby <br>
@@ -586,6 +625,7 @@ Ruby | 287 | 276 | 72.02%
  ``` X://[e5da:febd::fcad:252.251.252.254] ```  | Java <br>
  ``` b://s ```  | Java <br>
  ``` file:///%7b􏕒 ```  | C <br>Ruby <br>
+ ``` https://[::] < /ꚿ ```  | C <br>Ruby <br>
  ``` file:/// < //[::bcbf:10.254.255.252] ```  | Ruby <br>
  ``` A:/ < //[::adbf:dedc:252.254.44.255] ```  | Java <br>Ruby <br>
  ``` R:/ < //[::253.2.254.254] ```  | Java <br>Ruby <br>
@@ -597,6 +637,7 @@ Ruby | 287 | 276 | 72.02%
  ``` http://[::] < /?텫 ```  | C <br>Ruby <br>
  ``` https://[::] < //[bee7:fcfe::] ```  | Ruby <br>
  ``` T:/ < //%2e ```  | Java <br>Go <br>
+ ``` P:/#︆ < / ```  | Java <br>Ruby <br>
  ``` ws://[::] < //[::acef:deac:203.253.252.251] ```  | C <br>Java <br>Ruby <br>
  ``` L:/ < ///.// ```  | C <br>Java <br>Ruby <br>
  ``` j:/ﺱ < / ```  | Java <br>Ruby <br>
@@ -607,6 +648,7 @@ Ruby | 287 | 276 | 72.02%
  ``` L:/ < //[cefd:feeb:cbcf:eabb:ffca:bdee:253.199.251.254] ```  | Java <br>Ruby <br>
  ``` o:/// < / ```  | Java <br>chromium <br>
  ``` ftp://[::] < //[::daab:becd:ecde:db4d] ```  | Ruby <br>
+ ``` file:/// < %60퟼ ```  | C <br>Ruby <br>
  ``` n:/?/ < / ```  | Java <br>
  ``` file://;~ < / ```  | chromium <br>
  ``` ws://[::] < //[b4ed::ecdc:dfba:254.254.250.255] ```  | Java <br>Ruby <br>
@@ -620,6 +662,8 @@ Ruby | 287 | 276 | 72.02%
  ``` file:/// < //[9eed:bafe:dada:cecd:abca:fbec:250.252.255.253] ```  | Ruby <br>
  ``` j:/ < //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251] ```  | Java <br>Ruby <br>
  ``` http://[::] < //[0fef:badc::253.251.253.250] ```  | Ruby <br>
+ ``` file:/// < //[::d0bc:afbb:254.255.253.251] ```  | Ruby <br>
+ ``` wss://[::] < //} ```  | C <br>PHP <br>Java <br>Go <br>Ruby <br>
  ``` i:/ < //[::5fbf:bdbc] ```  | Java <br>Ruby <br>
  ``` O:/ < %2e%2e/// ```  | C <br>Java <br>Ruby <br>
  ``` s:/ < //D ```  | Java <br>
@@ -638,15 +682,18 @@ Ruby | 287 | 276 | 72.02%
  ``` file:/// < //[::eeda:cbcf:4dbe] ```  | Ruby <br>
  ``` wss://Gſ ```  | C <br>Java <br>Ruby <br>
  ``` file:/// < //[::]/./鹷 ```  | C <br>Ruby <br>
+ ``` https://[::] < /#ｰ ```  | C <br>Ruby <br>
  ``` wss://[::7cbc:253.250.252.255] < / ```  | Java <br>
  ``` ftp://[::] < //[::babe:250.251.40.254] ```  | Ruby <br>
  ``` ftp://[::] < /?򸛱 ```  | C <br>PHP <br>Ruby <br>
+ ``` file://[::]/ﻘ ```  | C <br>Ruby <br>
  ``` d:/ < ///􏾐 ```  | C <br>Java <br>chromium <br>Ruby <br>
  ``` http://[::] < //[::]/%60ａ ```  | C <br>Ruby <br>
  ``` file:/// < //[ed7c:cabe::252.251.253.254] ```  | Ruby <br>
  ``` file://[::]/%2e%2e/󬱰 ```  | C <br>Ruby <br>
  ``` wss://[::] < //[fdcf:dfdc:aafc:dfdd:eaae:bdfa:baca:c6ad] ```  | Java <br>Ruby <br>
  ``` ws://[::]/,% < / ```  | Cpp <br>Java <br>Go <br>Ruby <br>
+ ``` ftp://[::] < //[::acbb:aade:bfd9] ```  | Ruby <br>
  ``` http://[::] <  ```  | C <br>Ruby <br>
  ``` ws://[::] < //[::daaf:cfca:255.22.254.252] ```  | Java <br>Ruby <br>
  ``` T:/ < //[::4aba:251.250.254.255] ```  | Java <br>Ruby <br>
@@ -658,10 +705,12 @@ Ruby | 287 | 276 | 72.02%
  ``` z://[::dfbe:afea:251.254.251.254] < / ```  | Java <br>chromium <br>
  ``` wss://[::] < //[0dca:efef::ebed:efad:253.251.253.253] ```  | Java <br>Ruby <br>
  ``` H:/#􏨊 < / ```  | Java <br>Ruby <br>
+ ``` file:/// < //[::4fef:254.252.255.254] ```  | Ruby <br>
  ``` w:/ < //%5d ```  | PHP <br>Java <br>Go <br>chromium <br>
  ``` A:/ < //[::e9cf:cdce] ```  | Java <br>Ruby <br>
  ``` ftp://[::]/&^ ```  | C <br>Ruby <br>
  ``` ws://[::aa2b] ```  | Java <br>
+ ``` ws://254.255.253.218 ```  | Java <br>
  ``` file:/// < .%2e///[ ```  | C <br>Ruby <br>
  ``` https://[::]?㡑 ```  | C <br>Ruby <br>
  ``` http://[::] < //[::deff:cdaf:252.252.255.219] ```  | Ruby <br>
@@ -671,6 +720,7 @@ Ruby | 287 | 276 | 72.02%
  ``` http://[::] < //[::fccf:edda:cceb:a2ff] ```  | Ruby <br>
  ``` t:/ < //[cfae::dbff] ```  | Java <br>Ruby <br>
  ``` file:/// < /.///ᶓ ```  | C <br>PHP <br>Ruby <br>
+ ``` ftp://[::] < //[::abfb:afdb:5eeb:adaf] ```  | Ruby <br>
  ``` S:/q:/ < / ```  | Java <br>
  ``` V:/ < //( ```  | Java <br>
  ``` http://[::] < ./ￚ ```  | C <br>Ruby <br>
@@ -679,6 +729,7 @@ Ruby | 287 | 276 | 72.02%
  ``` ftp://[::] < ./񾣩 ```  | C <br>Ruby <br>
  ``` K://`= ```  | C <br>PHP <br>Java <br>Go <br>Ruby <br>
  ``` file://" ```  | C <br>PHP <br>Ruby <br>
+ ``` c:/ < ./%7d ```  | Java <br>
  ``` file:///#& ```  | PHP <br>
  ``` E:/%60( ```  | Java <br>
  ``` http://[::] < //[::adff:bede:7.250.254.250] ```  | Ruby <br>
@@ -687,6 +738,7 @@ Ruby | 287 | 276 | 72.02%
  ``` ftp://[::] < //[::]/%7d ```  | Ruby <br>
  ``` file:/// < //[::aadb:defe:bf9d:ccad] ```  | Ruby <br>
  ``` ftp://[::] < //[ac5e:bdbd::dcaa:cfdc:252.250.252.252] ```  | Ruby <br>
+ ``` file:/// < //[::cdec:3abe:bfcc] ```  | Ruby <br>
  ``` r:/ < /# ```  | C <br>Java <br>Ruby <br>
  ``` A:/P:/ < / ```  | Java <br>
  ``` https://[::] < //[::252.251.181.253] ```  | Ruby <br>
@@ -697,6 +749,7 @@ Ruby | 287 | 276 | 72.02%
  ``` ws://[::] < V ```  | Java <br>
  ``` file:///#틣 ```  | C <br>PHP <br>Ruby <br>
  ``` http://[::] < ퟺ ```  | C <br>Ruby <br>
+ ``` wss://[adac:abbc:abac:cbbe:cdba:cfea:df9a:fcbc] ```  | Java <br>
  ``` ws://[caf7::255.252.252.251] ```  | Java <br>
  ``` x:/ < ///'￪ ```  | C <br>Java <br>Ruby <br>
  ``` file:/// < /.////쇕 ```  | C <br>PHP <br>Ruby <br>
@@ -707,6 +760,7 @@ Ruby | 287 | 276 | 72.02%
  ``` L://[e8ac:aaeb::252.251.255.253] < / ```  | Java <br>chromium <br>
  ``` s:/ < /?= ```  | Java <br>
  ``` e:/ < //[::250.216.255.250] ```  | Java <br>Ruby <br>
+ ``` ws://[::] < //[6dae::cdff:dedd:253.252.251.254] ```  | Java <br>Ruby <br>
  ``` ftp://[::] < /#﮿ ```  | C <br>PHP <br>Ruby <br>
  ``` d:/ < //[::cfdc:cc8c] ```  | Java <br>Ruby <br>
  ``` p:///G:/ ```  | Java <br>
@@ -715,6 +769,7 @@ Ruby | 287 | 276 | 72.02%
  ``` A:/#隤 < / ```  | Java <br>Ruby <br>
  ``` s:/a:/ < / ```  | Java <br>
  ``` b:/ < ///) ```  | Java <br>
+ ``` Z://+& ```  | Java <br>
  ``` b:/ < //[fcbf:cbfa::eceb:252.251.253.251] ```  | Java <br>Ruby <br>
  ``` ws://[::] < /# ```  | C <br>PHP <br>Java <br>Ruby <br>
  ``` n:/ < //,p ```  | Java <br>
@@ -733,6 +788,7 @@ Ruby | 287 | 276 | 72.02%
  ``` wss://[::] < //254.255.177.255 ```  | Java <br>
  ``` ftp://[::] < //251.252.89.251 ```  | Ruby <br>
  ``` S:/(ﻴ ```  | C <br>Java <br>Ruby <br>
+ ``` h:/ < //[efd2:dade::] ```  | Java <br>Ruby <br>
  ``` file:/// < //[::caa8:254.250.250.250] ```  | Ruby <br>
  ``` t:/ < /$񳗓 ```  | C <br>Java <br>Ruby <br>
  ``` file://[::]/%2e.//ﻍ ```  | C <br>Ruby <br>
@@ -750,14 +806,17 @@ Ruby | 287 | 276 | 72.02%
  ``` I:/ < /%60* ```  | Java <br>
  ``` ftp://[::] < //252.250.90.251 ```  | Ruby <br>
  ``` wss://[::] < //[b4ca::eedf:ceac:253.254.254.254] ```  | Java <br>Ruby <br>
+ ``` https://[::] < //[::abcf:ffec:5add] ```  | Ruby <br>
  ``` H:/ < %2e%2e/𧀷 ```  | C <br>Java <br>Ruby <br>
  ``` https://[::] < //[::dfb6:efda] ```  | Ruby <br>
  ``` j:/ < //[::efec:8ddc] ```  | Java <br>Ruby <br>
+ ``` file:/// < /^򟜈 ```  | C <br>Ruby <br>
  ``` Z:///,􏛖 ```  | C <br>Java <br>Ruby <br>
  ``` file:///?퟼ ```  | C <br>PHP <br>Ruby <br>
  ``` https://[::] < //[cc6f:ecba::253.254.253.254] ```  | Ruby <br>
  ``` file:/// < ..///%60 ```  | PHP <br>
  ``` ws://[::]?! < / ```  | Java <br>
+ ``` F://[::fabe:254.251.254.57] ```  | Java <br>
  ``` wss://[::]:65341 ```  | Java <br>
  ``` M:/ < ///h:/ ```  | Java <br>
  ``` h:/񻿼 ```  | C <br>Java <br>Ruby <br>
@@ -780,11 +839,14 @@ Ruby | 287 | 276 | 72.02%
  ``` z:/ < /ﾚ ```  | C <br>Java <br>Ruby <br>
  ``` https://[::] < //[::252.252.215.252] ```  | Ruby <br>
  ``` M:/ < /+ ```  | C <br>Java <br>Ruby <br>
+ ``` https://[::] < //[faf1:bbab::bbdd] ```  | Ruby <br>
  ``` O:/%2e./$ ```  | Java <br>
  ``` file:/// < //[::250.56.254.253] ```  | Ruby <br>
  ``` ftp://[::] < //'S ```  | Ruby <br>
  ``` file:/// < /?1 ```  | PHP <br>
+ ``` https://[::] < //[::aefe:aafb:252.254.2.254] ```  | Ruby <br>
  ``` W:/ < //[db4d::fdfd:cecb:250.254.251.254] ```  | Java <br>Ruby <br>
+ ``` j:/ < /%7b%22 ```  | Java <br>
  ``` wss://[::44.252.252.251] ```  | Java <br>
  ``` file:/// < /[ ```  | C <br>Ruby <br>
  ``` ws://[::] < //250.236.252.255 ```  | Java <br>
@@ -797,6 +859,7 @@ Ruby | 287 | 276 | 72.02%
  ``` y:/ < //[aaf3:ccdc:cfbd:ecef:acfe:efdb:251.254.252.251] ```  | Java <br>Ruby <br>
  ``` file:///^ ```  | C <br>Ruby <br>
  ``` a:/ < //[::251.253.251.215] ```  | Java <br>Ruby <br>
+ ``` g:/ < //[e5cc:dadf::250.252.254.252] ```  | Java <br>Ruby <br>
  ``` L:/ < ///^. ```  | C <br>Java <br>chromium <br>Ruby <br>
  ``` http://[::]?򅴄 ```  | C <br>Ruby <br>
  ``` https://[::] < //[aefa:abfb:bebc:fbbd:cffc:dedb:6bfe:acbf] ```  | Ruby <br>
@@ -823,6 +886,7 @@ Ruby | 287 | 276 | 72.02%
  ``` file:/// < //[::efac:cfbc:ddef] ```  | Ruby <br>
  ``` B:/ < /#︓ ```  | C <br>Java <br>Ruby <br>
  ``` h:/ < //[fa0f:bbab::fbfc] ```  | Java <br>Ruby <br>
+ ``` c:/ < //[ffa7::dcba:253.252.254.252] ```  | Java <br>Ruby <br>
  ``` c:/ < /ﮢ ```  | C <br>Java <br>Ruby <br>
  ``` j:/ < /.%2e//@ ```  | Java <br>
  ``` ws://[::]:65511 < / ```  | Java <br>
@@ -835,6 +899,7 @@ Ruby | 287 | 276 | 72.02%
  ``` h:/ < //[::eca2] ```  | Java <br>Ruby <br>
  ``` http://[::] < //[1fef:fbaa::aeeb:fcbb:252.254.251.251] ```  | Ruby <br>
  ``` e:/ < //[fafe:cacb:edff:faea:defa:bddc:85.252.250.251] ```  | Java <br>Ruby <br>
+ ``` ftp://[::] < //[::]/,^ ```  | C <br>Ruby <br>
  ``` https://[::] < //M@` ```  | C <br>PHP <br>Go <br>Ruby <br>
  ``` file:///# ```  | C <br>PHP <br>Ruby <br>
  ``` wss://[::] < //[::ddde:dbcb:cff7] ```  | Java <br>Ruby <br>
@@ -867,8 +932,10 @@ Ruby | 287 | 276 | 72.02%
  ``` wss://[::] < //ſ3 ```  | C <br>Java <br>Ruby <br>
  ``` wss://:@+ < / ```  | Java <br>
  ``` file:/// < /./////%2e%2e ```  | PHP <br>
+ ``` file:///|羏 ```  | C <br>Ruby <br>
  ``` w:/ < //[::aeae:fcae:86.253.250.253] ```  | Java <br>Ruby <br>
  ``` ws://[fc3b::] ```  | Java <br>
+ ``` wss://=8 ```  | Java <br>
  ``` file:///'＿ < / ```  | Ruby <br>
  ``` d://[fdbe:ccab::acdf:daef:253.251.251.255] ```  | Java <br>
  ``` file://}a ```  | C <br>PHP <br>Go <br>Ruby <br>
@@ -891,8 +958,8 @@ Ruby | 287 | 276 | 72.02%
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 258 | 1 | 257
-chromium | 103 | 24 | 79
+firefox | 279 | 1 | 278
+chromium | 111 | 24 | 87
 
 [full browser comparison](./browseroverview.html)
 
@@ -900,8 +967,117 @@ chromium | 103 | 24 | 79
 
  URL | Component | Expected Value | Actual Value 
  --- | --- | --- | --- 
+ ``` T:/ < //[::4aba:251.250.254.255] ```  | host |  ``` ::4aba:fbfa:feff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://)5 ```  | host |  ``` )5 ```  |  ```  ``` 
+ ``` file://[bddc:ceda:eaab:cdaf:eeee:bdec:ad6f:cdeb] ```  | host |  ``` bddc:ceda:eaab:cdaf:eeee:bdec:ad6f:cdeb ```  |  ```  ``` 
+ ``` a:/ < //%6f ```  | host |  ``` %6f ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` o:/// < / ```  | filePath |  ``` / ```  |  ``` /// ``` 
+ ``` t:/ < //T ```  | host |  ``` t ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[adfc::fcee:250.255.255.250] ```  | host |  ``` adfc::fcee:faff:fffa ```  |  ```  ``` 
+ ``` file:/// < //[::]/.%2e/////%60 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` http://[::] < /?ퟻ ```  | query |  ``` ?%ED%9F%BB ```  |  ``` %ED%9F%BB ``` 
+ ``` g:/ < //[e5cc:dadf::250.252.254.252] ```  | host |  ``` e5cc:dadf::fafc:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` G:/ < //[edbd:fefa:ebab:ebde:cdac:bdba:250.252.201.252] ```  | host |  ``` edbd:fefa:ebab:ebde:cdac:bdba:fafc:c9fc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[babf:bbfe:ccfd:cadd:efab:dccd:eadb:5dac] ```  | host |  ``` babf:bbfe:ccfd:cadd:efab:dccd:eadb:5dac ```  |  ```  ``` 
+ ``` file://[::adff:abfb:214.252.253.252] ```  | host |  ``` ::adff:abfb:d6fc:fdfc ```  |  ```  ``` 
+ ``` R:/ < //[::b2ca:cdfa] ```  | host |  ``` ::b2ca:cdfa ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` b:/ < //[::ddbc:dede:debf] ```  | host |  ``` ::ddbc:dede:debf ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //HH ```  | host |  ``` hh ```  |  ```  ``` 
+ ``` file://[::220.250.251.253] ```  | host |  ``` ::dcfa:fbfd ```  |  ```  ``` 
+ ``` file://[::bbfe:251.252.122.251] ```  | host |  ``` ::bbfe:fbfc:7afb ```  |  ```  ``` 
+ ``` j:/ < ///X:/ ```  | filePath |  ``` /X:/ ```  |  ``` //X/ ``` 
+ ``` A:/ < ///%2e%2e//%2e ```  | filePath |  ``` // ```  |  ``` //%2e%2e// ``` 
+ ``` d://[fdbe:ccab::acdf:daef:253.251.251.255] ```  | host |  ``` fdbe:ccab::acdf:daef:fdfb:fbff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` V://[::afab:bc8d:bbdc] ```  | host |  ``` ::afab:bc8d:bbdc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` https://[::]?ﾭ ```  | query |  ``` ?%EF%BE%AD ```  |  ``` %EF%BE%AD ``` 
+ ``` file://[bf9b::beca:cadd:250.251.254.251] ```  | host |  ``` bf9b::beca:cadd:fafb:fefb ```  |  ```  ``` 
+ ``` file://[::fefb:ccfc:153.254.250.253] ```  | host |  ``` ::fefb:ccfc:99fe:fafd ```  |  ```  ``` 
+ ``` B://[::deee:202.255.253.255] < / ```  | host |  ``` ::deee:caff:fdff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[a6be:ffea::aeac:253.254.251.252] ```  | host |  ``` a6be:ffea::aeac:fdfe:fbfc ```  |  ```  ``` 
+ ``` file://[bb7e:fcba::fbeb] ```  | host |  ``` bb7e:fcba::fbeb ```  |  ```  ``` 
+ ``` q:/ < //$ ```  | host |  ``` $ ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` U:/ < //[::dbae:acfd:251.254.8.252] ```  | host |  ``` ::dbae:acfd:fbfe:8fc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` c://~Q ```  | host |  ``` ~q ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` Y:/ < ///S:/ ```  | filePath |  ``` /S:/ ```  |  ``` //S/ ``` 
+ ``` file:///^ ```  | filePath |  ``` /^ ```  |  ``` /%5E ``` 
+ ``` X://[e5da:febd::fcad:252.251.252.254] ```  | host |  ``` e5da:febd::fcad:fcfb:fcfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::eaac:235.255.253.252] ```  | host |  ``` ::eaac:ebff:fdfc ```  |  ```  ``` 
+ ``` G:/ < //[::abce:eabd:252.6.250.252] ```  | host |  ``` ::abce:eabd:fc06:fafc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::]/%2e./%3f ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file://[::]/񘃚 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file:/// < //[::aadb:defe:bf9d:ccad] ```  | host |  ``` ::aadb:defe:bf9d:ccad ```  |  ```  ``` 
+ ``` i:/ < //[::5fbf:bdbc] ```  | host |  ``` ::5fbf:bdbc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[cd7e::bbfa:beaf:253.251.255.255] ```  | host |  ``` cd7e::bbfa:beaf:fdfb:ffff ```  |  ```  ``` 
+ ``` E:/ < //[caa2:bafa::] ```  | host |  ``` caa2:bafa:: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://B ```  | host |  ``` b ```  |  ```  ``` 
+ ``` file://[fcc9:befc::] < / ```  | host |  ``` fcc9:befc:: ```  |  ```  ``` 
+ ``` file:/// < //[::faea:bbcc:a4ef] ```  | host |  ``` ::faea:bbcc:a4ef ```  |  ```  ``` 
+ ``` U://-p ```  | host |  ``` -p ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` b://s ```  | host |  ``` s ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` n://[::bbfd:ccae:255.252.90.254] ```  | host |  ``` ::bbfd:ccae:fffc:5afe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::253.83.252.252] ```  | host |  ``` ::fd53:fcfc ```  |  ```  ``` 
+ ``` file:/// < //}` ```  | host |  ``` }` ```  |  ```  ``` 
+ ``` file://U ```  | host |  ``` u ```  |  ```  ``` 
+ ``` g:/ < //[::acbe:bece:252.99.251.254] ```  | host |  ``` ::acbe:bece:fc63:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` C://[::ddcc:81.252.254.253] ```  | host |  ``` ::ddcc:51fc:fefd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //ċz ```  | host |  ``` xn--z-7ha ```  |  ```  ``` 
+ ``` o://[dcbb:ddbb::ddbb] ```  | host |  ``` dcbb:ddbb::ddbb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //y3 ```  | host |  ``` y3 ```  |  ```  ``` 
+ ``` O:/ < //Z ```  | host |  ``` z ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::]/󄐕 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file://" ```  | host |  ``` " ```  |  ```  ``` 
+ ``` h:/ < //[::eca2] ```  | host |  ``` ::eca2 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://255.252.252.70 ```  | host |  ``` 255.252.252.70 ```  |  ```  ``` 
+ ``` file:/// < //251.252.253.241 ```  | host |  ``` 251.252.253.241 ```  |  ```  ``` 
+ ``` file://[a0dd:bfdf::babb] ```  | host |  ``` a0dd:bfdf::babb ```  |  ```  ``` 
+ ``` file:/// < //[c8ab:efde::250.251.251.253] ```  | host |  ``` c8ab:efde::fafb:fbfd ```  |  ```  ``` 
+ ``` file://[::]/ꪸ ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` ftp://[::]/&^ ```  | filePath |  ``` /&^ ```  |  ``` /&%5E ``` 
+ ``` s:/ < /?= ```  | query |  ``` ?= ```  |  ``` = ``` 
+ ``` v://[ceda:eaab:cafc:afbb:bfac:fdaf:254.253.253.253] < / ```  | host |  ``` ceda:eaab:cafc:afbb:bfac:fdaf:fefd:fdfd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` P:/ < //;( ```  | host |  ``` ;( ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::]/./%2e%2e ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` z:/ < //(W ```  | host |  ``` (w ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::fede:dcaf:251.251.9.254] ```  | host |  ``` ::fede:dcaf:fbfb:9fe ```  |  ```  ``` 
+ ``` N:/ < //*& ```  | host |  ``` *& ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::dbed:aebe:fdfe:ea7b] ```  | host |  ``` ::dbed:aebe:fdfe:ea7b ```  |  ```  ``` 
+ ``` j:/ < //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251] ```  | host |  ``` efbb:efbc:eaff:cbaa:aebf:cada:fe43:fffb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` W:/ < //[db4d::fdfd:cecb:250.254.251.254] ```  | host |  ``` db4d::fdfd:cecb:fafe:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[b7ce::] ```  | host |  ``` b7ce:: ```  |  ```  ``` 
+ ``` file://[::dcee:250.250.254.232] ```  | host |  ``` ::dcee:fafa:fee8 ```  |  ```  ``` 
+ ``` file://h ```  | host |  ``` h ```  |  ```  ``` 
+ ``` z://[::dfbe:afea:251.254.251.254] < / ```  | host |  ``` ::dfbe:afea:fbfe:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[bba4::] ```  | host |  ``` bba4:: ```  |  ```  ``` 
+ ``` file://[::251.255.253.188] ```  | host |  ``` ::fbff:fdbc ```  |  ```  ``` 
+ ``` file:/// < //[dbdb:eecc:cdca:ddbd:dabe:bbef:253.254.255.238] ```  | host |  ``` dbdb:eecc:cdca:ddbd:dabe:bbef:fdfe:ffee ```  |  ```  ``` 
+ ``` q:/ < //[::fcaa:fddb:255.251.250.52] ```  | host |  ``` ::fcaa:fddb:fffb:fa34 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` W:/ < ///./! ```  | filePath |  ``` /! ```  |  ``` //./! ``` 
+ ``` file:/// < //[::eeda:cbcf:4dbe] ```  | host |  ``` ::eeda:cbcf:4dbe ```  |  ```  ``` 
+ ``` file://[edcf:bebf:adea:abbe:bcbb:abeb:254.13.253.251] ```  | host |  ``` edcf:bebf:adea:abbe:bcbb:abeb:fe0d:fdfb ```  |  ```  ``` 
+ ``` p:/ < //[::]:4 ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` G:/ < //[::fdfa:efbf:caab:1dea] ```  | host |  ``` ::fdfa:efbf:caab:1dea ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::]/! < / ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` http://[::] < /?텫 ```  | query |  ``` ?%ED%85%AB ```  |  ``` %ED%85%AB ``` 
+ ``` x:/ < ///'￪ ```  | filePath |  ``` /'%EF%BF%AA ```  |  ``` //'%EF%BF%AA/ ``` 
+ ``` U:/ < //[::e4da:253.255.255.252] ```  | host |  ``` ::e4da:fdff:fffc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` W:/ < /// ```  | filePath |  ``` /%EE%93%8D ```  |  ``` //%EE%93%8D/ ``` 
+ ``` file://)+ ```  | host |  ``` )+ ```  |  ```  ``` 
+ ``` file://255.250.250.57 ```  | host |  ``` 255.250.250.57 ```  |  ```  ``` 
+ ``` file:/// < /?1 ```  | query |  ``` ?1 ```  |  ``` 1 ``` 
+ ``` file:/// < //255.250.229.250 ```  | host |  ``` 255.250.229.250 ```  |  ```  ``` 
+ ``` K://`= ```  | host |  ``` `= ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::254.248.254.255] ```  | host |  ``` ::fef8:feff ```  |  ```  ``` 
+ ``` file:/// < //[::]/%2e.//痁 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file://nS ```  | host |  ``` ns ```  |  ```  ``` 
+ ``` file:/// < //{y ```  | host |  ``` {y ```  |  ```  ``` 
+ ``` file:/// < //253.43.251.251 ```  | host |  ``` 253.43.251.251 ```  |  ```  ``` 
+ ``` https://[::]?: ```  | query |  ``` ?: ```  |  ``` : ``` 
+ ``` s:/ < //D ```  | host |  ``` d ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://-& ```  | host |  ``` -& ```  |  ```  ``` 
  ``` file://[::]/, ```  | host |  ``` :: ```  |  ```  ``` 
  ``` file:/// < //[::efac:cfbc:ddef] ```  | host |  ``` ::efac:cfbc:ddef ```  |  ```  ``` 
+ ``` Z://+& ```  | host |  ``` +& ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` F://[::fabe:254.251.254.57] ```  | host |  ``` ::fabe:fefb:fe39 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` f:/ < ///@垳 ```  | filePath |  ``` /@%E5%9E%B3 ```  |  ``` //%E5%9E%B3/ ``` 
  ``` x:/ < //C ```  | host |  ``` c ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://[::feba:ecfb:251.252.253.6] ```  | host |  ``` ::feba:ecfb:fbfc:fd06 ```  |  ```  ``` 
@@ -920,9 +1096,116 @@ chromium | 103 | 24 | 79
  ``` file:/// < //250.255.211.254 ```  | host |  ``` 250.255.211.254 ```  |  ```  ``` 
  ``` file://[::aeef:254.252.252.9] ```  | host |  ``` ::aeef:fefc:fc09 ```  |  ```  ``` 
  ``` file://'l ```  | host |  ``` 'l ```  |  ```  ``` 
- ``` T:/ < //[::4aba:251.250.254.255] ```  | host |  ``` ::4aba:fbfa:feff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://)5 ```  | host |  ``` )5 ```  |  ```  ``` 
- ``` file://[bddc:ceda:eaab:cdaf:eeee:bdec:ad6f:cdeb] ```  | host |  ``` bddc:ceda:eaab:cdaf:eeee:bdec:ad6f:cdeb ```  |  ```  ``` 
+ ``` file://[::bdf3:255.252.254.255] ```  | host |  ``` ::bdf3:fffc:feff ```  |  ```  ``` 
+ ``` y://[::fdde:223.252.254.253] ```  | host |  ``` ::fdde:dffc:fefd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` J:/ < //; ```  | host |  ``` ; ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` p:/ < //1, ```  | host |  ``` 1, ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` s:/ < /?啁 ```  | query |  ``` ?%E5%95%81 ```  |  ``` %E5%95%81 ``` 
+ ``` file:/// < //[9eed:bafe:dada:cecd:abca:fbec:250.252.255.253] ```  | host |  ``` 9eed:bafe:dada:cecd:abca:fbec:fafc:fffd ```  |  ```  ``` 
+ ``` L:/ < ///^. ```  | filePath |  ``` /^. ```  |  ``` //^./ ``` 
+ ``` L://[e8ac:aaeb::252.251.255.253] < / ```  | host |  ``` e8ac:aaeb::fcfb:fffd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` f:/ < //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae] ```  | host |  ``` acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::4fef:254.252.255.254] ```  | host |  ``` ::4fef:fefc:fffe ```  |  ```  ``` 
+ ``` z://[abce::] < / ```  | host |  ``` abce:: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::]/- ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file://[::]/%2e.//ﻍ ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file://[::]/ﻘ ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file:/// < /..//%2e%2e ```  | filePath |  ``` / ```  |  ``` //%2e%2e ``` 
+ ``` file:/// < //[::cdec:3abe:bfcc] ```  | host |  ``` ::cdec:3abe:bfcc ```  |  ```  ``` 
+ ``` file://[::]/%2e//%2e ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file:/// < //[fb3f:aeeb::252.250.255.254] ```  | host |  ``` fb3f:aeeb::fcfa:fffe ```  |  ```  ``` 
+ ``` M:/ < ///h:/ ```  | filePath |  ``` /h:/ ```  |  ``` //h/ ``` 
+ ``` file://[::e2ff] < / ```  | host |  ``` ::e2ff ```  |  ```  ``` 
+ ``` A:/ < //[::adbf:dedc:252.254.44.255] ```  | host |  ``` ::adbf:dedc:fcfe:2cff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://250.218.255.252 ```  | host |  ``` 250.218.255.252 ```  |  ```  ``` 
+ ``` S:/ < //[::bcc6] ```  | host |  ``` ::bcc6 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` http://[::]?򅴄 ```  | query |  ``` ?%F2%85%B4%84 ```  |  ``` %F2%85%B4%84 ``` 
+ ``` file://[::]/酜 < / ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file://;~ < / ```  | host |  ``` ;~ ```  |  ```  ``` 
+ ``` file://[::253.254.254.6] ```  | host |  ``` ::fdfe:fe06 ```  |  ```  ``` 
+ ``` h:/ < //[efd2:dade::] ```  | host |  ``` efd2:dade:: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` G:/ < //[::252.250.250.45] ```  | host |  ``` ::fcfa:fa2d ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[dac2:dadf::eadd:251.255.253.254] < / ```  | host |  ``` dac2:dadf::eadd:fbff:fdfe ```  |  ```  ``` 
+ ``` file://[::fbca:cceb:dfda:dfde] ```  | host |  ``` ::fbca:cceb:dfda:dfde ```  |  ```  ``` 
+ ``` file:/// < //[::d0bc:afbb:254.255.253.251] ```  | host |  ``` ::d0bc:afbb:feff:fdfb ```  |  ```  ``` 
+ ``` a:/ < //[::251.253.251.215] ```  | host |  ``` ::fbfd:fbd7 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` ftp://[::] < .%2e/= ```  | filePath |  ``` /= ```  |  ``` /../= ``` 
+ ``` file://[bece:bdfa:acff:ffef:acdb:cbbf:250.253.251.6] ```  | host |  ``` bece:bdfa:acff:ffef:acdb:cbbf:fafd:fb06 ```  |  ```  ``` 
+ ``` file://[::8dfe:250.251.251.254] ```  | host |  ``` ::8dfe:fafb:fbfe ```  |  ```  ``` 
+ ``` file://[b8dc::fbec:dcae:252.250.254.250] ```  | host |  ``` b8dc::fbec:dcae:fcfa:fefa ```  |  ```  ``` 
+ ``` s://' ```  | host |  ``` ' ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::faff:ccbe:250.254.252.215] ```  | host |  ``` ::faff:ccbe:fafe:fcd7 ```  |  ```  ``` 
+ ``` file:/// < //251.250.253.57 ```  | host |  ``` 251.250.253.57 ```  |  ```  ``` 
+ ``` file:/// < //[::]/ﺑ ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file://`$ ```  | host |  ``` `$ ```  |  ```  ``` 
+ ``` c:/ < //[ffa7::dcba:253.252.254.252] ```  | host |  ``` ffa7::dcba:fdfc:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` y:/ < //[aaf3:ccdc:cfbd:ecef:acfe:efdb:251.254.252.251] ```  | host |  ``` aaf3:ccdc:cfbd:ecef:acfe:efdb:fbfe:fcfb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` c:/ < //m ```  | host |  ``` m ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` w://[::]:65516 ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:///?퟼ ```  | query |  ``` ?%ED%9F%BC ```  |  ``` %ED%9F%BC ``` 
+ ``` file://[ffef:bfbd:ebfa:dcba:fcae:afff:befe:bdc5] ```  | host |  ``` ffef:bfbd:ebfa:dcba:fcae:afff:befe:bdc5 ```  |  ```  ``` 
+ ``` file://[::cbfb:173.253.253.252] ```  | host |  ``` ::cbfb:adfd:fdfc ```  |  ```  ``` 
+ ``` i:/ < //[::f7fa:dafa] ```  | host |  ``` ::f7fa:dafa ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` b:/ < //[fcbf:cbfa::eceb:252.251.253.251] ```  | host |  ``` fcbf:cbfa::eceb:fcfb:fdfb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::]/.//㶭 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file:/// < //251.232.253.255 ```  | host |  ``` 251.232.253.255 ```  |  ```  ``` 
+ ``` file://250.234.250.251 < / ```  | host |  ``` 250.234.250.251 ```  |  ```  ``` 
+ ``` j:/ < //[::efec:8ddc] ```  | host |  ``` ::efec:8ddc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[efaf:cfcd::beac:255.253.253.253] ```  | host |  ``` efaf:cfcd::beac:fffd:fdfd ```  |  ```  ``` 
+ ``` o://[::5bde] < / ```  | host |  ``` ::5bde ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` L:/ < //[cefd:feeb:cbcf:eabb:ffca:bdee:253.199.251.254] ```  | host |  ``` cefd:feeb:cbcf:eabb:ffca:bdee:fdc7:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` d:/ < //[::cfdc:cc8c] ```  | host |  ``` ::cfdc:cc8c ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[eaf9:ebab:ccbd:abea:ebca:fcbf:250.255.255.250] ```  | host |  ``` eaf9:ebab:ccbd:abea:ebca:fcbf:faff:fffa ```  |  ```  ``` 
+ ``` file://[::252.255.252.97] ```  | host |  ``` ::fcff:fc61 ```  |  ```  ``` 
+ ``` file://[::dbff:eeeb] < / ```  | host |  ``` ::dbff:eeeb ```  |  ```  ``` 
+ ``` file://Cċ < / ```  | host |  ``` xn--c-8ha ```  |  ```  ``` 
+ ``` file://[::dccc:dfaa] ```  | host |  ``` ::dccc:dfaa ```  |  ```  ``` 
+ ``` v:/ < //[::babd:244.252.253.254] ```  | host |  ``` ::babd:f4fc:fdfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[ed7c:cabe::252.251.253.254] ```  | host |  ``` ed7c:cabe::fcfb:fdfe ```  |  ```  ``` 
+ ``` file://[::bcfb:fbf3:faef] < / ```  | host |  ``` ::bcfb:fbf3:faef ```  |  ```  ``` 
+ ``` n://[::255.250.241.250] ```  | host |  ``` ::fffa:f1fa ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` d:/ < ///􏾐 ```  | filePath |  ``` /%F4%8F%BE%90 ```  |  ``` //%F4%8F%BE%90/ ``` 
+ ``` w:/ < //[::aeae:fcae:86.253.250.253] ```  | host |  ``` ::aeae:fcae:56fd:fafd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::feeb] ```  | host |  ``` ::feeb ```  |  ```  ``` 
+ ``` file:/// < /%2e///.%2e ```  | filePath |  ``` // ```  |  ``` ///.%2e ``` 
+ ``` https://[::]/./%2e%2e ```  | filePath |  ``` / ```  |  ``` /%2e%2e ``` 
+ ``` q:/ < //[::bedc:bbde:df8c] ```  | host |  ``` ::bedc:bbde:df8c ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` S://a2 ```  | host |  ``` a2 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::bdbc:223.254.255.254] < / ```  | host |  ``` ::bdbc:dffe:fffe ```  |  ```  ``` 
+ ``` e:/ < //[::7bce:fdcc] ```  | host |  ``` ::7bce:fdcc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::bcbf:10.254.255.252] ```  | host |  ``` ::bcbf:afe:fffc ```  |  ```  ``` 
+ ``` file://[ebff:daae:dfdb:efee:bbeb:efca:bc3f:faac] ```  | host |  ``` ebff:daae:dfdb:efee:bbeb:efca:bc3f:faac ```  |  ```  ``` 
+ ``` ftp://[::] < //[::]/,^ ```  | filePath |  ``` /,^ ```  |  ``` /,%5E ``` 
+ ``` Y:/ < //O ```  | host |  ``` o ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` K:/ < //U ```  | host |  ``` u ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < /./////%2e%2e ```  | filePath |  ``` //// ```  |  ``` /////%2e%2e ``` 
+ ``` file://[::8bfd] ```  | host |  ``` ::8bfd ```  |  ```  ``` 
+ ``` file:/// < /./.%2e ```  | filePath |  ``` / ```  |  ``` /.%2e ``` 
+ ``` F:/ < //~! ```  | host |  ``` ~! ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` q://[daf9:dcce::dbcf:fbdc:255.250.254.252] < / ```  | host |  ``` daf9:dcce::dbcf:fbdc:fffa:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::]/./鹷 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` e:/ < //[fafe:cacb:edff:faea:defa:bddc:85.252.250.251] ```  | host |  ``` fafe:cacb:edff:faea:defa:bddc:55fc:fafb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` w:/ < //%5d ```  | host |  ``` %5d ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://,= < / ```  | host |  ``` ,= ```  |  ```  ``` 
+ ``` file://[::]/../􏳁 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file:/// < /^򟜈 ```  | filePath |  ``` /^%F2%9F%9C%88 ```  |  ``` /%5E%F2%9F%9C%88 ``` 
+ ``` X://M < / ```  | host |  ``` m ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //!_ ```  | host |  ``` !_ ```  |  ```  ``` 
+ ``` file://[feba:dabc:fccb:dedc:cdca:bbcf:ceba:ecdb] ```  | host |  ``` feba:dabc:fccb:dedc:cdca:bbcf:ceba:ecdb ```  |  ```  ``` 
+ ``` H:/ < //[::7afa:254.250.252.253] ```  | host |  ``` ::7afa:fefa:fcfd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::caa8:254.250.250.250] ```  | host |  ``` ::caa8:fefa:fafa ```  |  ```  ``` 
+ ``` ftp://[::] < /?򸛱 ```  | query |  ``` ?%F2%B8%9B%B1 ```  |  ``` %F2%B8%9B%B1 ``` 
+ ``` P:/ < //[::cfcc:253.88.251.253] ```  | host |  ``` ::cfcc:fd58:fbfd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` A:/ < //[::aeb6] ```  | host |  ``` ::aeb6 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::3eae:befd:250.255.253.253] ```  | host |  ``` ::3eae:befd:faff:fdfd ```  |  ```  ``` 
+ ``` z:/ < //$} ```  | host |  ``` $} ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file:/// < //[::7edf:253.251.254.253] ```  | host |  ``` ::7edf:fdfb:fefd ```  |  ```  ``` 
+ ``` file://[::]/%2e%2e/󬱰 ```  | host |  ``` :: ```  |  ```  ``` 
+ ``` file:/// < /? ```  | query |  ``` ?%EE%BA%87 ```  |  ``` %EE%BA%87 ``` 
+ ``` file:/// < //Z ```  | host |  ``` z ```  |  ```  ``` 
+ ``` R:/ < //[::253.2.254.254] ```  | host |  ``` ::fd02:fefe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` P:/ < //[::fbaa:ceec:250.254.149.251] ```  | host |  ``` ::fbaa:ceec:fafe:95fb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::ac4d:dadb:254.253.251.253] ```  | host |  ``` ::ac4d:dadb:fefd:fbfd ```  |  ```  ``` 
  ``` V:/ < //( ```  | host |  ``` ( ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://[::9dff:afda:251.255.250.252] ```  | host |  ``` ::9dff:afda:fbff:fafc ```  |  ```  ``` 
  ``` a:/ < //[aebb:cfee:ddba:cbda:fbca:aebc:b6cd:dcba] ```  | host |  ``` aebb:cfee:ddba:cbda:fbca:aebc:b6cd:dcba ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
@@ -959,204 +1242,9 @@ chromium | 103 | 24 | 79
  ``` file://178.254.253.250 ```  | host |  ``` 178.254.253.250 ```  |  ```  ``` 
  ``` e:/ < //[::253.254.44.255] ```  | host |  ``` ::fdfe:2cff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
  ``` file://[::e3df] ```  | host |  ``` ::e3df ```  |  ```  ``` 
+ ``` q:/ < //[::251.252.251.85] ```  | host |  ``` ::fbfc:fb55 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
+ ``` file://[::bfbe:bcfa:dcd6] < / ```  | host |  ``` ::bfbe:bcfa:dcd6 ```  |  ```  ``` 
  ``` file:/// < /?W ```  | query |  ``` ?W ```  |  ``` W ``` 
- ``` file:/// < //[::faea:bbcc:a4ef] ```  | host |  ``` ::faea:bbcc:a4ef ```  |  ```  ``` 
- ``` U://-p ```  | host |  ``` -p ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` b://s ```  | host |  ``` s ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` n://[::bbfd:ccae:255.252.90.254] ```  | host |  ``` ::bbfd:ccae:fffc:5afe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::253.83.252.252] ```  | host |  ``` ::fd53:fcfc ```  |  ```  ``` 
- ``` file:/// < //}` ```  | host |  ``` }` ```  |  ```  ``` 
- ``` file://U ```  | host |  ``` u ```  |  ```  ``` 
- ``` g:/ < //[::acbe:bece:252.99.251.254] ```  | host |  ``` ::acbe:bece:fc63:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` C://[::ddcc:81.252.254.253] ```  | host |  ``` ::ddcc:51fc:fefd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //ċz ```  | host |  ``` xn--z-7ha ```  |  ```  ``` 
- ``` o://[dcbb:ddbb::ddbb] ```  | host |  ``` dcbb:ddbb::ddbb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //251.232.253.255 ```  | host |  ``` 251.232.253.255 ```  |  ```  ``` 
- ``` file://250.234.250.251 < / ```  | host |  ``` 250.234.250.251 ```  |  ```  ``` 
- ``` j:/ < //[::efec:8ddc] ```  | host |  ``` ::efec:8ddc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[efaf:cfcd::beac:255.253.253.253] ```  | host |  ``` efaf:cfcd::beac:fffd:fdfd ```  |  ```  ``` 
- ``` o://[::5bde] < / ```  | host |  ``` ::5bde ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` L:/ < //[cefd:feeb:cbcf:eabb:ffca:bdee:253.199.251.254] ```  | host |  ``` cefd:feeb:cbcf:eabb:ffca:bdee:fdc7:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` d:/ < //[::cfdc:cc8c] ```  | host |  ``` ::cfdc:cc8c ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[eaf9:ebab:ccbd:abea:ebca:fcbf:250.255.255.250] ```  | host |  ``` eaf9:ebab:ccbd:abea:ebca:fcbf:faff:fffa ```  |  ```  ``` 
- ``` file://[::dbff:eeeb] < / ```  | host |  ``` ::dbff:eeeb ```  |  ```  ``` 
- ``` file://Cċ < / ```  | host |  ``` xn--c-8ha ```  |  ```  ``` 
- ``` file://[::dccc:dfaa] ```  | host |  ``` ::dccc:dfaa ```  |  ```  ``` 
- ``` v:/ < //[::babd:244.252.253.254] ```  | host |  ``` ::babd:f4fc:fdfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[ed7c:cabe::252.251.253.254] ```  | host |  ``` ed7c:cabe::fcfb:fdfe ```  |  ```  ``` 
- ``` file://[::bcfb:fbf3:faef] < / ```  | host |  ``` ::bcfb:fbf3:faef ```  |  ```  ``` 
- ``` n://[::255.250.241.250] ```  | host |  ``` ::fffa:f1fa ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` d:/ < ///􏾐 ```  | filePath |  ``` /%F4%8F%BE%90 ```  |  ``` //%F4%8F%BE%90/ ``` 
- ``` w:/ < //[::aeae:fcae:86.253.250.253] ```  | host |  ``` ::aeae:fcae:56fd:fafd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::feeb] ```  | host |  ``` ::feeb ```  |  ```  ``` 
- ``` file:/// < /%2e///.%2e ```  | filePath |  ``` // ```  |  ``` ///.%2e ``` 
- ``` https://[::]/./%2e%2e ```  | filePath |  ``` / ```  |  ``` /%2e%2e ``` 
- ``` q:/ < //[::bedc:bbde:df8c] ```  | host |  ``` ::bedc:bbde:df8c ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` S://a2 ```  | host |  ``` a2 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::bdbc:223.254.255.254] < / ```  | host |  ``` ::bdbc:dffe:fffe ```  |  ```  ``` 
- ``` e:/ < //[::7bce:fdcc] ```  | host |  ``` ::7bce:fdcc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::bcbf:10.254.255.252] ```  | host |  ``` ::bcbf:afe:fffc ```  |  ```  ``` 
- ``` file://[ebff:daae:dfdb:efee:bbeb:efca:bc3f:faac] ```  | host |  ``` ebff:daae:dfdb:efee:bbeb:efca:bc3f:faac ```  |  ```  ``` 
- ``` Y:/ < //O ```  | host |  ``` o ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` K:/ < //U ```  | host |  ``` u ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < /./////%2e%2e ```  | filePath |  ``` //// ```  |  ``` /////%2e%2e ``` 
- ``` file://[::8bfd] ```  | host |  ``` ::8bfd ```  |  ```  ``` 
- ``` file:/// < /./.%2e ```  | filePath |  ``` / ```  |  ``` /.%2e ``` 
- ``` F:/ < //~! ```  | host |  ``` ~! ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` q://[daf9:dcce::dbcf:fbdc:255.250.254.252] < / ```  | host |  ``` daf9:dcce::dbcf:fbdc:fffa:fefc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::]/./鹷 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` e:/ < //[fafe:cacb:edff:faea:defa:bddc:85.252.250.251] ```  | host |  ``` fafe:cacb:edff:faea:defa:bddc:55fc:fafb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` w:/ < //%5d ```  | host |  ``` %5d ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://,= < / ```  | host |  ``` ,= ```  |  ```  ``` 
- ``` file://[::]/../􏳁 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` X://M < / ```  | host |  ``` m ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //!_ ```  | host |  ``` !_ ```  |  ```  ``` 
- ``` file://[feba:dabc:fccb:dedc:cdca:bbcf:ceba:ecdb] ```  | host |  ``` feba:dabc:fccb:dedc:cdca:bbcf:ceba:ecdb ```  |  ```  ``` 
- ``` H:/ < //[::7afa:254.250.252.253] ```  | host |  ``` ::7afa:fefa:fcfd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::caa8:254.250.250.250] ```  | host |  ``` ::caa8:fefa:fafa ```  |  ```  ``` 
- ``` ftp://[::] < /?򸛱 ```  | query |  ``` ?%F2%B8%9B%B1 ```  |  ``` %F2%B8%9B%B1 ``` 
- ``` y://[::fdde:223.252.254.253] ```  | host |  ``` ::fdde:dffc:fefd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` J:/ < //; ```  | host |  ``` ; ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` p:/ < //1, ```  | host |  ``` 1, ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` s:/ < /?啁 ```  | query |  ``` ?%E5%95%81 ```  |  ``` %E5%95%81 ``` 
- ``` file:/// < //[9eed:bafe:dada:cecd:abca:fbec:250.252.255.253] ```  | host |  ``` 9eed:bafe:dada:cecd:abca:fbec:fafc:fffd ```  |  ```  ``` 
- ``` a:/ < //%6f ```  | host |  ``` %6f ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` o:/// < / ```  | filePath |  ``` / ```  |  ``` /// ``` 
- ``` t:/ < //T ```  | host |  ``` t ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[adfc::fcee:250.255.255.250] ```  | host |  ``` adfc::fcee:faff:fffa ```  |  ```  ``` 
- ``` file:/// < //[::]/.%2e/////%60 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` http://[::] < /?ퟻ ```  | query |  ``` ?%ED%9F%BB ```  |  ``` %ED%9F%BB ``` 
- ``` G:/ < //[edbd:fefa:ebab:ebde:cdac:bdba:250.252.201.252] ```  | host |  ``` edbd:fefa:ebab:ebde:cdac:bdba:fafc:c9fc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[babf:bbfe:ccfd:cadd:efab:dccd:eadb:5dac] ```  | host |  ``` babf:bbfe:ccfd:cadd:efab:dccd:eadb:5dac ```  |  ```  ``` 
- ``` file://[::adff:abfb:214.252.253.252] ```  | host |  ``` ::adff:abfb:d6fc:fdfc ```  |  ```  ``` 
- ``` R:/ < //[::b2ca:cdfa] ```  | host |  ``` ::b2ca:cdfa ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` b:/ < //[::ddbc:dede:debf] ```  | host |  ``` ::ddbc:dede:debf ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //HH ```  | host |  ``` hh ```  |  ```  ``` 
- ``` file://[::220.250.251.253] ```  | host |  ``` ::dcfa:fbfd ```  |  ```  ``` 
- ``` file://[::bbfe:251.252.122.251] ```  | host |  ``` ::bbfe:fbfc:7afb ```  |  ```  ``` 
- ``` j:/ < ///X:/ ```  | filePath |  ``` /X:/ ```  |  ``` //X/ ``` 
- ``` A:/ < ///%2e%2e//%2e ```  | filePath |  ``` // ```  |  ``` //%2e%2e// ``` 
- ``` d://[fdbe:ccab::acdf:daef:253.251.251.255] ```  | host |  ``` fdbe:ccab::acdf:daef:fdfb:fbff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` V://[::afab:bc8d:bbdc] ```  | host |  ``` ::afab:bc8d:bbdc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` https://[::]?ﾭ ```  | query |  ``` ?%EF%BE%AD ```  |  ``` %EF%BE%AD ``` 
- ``` file://[bf9b::beca:cadd:250.251.254.251] ```  | host |  ``` bf9b::beca:cadd:fafb:fefb ```  |  ```  ``` 
- ``` file://[::fefb:ccfc:153.254.250.253] ```  | host |  ``` ::fefb:ccfc:99fe:fafd ```  |  ```  ``` 
- ``` B://[::deee:202.255.253.255] < / ```  | host |  ``` ::deee:caff:fdff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[a6be:ffea::aeac:253.254.251.252] ```  | host |  ``` a6be:ffea::aeac:fdfe:fbfc ```  |  ```  ``` 
- ``` file://[bb7e:fcba::fbeb] ```  | host |  ``` bb7e:fcba::fbeb ```  |  ```  ``` 
- ``` q:/ < //$ ```  | host |  ``` $ ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` U:/ < //[::dbae:acfd:251.254.8.252] ```  | host |  ``` ::dbae:acfd:fbfe:8fc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` c://~Q ```  | host |  ``` ~q ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` Y:/ < ///S:/ ```  | filePath |  ``` /S:/ ```  |  ``` //S/ ``` 
- ``` file:///^ ```  | filePath |  ``` /^ ```  |  ``` /%5E ``` 
- ``` X://[e5da:febd::fcad:252.251.252.254] ```  | host |  ``` e5da:febd::fcad:fcfb:fcfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::eaac:235.255.253.252] ```  | host |  ``` ::eaac:ebff:fdfc ```  |  ```  ``` 
- ``` G:/ < //[::abce:eabd:252.6.250.252] ```  | host |  ``` ::abce:eabd:fc06:fafc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::]/%2e./%3f ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file://[::]/񘃚 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file:/// < //[::aadb:defe:bf9d:ccad] ```  | host |  ``` ::aadb:defe:bf9d:ccad ```  |  ```  ``` 
- ``` i:/ < //[::5fbf:bdbc] ```  | host |  ``` ::5fbf:bdbc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[cd7e::bbfa:beaf:253.251.255.255] ```  | host |  ``` cd7e::bbfa:beaf:fdfb:ffff ```  |  ```  ``` 
- ``` file://B ```  | host |  ``` b ```  |  ```  ``` 
- ``` file://[fcc9:befc::] < / ```  | host |  ``` fcc9:befc:: ```  |  ```  ``` 
- ``` file://[::cbfb:173.253.253.252] ```  | host |  ``` ::cbfb:adfd:fdfc ```  |  ```  ``` 
- ``` i:/ < //[::f7fa:dafa] ```  | host |  ``` ::f7fa:dafa ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` b:/ < //[fcbf:cbfa::eceb:252.251.253.251] ```  | host |  ``` fcbf:cbfa::eceb:fcfb:fdfb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::]/.//㶭 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` L:/ < ///^. ```  | filePath |  ``` /^. ```  |  ``` //^./ ``` 
- ``` L://[e8ac:aaeb::252.251.255.253] < / ```  | host |  ``` e8ac:aaeb::fcfb:fffd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` f:/ < //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae] ```  | host |  ``` acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` z://[abce::] < / ```  | host |  ``` abce:: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::]/- ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file://[::]/%2e.//ﻍ ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file:/// < /..//%2e%2e ```  | filePath |  ``` / ```  |  ``` //%2e%2e ``` 
- ``` file://[::]/%2e//%2e ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file:/// < //[fb3f:aeeb::252.250.255.254] ```  | host |  ``` fb3f:aeeb::fcfa:fffe ```  |  ```  ``` 
- ``` M:/ < ///h:/ ```  | filePath |  ``` /h:/ ```  |  ``` //h/ ``` 
- ``` file://[::e2ff] < / ```  | host |  ``` ::e2ff ```  |  ```  ``` 
- ``` A:/ < //[::adbf:dedc:252.254.44.255] ```  | host |  ``` ::adbf:dedc:fcfe:2cff ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://250.218.255.252 ```  | host |  ``` 250.218.255.252 ```  |  ```  ``` 
- ``` S:/ < //[::bcc6] ```  | host |  ``` ::bcc6 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` http://[::]?򅴄 ```  | query |  ``` ?%F2%85%B4%84 ```  |  ``` %F2%85%B4%84 ``` 
- ``` file://[::]/酜 < / ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file://;~ < / ```  | host |  ``` ;~ ```  |  ```  ``` 
- ``` G:/ < //[::252.250.250.45] ```  | host |  ``` ::fcfa:fa2d ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[dac2:dadf::eadd:251.255.253.254] < / ```  | host |  ``` dac2:dadf::eadd:fbff:fdfe ```  |  ```  ``` 
- ``` file://[::fbca:cceb:dfda:dfde] ```  | host |  ``` ::fbca:cceb:dfda:dfde ```  |  ```  ``` 
- ``` a:/ < //[::251.253.251.215] ```  | host |  ``` ::fbfd:fbd7 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` ftp://[::] < .%2e/= ```  | filePath |  ``` /= ```  |  ``` /../= ``` 
- ``` file://[bece:bdfa:acff:ffef:acdb:cbbf:250.253.251.6] ```  | host |  ``` bece:bdfa:acff:ffef:acdb:cbbf:fafd:fb06 ```  |  ```  ``` 
- ``` file://[::8dfe:250.251.251.254] ```  | host |  ``` ::8dfe:fafb:fbfe ```  |  ```  ``` 
- ``` file://[b8dc::fbec:dcae:252.250.254.250] ```  | host |  ``` b8dc::fbec:dcae:fcfa:fefa ```  |  ```  ``` 
- ``` s://' ```  | host |  ``` ' ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::faff:ccbe:250.254.252.215] ```  | host |  ``` ::faff:ccbe:fafe:fcd7 ```  |  ```  ``` 
- ``` file:/// < //251.250.253.57 ```  | host |  ``` 251.250.253.57 ```  |  ```  ``` 
- ``` file:/// < //[::]/ﺑ ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file://`$ ```  | host |  ``` `$ ```  |  ```  ``` 
- ``` y:/ < //[aaf3:ccdc:cfbd:ecef:acfe:efdb:251.254.252.251] ```  | host |  ``` aaf3:ccdc:cfbd:ecef:acfe:efdb:fbfe:fcfb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` c:/ < //m ```  | host |  ``` m ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` w://[::]:65516 ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:///?퟼ ```  | query |  ``` ?%ED%9F%BC ```  |  ``` %ED%9F%BC ``` 
- ``` file://[ffef:bfbd:ebfa:dcba:fcae:afff:befe:bdc5] ```  | host |  ``` ffef:bfbd:ebfa:dcba:fcae:afff:befe:bdc5 ```  |  ```  ``` 
- ``` P:/ < //[::cfcc:253.88.251.253] ```  | host |  ``` ::cfcc:fd58:fbfd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` A:/ < //[::aeb6] ```  | host |  ``` ::aeb6 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::3eae:befd:250.255.253.253] ```  | host |  ``` ::3eae:befd:faff:fdfd ```  |  ```  ``` 
- ``` z:/ < //$} ```  | host |  ``` $} ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file:/// < //[::7edf:253.251.254.253] ```  | host |  ``` ::7edf:fdfb:fefd ```  |  ```  ``` 
- ``` file://[::]/%2e%2e/󬱰 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file:/// < /? ```  | query |  ``` ?%EE%BA%87 ```  |  ``` %EE%BA%87 ``` 
- ``` file:/// < //Z ```  | host |  ``` z ```  |  ```  ``` 
- ``` R:/ < //[::253.2.254.254] ```  | host |  ``` ::fd02:fefe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` P:/ < //[::fbaa:ceec:250.254.149.251] ```  | host |  ``` ::fbaa:ceec:fafe:95fb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::ac4d:dadb:254.253.251.253] ```  | host |  ``` ::ac4d:dadb:fefd:fbfd ```  |  ```  ``` 
- ``` file:/// < //y3 ```  | host |  ``` y3 ```  |  ```  ``` 
- ``` file:/// < //[::]/󄐕 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file://" ```  | host |  ``` " ```  |  ```  ``` 
- ``` h:/ < //[::eca2] ```  | host |  ``` ::eca2 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://255.252.252.70 ```  | host |  ``` 255.252.252.70 ```  |  ```  ``` 
- ``` file:/// < //251.252.253.241 ```  | host |  ``` 251.252.253.241 ```  |  ```  ``` 
- ``` file://[a0dd:bfdf::babb] ```  | host |  ``` a0dd:bfdf::babb ```  |  ```  ``` 
- ``` file:/// < //[c8ab:efde::250.251.251.253] ```  | host |  ``` c8ab:efde::fafb:fbfd ```  |  ```  ``` 
- ``` file://[::]/ꪸ ```  | host |  ``` :: ```  |  ```  ``` 
- ``` ftp://[::]/&^ ```  | filePath |  ``` /&^ ```  |  ``` /&%5E ``` 
- ``` s:/ < /?= ```  | query |  ``` ?= ```  |  ``` = ``` 
- ``` v://[ceda:eaab:cafc:afbb:bfac:fdaf:254.253.253.253] < / ```  | host |  ``` ceda:eaab:cafc:afbb:bfac:fdaf:fefd:fdfd ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` P:/ < //;( ```  | host |  ``` ;( ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::]/./%2e%2e ```  | host |  ``` :: ```  |  ```  ``` 
- ``` z:/ < //(W ```  | host |  ``` (w ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::fede:dcaf:251.251.9.254] ```  | host |  ``` ::fede:dcaf:fbfb:9fe ```  |  ```  ``` 
- ``` N:/ < //*& ```  | host |  ``` *& ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::dbed:aebe:fdfe:ea7b] ```  | host |  ``` ::dbed:aebe:fdfe:ea7b ```  |  ```  ``` 
- ``` j:/ < //[efbb:efbc:eaff:cbaa:aebf:cada:254.67.255.251] ```  | host |  ``` efbb:efbc:eaff:cbaa:aebf:cada:fe43:fffb ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` W:/ < //[db4d::fdfd:cecb:250.254.251.254] ```  | host |  ``` db4d::fdfd:cecb:fafe:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[b7ce::] ```  | host |  ``` b7ce:: ```  |  ```  ``` 
- ``` file://[::dcee:250.250.254.232] ```  | host |  ``` ::dcee:fafa:fee8 ```  |  ```  ``` 
- ``` file://h ```  | host |  ``` h ```  |  ```  ``` 
- ``` z://[::dfbe:afea:251.254.251.254] < / ```  | host |  ``` ::dfbe:afea:fbfe:fbfe ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::251.255.253.188] ```  | host |  ``` ::fbff:fdbc ```  |  ```  ``` 
- ``` q:/ < //[::fcaa:fddb:255.251.250.52] ```  | host |  ``` ::fcaa:fddb:fffb:fa34 ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` W:/ < ///./! ```  | filePath |  ``` /! ```  |  ``` //./! ``` 
- ``` file:/// < //[::eeda:cbcf:4dbe] ```  | host |  ``` ::eeda:cbcf:4dbe ```  |  ```  ``` 
- ``` file://[edcf:bebf:adea:abbe:bcbb:abeb:254.13.253.251] ```  | host |  ``` edcf:bebf:adea:abbe:bcbb:abeb:fe0d:fdfb ```  |  ```  ``` 
- ``` p:/ < //[::]:4 ```  | host |  ``` :: ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` G:/ < //[::fdfa:efbf:caab:1dea] ```  | host |  ``` ::fdfa:efbf:caab:1dea ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::]/! < / ```  | host |  ``` :: ```  |  ```  ``` 
- ``` http://[::] < /?텫 ```  | query |  ``` ?%ED%85%AB ```  |  ``` %ED%85%AB ``` 
- ``` x:/ < ///'￪ ```  | filePath |  ``` /'%EF%BF%AA ```  |  ``` //'%EF%BF%AA/ ``` 
- ``` U:/ < //[::e4da:253.255.255.252] ```  | host |  ``` ::e4da:fdff:fffc ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` W:/ < /// ```  | filePath |  ``` /%EE%93%8D ```  |  ``` //%EE%93%8D/ ``` 
- ``` file://)+ ```  | host |  ``` )+ ```  |  ```  ``` 
- ``` file://255.250.250.57 ```  | host |  ``` 255.250.250.57 ```  |  ```  ``` 
- ``` file:/// < /?1 ```  | query |  ``` ?1 ```  |  ``` 1 ``` 
- ``` file:/// < //255.250.229.250 ```  | host |  ``` 255.250.229.250 ```  |  ```  ``` 
- ``` K://`= ```  | host |  ``` `= ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://[::254.248.254.255] ```  | host |  ``` ::fef8:feff ```  |  ```  ``` 
- ``` file:/// < //[::]/%2e.//痁 ```  | host |  ``` :: ```  |  ```  ``` 
- ``` file:/// < //{y ```  | host |  ``` {y ```  |  ```  ``` 
- ``` file:/// < //253.43.251.251 ```  | host |  ``` 253.43.251.251 ```  |  ```  ``` 
- ``` https://[::]?: ```  | query |  ``` ?: ```  |  ``` : ``` 
- ``` s:/ < //D ```  | host |  ``` d ```  |  ``` NS_ERROR_FAILURE 2147500037 ``` 
- ``` file://-& ```  | host |  ``` -& ```  |  ```  ``` 
 
 ### chromium
 
@@ -1201,17 +1289,22 @@ chromium | 103 | 24 | 79
  ``` M:/ < ///h:/ ```  | host |  ```  ```  |  ``` h ``` 
  ``` j:/ < ///X:/ ```  | host |  ```  ```  |  ``` x ``` 
  ``` z:/ < //(W ```  | host |  ``` (w ```  |  ``` %28w ``` 
+ ``` ftp://[::] < //[::]/,^ ```  | path |  ``` /,^ ```  |  ``` /,%5E ``` 
  ``` file://[fcc9:befc::] < / ```  | host |  ``` [fcc9:befc::] ```  |  ```  ``` 
  ``` H://" ```  | host |  ``` " ```  |  ```  ``` 
  ``` a:/ < //%6f ```  | host |  ``` %6f ```  |  ``` o ``` 
+ ``` wss://=8 ```  | host |  ``` =8 ```  |  ``` %3D8 ``` 
  ``` https://.@, ```  | host |  ``` , ```  |  ``` %2C ``` 
  ``` file://250.234.250.251 < / ```  | host |  ``` 250.234.250.251 ```  |  ```  ``` 
  ``` ws://[::]/|% ```  | path |  ``` /|% ```  |  ``` /%7C% ``` 
+ ``` wss://[::] < //} ```  | host |  ``` } ```  |  ``` %7D ``` 
  ``` file://'l ```  | host |  ``` 'l ```  |  ``` %27l ``` 
  ``` file://" ```  | host |  ``` " ```  |  ``` %22 ``` 
  ``` https://[::] < //%@) ```  | host |  ``` ) ```  |  ``` %29 ``` 
  ``` ws://[::] < /|, ```  | path |  ``` /|, ```  |  ``` /%7C, ``` 
+ ``` file:/// < /^򟜈 ```  | path |  ``` /^%F2%9F%9C%88 ```  |  ``` /%5E%F2%9F%9C%88 ``` 
  ``` https://[::] < //'p ```  | host |  ``` 'p ```  |  ``` %27p ``` 
+ ``` F://[::fabe:254.251.254.57] ```  | host |  ``` [::fabe:fefb:fe39] ```  |  ```  ``` 
  ``` file://-& ```  | host |  ``` -& ```  |  ``` -%26 ``` 
  ``` https://[::] < //M@` ```  | host |  ``` ` ```  |  ``` %60 ``` 
  ``` file://`$ ```  | host |  ``` `$ ```  |  ``` %60%24 ``` 
@@ -1225,15 +1318,18 @@ chromium | 103 | 24 | 79
  ``` K://`= ```  | host |  ``` `= ```  |  ```  ``` 
  ``` U://[::ecea:cdbd:ccdd:afdb] ```  | host |  ``` [::ecea:cdbd:ccdd:afdb] ```  |  ```  ``` 
  ``` V:/ < //( ```  | host |  ``` ( ```  |  ``` %28 ``` 
+ ``` file://[::bfbe:bcfa:dcd6] < / ```  | host |  ``` [::bfbe:bcfa:dcd6] ```  |  ```  ``` 
  ``` ftp://x= ```  | host |  ``` x= ```  |  ``` x%3D ``` 
  ``` w://[::]:65516 ```  | host |  ``` [::] ```  |  ```  ``` 
  ``` file://[::e2ff] < / ```  | host |  ``` [::e2ff] ```  |  ```  ``` 
  ``` file:/// < ///|񁣀 ```  | path |  ``` /|%F1%81%A3%80 ```  |  ``` /%7C%F1%81%A3%80 ``` 
  ``` X://[d1db:aace::] ```  | host |  ``` [d1db:aace::] ```  |  ```  ``` 
+ ``` file:///|羏 ```  | path |  ``` /|%E7%BE%8F ```  |  ``` /%7C%E7%BE%8F ``` 
  ``` Y:/ < ///S:/ ```  | host |  ```  ```  |  ``` s ``` 
  ``` s://' ```  | host |  ``` ' ```  |  ```  ``` 
  ``` U://-p ```  | host |  ``` -p ```  |  ```  ``` 
  ``` http://[::] < //󢯼@= ```  | host |  ``` = ```  |  ``` %3D ``` 
+ ``` Z://+& ```  | host |  ``` +& ```  |  ```  ``` 
  ``` ftp://[::] < //)@& ```  | host |  ``` & ```  |  ``` %26 ``` 
  ``` http://b$ ```  | host |  ``` b$ ```  |  ``` b%24 ``` 
  ``` file://Cċ < / ```  | host |  ``` xn--c-8ha ```  |  ```  ``` 
