@@ -12,37 +12,37 @@
 <tbody>
 <tr>
 <td>parsed successfully</td>
-<td>(211/419)</td>
-<td>(211/419)</td>
-<td>(211/419)</td>
+<td>(227/459)</td>
+<td>(227/459)</td>
+<td>(227/459)</td>
 </tr>
 <tr>
 <td>rejected</td>
-<td>(208/419)</td>
-<td>(208/419)</td>
-<td>(208/419)</td>
+<td>(232/459)</td>
+<td>(232/459)</td>
+<td>(232/459)</td>
 </tr>
 <tr>
 <td>also rejected by whatwg</td>
-<td>(208/302)</td>
-<td>(208/302)</td>
-<td>(208/302)</td>
+<td>(232/335)</td>
+<td>(232/335)</td>
+<td>(232/335)</td>
 </tr>
 <tr>
 <td>component errors</td>
 <td></td>
-<td>(0/419)</td>
-<td>(0/419)</td>
+<td>(0/459)</td>
+<td>(0/459)</td>
 </tr>
 <tr>
 <td>equal component errors</td>
-<td>(0/419)</td>
+<td>(0/459)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>unequal component errors</td>
-<td>(0/419)</td>
+<td>(0/459)</td>
 <td></td>
 <td></td>
 </tr>
@@ -54,13 +54,13 @@
 </tr>
 <tr>
 <td>overall equal results</td>
-<td>(419/419)</td>
+<td>(459/459)</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>overall unequal results</td>
-<td>(0/419)</td>
+<td>(0/459)</td>
 <td></td>
 <td></td>
 </tr>
@@ -92,6 +92,11 @@
 <td class="pfail"> invalid URL</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>h://[eecb::dbdb:eeae:fbbd:eabf:171.250.252.255%25.]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>V://[5def::fede:ceee:ecaa:dbae:251.254.252.255%25~]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -100,6 +105,11 @@
 <td><code>h://?%d6</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::aebf:eaca:feab:8fcc%25.]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td><code>F1://</code></td>
@@ -162,9 +172,19 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>n://[::dfbd:fabd:fbba:ffae:dcaa:140.250.253.251%25-]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>w://#W</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::cabc:252.83.250.250%25.]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td><code>D://[::cbcc:236.255.254.253]</code></td>
@@ -232,6 +252,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>o://[eacf:eeae:bdfe:fccd:ceaa:cbba:250.253.220.254%25_]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>//[::dfea:ccae:255.254.253.196%25~]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
@@ -272,6 +297,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>T://[adfb:dbbc:eacc:ceae:bbfa:edee:253.251.252.6%25_]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>//%2f</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
@@ -303,6 +333,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>//[::dace:dfbd:8.251.252.250]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::252.255.251.213]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -392,9 +427,29 @@
 <td class="pfail"> invalid URL</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//D</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::afdc:fefd:254.1.250.254%25~]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>P://[::175.255.252.251%25~]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>Z://T</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>///%7d</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td class="wgfail">  <code>p://[abeb::abde:fcdb:eebd:cecb:255.253.8.250%25~]</code></td>
@@ -502,12 +557,22 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>D://[::cebc:80.255.255.255]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td><code>E://[::0cee:253.252.254.255]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
 <td class="wgfail">  <code>//[::feec:dbbd:afbc:ceae:acbf:253.255.255.229%25_]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::bbfa:afdc:253.254.254.40%25-]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -558,6 +623,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>//-@</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[9ecd::dffd:abec:dcae:caac:255.255.253.251%25-]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -622,6 +692,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//[fcae::defe:ebbf:fbfb:ebad:250.253.94.254]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>//[3aef:cecd::cbcd:255.250.250.252%25_]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
@@ -667,6 +742,11 @@
 <td class="pfail"> invalid URL</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//%f7</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>Z://[::adbd:254.254.252.2%25~]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -685,6 +765,11 @@
 <td class="wgfail">  <code>//[bebd::ebeb:abde:bceb:edcc:252.251.106.255%25~]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td><code>m://?%e8</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
 </tr>
 <tr>
 <td><code>k://[::abaa:cced:251.253.251.15]</code></td>
@@ -732,6 +817,11 @@
 <td class="pfail"> invalid URL</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//[5aaf:caaa::eebe%25~]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>Z://[::dafa:badf:affe:bdfa:fdaf:252.250.255.221%25.]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -760,6 +850,11 @@
 <td><code>v://8.254.255.252</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[9bcf:bedc::accc:255.252.253.250%25_]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td><code>p://[::afde:afea:adbf:250.255.0.254]</code></td>
@@ -832,6 +927,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//[8dbc:beaf::252.251.253.255]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td><code>X://[::ffcc:baba:caaa:fefd:dfbe:255.41.255.254]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -858,6 +958,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>//[ddec::bbae:cfbf:bfae:bfac:252.255.251.254%25-]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::ffac:ffec:fedb:229.253.252.255]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -902,9 +1007,19 @@
 <td class="pfail"> invalid URL</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//104.252.255.250</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>//:5</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>A://=@</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
 </tr>
 <tr>
 <td class="wgfail">  <code>//[::ddcf:197.254.252.255]</code></td>
@@ -973,6 +1088,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>//[::aeee:35.250.250.253%25.]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::fdfe:ddfd:badc:addf:ebed:255.254.52.252%25_]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -1082,7 +1202,22 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>i://[dcba:bfdc:acfb:fbff:fbfc:ffea:250.250.248.251]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td><code>p://8</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>//[::adec:123.254.253.253]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::%25i]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -1135,6 +1270,11 @@
 <td><code>f://[fdfc::cecf:fefe:dade:caca:255.252.127.252]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::acec:edec:fafc:efaf:dfda:253.251.77.254]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td class="wgfail">  <code>//[afba::baec:ceea:caec:dafd:252.251.250.1%25_]</code></td>
@@ -1218,6 +1358,11 @@
 </tr>
 <tr>
 <td><code>a://%6b</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>c://[v2.:]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -1307,6 +1452,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//[::fdfd:ccae:ffda:deaa:acfc:253.2.250.250]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>F://[::eacf:255.251.250.239%25_]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -1323,6 +1473,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>//[aead::edab:dfec:deeb:baca:251.253.166.255]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[fbbc::cfef:aadf:dddb:eefc:31.251.250.250%25~]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -1412,6 +1567,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td><code>w://[::fcdc:250.254.96.251]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>//[::cceb:bfae:efbc:dcfb:efff:252.255.255.103%25-]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
@@ -1420,6 +1580,11 @@
 <td class="wgfail">  <code>E://[abfc:ceaf:ddac:baec:ccae:cedc:4.252.254.255%25-]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[bfad:bfba:eeff:bdcb:bcfc:cccd:187.255.251.253%25_]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
 </tr>
 <tr>
 <td class="wgfail">  <code>//[3bca:cffe::252.254.255.251]</code></td>
@@ -1453,6 +1618,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>K://[::bfbe:fcba:253.7.252.255%25~]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>B://)@</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
@@ -1597,6 +1767,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//[cead:dbbe:dbae:fedc:cdfb:adfb:250.254.251.8%25~]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td><code>V://[cbcf::afce:bfef:aaba:cbcf:16.250.255.255]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -1695,6 +1870,11 @@
 <td class="wgfail">  <code>//[::253.0.251.254%25_]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td><code>a://[::eedc:cddb:bafb:bdcb:dead:210.255.252.253]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
 </tr>
 <tr>
 <td><code>U://[::bbee:bebe:253.252.253.142]</code></td>
@@ -1832,6 +2012,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>S://[::ffab:becd:254.250.254.102%25_]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
 <td class="wgfail">  <code>//[::baee:254.253.255.230%25-]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
@@ -1913,6 +2098,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>//[::aaab:edcf:bcfa:138.252.255.252]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>//[::bafd:dffa:fece%25_]</code></td>
 <td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
 <td class="pfail"> invalid URL</td>
 </tr>
@@ -2047,6 +2237,11 @@
 <td class="psucc"> PASS</td>
 </tr>
 <tr>
+<td class="wgfail">  <code>//[::baeb:252.242.251.254%25_]</code></td>
+<td class="pfail"> NS_ERROR_MALFORMED_URI 2152398858</td>
+<td class="pfail"> invalid URL</td>
+</tr>
+<tr>
 <td><code>r://[::aaff:dfdc:bcac:250.250.49.250]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
@@ -2088,6 +2283,11 @@
 </tr>
 <tr>
 <td class="wgfail">  <code>h://[ebfb:adac:dffc:eaba:fbbc:adaf:255.251.21.252%25_]</code></td>
+<td class="psucc"> PASS</td>
+<td class="psucc"> PASS</td>
+</tr>
+<tr>
+<td class="wgfail">  <code>O://[::251.250.14.252%25.]</code></td>
 <td class="psucc"> PASS</td>
 <td class="psucc"> PASS</td>
 </tr>
