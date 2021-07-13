@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-13 15:35:35</td>
+            <td class="headerValue">2021-07-13 17:17:15</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">5</td>
@@ -186,24 +186,24 @@
 <span class="lineNum">     124 </span>            : //
 <a name="125"><span class="lineNum">     125 </span>            : // inlines</a>
 <span class="lineNum">     126 </span>            : //
-<span class="lineNum">     127 </span><span class="lineCov">       3306 : inline int Ascii::properties(int ch)</span>
+<span class="lineNum">     127 </span><span class="lineCov">       4969 : inline int Ascii::properties(int ch)</span>
 <span class="lineNum">     128 </span>            : {
-<span class="lineNum">     129 </span><span class="lineCov">       3306 :         if (isAscii(ch)) </span>
-<span class="lineNum">     130 </span><span class="lineCov">       3304 :                 return CHARACTER_PROPERTIES[ch];</span>
+<span class="lineNum">     129 </span><span class="lineCov">       4969 :         if (isAscii(ch)) </span>
+<span class="lineNum">     130 </span><span class="lineCov">       4965 :                 return CHARACTER_PROPERTIES[ch];</span>
 <span class="lineNum">     131 </span>            :         else
-<span class="lineNum">     132 </span><span class="lineCov">          2 :                 return 0;</span>
+<span class="lineNum">     132 </span><span class="lineCov">          4 :                 return 0;</span>
 <span class="lineNum">     133 </span>            : }
 <a name="134"><span class="lineNum">     134 </span>            : </a>
 <span class="lineNum">     135 </span>            : 
-<span class="lineNum">     136 </span><span class="lineCov">       3306 : inline bool Ascii::isAscii(int ch)</span>
+<span class="lineNum">     136 </span><span class="lineCov">       4969 : inline bool Ascii::isAscii(int ch)</span>
 <span class="lineNum">     137 </span>            : {
-<span class="lineNum">     138 </span><span class="lineCov">       3306 :         return (static_cast&lt;UInt32&gt;(ch) &amp; 0xFFFFFF80) == 0;</span>
+<span class="lineNum">     138 </span><span class="lineCov">       4969 :         return (static_cast&lt;UInt32&gt;(ch) &amp; 0xFFFFFF80) == 0;</span>
 <span class="lineNum">     139 </span>            : }
 <a name="140"><span class="lineNum">     140 </span>            : </a>
 <span class="lineNum">     141 </span>            : 
-<span class="lineNum">     142 </span><span class="lineCov">       3306 : inline bool Ascii::hasProperties(int ch, int props)</span>
+<span class="lineNum">     142 </span><span class="lineCov">       4969 : inline bool Ascii::hasProperties(int ch, int props)</span>
 <span class="lineNum">     143 </span>            : {
-<span class="lineNum">     144 </span><span class="lineCov">       3306 :         return (properties(ch) &amp; props) == props;</span>
+<span class="lineNum">     144 </span><span class="lineCov">       4969 :         return (properties(ch) &amp; props) == props;</span>
 <span class="lineNum">     145 </span>            : }
 <a name="146"><span class="lineNum">     146 </span>            : </a>
 <span class="lineNum">     147 </span>            : 
@@ -255,9 +255,9 @@
 <span class="lineNum">     193 </span>            : }
 <a name="194"><span class="lineNum">     194 </span>            : </a>
 <span class="lineNum">     195 </span>            : 
-<span class="lineNum">     196 </span><span class="lineCov">       3306 : inline bool Ascii::isUpper(int ch)</span>
+<span class="lineNum">     196 </span><span class="lineCov">       4969 : inline bool Ascii::isUpper(int ch)</span>
 <span class="lineNum">     197 </span>            : {
-<span class="lineNum">     198 </span><span class="lineCov">       3306 :         return hasProperties(ch, ACP_UPPER);</span>
+<span class="lineNum">     198 </span><span class="lineCov">       4969 :         return hasProperties(ch, ACP_UPPER);</span>
 <span class="lineNum">     199 </span>            : }
 <span class="lineNum">     200 </span>            : 
 <span class="lineNum">     201 </span>            : 
@@ -267,12 +267,12 @@
 <span class="lineNum">     205 </span>            : }
 <a name="206"><span class="lineNum">     206 </span>            : </a>
 <span class="lineNum">     207 </span>            : 
-<span class="lineNum">     208 </span><span class="lineCov">       3306 : inline int Ascii::toLower(int ch)</span>
+<span class="lineNum">     208 </span><span class="lineCov">       4969 : inline int Ascii::toLower(int ch)</span>
 <span class="lineNum">     209 </span>            : {
-<span class="lineNum">     210 </span><span class="lineCov">       3306 :         if (isUpper(ch))</span>
-<span class="lineNum">     211 </span><span class="lineCov">         70 :                 return ch + 32;</span>
+<span class="lineNum">     210 </span><span class="lineCov">       4969 :         if (isUpper(ch))</span>
+<span class="lineNum">     211 </span><span class="lineCov">        102 :                 return ch + 32;</span>
 <span class="lineNum">     212 </span>            :         else
-<span class="lineNum">     213 </span><span class="lineCov">       3236 :                 return ch;</span>
+<span class="lineNum">     213 </span><span class="lineCov">       4867 :                 return ch;</span>
 <span class="lineNum">     214 </span>            : }
 <a name="215"><span class="lineNum">     215 </span>            : </a>
 <span class="lineNum">     216 </span>            : 
