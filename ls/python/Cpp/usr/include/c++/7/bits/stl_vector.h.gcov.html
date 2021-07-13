@@ -31,18 +31,18 @@
             <td class="headerValue">main_coverage.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">25</td>
+            <td class="headerCovTableEntry">31</td>
             <td class="headerCovTableEntry">161</td>
-            <td class="headerCovTableEntryLo">15.5 %</td>
+            <td class="headerCovTableEntryLo">19.3 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-13 14:12:16</td>
+            <td class="headerValue">2021-07-13 16:21:03</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">11</td>
+            <td class="headerCovTableEntry">13</td>
             <td class="headerCovTableEntry">536</td>
-            <td class="headerCovTableEntryLo">2.1 %</td>
+            <td class="headerCovTableEntryLo">2.4 %</td>
           </tr>
           <tr><td><img src="../../../../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -631,8 +631,8 @@
 <span class="lineNum">     569 </span>            :        *  element order.
 <a name="570"><span class="lineNum">     570 </span>            :        */</a>
 <span class="lineNum">     571 </span>            :       const_iterator
-<span class="lineNum">     572 </span><span class="lineCov">        109 :       begin() const _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     573 </span><span class="lineCov">        109 :       { return const_iterator(this-&gt;_M_impl._M_start); }</span>
+<span class="lineNum">     572 </span><span class="lineCov">        337 :       begin() const _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     573 </span><span class="lineCov">        337 :       { return const_iterator(this-&gt;_M_impl._M_start); }</span>
 <span class="lineNum">     574 </span>            : 
 <span class="lineNum">     575 </span>            :       /**
 <span class="lineNum">     576 </span>            :        *  Returns a read/write iterator that points one past the last
@@ -649,8 +649,8 @@
 <span class="lineNum">     587 </span>            :        *  ordinary element order.
 <a name="588"><span class="lineNum">     588 </span>            :        */</a>
 <span class="lineNum">     589 </span>            :       const_iterator
-<span class="lineNum">     590 </span><span class="lineCov">        109 :       end() const _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     591 </span><span class="lineCov">        109 :       { return const_iterator(this-&gt;_M_impl._M_finish); }</span>
+<span class="lineNum">     590 </span><span class="lineCov">        337 :       end() const _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     591 </span><span class="lineCov">        337 :       { return const_iterator(this-&gt;_M_impl._M_finish); }</span>
 <span class="lineNum">     592 </span>            : 
 <span class="lineNum">     593 </span>            :       /**
 <span class="lineNum">     594 </span>            :        *  Returns a read/write reverse iterator that points to the
@@ -818,8 +818,8 @@
 <span class="lineNum">     756 </span>            :        *  equal end().)
 <a name="757"><span class="lineNum">     757 </span>            :        */</a>
 <span class="lineNum">     758 </span>            :       bool
-<span class="lineNum">     759 </span><span class="lineCov">          4 :       empty() const _GLIBCXX_NOEXCEPT</span>
-<span class="lineNum">     760 </span><span class="lineCov">          4 :       { return begin() == end(); }</span>
+<span class="lineNum">     759 </span><span class="lineCov">         17 :       empty() const _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     760 </span><span class="lineCov">         17 :       { return begin() == end(); }</span>
 <span class="lineNum">     761 </span>            : 
 <span class="lineNum">     762 </span>            :       /**
 <span class="lineNum">     763 </span>            :        *  @brief  Attempt to preallocate enough memory for specified number of
@@ -954,10 +954,10 @@
 <span class="lineNum">     892 </span>            :        *  element of the %vector.
 <a name="893"><span class="lineNum">     893 </span>            :        */</a>
 <span class="lineNum">     894 </span>            :       reference
-<span class="lineNum">     895 </span><span class="lineNoCov">          0 :       back() _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     895 </span><span class="lineCov">          2 :       back() _GLIBCXX_NOEXCEPT</span>
 <span class="lineNum">     896 </span>            :       {
 <span class="lineNum">     897 </span>            :         __glibcxx_requires_nonempty();
-<span class="lineNum">     898 </span><span class="lineNoCov">          0 :         return *(end() - 1);</span>
+<span class="lineNum">     898 </span><span class="lineCov">          2 :         return *(end() - 1);</span>
 <span class="lineNum">     899 </span>            :       }
 <span class="lineNum">     900 </span>            : 
 <span class="lineNum">     901 </span>            :       /**
@@ -1034,12 +1034,12 @@
 <span class="lineNum">     972 </span>            :        *  called.
 <a name="973"><span class="lineNum">     973 </span>            :        */</a>
 <span class="lineNum">     974 </span>            :       void
-<span class="lineNum">     975 </span><span class="lineNoCov">          0 :       pop_back() _GLIBCXX_NOEXCEPT</span>
+<span class="lineNum">     975 </span><span class="lineCov">          2 :       pop_back() _GLIBCXX_NOEXCEPT</span>
 <span class="lineNum">     976 </span>            :       {
 <span class="lineNum">     977 </span>            :         __glibcxx_requires_nonempty();
-<span class="lineNum">     978 </span><span class="lineNoCov">          0 :         --this-&gt;_M_impl._M_finish;</span>
-<span class="lineNum">     979 </span><span class="lineNoCov">          0 :         _Alloc_traits::destroy(this-&gt;_M_impl, this-&gt;_M_impl._M_finish);</span>
-<span class="lineNum">     980 </span><span class="lineNoCov">          0 :       }</span>
+<span class="lineNum">     978 </span><span class="lineCov">          2 :         --this-&gt;_M_impl._M_finish;</span>
+<span class="lineNum">     979 </span><span class="lineCov">          2 :         _Alloc_traits::destroy(this-&gt;_M_impl, this-&gt;_M_impl._M_finish);</span>
+<span class="lineNum">     980 </span><span class="lineCov">          2 :       }</span>
 <span class="lineNum">     981 </span>            : 
 <span class="lineNum">     982 </span>            : #if __cplusplus &gt;= 201103L
 <span class="lineNum">     983 </span>            :       /**
