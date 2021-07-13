@@ -9,13 +9,24 @@ Note: Google Test filter = URLParser.Parsing
 [----------] Global test environment set-up.
 [----------] 1 test from URLParser
 [ RUN      ] URLParser.Parsing
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: ",="
+  parsed_url.host()
+    Which is: ""
+{"url":"file://,=</", "error":{"component":"host", "expected":",=", "actual":""}}
+Stack trace:
+#0 0x55763e191945 url::(anonymous namespace)::CheckComponents()
+#1 0x55763e18f668 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
 ../../url/url_parsing_unittest.cc:32: Failure
 Value of: parsed_url.is_valid()
   Actual: false
 Expected: true
 {"url":"F:/<//~!", "exception":"invalid URL"}
 Stack trace:
-#0 0x5563182ebbc6 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55763e18f506 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -25,8 +36,8 @@ Expected equality of these values:
     Which is: ""
 {"url":"R://[dfaa::]", "error":{"component":"host", "expected":"[dfaa::]", "actual":""}}
 Stack trace:
-#0 0x5563182ee005 url::(anonymous namespace)::CheckComponents()
-#1 0x5563182ebd28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55763e191945 url::(anonymous namespace)::CheckComponents()
+#1 0x55763e18f668 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
@@ -36,20 +47,31 @@ Expected equality of these values:
     Which is: "%60"
 {"url":"https://[::]<//M@`", "error":{"component":"host", "expected":"`", "actual":"%60"}}
 Stack trace:
-#0 0x5563182ee005 url::(anonymous namespace)::CheckComponents()
-#1 0x5563182ebd28 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55763e191945 url::(anonymous namespace)::CheckComponents()
+#1 0x55763e18f668 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
-[  FAILED  ] URLParser.Parsing (1 ms)
-[----------] 1 test from URLParser (2 ms total)
+../../url/url_parsing_unittest.cc:54: Failure
+Expected equality of these values:
+  parse_case.host
+    Which is: "[d1db:aace::]"
+  parsed_url.host()
+    Which is: ""
+{"url":"X://[d1db:aace::]", "error":{"component":"host", "expected":"[d1db:aace::]", "actual":""}}
+Stack trace:
+#0 0x55763e191945 url::(anonymous namespace)::CheckComponents()
+#1 0x55763e18f668 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+[  FAILED  ] URLParser.Parsing (3 ms)
+[----------] 1 test from URLParser (3 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (2 ms total)
+[==========] 1 test from 1 test suite ran. (3 ms total)
 [  PASSED  ] 0 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] URLParser.Parsing
 
  1 FAILED TEST
-[1/1] URLParser.Parsing (1 ms)
+[1/1] URLParser.Parsing (3 ms)
 1 test failed:
-    URLParser.Parsing (../../url/url_parsing_unittest.cc:74)
-Tests took 0 seconds.
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:84)
+Tests took 3 seconds.

@@ -60,16 +60,26 @@ void CheckComponents(const URLParseCase& parse_case, const GURL& parsed_url) {
 }
 
 //Test inputs
-static URLParseCase parse_cases[]={{"F:/" ,"//~!" ,"f" ,"" ,"" ,"~!" ,-1 ,"/" ,"" ,""},
+static URLParseCase parse_cases[]={{"file://,=" ,"/" ,"file" ,"" ,"" ,",=" ,-1 ,"/" ,"" ,""},
+{"F:/" ,"//~!" ,"f" ,"" ,"" ,"~!" ,-1 ,"/" ,"" ,""},
+{"" ,"ftp://[::]/%2e//" ,"ftp" ,"" ,"" ,"[::]" ,-1 ,"//" ,"" ,""},
 {"wss://[::7cbc:253.250.252.255]" ,"/" ,"wss" ,"" ,"" ,"[::7cbc:fdfa:fcff]" ,-1 ,"/" ,"" ,""},
 {"" ,"R://[dfaa::]" ,"r" ,"" ,"" ,"[dfaa::]" ,-1 ,"/" ,"" ,""},
+{"file:///#󥓈" ,"/" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"" ,""},
+{"file:///" ,"햐" ,"file" ,"" ,"" ,"" ,-1 ,"/%ED%96%90" ,"" ,""},
 {"" ,"wss://[c6fe::252.251.250.250]" ,"wss" ,"" ,"" ,"[c6fe::fcfb:fafa]" ,-1 ,"/" ,"" ,""},
+{"file:///" ,"//[::3eae:befd:250.255.253.253]" ,"file" ,"" ,"" ,"[::3eae:befd:faff:fdfd]" ,-1 ,"/" ,"" ,""},
 {"https://[::]" ,"//M@`" ,"https" ,"M" ,"" ,"`" ,-1 ,"/" ,"" ,""},
+{"https://[::]" ,"//[::165.255.253.255]" ,"https" ,"" ,"" ,"[::a5ff:fdff]" ,-1 ,"/" ,"" ,""},
 {"file:///" ,"/./////%2e%2e" ,"file" ,"" ,"" ,"" ,-1 ,"////" ,"" ,""},
+{"" ,"wss://[::]/./" ,"wss" ,"" ,"" ,"[::]" ,-1 ,"/%EE%AC%89" ,"" ,""},
 {"f:/" ,"//[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]" ,"f" ,"" ,"" ,"[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]" ,-1 ,"/" ,"" ,""},
 {"file:///" ,"//[::feeb]" ,"file" ,"" ,"" ,"[::feeb]" ,-1 ,"/" ,"" ,""},
+{"" ,"X://[d1db:aace::]" ,"x" ,"" ,"" ,"[d1db:aace::]" ,-1 ,"/" ,"" ,""},
 {"" ,"file:///#@" ,"file" ,"" ,"" ,"" ,-1 ,"/" ,"" ,"@"},
-{"http://[::]" ,"//[::fccf:edda:cceb:a2ff]" ,"http" ,"" ,"" ,"[::fccf:edda:cceb:a2ff]" ,-1 ,"/" ,"" ,""}};
+{"http://[::]" ,"//[::fccf:edda:cceb:a2ff]" ,"http" ,"" ,"" ,"[::fccf:edda:cceb:a2ff]" ,-1 ,"/" ,"" ,""},
+{"e:/" ,"%2e////=" ,"e" ,"" ,"" ,"" ,-1 ,"////=" ,"" ,""},
+{"" ,"http://E" ,"http" ,"" ,"" ,"e" ,-1 ,"/" ,"" ,""}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {
