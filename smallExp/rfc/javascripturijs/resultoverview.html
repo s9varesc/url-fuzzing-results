@@ -1,0 +1,660 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
+<h1>Results</h1>
+<p>Total number of URLs: 50</p>
+<p>Total number of Parsers: 11</p>
+<h2>Parser Comparison</h2>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Parsername</th>
+<th>Number of Exceptions</th>
+<th>Number of Different Exceptions</th>
+<th>Code Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cpp</td>
+<td>0</td>
+<td>0</td>
+<td>18.1%</td>
+</tr>
+<tr>
+<td>Go</td>
+<td>0</td>
+<td>0</td>
+<td>73.1%</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>0</td>
+<td>0</td>
+<td>33.0%</td>
+</tr>
+<tr>
+<td>JavaScripturijs</td>
+<td>1</td>
+<td>1</td>
+<td>18.37%</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>19</td>
+<td>19</td>
+<td>49.14%</td>
+</tr>
+<tr>
+<td>C</td>
+<td>20</td>
+<td>1</td>
+<td>42.5%</td>
+</tr>
+<tr>
+<td>firefox</td>
+<td>31</td>
+<td>1</td>
+<td>48.1%</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>31</td>
+<td>1</td>
+<td>13.72%</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>36</td>
+<td>1</td>
+<td>68.91%</td>
+</tr>
+<tr>
+<td>JavaScriptwhatwg-url</td>
+<td>41</td>
+<td>1</td>
+<td>34.28%</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>50</td>
+<td>15</td>
+<td>36.0%</td>
+</tr>
+</tbody>
+</table>
+<p><em>note:</em>  base and relative URLs are represented as "base&lt;relative" in this document for readabilty, the actually parsed inputs do not contain "&lt;" </p>
+<h3>firefox</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NS_ERROR_MALFORMED_URI 2152398858</code></td>
+<td><code>//[::aebc:cbbb:edbc:250.252.1.252]</code>  <br> <code>//[ecfd::dbad:aadf:cfde:fdae:eeee:9dbb]</code>  <br> <code>//[bbfb::eacc:ccff:cfef:cced:255.250.152.255]</code>  <br> <code>//[::eead:dfaa:235.254.255.250%25-]</code>  <br> <code>//[::cdad:fdfb:253.250.152.254]</code>  <br> <code>//252.253.250.3</code>  <br> <code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code>  <br> <code>//[vc.t]</code>  <br> <code>//[::cfab:cbcf:eccf:251.250.254.64]</code>  <br> <code>//?%f8</code>  <br> <code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code>  <br> <code>//[::deca:eabe:bbdc:251.252.90.251]</code>  <br> <code>//[::254.250.183.252%25~]</code>  <br> <code>//[::252.251.29.254%25_]</code>  <br> <code>//[::fbec:39.252.254.252]</code>  <br> <code>//[va.Z]</code>  <br> <code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code>  <br> <code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code>  <br> <code>//[::253.255.119.250]</code>  <br> <code>//%a6@</code>  <br> <code>//[::fcfe:eaaf:acdd:beba:cdeb:209.255.252.254]</code>  <br> <code>//[::9ebc:ebcf:daeb:ffef:aadc:252.250.255.253]</code>  <br> <code>//[2cea:dbdf::%25.]</code>  <br> <code>//[3fcb:eaea:dadf:eacb:cfcb:ceac:254.252.252.255]</code>  <br> <code>//48.253.255.252</code>  <br> <code>//?-</code>  <br> <code>//[cebd:cfed:dafe:fbff:dbed:aabc:3cdd:dcae]</code>  <br> <code>//[::cafd:153.253.252.255]</code>  <br> <code>//[ccfb::dfec:bebe:effc:cefc:255.250.250.58]</code>  <br> <code>//[::cfbc:adce:adee:250.251.250.93%25-]</code>  <br> <code>//[ecbf::5eaf:daba:edae:eeaa:251.252.250.254]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>C</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td><code>I://[::daef:dfdb:ebfb:252.252.251.7%25~]</code>  <br> <code>//[::eead:dfaa:235.254.255.250%25-]</code>  <br> <code>q://[5dbf:faed::badf:255.250.252.251%25_]</code>  <br> <code>H://[::bfca:caee:cccd:dfaa:ebff:251.251.253.212%25~]</code>  <br> <code>w://[::fcee:ebdb:cbec:251.253.191.252%25~]</code>  <br> <code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code>  <br> <code>a://[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]</code>  <br> <code>r://[::ddbf:ebcb:dfef:0.254.250.253%25~]</code>  <br> <code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code>  <br> <code>//[::254.250.183.252%25~]</code>  <br> <code>//[::252.251.29.254%25_]</code>  <br> <code>r://[::cbdd:250.89.251.253%25.]</code>  <br> <code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code>  <br> <code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code>  <br> <code>//[::fcfe:eaaf:acdd:beba:cdeb:209.255.252.254]</code>  <br> <code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br> <code>//[2cea:dbdf::%25.]</code>  <br> <code>P://[ceed::cddd:dfbb:ffbb:ddcb:253.254.250.19%25~]</code>  <br> <code>//[::cfbc:adce:adee:250.251.250.93%25-]</code>  <br> <code>V://[4eed::fcfe:ecde:edcf:fccc:252.252.250.252%25_]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>JavaScripturijs</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>URI malformed</code></td>
+<td><code>//%a6@</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>Cpp</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>PHP</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Host `[::daef:dfdb:ebfb:252.252.251.7%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>I://[::daef:dfdb:ebfb:252.252.251.7%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::eead:dfaa:235.254.255.250%25-]` is invalid : the IP host is malformed</code></td>
+<td><code>//[::eead:dfaa:235.254.255.250%25-]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[5dbf:faed::badf:255.250.252.251%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>q://[5dbf:faed::badf:255.250.252.251%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::bfca:caee:cccd:dfaa:ebff:251.251.253.212%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>H://[::bfca:caee:cccd:dfaa:ebff:251.251.253.212%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::fcee:ebdb:cbec:251.253.191.252%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>w://[::fcee:ebdb:cbec:251.253.191.252%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]` is invalid : the IP host is malformed</code></td>
+<td><code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>a://[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::ddbf:ebcb:dfef:0.254.250.253%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>r://[::ddbf:ebcb:dfef:0.254.250.253%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::254.250.183.252%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>//[::254.250.183.252%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::252.251.29.254%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>//[::252.251.29.254%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::cbdd:250.89.251.253%25.]` is invalid : the IP host is malformed</code></td>
+<td><code>r://[::cbdd:250.89.251.253%25.]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::dbca:eafc:acca:255.255.254.243%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[2cea:dbdf::%25.]` is invalid : the IP host is malformed</code></td>
+<td><code>//[2cea:dbdf::%25.]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[ceed::cddd:dfbb:ffbb:ddcb:253.254.250.19%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>P://[ceed::cddd:dfbb:ffbb:ddcb:253.254.250.19%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::cfbc:adce:adee:250.251.250.93%25-]` is invalid : the IP host is malformed</code></td>
+<td><code>//[::cfbc:adce:adee:250.251.250.93%25-]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[4eed::fcfe:ecde:edcf:fccc:252.252.250.252%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>V://[4eed::fcfe:ecde:edcf:fccc:252.252.250.252%25_]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>Java</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: j</code></td>
+<td><code>J:///%2e</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: i</code></td>
+<td><code>I://[::daef:dfdb:ebfb:252.252.251.7%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: no protocol:</code></td>
+<td><code>//[::aebc:cbbb:edbc:250.252.1.252]</code>  <br> <code>//[ecfd::dbad:aadf:cfde:fdae:eeee:9dbb]</code>  <br> <code>//[bbfb::eacc:ccff:cfef:cced:255.250.152.255]</code>  <br> <code>//[::eead:dfaa:235.254.255.250%25-]</code>  <br> <code>//[::cdad:fdfb:253.250.152.254]</code>  <br> <code>//252.253.250.3</code>  <br> <code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code>  <br> <code>//[vc.t]</code>  <br> <code>//[::cfab:cbcf:eccf:251.250.254.64]</code>  <br> <code>//?%f8</code>  <br> <code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code>  <br> <code>//[::deca:eabe:bbdc:251.252.90.251]</code>  <br> <code>//[::254.250.183.252%25~]</code>  <br> <code>//[::252.251.29.254%25_]</code>  <br> <code>//[::fbec:39.252.254.252]</code>  <br> <code>//[va.Z]</code>  <br> <code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code>  <br> <code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code>  <br> <code>//[::253.255.119.250]</code>  <br> <code>//%a6@</code>  <br> <code>//[::fcfe:eaaf:acdd:beba:cdeb:209.255.252.254]</code>  <br> <code>//[::9ebc:ebcf:daeb:ffef:aadc:252.250.255.253]</code>  <br> <code>//[2cea:dbdf::%25.]</code>  <br> <code>//[3fcb:eaea:dadf:eacb:cfcb:ceac:254.252.252.255]</code>  <br> <code>//48.253.255.252</code>  <br> <code>//?-</code>  <br> <code>//[cebd:cfed:dafe:fbff:dbed:aabc:3cdd:dcae]</code>  <br> <code>//[::cafd:153.253.252.255]</code>  <br> <code>//[ccfb::dfec:bebe:effc:cefc:255.250.250.58]</code>  <br> <code>//[::cfbc:adce:adee:250.251.250.93%25-]</code>  <br> <code>//[ecbf::5eaf:daba:edae:eeaa:251.252.250.254]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: f</code></td>
+<td><code>f:///+</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: r</code></td>
+<td><code>R://[::ccce:dcec:4.254.252.250]</code>  <br> <code>r://[::ddbf:ebcb:dfef:0.254.250.253%25~]</code>  <br> <code>r://[::cbdd:250.89.251.253%25.]</code>  <br> <code>R:///l</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: q</code></td>
+<td><code>q://[5dbf:faed::badf:255.250.252.251%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: h</code></td>
+<td><code>H://[::bfca:caee:cccd:dfaa:ebff:251.251.253.212%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: w</code></td>
+<td><code>w://[::fcee:ebdb:cbec:251.253.191.252%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: m</code></td>
+<td><code>M://[bbdb::eeba:bdee:fbde:efdc:250.254.250.219]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: a</code></td>
+<td><code>a://[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: d</code></td>
+<td><code>D://[::254.72.251.250]</code>  <br> <code>d://[::bafe:aabf:251.250.228.255]</code>  <br> <code>d://[::8ceb:cfcd]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: l</code></td>
+<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: u</code></td>
+<td><code>U://[fcaa::aaaa:ebeb:dbfa:aeba:252.5.251.250]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: p</code></td>
+<td><code>P://[ceed::cddd:dfbb:ffbb:ddcb:253.254.250.19%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: v</code></td>
+<td><code>V://[4eed::fcfe:ecde:edcf:fccc:252.252.250.252%25_]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>Go</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>JavaScriptwhatwg-url</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Invalid URL:</code></td>
+<td><code>I://[::daef:dfdb:ebfb:252.252.251.7%25~]</code>  <br> <code>//[::aebc:cbbb:edbc:250.252.1.252]</code>  <br> <code>//[ecfd::dbad:aadf:cfde:fdae:eeee:9dbb]</code>  <br> <code>//[bbfb::eacc:ccff:cfef:cced:255.250.152.255]</code>  <br> <code>//[::eead:dfaa:235.254.255.250%25-]</code>  <br> <code>q://[5dbf:faed::badf:255.250.252.251%25_]</code>  <br> <code>H://[::bfca:caee:cccd:dfaa:ebff:251.251.253.212%25~]</code>  <br> <code>w://[::fcee:ebdb:cbec:251.253.191.252%25~]</code>  <br> <code>//[::cdad:fdfb:253.250.152.254]</code>  <br> <code>//252.253.250.3</code>  <br> <code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code>  <br> <code>//[vc.t]</code>  <br> <code>//[::cfab:cbcf:eccf:251.250.254.64]</code>  <br> <code>a://[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]</code>  <br> <code>//?%f8</code>  <br> <code>r://[::ddbf:ebcb:dfef:0.254.250.253%25~]</code>  <br> <code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code>  <br> <code>//[::deca:eabe:bbdc:251.252.90.251]</code>  <br> <code>//[::254.250.183.252%25~]</code>  <br> <code>//[::252.251.29.254%25_]</code>  <br> <code>//[::fbec:39.252.254.252]</code>  <br> <code>//[va.Z]</code>  <br> <code>r://[::cbdd:250.89.251.253%25.]</code>  <br> <code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code>  <br> <code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code>  <br> <code>//[::253.255.119.250]</code>  <br> <code>//%a6@</code>  <br> <code>//[::fcfe:eaaf:acdd:beba:cdeb:209.255.252.254]</code>  <br> <code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br> <code>//[::9ebc:ebcf:daeb:ffef:aadc:252.250.255.253]</code>  <br> <code>//[2cea:dbdf::%25.]</code>  <br> <code>//[3fcb:eaea:dadf:eacb:cfcb:ceac:254.252.252.255]</code>  <br> <code>//48.253.255.252</code>  <br> <code>//?-</code>  <br> <code>//[cebd:cfed:dafe:fbff:dbed:aabc:3cdd:dcae]</code>  <br> <code>P://[ceed::cddd:dfbb:ffbb:ddcb:253.254.250.19%25~]</code>  <br> <code>//[::cafd:153.253.252.255]</code>  <br> <code>//[ccfb::dfec:bebe:effc:cefc:255.250.250.58]</code>  <br> <code>//[::cfbc:adce:adee:250.251.250.93%25-]</code>  <br> <code>//[ecbf::5eaf:daba:edae:eeaa:251.252.250.254]</code>  <br> <code>V://[4eed::fcfe:ecde:edcf:fccc:252.252.250.252%25_]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>chromium</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>invalid URL</code></td>
+<td><code>//[::aebc:cbbb:edbc:250.252.1.252]</code>  <br> <code>//[ecfd::dbad:aadf:cfde:fdae:eeee:9dbb]</code>  <br> <code>//[bbfb::eacc:ccff:cfef:cced:255.250.152.255]</code>  <br> <code>//[::eead:dfaa:235.254.255.250%25-]</code>  <br> <code>//[::cdad:fdfb:253.250.152.254]</code>  <br> <code>//252.253.250.3</code>  <br> <code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code>  <br> <code>//[vc.t]</code>  <br> <code>//[::cfab:cbcf:eccf:251.250.254.64]</code>  <br> <code>//?%f8</code>  <br> <code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code>  <br> <code>//[::deca:eabe:bbdc:251.252.90.251]</code>  <br> <code>//[::254.250.183.252%25~]</code>  <br> <code>//[::252.251.29.254%25_]</code>  <br> <code>//[::fbec:39.252.254.252]</code>  <br> <code>//[va.Z]</code>  <br> <code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code>  <br> <code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code>  <br> <code>//[::253.255.119.250]</code>  <br> <code>//%a6@</code>  <br> <code>//[::fcfe:eaaf:acdd:beba:cdeb:209.255.252.254]</code>  <br> <code>//[::9ebc:ebcf:daeb:ffef:aadc:252.250.255.253]</code>  <br> <code>//[2cea:dbdf::%25.]</code>  <br> <code>//[3fcb:eaea:dadf:eacb:cfcb:ceac:254.252.252.255]</code>  <br> <code>//48.253.255.252</code>  <br> <code>//?-</code>  <br> <code>//[cebd:cfed:dafe:fbff:dbed:aabc:3cdd:dcae]</code>  <br> <code>//[::cafd:153.253.252.255]</code>  <br> <code>//[ccfb::dfec:bebe:effc:cefc:255.250.250.58]</code>  <br> <code>//[::cfbc:adce:adee:250.251.250.93%25-]</code>  <br> <code>//[ecbf::5eaf:daba:edae:eeaa:251.252.250.254]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h3>Python</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Ruby</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Exception Type</th>
+<th>URLs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bad URI(is not URI?):</code></td>
+<td><code>I://[::daef:dfdb:ebfb:252.252.251.7%25~]</code>  <br> <code>//[::aebc:cbbb:edbc:250.252.1.252]</code>  <br> <code>//[ecfd::dbad:aadf:cfde:fdae:eeee:9dbb]</code>  <br> <code>//[bbfb::eacc:ccff:cfef:cced:255.250.152.255]</code>  <br> <code>//[::eead:dfaa:235.254.255.250%25-]</code>  <br> <code>q://[5dbf:faed::badf:255.250.252.251%25_]</code>  <br> <code>H://[::bfca:caee:cccd:dfaa:ebff:251.251.253.212%25~]</code>  <br> <code>w://[::fcee:ebdb:cbec:251.253.191.252%25~]</code>  <br> <code>//[::cdad:fdfb:253.250.152.254]</code>  <br> <code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code>  <br> <code>//[vc.t]</code>  <br> <code>//[::cfab:cbcf:eccf:251.250.254.64]</code>  <br> <code>a://[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]</code>  <br> <code>r://[::ddbf:ebcb:dfef:0.254.250.253%25~]</code>  <br> <code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code>  <br> <code>//[::deca:eabe:bbdc:251.252.90.251]</code>  <br> <code>//[::254.250.183.252%25~]</code>  <br> <code>//[::252.251.29.254%25_]</code>  <br> <code>//[::fbec:39.252.254.252]</code>  <br> <code>//[va.Z]</code>  <br> <code>r://[::cbdd:250.89.251.253%25.]</code>  <br> <code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code>  <br> <code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code>  <br> <code>//[::253.255.119.250]</code>  <br> <code>//[::fcfe:eaaf:acdd:beba:cdeb:209.255.252.254]</code>  <br> <code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br> <code>//[::9ebc:ebcf:daeb:ffef:aadc:252.250.255.253]</code>  <br> <code>//[2cea:dbdf::%25.]</code>  <br> <code>//[3fcb:eaea:dadf:eacb:cfcb:ceac:254.252.252.255]</code>  <br> <code>//[cebd:cfed:dafe:fbff:dbed:aabc:3cdd:dcae]</code>  <br> <code>P://[ceed::cddd:dfbb:ffbb:ddcb:253.254.250.19%25~]</code>  <br> <code>//[::cafd:153.253.252.255]</code>  <br> <code>//[ccfb::dfec:bebe:effc:cefc:255.250.250.58]</code>  <br> <code>//[::cfbc:adce:adee:250.251.250.93%25-]</code>  <br> <code>//[ecbf::5eaf:daba:edae:eeaa:251.252.250.254]</code>  <br> <code>V://[4eed::fcfe:ecde:edcf:fccc:252.252.250.252%25_]</code>  <br></td>
+</tr>
+</tbody>
+</table>
+<h2>URL Comparison</h2>
+<table class="simpletable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Parsers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>J:///%2e</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>I://[::daef:dfdb:ebfb:252.252.251.7%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::aebc:cbbb:edbc:250.252.1.252]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>f:///+</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//[ecfd::dbad:aadf:cfde:fdae:eeee:9dbb]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[bbfb::eacc:ccff:cfef:cced:255.250.152.255]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>R://[::ccce:dcec:4.254.252.250]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//[::eead:dfaa:235.254.255.250%25-]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>q://[5dbf:faed::badf:255.250.252.251%25_]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>H://[::bfca:caee:cccd:dfaa:ebff:251.251.253.212%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>w://[::fcee:ebdb:cbec:251.253.191.252%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::cdad:fdfb:253.250.152.254]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>M://[bbdb::eeba:bdee:fbde:efdc:250.254.250.219]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//252.253.250.3</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>//[ceda:dabe:cced:dfaa:eaff:bbea:31.251.250.253%25.]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[vc.t]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::cfab:cbcf:eccf:251.250.254.64]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>a://[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//?%f8</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>D://[::254.72.251.250]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>r://[::ddbf:ebcb:dfef:0.254.250.253%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::deca:eabe:bbdc:251.252.90.251]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::254.250.183.252%25~]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::252.251.29.254%25_]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::fbec:39.252.254.252]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[va.Z]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>r://[::cbdd:250.89.251.253%25.]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[ebde:baee:debf:deaa:bcdb:bfee:48.253.254.252%25_]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::253.255.119.250]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//%a6@</code></td>
+<td>firefox <br>JavaScripturijs <br>Java <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>//[::fcfe:eaaf:acdd:beba:cdeb:209.255.252.254]</code></td>
+<td>firefox <br>C <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::9ebc:ebcf:daeb:ffef:aadc:252.250.255.253]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>U://[fcaa::aaaa:ebeb:dbfa:aeba:252.5.251.250]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//[2cea:dbdf::%25.]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>d://[::bafe:aabf:251.250.228.255]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//[3fcb:eaea:dadf:eacb:cfcb:ceac:254.252.252.255]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>R:///l</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//48.253.255.252</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>//?-</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br></td>
+</tr>
+<tr>
+<td><code>//[cebd:cfed:dafe:fbff:dbed:aabc:3cdd:dcae]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>P://[ceed::cddd:dfbb:ffbb:ddcb:253.254.250.19%25~]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[::cafd:153.253.252.255]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[ccfb::dfec:bebe:effc:cefc:255.250.250.58]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>d://[::8ceb:cfcd]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//[::cfbc:adce:adee:250.251.250.93%25-]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>//[ecbf::5eaf:daba:edae:eeaa:251.252.250.254]</code></td>
+<td>firefox <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>V://[4eed::fcfe:ecde:edcf:fccc:252.252.250.252%25_]</code></td>
+<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+</tr>
+</tbody>
+</table>
+<h2>Browsers</h2>
+<table class="simpletable">
+<thead>
+<tr>
+<th>Browser</th>
+<th>Overall Failures</th>
+<th>Parsing Exceptions</th>
+<th>Verification Errors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firefox</td>
+<td>31</td>
+<td>31</td>
+<td>0</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>31</td>
+<td>31</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><a href="./browseroverview.html">full browser comparison</a></p>
+<h3>firefox</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Component</th>
+<th>Expected Value</th>
+<th>Actual Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>chromium</h3>
+<table class="simpletable">
+<thead>
+<tr>
+<th>URL</th>
+<th>Component</th>
+<th>Expected Value</th>
+<th>Actual Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Coverage Reports</h2>
+<h3>Browsers</h3>
+<h4>Chromium</h4>
+<p><a href="./chromium/report.html">Overview</a></p>
+<p><a href="./chromium/url_parse.cc.html">Source File Report</a></p>
+<h4>Firefox</h4>
+<p><a href="./firefox/index.html">Overview</a></p>
+<p><a href="./firefox/nsURLParsers.cpp.gcov.html">Source File Report</a></p></body></html>
