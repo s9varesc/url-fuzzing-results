@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-22 21:00:41</td>
+            <td class="headerValue">2021-07-23 00:10:23</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">6</td>
@@ -153,49 +153,49 @@
 <span class="lineNum">      91 </span>            : /*
 <a name="92"><span class="lineNum">      92 </span>            :  * [ipFourAddress]-&gt;[decOctet]&lt;.&gt;[decOctet]&lt;.&gt;[decOctet]&lt;.&gt;[decOctet]</a>
 <span class="lineNum">      93 </span>            :  */
-<span class="lineNum">      94 </span><span class="lineCov">        492 : int URI_FUNC(ParseIpFourAddress)(unsigned char * octetOutput,</span>
+<span class="lineNum">      94 </span><span class="lineCov">        499 : int URI_FUNC(ParseIpFourAddress)(unsigned char * octetOutput,</span>
 <span class="lineNum">      95 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast) {
 <span class="lineNum">      96 </span>            :         const URI_CHAR * after;
 <span class="lineNum">      97 </span>            :         UriIp4Parser parser;
 <span class="lineNum">      98 </span>            : 
 <span class="lineNum">      99 </span>            :         /* Essential checks */
-<span class="lineNum">     100 </span><span class="lineCov">        492 :         if ((octetOutput == NULL) || (first == NULL)</span>
-<span class="lineNum">     101 </span><span class="lineCov">        492 :                         || (afterLast &lt;= first)) {</span>
+<span class="lineNum">     100 </span><span class="lineCov">        499 :         if ((octetOutput == NULL) || (first == NULL)</span>
+<span class="lineNum">     101 </span><span class="lineCov">        499 :                         || (afterLast &lt;= first)) {</span>
 <span class="lineNum">     102 </span><span class="lineCov">        109 :                 return URI_ERROR_SYNTAX;</span>
 <span class="lineNum">     103 </span>            :         }
 <span class="lineNum">     104 </span>            : 
 <span class="lineNum">     105 </span>            :         /* Reset parser */
-<span class="lineNum">     106 </span><span class="lineCov">        383 :         parser.stackCount = 0;</span>
+<span class="lineNum">     106 </span><span class="lineCov">        390 :         parser.stackCount = 0;</span>
 <span class="lineNum">     107 </span>            : 
 <span class="lineNum">     108 </span>            :         /* Octet #1 */
-<span class="lineNum">     109 </span><span class="lineCov">        383 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, first, afterLast);</span>
-<span class="lineNum">     110 </span><span class="lineCov">        383 :         if ((after == NULL) || (after &gt;= afterLast) || (*after != _UT('.'))) {</span>
-<span class="lineNum">     111 </span><span class="lineCov">        183 :                 return URI_ERROR_SYNTAX;</span>
+<span class="lineNum">     109 </span><span class="lineCov">        390 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, first, afterLast);</span>
+<span class="lineNum">     110 </span><span class="lineCov">        390 :         if ((after == NULL) || (after &gt;= afterLast) || (*after != _UT('.'))) {</span>
+<span class="lineNum">     111 </span><span class="lineCov">        187 :                 return URI_ERROR_SYNTAX;</span>
 <span class="lineNum">     112 </span>            :         }
-<span class="lineNum">     113 </span><span class="lineCov">        200 :         uriStackToOctet(&amp;parser, octetOutput);</span>
+<span class="lineNum">     113 </span><span class="lineCov">        203 :         uriStackToOctet(&amp;parser, octetOutput);</span>
 <span class="lineNum">     114 </span>            : 
 <span class="lineNum">     115 </span>            :         /* Octet #2 */
-<span class="lineNum">     116 </span><span class="lineCov">        200 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, after + 1, afterLast);</span>
-<span class="lineNum">     117 </span><span class="lineCov">        200 :         if ((after == NULL) || (after &gt;= afterLast) || (*after != _UT('.'))) {</span>
+<span class="lineNum">     116 </span><span class="lineCov">        203 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, after + 1, afterLast);</span>
+<span class="lineNum">     117 </span><span class="lineCov">        203 :         if ((after == NULL) || (after &gt;= afterLast) || (*after != _UT('.'))) {</span>
 <span class="lineNum">     118 </span><span class="lineNoCov">          0 :                 return URI_ERROR_SYNTAX;</span>
 <span class="lineNum">     119 </span>            :         }
-<span class="lineNum">     120 </span><span class="lineCov">        200 :         uriStackToOctet(&amp;parser, octetOutput + 1);</span>
+<span class="lineNum">     120 </span><span class="lineCov">        203 :         uriStackToOctet(&amp;parser, octetOutput + 1);</span>
 <span class="lineNum">     121 </span>            : 
 <span class="lineNum">     122 </span>            :         /* Octet #3 */
-<span class="lineNum">     123 </span><span class="lineCov">        200 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, after + 1, afterLast);</span>
-<span class="lineNum">     124 </span><span class="lineCov">        200 :         if ((after == NULL) || (after &gt;= afterLast) || (*after != _UT('.'))) {</span>
+<span class="lineNum">     123 </span><span class="lineCov">        203 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, after + 1, afterLast);</span>
+<span class="lineNum">     124 </span><span class="lineCov">        203 :         if ((after == NULL) || (after &gt;= afterLast) || (*after != _UT('.'))) {</span>
 <span class="lineNum">     125 </span><span class="lineNoCov">          0 :                 return URI_ERROR_SYNTAX;</span>
 <span class="lineNum">     126 </span>            :         }
-<span class="lineNum">     127 </span><span class="lineCov">        200 :         uriStackToOctet(&amp;parser, octetOutput + 2);</span>
+<span class="lineNum">     127 </span><span class="lineCov">        203 :         uriStackToOctet(&amp;parser, octetOutput + 2);</span>
 <span class="lineNum">     128 </span>            : 
 <span class="lineNum">     129 </span>            :         /* Octet #4 */
-<span class="lineNum">     130 </span><span class="lineCov">        200 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, after + 1, afterLast);</span>
-<span class="lineNum">     131 </span><span class="lineCov">        200 :         if (after != afterLast) {</span>
+<span class="lineNum">     130 </span><span class="lineCov">        203 :         after = URI_FUNC(ParseDecOctet)(&amp;parser, after + 1, afterLast);</span>
+<span class="lineNum">     131 </span><span class="lineCov">        203 :         if (after != afterLast) {</span>
 <span class="lineNum">     132 </span><span class="lineNoCov">          0 :                 return URI_ERROR_SYNTAX;</span>
 <span class="lineNum">     133 </span>            :         }
-<span class="lineNum">     134 </span><span class="lineCov">        200 :         uriStackToOctet(&amp;parser, octetOutput + 3);</span>
+<span class="lineNum">     134 </span><span class="lineCov">        203 :         uriStackToOctet(&amp;parser, octetOutput + 3);</span>
 <span class="lineNum">     135 </span>            : 
-<span class="lineNum">     136 </span><span class="lineCov">        200 :         return URI_SUCCESS;</span>
+<span class="lineNum">     136 </span><span class="lineCov">        203 :         return URI_SUCCESS;</span>
 <span class="lineNum">     137 </span>            : }
 <span class="lineNum">     138 </span>            : 
 <span class="lineNum">     139 </span>            : 
@@ -212,13 +212,13 @@
 <span class="lineNum">     150 </span>            :  * [decOctet]-&gt;&lt;8&gt;[decOctetThree]
 <a name="151"><span class="lineNum">     151 </span>            :  * [decOctet]-&gt;&lt;9&gt;[decOctetThree]</a>
 <span class="lineNum">     152 </span>            :  */
-<span class="lineNum">     153 </span><span class="lineCov">        983 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctet)(UriIp4Parser * parser,</span>
+<span class="lineNum">     153 </span><span class="lineCov">        999 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctet)(UriIp4Parser * parser,</span>
 <span class="lineNum">     154 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast) {
-<span class="lineNum">     155 </span><span class="lineCov">        983 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     155 </span><span class="lineCov">        999 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">     156 </span><span class="lineNoCov">          0 :                 return NULL;</span>
 <span class="lineNum">     157 </span>            :         }
 <span class="lineNum">     158 </span>            : 
-<span class="lineNum">     159 </span><span class="lineCov">        983 :         switch (*first) {</span>
+<span class="lineNum">     159 </span><span class="lineCov">        999 :         switch (*first) {</span>
 <span class="lineNum">     160 </span><span class="lineCov">          7 :         case _UT('0'):</span>
 <span class="lineNum">     161 </span><span class="lineCov">          7 :                 uriPushToStack(parser, 0);</span>
 <span class="lineNum">     162 </span><span class="lineCov">          7 :                 return first + 1;</span>
@@ -227,22 +227,22 @@
 <span class="lineNum">     165 </span><span class="lineCov">         54 :                 uriPushToStack(parser, 1);</span>
 <span class="lineNum">     166 </span><span class="lineCov">         54 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetOne)(parser, first + 1, afterLast);</span>
 <span class="lineNum">     167 </span>            : 
-<span class="lineNum">     168 </span><span class="lineCov">        670 :         case _UT('2'):</span>
-<span class="lineNum">     169 </span><span class="lineCov">        670 :                 uriPushToStack(parser, 2);</span>
-<span class="lineNum">     170 </span><span class="lineCov">        670 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetTwo)(parser, first + 1, afterLast);</span>
+<span class="lineNum">     168 </span><span class="lineCov">        680 :         case _UT('2'):</span>
+<span class="lineNum">     169 </span><span class="lineCov">        680 :                 uriPushToStack(parser, 2);</span>
+<span class="lineNum">     170 </span><span class="lineCov">        680 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetTwo)(parser, first + 1, afterLast);</span>
 <span class="lineNum">     171 </span>            : 
-<span class="lineNum">     172 </span><span class="lineCov">         88 :         case _UT('3'):</span>
+<span class="lineNum">     172 </span><span class="lineCov">         90 :         case _UT('3'):</span>
 <span class="lineNum">     173 </span>            :         case _UT('4'):
 <span class="lineNum">     174 </span>            :         case _UT('5'):
 <span class="lineNum">     175 </span>            :         case _UT('6'):
 <span class="lineNum">     176 </span>            :         case _UT('7'):
 <span class="lineNum">     177 </span>            :         case _UT('8'):
 <span class="lineNum">     178 </span>            :         case _UT('9'):
-<span class="lineNum">     179 </span><span class="lineCov">         88 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
-<span class="lineNum">     180 </span><span class="lineCov">         88 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetThree)(parser, first + 1, afterLast);</span>
+<span class="lineNum">     179 </span><span class="lineCov">         90 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
+<span class="lineNum">     180 </span><span class="lineCov">         90 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetThree)(parser, first + 1, afterLast);</span>
 <span class="lineNum">     181 </span>            : 
-<span class="lineNum">     182 </span><span class="lineCov">        164 :         default:</span>
-<span class="lineNum">     183 </span><span class="lineCov">        164 :                 return NULL;</span>
+<span class="lineNum">     182 </span><span class="lineCov">        168 :         default:</span>
+<span class="lineNum">     183 </span><span class="lineCov">        168 :                 return NULL;</span>
 <span class="lineNum">     184 </span>            :         }
 <span class="lineNum">     185 </span>            : }
 <span class="lineNum">     186 </span>            : 
@@ -292,24 +292,24 @@
 <span class="lineNum">     230 </span>            :  * [decOctetTwo]-&gt;&lt;8&gt;
 <a name="231"><span class="lineNum">     231 </span>            :  * [decOctetTwo]-&gt;&lt;9&gt;</a>
 <span class="lineNum">     232 </span>            : */
-<span class="lineNum">     233 </span><span class="lineCov">        670 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctetTwo)(UriIp4Parser * parser,</span>
+<span class="lineNum">     233 </span><span class="lineCov">        680 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctetTwo)(UriIp4Parser * parser,</span>
 <span class="lineNum">     234 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast) {
-<span class="lineNum">     235 </span><span class="lineCov">        670 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     235 </span><span class="lineCov">        680 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">     236 </span><span class="lineCov">          2 :                 return afterLast;</span>
 <span class="lineNum">     237 </span>            :         }
 <span class="lineNum">     238 </span>            : 
-<span class="lineNum">     239 </span><span class="lineCov">        668 :         switch (*first) {</span>
-<span class="lineNum">     240 </span><span class="lineCov">         58 :         case _UT('0'):</span>
+<span class="lineNum">     239 </span><span class="lineCov">        678 :         switch (*first) {</span>
+<span class="lineNum">     240 </span><span class="lineCov">         59 :         case _UT('0'):</span>
 <span class="lineNum">     241 </span>            :         case _UT('1'):
 <span class="lineNum">     242 </span>            :         case _UT('2'):
 <span class="lineNum">     243 </span>            :         case _UT('3'):
 <span class="lineNum">     244 </span>            :         case _UT('4'):
-<span class="lineNum">     245 </span><span class="lineCov">         58 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
-<span class="lineNum">     246 </span><span class="lineCov">         58 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetThree)(parser, first + 1, afterLast);</span>
+<span class="lineNum">     245 </span><span class="lineCov">         59 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
+<span class="lineNum">     246 </span><span class="lineCov">         59 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetThree)(parser, first + 1, afterLast);</span>
 <span class="lineNum">     247 </span>            : 
-<span class="lineNum">     248 </span><span class="lineCov">        602 :         case _UT('5'):</span>
-<span class="lineNum">     249 </span><span class="lineCov">        602 :                 uriPushToStack(parser, 5);</span>
-<span class="lineNum">     250 </span><span class="lineCov">        602 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetFour)(parser, first + 1, afterLast);</span>
+<span class="lineNum">     248 </span><span class="lineCov">        611 :         case _UT('5'):</span>
+<span class="lineNum">     249 </span><span class="lineCov">        611 :                 uriPushToStack(parser, 5);</span>
+<span class="lineNum">     250 </span><span class="lineCov">        611 :                 return (const URI_CHAR *)URI_FUNC(ParseDecOctetFour)(parser, first + 1, afterLast);</span>
 <span class="lineNum">     251 </span>            : 
 <span class="lineNum">     252 </span><span class="lineCov">          4 :         case _UT('6'):</span>
 <span class="lineNum">     253 </span>            :         case _UT('7'):
@@ -329,14 +329,14 @@
 <span class="lineNum">     267 </span>            :  * [decOctetThree]-&gt;&lt;NULL&gt;
 <a name="268"><span class="lineNum">     268 </span>            :  * [decOctetThree]-&gt;[DIGIT]</a>
 <span class="lineNum">     269 </span>            :  */
-<span class="lineNum">     270 </span><span class="lineCov">        196 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctetThree)(UriIp4Parser * parser,</span>
+<span class="lineNum">     270 </span><span class="lineCov">        199 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctetThree)(UriIp4Parser * parser,</span>
 <span class="lineNum">     271 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast) {
-<span class="lineNum">     272 </span><span class="lineCov">        196 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     272 </span><span class="lineCov">        199 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">     273 </span><span class="lineCov">         27 :                 return afterLast;</span>
 <span class="lineNum">     274 </span>            :         }
 <span class="lineNum">     275 </span>            : 
-<span class="lineNum">     276 </span><span class="lineCov">        169 :         switch (*first) {</span>
-<span class="lineNum">     277 </span><span class="lineCov">        141 :         case _UT('0'):</span>
+<span class="lineNum">     276 </span><span class="lineCov">        172 :         switch (*first) {</span>
+<span class="lineNum">     277 </span><span class="lineCov">        143 :         case _UT('0'):</span>
 <span class="lineNum">     278 </span>            :         case _UT('1'):
 <span class="lineNum">     279 </span>            :         case _UT('2'):
 <span class="lineNum">     280 </span>            :         case _UT('3'):
@@ -346,11 +346,11 @@
 <span class="lineNum">     284 </span>            :         case _UT('7'):
 <span class="lineNum">     285 </span>            :         case _UT('8'):
 <span class="lineNum">     286 </span>            :         case _UT('9'):
-<span class="lineNum">     287 </span><span class="lineCov">        141 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
-<span class="lineNum">     288 </span><span class="lineCov">        141 :                 return first + 1;</span>
+<span class="lineNum">     287 </span><span class="lineCov">        143 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
+<span class="lineNum">     288 </span><span class="lineCov">        143 :                 return first + 1;</span>
 <span class="lineNum">     289 </span>            : 
-<span class="lineNum">     290 </span><span class="lineCov">         28 :         default:</span>
-<span class="lineNum">     291 </span><span class="lineCov">         28 :                 return first;</span>
+<span class="lineNum">     290 </span><span class="lineCov">         29 :         default:</span>
+<span class="lineNum">     291 </span><span class="lineCov">         29 :                 return first;</span>
 <span class="lineNum">     292 </span>            :         }
 <span class="lineNum">     293 </span>            : }
 <span class="lineNum">     294 </span>            : 
@@ -365,21 +365,21 @@
 <span class="lineNum">     303 </span>            :  * [decOctetFour]-&gt;&lt;4&gt;
 <a name="304"><span class="lineNum">     304 </span>            :  * [decOctetFour]-&gt;&lt;5&gt;</a>
 <span class="lineNum">     305 </span>            :  */
-<span class="lineNum">     306 </span><span class="lineCov">        602 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctetFour)(UriIp4Parser * parser,</span>
+<span class="lineNum">     306 </span><span class="lineCov">        611 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseDecOctetFour)(UriIp4Parser * parser,</span>
 <span class="lineNum">     307 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast) {
-<span class="lineNum">     308 </span><span class="lineCov">        602 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     308 </span><span class="lineCov">        611 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">     309 </span><span class="lineNoCov">          0 :                 return afterLast;</span>
 <span class="lineNum">     310 </span>            :         }
 <span class="lineNum">     311 </span>            : 
-<span class="lineNum">     312 </span><span class="lineCov">        602 :         switch (*first) {</span>
-<span class="lineNum">     313 </span><span class="lineCov">        601 :         case _UT('0'):</span>
+<span class="lineNum">     312 </span><span class="lineCov">        611 :         switch (*first) {</span>
+<span class="lineNum">     313 </span><span class="lineCov">        610 :         case _UT('0'):</span>
 <span class="lineNum">     314 </span>            :         case _UT('1'):
 <span class="lineNum">     315 </span>            :         case _UT('2'):
 <span class="lineNum">     316 </span>            :         case _UT('3'):
 <span class="lineNum">     317 </span>            :         case _UT('4'):
 <span class="lineNum">     318 </span>            :         case _UT('5'):
-<span class="lineNum">     319 </span><span class="lineCov">        601 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
-<span class="lineNum">     320 </span><span class="lineCov">        601 :                 return first + 1;</span>
+<span class="lineNum">     319 </span><span class="lineCov">        610 :                 uriPushToStack(parser, (unsigned char)(9 + *first - _UT('9')));</span>
+<span class="lineNum">     320 </span><span class="lineCov">        610 :                 return first + 1;</span>
 <span class="lineNum">     321 </span>            : 
 <span class="lineNum">     322 </span><span class="lineCov">          1 :         default:</span>
 <span class="lineNum">     323 </span><span class="lineCov">          1 :                 return first;</span>
