@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-27 12:08:46</td>
+            <td class="headerValue">2021-07-27 16:26:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">15</td>
@@ -87,19 +87,19 @@
 <span class="lineNum">      17 </span>            : 
 <a name="18"><span class="lineNum">      18 </span>            : //----------------------------------------------------------------------------</a>
 <span class="lineNum">      19 </span>            : 
-<span class="lineNum">      20 </span><span class="lineCov">      35112 : static uint32_t CountConsecutiveSlashes(const char* str, int32_t len) {</span>
-<span class="lineNum">      21 </span><span class="lineCov">      35112 :   RangedPtr&lt;const char&gt; p(str, len);</span>
-<span class="lineNum">      22 </span><span class="lineCov">      35112 :   uint32_t count = 0;</span>
-<span class="lineNum">      23 </span><span class="lineCov">     528528 :   while (len-- &amp;&amp; *p++ == '/') ++count;</span>
-<span class="lineNum">      24 </span><span class="lineCov">      70224 :   return count;</span>
-<span class="lineNum">      25 </span><span class="lineCov">      35112 : }</span>
+<span class="lineNum">      20 </span><span class="lineCov">      35644 : static uint32_t CountConsecutiveSlashes(const char* str, int32_t len) {</span>
+<span class="lineNum">      21 </span><span class="lineCov">      35644 :   RangedPtr&lt;const char&gt; p(str, len);</span>
+<span class="lineNum">      22 </span><span class="lineCov">      35644 :   uint32_t count = 0;</span>
+<span class="lineNum">      23 </span><span class="lineCov">     536536 :   while (len-- &amp;&amp; *p++ == '/') ++count;</span>
+<span class="lineNum">      24 </span><span class="lineCov">      71288 :   return count;</span>
+<span class="lineNum">      25 </span><span class="lineCov">      35644 : }</span>
 <span class="lineNum">      26 </span>            : 
 <span class="lineNum">      27 </span>            : //----------------------------------------------------------------------------
 <span class="lineNum">      28 </span>            : // nsBaseURLParser implementation
 <a name="29"><span class="lineNum">      29 </span>            : //----------------------------------------------------------------------------</a>
 <a name="30"><span class="lineNum">      30 </span>            : </a>
-<span class="lineNum">      31 </span><span class="lineCov">    1070256 : NS_IMPL_ISUPPORTS(nsAuthURLParser, nsIURLParser)</span>
-<span class="lineNum">      32 </span><span class="lineCov">     526680 : NS_IMPL_ISUPPORTS(nsNoAuthURLParser, nsIURLParser)</span>
+<span class="lineNum">      31 </span><span class="lineCov">    1086472 : NS_IMPL_ISUPPORTS(nsAuthURLParser, nsIURLParser)</span>
+<span class="lineNum">      32 </span><span class="lineCov">     534660 : NS_IMPL_ISUPPORTS(nsNoAuthURLParser, nsIURLParser)</span>
 <span class="lineNum">      33 </span>            : 
 <span class="lineNum">      34 </span>            : #define SET_RESULT(component, pos, len)                \
 <span class="lineNum">      35 </span>            :   PR_BEGIN_MACRO                                       \
@@ -113,25 +113,25 @@
 <span class="lineNum">      43 </span>            :   PR_END_MACRO
 <a name="44"><span class="lineNum">      44 </span>            : </a>
 <span class="lineNum">      45 </span>            : NS_IMETHODIMP
-<span class="lineNum">      46 </span><span class="lineCov">      42372 : nsBaseURLParser::ParseURL(const char* spec, int32_t specLen,</span>
+<span class="lineNum">      46 </span><span class="lineCov">      43014 : nsBaseURLParser::ParseURL(const char* spec, int32_t specLen,</span>
 <span class="lineNum">      47 </span>            :                           uint32_t* schemePos, int32_t* schemeLen,
 <span class="lineNum">      48 </span>            :                           uint32_t* authorityPos, int32_t* authorityLen,
 <span class="lineNum">      49 </span>            :                           uint32_t* pathPos, int32_t* pathLen) {
-<span class="lineNum">      50 </span><span class="lineCov">      42372 :   if (NS_WARN_IF(!spec)) {</span>
+<span class="lineNum">      50 </span><span class="lineCov">      43014 :   if (NS_WARN_IF(!spec)) {</span>
 <span class="lineNum">      51 </span><span class="lineNoCov">          0 :     return NS_ERROR_INVALID_POINTER;</span>
 <span class="lineNum">      52 </span>            :   }
 <span class="lineNum">      53 </span>            : 
-<span class="lineNum">      54 </span><span class="lineCov">      42372 :   if (specLen &lt; 0) specLen = strlen(spec);</span>
+<span class="lineNum">      54 </span><span class="lineCov">      43014 :   if (specLen &lt; 0) specLen = strlen(spec);</span>
 <span class="lineNum">      55 </span>            : 
-<span class="lineNum">      56 </span><span class="lineCov">      42372 :   const char* stop = nullptr;</span>
-<span class="lineNum">      57 </span><span class="lineCov">      42372 :   const char* colon = nullptr;</span>
-<span class="lineNum">      58 </span><span class="lineCov">      42372 :   const char* slash = nullptr;</span>
-<span class="lineNum">      59 </span><span class="lineCov">      42372 :   const char* p = spec;</span>
-<span class="lineNum">      60 </span><span class="lineCov">      42372 :   uint32_t offset = 0;</span>
-<span class="lineNum">      61 </span><span class="lineCov">      42372 :   int32_t len = specLen;</span>
+<span class="lineNum">      56 </span><span class="lineCov">      43014 :   const char* stop = nullptr;</span>
+<span class="lineNum">      57 </span><span class="lineCov">      43014 :   const char* colon = nullptr;</span>
+<span class="lineNum">      58 </span><span class="lineCov">      43014 :   const char* slash = nullptr;</span>
+<span class="lineNum">      59 </span><span class="lineCov">      43014 :   const char* p = spec;</span>
+<span class="lineNum">      60 </span><span class="lineCov">      43014 :   uint32_t offset = 0;</span>
+<span class="lineNum">      61 </span><span class="lineCov">      43014 :   int32_t len = specLen;</span>
 <span class="lineNum">      62 </span>            : 
 <span class="lineNum">      63 </span>            :   // skip leading whitespace
-<span class="lineNum">      64 </span><span class="lineCov">     254232 :   while (*p == ' ' || *p == '\n' || *p == '\r' || *p == '\t') {</span>
+<span class="lineNum">      64 </span><span class="lineCov">     258084 :   while (*p == ' ' || *p == '\n' || *p == '\r' || *p == '\t') {</span>
 <span class="lineNum">      65 </span><span class="lineNoCov">          0 :     spec++;</span>
 <span class="lineNum">      66 </span><span class="lineNoCov">          0 :     specLen--;</span>
 <span class="lineNum">      67 </span><span class="lineNoCov">          0 :     offset++;</span>
@@ -140,27 +140,27 @@
 <span class="lineNum">      70 </span><span class="lineNoCov">          0 :     len--;</span>
 <span class="lineNum">      71 </span>            :   }
 <span class="lineNum">      72 </span>            : 
-<span class="lineNum">      73 </span><span class="lineCov">    1754808 :   for (; len &amp;&amp; *p &amp;&amp; !colon &amp;&amp; !slash; ++p, --len) {</span>
-<span class="lineNum">      74 </span><span class="lineCov">     256344 :     switch (*p) {</span>
+<span class="lineNum">      73 </span><span class="lineCov">    1781396 :   for (; len &amp;&amp; *p &amp;&amp; !colon &amp;&amp; !slash; ++p, --len) {</span>
+<span class="lineNum">      74 </span><span class="lineCov">     260228 :     switch (*p) {</span>
 <span class="lineNum">      75 </span>            :       case ':':
-<span class="lineNum">      76 </span><span class="lineCov">      70224 :         if (!colon) colon = p;</span>
-<span class="lineNum">      77 </span><span class="lineCov">      35112 :         break;</span>
+<span class="lineNum">      76 </span><span class="lineCov">      71288 :         if (!colon) colon = p;</span>
+<span class="lineNum">      77 </span><span class="lineCov">      35644 :         break;</span>
 <span class="lineNum">      78 </span>            :       case '/':  // start of filepath
 <span class="lineNum">      79 </span>            :       case '?':  // start of query
 <span class="lineNum">      80 </span>            :       case '#':  // start of ref
-<span class="lineNum">      81 </span><span class="lineCov">      12936 :         if (!slash) slash = p;</span>
-<span class="lineNum">      82 </span><span class="lineCov">       6468 :         break;</span>
+<span class="lineNum">      81 </span><span class="lineCov">      13132 :         if (!slash) slash = p;</span>
+<span class="lineNum">      82 </span><span class="lineCov">       6566 :         break;</span>
 <span class="lineNum">      83 </span>            :       case '@':  // username@hostname
 <span class="lineNum">      84 </span>            :       case '[':  // start of IPv6 address literal
 <span class="lineNum">      85 </span><span class="lineNoCov">          0 :         if (!stop) stop = p;</span>
 <span class="lineNum">      86 </span><span class="lineNoCov">          0 :         break;</span>
 <span class="lineNum">      87 </span>            :     }
-<span class="lineNum">      88 </span><span class="lineCov">     256344 :   }</span>
+<span class="lineNum">      88 </span><span class="lineCov">     260228 :   }</span>
 <span class="lineNum">      89 </span>            :   // disregard the first colon if it follows an '@' or a '['
-<span class="lineNum">      90 </span><span class="lineCov">      77484 :   if (colon &amp;&amp; stop &amp;&amp; colon &gt; stop) colon = nullptr;</span>
+<span class="lineNum">      90 </span><span class="lineCov">      78658 :   if (colon &amp;&amp; stop &amp;&amp; colon &gt; stop) colon = nullptr;</span>
 <span class="lineNum">      91 </span>            : 
 <span class="lineNum">      92 </span>            :   // if the spec only contained whitespace ...
-<span class="lineNum">      93 </span><span class="lineCov">      42372 :   if (specLen == 0) {</span>
+<span class="lineNum">      93 </span><span class="lineCov">      43014 :   if (specLen == 0) {</span>
 <span class="lineNum">      94 </span><span class="lineNoCov">          0 :     SET_RESULT(scheme, 0, -1);</span>
 <span class="lineNum">      95 </span><span class="lineNoCov">          0 :     SET_RESULT(authority, 0, 0);</span>
 <span class="lineNum">      96 </span><span class="lineNoCov">          0 :     SET_RESULT(path, 0, 0);</span>
@@ -168,12 +168,12 @@
 <span class="lineNum">      98 </span>            :   }
 <span class="lineNum">      99 </span>            : 
 <span class="lineNum">     100 </span>            :   // ignore trailing whitespace and control characters
-<span class="lineNum">     101 </span><span class="lineCov">     127116 :   for (p = spec + specLen - 1; ((unsigned char)*p &lt;= ' ') &amp;&amp; (p != spec); --p)</span>
+<span class="lineNum">     101 </span><span class="lineCov">     129042 :   for (p = spec + specLen - 1; ((unsigned char)*p &lt;= ' ') &amp;&amp; (p != spec); --p)</span>
 <span class="lineNum">     102 </span>            :     ;
 <span class="lineNum">     103 </span>            : 
-<span class="lineNum">     104 </span><span class="lineCov">      42372 :   specLen = p - spec + 1;</span>
+<span class="lineNum">     104 </span><span class="lineCov">      43014 :   specLen = p - spec + 1;</span>
 <span class="lineNum">     105 </span>            : 
-<span class="lineNum">     106 </span><span class="lineCov">     112596 :   if (colon &amp;&amp; (colon &lt; slash || !slash)) {</span>
+<span class="lineNum">     106 </span><span class="lineCov">     114302 :   if (colon &amp;&amp; (colon &lt; slash || !slash)) {</span>
 <span class="lineNum">     107 </span>            :     //
 <span class="lineNum">     108 </span>            :     // spec = &lt;scheme&gt;:/&lt;the-rest&gt;
 <span class="lineNum">     109 </span>            :     //
@@ -182,20 +182,20 @@
 <span class="lineNum">     112 </span>            :     // spec = &lt;scheme&gt;:&lt;authority&gt;
 <span class="lineNum">     113 </span>            :     // spec = &lt;scheme&gt;:&lt;path-no-slashes&gt;
 <span class="lineNum">     114 </span>            :     //
-<span class="lineNum">     115 </span><span class="lineCov">     105336 :     if (!net_IsValidScheme(nsDependentCSubstring(spec, colon - spec)) ||</span>
-<span class="lineNum">     116 </span><span class="lineCov">      35112 :         (*(colon + 1) == ':')) {</span>
+<span class="lineNum">     115 </span><span class="lineCov">     106932 :     if (!net_IsValidScheme(nsDependentCSubstring(spec, colon - spec)) ||</span>
+<span class="lineNum">     116 </span><span class="lineCov">      35644 :         (*(colon + 1) == ':')) {</span>
 <span class="lineNum">     117 </span><span class="lineNoCov">          0 :       return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     118 </span>            :     }
-<span class="lineNum">     119 </span><span class="lineCov">     222552 :     SET_RESULT(scheme, offset, colon - spec);</span>
-<span class="lineNum">     120 </span><span class="lineCov">      46728 :     if (authorityLen || pathLen) {</span>
-<span class="lineNum">     121 </span><span class="lineCov">      35112 :       uint32_t schemeLen = colon + 1 - spec;</span>
-<span class="lineNum">     122 </span><span class="lineCov">      35112 :       offset += schemeLen;</span>
-<span class="lineNum">     123 </span><span class="lineCov">      70224 :       ParseAfterScheme(colon + 1, specLen - schemeLen, authorityPos,</span>
-<span class="lineNum">     124 </span><span class="lineCov">      35112 :                        authorityLen, pathPos, pathLen);</span>
-<span class="lineNum">     125 </span><span class="lineCov">     163944 :       OFFSET_RESULT(authority, offset);</span>
-<span class="lineNum">     126 </span><span class="lineCov">     175560 :       OFFSET_RESULT(path, offset);</span>
-<span class="lineNum">     127 </span><span class="lineCov">      35112 :     }</span>
-<span class="lineNum">     128 </span><span class="lineCov">      35112 :   } else {</span>
+<span class="lineNum">     119 </span><span class="lineCov">     225924 :     SET_RESULT(scheme, offset, colon - spec);</span>
+<span class="lineNum">     120 </span><span class="lineCov">      47436 :     if (authorityLen || pathLen) {</span>
+<span class="lineNum">     121 </span><span class="lineCov">      35644 :       uint32_t schemeLen = colon + 1 - spec;</span>
+<span class="lineNum">     122 </span><span class="lineCov">      35644 :       offset += schemeLen;</span>
+<span class="lineNum">     123 </span><span class="lineCov">      71288 :       ParseAfterScheme(colon + 1, specLen - schemeLen, authorityPos,</span>
+<span class="lineNum">     124 </span><span class="lineCov">      35644 :                        authorityLen, pathPos, pathLen);</span>
+<span class="lineNum">     125 </span><span class="lineCov">     166428 :       OFFSET_RESULT(authority, offset);</span>
+<span class="lineNum">     126 </span><span class="lineCov">     178220 :       OFFSET_RESULT(path, offset);</span>
+<span class="lineNum">     127 </span><span class="lineCov">      35644 :     }</span>
+<span class="lineNum">     128 </span><span class="lineCov">      35644 :   } else {</span>
 <span class="lineNum">     129 </span>            :     //
 <span class="lineNum">     130 </span>            :     // spec = &lt;authority-no-port-or-password&gt;/&lt;path&gt;
 <span class="lineNum">     131 </span>            :     // spec = &lt;path&gt;
@@ -210,16 +210,16 @@
 <span class="lineNum">     140 </span>            :     // spec = &lt;authority-no-port-or-password&gt;
 <span class="lineNum">     141 </span>            :     // spec = &lt;path-no-slashes-or-colon&gt;
 <span class="lineNum">     142 </span>            :     //
-<span class="lineNum">     143 </span><span class="lineCov">      50820 :     SET_RESULT(scheme, 0, -1);</span>
-<span class="lineNum">     144 </span><span class="lineCov">      14520 :     if (authorityLen || pathLen) {</span>
+<span class="lineNum">     143 </span><span class="lineCov">      51590 :     SET_RESULT(scheme, 0, -1);</span>
+<span class="lineNum">     144 </span><span class="lineCov">      14740 :     if (authorityLen || pathLen) {</span>
 <span class="lineNum">     145 </span><span class="lineNoCov">          0 :       ParseAfterScheme(spec, specLen, authorityPos, authorityLen, pathPos,</span>
 <span class="lineNum">     146 </span><span class="lineNoCov">          0 :                        pathLen);</span>
 <span class="lineNum">     147 </span><span class="lineNoCov">          0 :       OFFSET_RESULT(authority, offset);</span>
 <span class="lineNum">     148 </span><span class="lineNoCov">          0 :       OFFSET_RESULT(path, offset);</span>
 <span class="lineNum">     149 </span><span class="lineNoCov">          0 :     }</span>
 <span class="lineNum">     150 </span>            :   }
-<span class="lineNum">     151 </span><span class="lineCov">      42372 :   return NS_OK;</span>
-<span class="lineNum">     152 </span><span class="lineCov">      84744 : }</span>
+<span class="lineNum">     151 </span><span class="lineCov">      43014 :   return NS_OK;</span>
+<span class="lineNum">     152 </span><span class="lineCov">      86028 : }</span>
 <a name="153"><span class="lineNum">     153 </span>            : </a>
 <span class="lineNum">     154 </span>            : NS_IMETHODIMP
 <span class="lineNum">     155 </span><span class="lineNoCov">          0 : nsBaseURLParser::ParseAuthority(const char* auth, int32_t authLen,</span>
@@ -259,135 +259,135 @@
 <span class="lineNum">     189 </span>            : }
 <a name="190"><span class="lineNum">     190 </span>            : </a>
 <span class="lineNum">     191 </span>            : NS_IMETHODIMP
-<span class="lineNum">     192 </span><span class="lineCov">      35112 : nsBaseURLParser::ParsePath(const char* path, int32_t pathLen,</span>
+<span class="lineNum">     192 </span><span class="lineCov">      35644 : nsBaseURLParser::ParsePath(const char* path, int32_t pathLen,</span>
 <span class="lineNum">     193 </span>            :                            uint32_t* filepathPos, int32_t* filepathLen,
 <span class="lineNum">     194 </span>            :                            uint32_t* queryPos, int32_t* queryLen,
 <span class="lineNum">     195 </span>            :                            uint32_t* refPos, int32_t* refLen) {
-<span class="lineNum">     196 </span><span class="lineCov">      35112 :   if (NS_WARN_IF(!path)) {</span>
+<span class="lineNum">     196 </span><span class="lineCov">      35644 :   if (NS_WARN_IF(!path)) {</span>
 <span class="lineNum">     197 </span><span class="lineNoCov">          0 :     return NS_ERROR_INVALID_POINTER;</span>
 <span class="lineNum">     198 </span>            :   }
 <span class="lineNum">     199 </span>            : 
-<span class="lineNum">     200 </span><span class="lineCov">      35112 :   if (pathLen &lt; 0) pathLen = strlen(path);</span>
+<span class="lineNum">     200 </span><span class="lineCov">      35644 :   if (pathLen &lt; 0) pathLen = strlen(path);</span>
 <span class="lineNum">     201 </span>            : 
 <span class="lineNum">     202 </span>            :   // path = [/]&lt;segment1&gt;/&lt;segment2&gt;/&lt;...&gt;/&lt;segmentN&gt;?&lt;query&gt;#&lt;ref&gt;
 <span class="lineNum">     203 </span>            : 
 <span class="lineNum">     204 </span>            :   // XXX PL_strnpbrk would be nice, but it's buggy
 <span class="lineNum">     205 </span>            : 
 <span class="lineNum">     206 </span>            :   // search for first occurrence of either ? or #
-<span class="lineNum">     207 </span><span class="lineCov">      35112 :   const char *query_beg = nullptr, *query_end = nullptr;</span>
-<span class="lineNum">     208 </span><span class="lineCov">      35112 :   const char* ref_beg = nullptr;</span>
-<span class="lineNum">     209 </span><span class="lineCov">      35112 :   const char* p = nullptr;</span>
-<span class="lineNum">     210 </span><span class="lineCov">    5021016 :   for (p = path; p &lt; path + pathLen; ++p) {</span>
+<span class="lineNum">     207 </span><span class="lineCov">      35644 :   const char *query_beg = nullptr, *query_end = nullptr;</span>
+<span class="lineNum">     208 </span><span class="lineCov">      35644 :   const char* ref_beg = nullptr;</span>
+<span class="lineNum">     209 </span><span class="lineCov">      35644 :   const char* p = nullptr;</span>
+<span class="lineNum">     210 </span><span class="lineCov">    5097092 :   for (p = path; p &lt; path + pathLen; ++p) {</span>
 <span class="lineNum">     211 </span>            :     // only match the query string if it precedes the reference fragment
-<span class="lineNum">     212 </span><span class="lineCov">    7426188 :     if (!ref_beg &amp;&amp; !query_beg &amp;&amp; *p == '?')</span>
+<span class="lineNum">     212 </span><span class="lineCov">    7538706 :     if (!ref_beg &amp;&amp; !query_beg &amp;&amp; *p == '?')</span>
 <span class="lineNum">     213 </span><span class="lineNoCov">          0 :       query_beg = p + 1;</span>
-<span class="lineNum">     214 </span><span class="lineCov">    2475396 :     else if (*p == '#') {</span>
+<span class="lineNum">     214 </span><span class="lineCov">    2512902 :     else if (*p == '#') {</span>
 <span class="lineNum">     215 </span><span class="lineNoCov">          0 :       ref_beg = p + 1;</span>
 <span class="lineNum">     216 </span><span class="lineNoCov">          0 :       if (query_beg) query_end = p;</span>
 <span class="lineNum">     217 </span><span class="lineNoCov">          0 :       break;</span>
 <span class="lineNum">     218 </span>            :     }
-<span class="lineNum">     219 </span><span class="lineCov">    2475396 :   }</span>
+<span class="lineNum">     219 </span><span class="lineCov">    2512902 :   }</span>
 <span class="lineNum">     220 </span>            : 
-<span class="lineNum">     221 </span><span class="lineCov">      35112 :   if (query_beg) {</span>
+<span class="lineNum">     221 </span><span class="lineCov">      35644 :   if (query_beg) {</span>
 <span class="lineNum">     222 </span><span class="lineNoCov">          0 :     if (query_end)</span>
 <span class="lineNum">     223 </span><span class="lineNoCov">          0 :       SET_RESULT(query, query_beg - path, query_end - query_beg);</span>
 <span class="lineNum">     224 </span>            :     else
 <span class="lineNum">     225 </span><span class="lineNoCov">          0 :       SET_RESULT(query, query_beg - path, pathLen - (query_beg - path));</span>
 <span class="lineNum">     226 </span><span class="lineNoCov">          0 :   } else</span>
-<span class="lineNum">     227 </span><span class="lineCov">     222552 :     SET_RESULT(query, 0, -1);</span>
+<span class="lineNum">     227 </span><span class="lineCov">     225924 :     SET_RESULT(query, 0, -1);</span>
 <span class="lineNum">     228 </span>            : 
-<span class="lineNum">     229 </span><span class="lineCov">      35112 :   if (ref_beg)</span>
+<span class="lineNum">     229 </span><span class="lineCov">      35644 :   if (ref_beg)</span>
 <span class="lineNum">     230 </span><span class="lineNoCov">          0 :     SET_RESULT(ref, ref_beg - path, pathLen - (ref_beg - path));</span>
 <span class="lineNum">     231 </span>            :   else
-<span class="lineNum">     232 </span><span class="lineCov">     222552 :     SET_RESULT(ref, 0, -1);</span>
+<span class="lineNum">     232 </span><span class="lineCov">     225924 :     SET_RESULT(ref, 0, -1);</span>
 <span class="lineNum">     233 </span>            : 
-<span class="lineNum">     234 </span><span class="lineCov">      35112 :   const char* end;</span>
-<span class="lineNum">     235 </span><span class="lineCov">      35112 :   if (query_beg)</span>
+<span class="lineNum">     234 </span><span class="lineCov">      35644 :   const char* end;</span>
+<span class="lineNum">     235 </span><span class="lineCov">      35644 :   if (query_beg)</span>
 <span class="lineNum">     236 </span><span class="lineNoCov">          0 :     end = query_beg - 1;</span>
-<span class="lineNum">     237 </span><span class="lineCov">      35112 :   else if (ref_beg)</span>
+<span class="lineNum">     237 </span><span class="lineCov">      35644 :   else if (ref_beg)</span>
 <span class="lineNum">     238 </span><span class="lineNoCov">          0 :     end = ref_beg - 1;</span>
 <span class="lineNum">     239 </span>            :   else
-<span class="lineNum">     240 </span><span class="lineCov">      35112 :     end = path + pathLen;</span>
+<span class="lineNum">     240 </span><span class="lineCov">      35644 :     end = path + pathLen;</span>
 <span class="lineNum">     241 </span>            : 
 <span class="lineNum">     242 </span>            :   // an empty file path is no file path
-<span class="lineNum">     243 </span><span class="lineCov">      35112 :   if (end != path)</span>
-<span class="lineNum">     244 </span><span class="lineCov">     280896 :     SET_RESULT(filepath, 0, end - path);</span>
+<span class="lineNum">     243 </span><span class="lineCov">      35644 :   if (end != path)</span>
+<span class="lineNum">     244 </span><span class="lineCov">     285152 :     SET_RESULT(filepath, 0, end - path);</span>
 <span class="lineNum">     245 </span>            :   else
 <span class="lineNum">     246 </span><span class="lineNoCov">          0 :     SET_RESULT(filepath, 0, -1);</span>
-<span class="lineNum">     247 </span><span class="lineCov">      35112 :   return NS_OK;</span>
-<span class="lineNum">     248 </span><span class="lineCov">      70224 : }</span>
+<span class="lineNum">     247 </span><span class="lineCov">      35644 :   return NS_OK;</span>
+<span class="lineNum">     248 </span><span class="lineCov">      71288 : }</span>
 <a name="249"><span class="lineNum">     249 </span>            : </a>
 <span class="lineNum">     250 </span>            : NS_IMETHODIMP
-<span class="lineNum">     251 </span><span class="lineCov">      35112 : nsBaseURLParser::ParseFilePath(const char* filepath, int32_t filepathLen,</span>
+<span class="lineNum">     251 </span><span class="lineCov">      35644 : nsBaseURLParser::ParseFilePath(const char* filepath, int32_t filepathLen,</span>
 <span class="lineNum">     252 </span>            :                                uint32_t* directoryPos, int32_t* directoryLen,
 <span class="lineNum">     253 </span>            :                                uint32_t* basenamePos, int32_t* basenameLen,
 <span class="lineNum">     254 </span>            :                                uint32_t* extensionPos, int32_t* extensionLen) {
-<span class="lineNum">     255 </span><span class="lineCov">      35112 :   if (NS_WARN_IF(!filepath)) {</span>
+<span class="lineNum">     255 </span><span class="lineCov">      35644 :   if (NS_WARN_IF(!filepath)) {</span>
 <span class="lineNum">     256 </span><span class="lineNoCov">          0 :     return NS_ERROR_INVALID_POINTER;</span>
 <span class="lineNum">     257 </span>            :   }
 <span class="lineNum">     258 </span>            : 
-<span class="lineNum">     259 </span><span class="lineCov">      35112 :   if (filepathLen &lt; 0) filepathLen = strlen(filepath);</span>
+<span class="lineNum">     259 </span><span class="lineCov">      35644 :   if (filepathLen &lt; 0) filepathLen = strlen(filepath);</span>
 <span class="lineNum">     260 </span>            : 
-<span class="lineNum">     261 </span><span class="lineCov">      35112 :   if (filepathLen == 0) {</span>
+<span class="lineNum">     261 </span><span class="lineCov">      35644 :   if (filepathLen == 0) {</span>
 <span class="lineNum">     262 </span><span class="lineNoCov">          0 :     SET_RESULT(directory, 0, -1);</span>
 <span class="lineNum">     263 </span><span class="lineNoCov">          0 :     SET_RESULT(basename, 0, 0);  // assume a zero length file basename</span>
 <span class="lineNum">     264 </span><span class="lineNoCov">          0 :     SET_RESULT(extension, 0, -1);</span>
 <span class="lineNum">     265 </span><span class="lineNoCov">          0 :     return NS_OK;</span>
 <span class="lineNum">     266 </span>            :   }
 <span class="lineNum">     267 </span>            : 
-<span class="lineNum">     268 </span><span class="lineCov">      35112 :   const char* p;</span>
-<span class="lineNum">     269 </span><span class="lineCov">      35112 :   const char* end = filepath + filepathLen;</span>
+<span class="lineNum">     268 </span><span class="lineCov">      35644 :   const char* p;</span>
+<span class="lineNum">     269 </span><span class="lineCov">      35644 :   const char* end = filepath + filepathLen;</span>
 <span class="lineNum">     270 </span>            : 
 <span class="lineNum">     271 </span>            :   // search backwards for filename
-<span class="lineNum">     272 </span><span class="lineCov">    2591556 :   for (p = end - 1; *p != '/' &amp;&amp; p &gt; filepath; --p)</span>
+<span class="lineNum">     272 </span><span class="lineCov">    2630822 :   for (p = end - 1; *p != '/' &amp;&amp; p &gt; filepath; --p)</span>
 <span class="lineNum">     273 </span>            :     ;
-<span class="lineNum">     274 </span><span class="lineCov">      35112 :   if (*p == '/') {</span>
+<span class="lineNum">     274 </span><span class="lineCov">      35644 :   if (*p == '/') {</span>
 <span class="lineNum">     275 </span>            :     // catch /.. and /.
-<span class="lineNum">     276 </span><span class="lineCov">      63888 :     if ((p + 1 &lt; end &amp;&amp; *(p + 1) == '.') &amp;&amp;</span>
+<span class="lineNum">     276 </span><span class="lineCov">      64856 :     if ((p + 1 &lt; end &amp;&amp; *(p + 1) == '.') &amp;&amp;</span>
 <span class="lineNum">     277 </span><span class="lineNoCov">          0 :         (p + 2 == end || (*(p + 2) == '.' &amp;&amp; p + 3 == end)))</span>
 <span class="lineNum">     278 </span><span class="lineNoCov">          0 :       p = end - 1;</span>
 <span class="lineNum">     279 </span>            :     // filepath = &lt;directory&gt;&lt;filename&gt;.&lt;extension&gt;
-<span class="lineNum">     280 </span><span class="lineCov">     245784 :     SET_RESULT(directory, 0, p - filepath + 1);</span>
-<span class="lineNum">     281 </span><span class="lineCov">      70224 :     ParseFileName(p + 1, end - (p + 1), basenamePos, basenameLen, extensionPos,</span>
-<span class="lineNum">     282 </span><span class="lineCov">      35112 :                   extensionLen);</span>
-<span class="lineNum">     283 </span><span class="lineCov">     175560 :     OFFSET_RESULT(basename, p + 1 - filepath);</span>
-<span class="lineNum">     284 </span><span class="lineCov">     175560 :     OFFSET_RESULT(extension, p + 1 - filepath);</span>
-<span class="lineNum">     285 </span><span class="lineCov">      35112 :   } else {</span>
+<span class="lineNum">     280 </span><span class="lineCov">     249508 :     SET_RESULT(directory, 0, p - filepath + 1);</span>
+<span class="lineNum">     281 </span><span class="lineCov">      71288 :     ParseFileName(p + 1, end - (p + 1), basenamePos, basenameLen, extensionPos,</span>
+<span class="lineNum">     282 </span><span class="lineCov">      35644 :                   extensionLen);</span>
+<span class="lineNum">     283 </span><span class="lineCov">     178220 :     OFFSET_RESULT(basename, p + 1 - filepath);</span>
+<span class="lineNum">     284 </span><span class="lineCov">     178220 :     OFFSET_RESULT(extension, p + 1 - filepath);</span>
+<span class="lineNum">     285 </span><span class="lineCov">      35644 :   } else {</span>
 <span class="lineNum">     286 </span>            :     // filepath = &lt;filename&gt;.&lt;extension&gt;
 <span class="lineNum">     287 </span><span class="lineNoCov">          0 :     SET_RESULT(directory, 0, -1);</span>
 <span class="lineNum">     288 </span><span class="lineNoCov">          0 :     ParseFileName(filepath, filepathLen, basenamePos, basenameLen, extensionPos,</span>
 <span class="lineNum">     289 </span><span class="lineNoCov">          0 :                   extensionLen);</span>
 <span class="lineNum">     290 </span>            :   }
-<span class="lineNum">     291 </span><span class="lineCov">      35112 :   return NS_OK;</span>
-<a name="292"><span class="lineNum">     292 </span><span class="lineCov">      70224 : }</span></a>
+<span class="lineNum">     291 </span><span class="lineCov">      35644 :   return NS_OK;</span>
+<a name="292"><span class="lineNum">     292 </span><span class="lineCov">      71288 : }</span></a>
 <span class="lineNum">     293 </span>            : 
-<span class="lineNum">     294 </span><span class="lineCov">      35112 : nsresult nsBaseURLParser::ParseFileName(</span>
+<span class="lineNum">     294 </span><span class="lineCov">      35644 : nsresult nsBaseURLParser::ParseFileName(</span>
 <span class="lineNum">     295 </span>            :     const char* filename, int32_t filenameLen, uint32_t* basenamePos,
 <span class="lineNum">     296 </span>            :     int32_t* basenameLen, uint32_t* extensionPos, int32_t* extensionLen) {
-<span class="lineNum">     297 </span><span class="lineCov">      35112 :   if (NS_WARN_IF(!filename)) {</span>
+<span class="lineNum">     297 </span><span class="lineCov">      35644 :   if (NS_WARN_IF(!filename)) {</span>
 <span class="lineNum">     298 </span><span class="lineNoCov">          0 :     return NS_ERROR_INVALID_POINTER;</span>
 <span class="lineNum">     299 </span>            :   }
 <span class="lineNum">     300 </span>            : 
-<span class="lineNum">     301 </span><span class="lineCov">      35112 :   if (filenameLen &lt; 0) filenameLen = strlen(filename);</span>
+<span class="lineNum">     301 </span><span class="lineCov">      35644 :   if (filenameLen &lt; 0) filenameLen = strlen(filename);</span>
 <span class="lineNum">     302 </span>            : 
 <span class="lineNum">     303 </span>            :   // no extension if filename ends with a '.'
-<span class="lineNum">     304 </span><span class="lineCov">      35112 :   if (filename[filenameLen - 1] != '.') {</span>
+<span class="lineNum">     304 </span><span class="lineCov">      35644 :   if (filename[filenameLen - 1] != '.') {</span>
 <span class="lineNum">     305 </span>            :     // ignore '.' at the beginning
-<span class="lineNum">     306 </span><span class="lineCov">     429528 :     for (const char* p = filename + filenameLen - 1; p &gt; filename; --p) {</span>
-<span class="lineNum">     307 </span><span class="lineCov">     187704 :       if (*p == '.') {</span>
+<span class="lineNum">     306 </span><span class="lineCov">     436036 :     for (const char* p = filename + filenameLen - 1; p &gt; filename; --p) {</span>
+<span class="lineNum">     307 </span><span class="lineCov">     190548 :       if (*p == '.') {</span>
 <span class="lineNum">     308 </span>            :         // filename = &lt;basename.extension&gt;
-<span class="lineNum">     309 </span><span class="lineCov">     201432 :         SET_RESULT(basename, 0, p - filename);</span>
-<span class="lineNum">     310 </span><span class="lineCov">     201432 :         SET_RESULT(extension, p + 1 - filename,</span>
+<span class="lineNum">     309 </span><span class="lineCov">     204484 :         SET_RESULT(basename, 0, p - filename);</span>
+<span class="lineNum">     310 </span><span class="lineCov">     204484 :         SET_RESULT(extension, p + 1 - filename,</span>
 <span class="lineNum">     311 </span>            :                    filenameLen - (p - filename + 1));
-<span class="lineNum">     312 </span><span class="lineCov">      28776 :         return NS_OK;</span>
+<span class="lineNum">     312 </span><span class="lineCov">      29212 :         return NS_OK;</span>
 <span class="lineNum">     313 </span>            :       }
-<span class="lineNum">     314 </span><span class="lineCov">     158928 :     }</span>
-<span class="lineNum">     315 </span><span class="lineCov">       6336 :   }</span>
+<span class="lineNum">     314 </span><span class="lineCov">     161336 :     }</span>
+<span class="lineNum">     315 </span><span class="lineCov">       6432 :   }</span>
 <span class="lineNum">     316 </span>            :   // filename = &lt;basename&gt;
-<span class="lineNum">     317 </span><span class="lineCov">      38016 :   SET_RESULT(basename, 0, filenameLen);</span>
-<span class="lineNum">     318 </span><span class="lineCov">      38016 :   SET_RESULT(extension, 0, -1);</span>
-<span class="lineNum">     319 </span><span class="lineCov">       6336 :   return NS_OK;</span>
-<span class="lineNum">     320 </span><span class="lineCov">      35112 : }</span>
+<span class="lineNum">     317 </span><span class="lineCov">      38592 :   SET_RESULT(basename, 0, filenameLen);</span>
+<span class="lineNum">     318 </span><span class="lineCov">      38592 :   SET_RESULT(extension, 0, -1);</span>
+<span class="lineNum">     319 </span><span class="lineCov">       6432 :   return NS_OK;</span>
+<span class="lineNum">     320 </span><span class="lineCov">      35644 : }</span>
 <span class="lineNum">     321 </span>            : 
 <span class="lineNum">     322 </span>            : //----------------------------------------------------------------------------
 <span class="lineNum">     323 </span>            : // nsNoAuthURLParser implementation
@@ -403,14 +403,14 @@
 <span class="lineNum">     333 </span><span class="lineNoCov">          0 :   return NS_ERROR_UNEXPECTED;</span>
 <a name="334"><span class="lineNum">     334 </span>            : }</a>
 <span class="lineNum">     335 </span>            : 
-<span class="lineNum">     336 </span><span class="lineCov">      26796 : void nsNoAuthURLParser::ParseAfterScheme(const char* spec, int32_t specLen,</span>
+<span class="lineNum">     336 </span><span class="lineCov">      27202 : void nsNoAuthURLParser::ParseAfterScheme(const char* spec, int32_t specLen,</span>
 <span class="lineNum">     337 </span>            :                                          uint32_t* authPos, int32_t* authLen,
 <span class="lineNum">     338 </span>            :                                          uint32_t* pathPos, int32_t* pathLen) {
-<span class="lineNum">     339 </span><span class="lineCov">      53592 :   MOZ_ASSERT(specLen &gt;= 0, &quot;unexpected&quot;);</span>
+<span class="lineNum">     339 </span><span class="lineCov">      54404 :   MOZ_ASSERT(specLen &gt;= 0, &quot;unexpected&quot;);</span>
 <span class="lineNum">     340 </span>            : 
 <span class="lineNum">     341 </span>            :   // everything is the path
-<span class="lineNum">     342 </span><span class="lineCov">      26796 :   uint32_t pos = 0;</span>
-<span class="lineNum">     343 </span><span class="lineCov">      26796 :   switch (CountConsecutiveSlashes(spec, specLen)) {</span>
+<span class="lineNum">     342 </span><span class="lineCov">      27202 :   uint32_t pos = 0;</span>
+<span class="lineNum">     343 </span><span class="lineCov">      27202 :   switch (CountConsecutiveSlashes(spec, specLen)) {</span>
 <span class="lineNum">     344 </span>            :     case 0:
 <span class="lineNum">     345 </span>            :     case 1:
 <span class="lineNum">     346 </span><span class="lineNoCov">          0 :       break;</span>
@@ -442,12 +442,12 @@
 <span class="lineNum">     372 </span><span class="lineNoCov">          0 :       return;</span>
 <span class="lineNum">     373 </span><span class="lineNoCov">          0 :     }</span>
 <span class="lineNum">     374 </span>            :     default:
-<span class="lineNum">     375 </span><span class="lineCov">      26796 :       pos = 2;</span>
-<span class="lineNum">     376 </span><span class="lineCov">      26796 :       break;</span>
+<span class="lineNum">     375 </span><span class="lineCov">      27202 :       pos = 2;</span>
+<span class="lineNum">     376 </span><span class="lineCov">      27202 :       break;</span>
 <span class="lineNum">     377 </span>            :   }
-<span class="lineNum">     378 </span><span class="lineCov">     164340 :   SET_RESULT(auth, pos, 0);</span>
-<span class="lineNum">     379 </span><span class="lineCov">     187572 :   SET_RESULT(path, pos, specLen - pos);</span>
-<span class="lineNum">     380 </span><span class="lineCov">      80388 : }</span>
+<span class="lineNum">     378 </span><span class="lineCov">     166830 :   SET_RESULT(auth, pos, 0);</span>
+<span class="lineNum">     379 </span><span class="lineCov">     190414 :   SET_RESULT(path, pos, specLen - pos);</span>
+<span class="lineNum">     380 </span><span class="lineCov">      81606 : }</span>
 <span class="lineNum">     381 </span>            : 
 <span class="lineNum">     382 </span>            : #if defined(XP_WIN)
 <span class="lineNum">     383 </span>            : NS_IMETHODIMP
@@ -489,20 +489,20 @@
 <span class="lineNum">     419 </span>            : //----------------------------------------------------------------------------
 <a name="420"><span class="lineNum">     420 </span>            : </a>
 <span class="lineNum">     421 </span>            : NS_IMETHODIMP
-<span class="lineNum">     422 </span><span class="lineCov">       8316 : nsAuthURLParser::ParseAuthority(const char* auth, int32_t authLen,</span>
+<span class="lineNum">     422 </span><span class="lineCov">       8442 : nsAuthURLParser::ParseAuthority(const char* auth, int32_t authLen,</span>
 <span class="lineNum">     423 </span>            :                                 uint32_t* usernamePos, int32_t* usernameLen,
 <span class="lineNum">     424 </span>            :                                 uint32_t* passwordPos, int32_t* passwordLen,
 <span class="lineNum">     425 </span>            :                                 uint32_t* hostnamePos, int32_t* hostnameLen,
 <span class="lineNum">     426 </span>            :                                 int32_t* port) {
-<span class="lineNum">     427 </span><span class="lineCov">       8316 :   nsresult rv;</span>
+<span class="lineNum">     427 </span><span class="lineCov">       8442 :   nsresult rv;</span>
 <span class="lineNum">     428 </span>            : 
-<span class="lineNum">     429 </span><span class="lineCov">       8316 :   if (NS_WARN_IF(!auth)) {</span>
+<span class="lineNum">     429 </span><span class="lineCov">       8442 :   if (NS_WARN_IF(!auth)) {</span>
 <span class="lineNum">     430 </span><span class="lineNoCov">          0 :     return NS_ERROR_INVALID_POINTER;</span>
 <span class="lineNum">     431 </span>            :   }
 <span class="lineNum">     432 </span>            : 
-<span class="lineNum">     433 </span><span class="lineCov">       8316 :   if (authLen &lt; 0) authLen = strlen(auth);</span>
+<span class="lineNum">     433 </span><span class="lineCov">       8442 :   if (authLen &lt; 0) authLen = strlen(auth);</span>
 <span class="lineNum">     434 </span>            : 
-<span class="lineNum">     435 </span><span class="lineCov">       8316 :   if (authLen == 0) {</span>
+<span class="lineNum">     435 </span><span class="lineCov">       8442 :   if (authLen == 0) {</span>
 <span class="lineNum">     436 </span><span class="lineNoCov">          0 :     SET_RESULT(username, 0, -1);</span>
 <span class="lineNum">     437 </span><span class="lineNoCov">          0 :     SET_RESULT(password, 0, -1);</span>
 <span class="lineNum">     438 </span><span class="lineNoCov">          0 :     SET_RESULT(hostname, 0, 0);</span>
@@ -511,10 +511,10 @@
 <span class="lineNum">     441 </span>            :   }
 <span class="lineNum">     442 </span>            : 
 <span class="lineNum">     443 </span>            :   // search backwards for @
-<span class="lineNum">     444 </span><span class="lineCov">       8316 :   const char* p = auth + authLen - 1;</span>
-<span class="lineNum">     445 </span><span class="lineCov">     175296 :   for (; (*p != '@') &amp;&amp; (p &gt; auth); --p) {</span>
-<span class="lineNum">     446 </span><span class="lineCov">      35508 :   }</span>
-<span class="lineNum">     447 </span><span class="lineCov">       8316 :   if (*p == '@') {</span>
+<span class="lineNum">     444 </span><span class="lineCov">       8442 :   const char* p = auth + authLen - 1;</span>
+<span class="lineNum">     445 </span><span class="lineCov">     177952 :   for (; (*p != '@') &amp;&amp; (p &gt; auth); --p) {</span>
+<span class="lineNum">     446 </span><span class="lineCov">      36046 :   }</span>
+<span class="lineNum">     447 </span><span class="lineCov">       8442 :   if (*p == '@') {</span>
 <span class="lineNum">     448 </span>            :     // auth = &lt;user-info@server-info&gt;
 <span class="lineNum">     449 </span><span class="lineNoCov">          0 :     rv = ParseUserInfo(auth, p - auth, usernamePos, usernameLen, passwordPos,</span>
 <span class="lineNum">     450 </span><span class="lineNoCov">          0 :                        passwordLen);</span>
@@ -531,13 +531,13 @@
 <span class="lineNum">     461 </span>            :     }
 <span class="lineNum">     462 </span><span class="lineNoCov">          0 :   } else {</span>
 <span class="lineNum">     463 </span>            :     // auth = &lt;server-info&gt;
-<span class="lineNum">     464 </span><span class="lineCov">      58212 :     SET_RESULT(username, 0, -1);</span>
-<span class="lineNum">     465 </span><span class="lineCov">      58212 :     SET_RESULT(password, 0, -1);</span>
-<span class="lineNum">     466 </span><span class="lineCov">       8316 :     rv = ParseServerInfo(auth, authLen, hostnamePos, hostnameLen, port);</span>
-<span class="lineNum">     467 </span><span class="lineCov">       8316 :     if (NS_FAILED(rv)) return rv;</span>
+<span class="lineNum">     464 </span><span class="lineCov">      59094 :     SET_RESULT(username, 0, -1);</span>
+<span class="lineNum">     465 </span><span class="lineCov">      59094 :     SET_RESULT(password, 0, -1);</span>
+<span class="lineNum">     466 </span><span class="lineCov">       8442 :     rv = ParseServerInfo(auth, authLen, hostnamePos, hostnameLen, port);</span>
+<span class="lineNum">     467 </span><span class="lineCov">       8442 :     if (NS_FAILED(rv)) return rv;</span>
 <span class="lineNum">     468 </span>            :   }
-<span class="lineNum">     469 </span><span class="lineCov">       8316 :   return NS_OK;</span>
-<span class="lineNum">     470 </span><span class="lineCov">      16632 : }</span>
+<span class="lineNum">     469 </span><span class="lineCov">       8442 :   return NS_OK;</span>
+<span class="lineNum">     470 </span><span class="lineCov">      16884 : }</span>
 <a name="471"><span class="lineNum">     471 </span>            : </a>
 <span class="lineNum">     472 </span>            : NS_IMETHODIMP
 <span class="lineNum">     473 </span><span class="lineNoCov">          0 : nsAuthURLParser::ParseUserInfo(const char* userinfo, int32_t userinfoLen,</span>
@@ -569,16 +569,16 @@
 <span class="lineNum">     499 </span><span class="lineNoCov">          0 : }</span>
 <a name="500"><span class="lineNum">     500 </span>            : </a>
 <span class="lineNum">     501 </span>            : NS_IMETHODIMP
-<span class="lineNum">     502 </span><span class="lineCov">       8316 : nsAuthURLParser::ParseServerInfo(const char* serverinfo, int32_t serverinfoLen,</span>
+<span class="lineNum">     502 </span><span class="lineCov">       8442 : nsAuthURLParser::ParseServerInfo(const char* serverinfo, int32_t serverinfoLen,</span>
 <span class="lineNum">     503 </span>            :                                  uint32_t* hostnamePos, int32_t* hostnameLen,
 <span class="lineNum">     504 </span>            :                                  int32_t* port) {
-<span class="lineNum">     505 </span><span class="lineCov">       8316 :   if (NS_WARN_IF(!serverinfo)) {</span>
+<span class="lineNum">     505 </span><span class="lineCov">       8442 :   if (NS_WARN_IF(!serverinfo)) {</span>
 <span class="lineNum">     506 </span><span class="lineNoCov">          0 :     return NS_ERROR_INVALID_POINTER;</span>
 <span class="lineNum">     507 </span>            :   }
 <span class="lineNum">     508 </span>            : 
-<span class="lineNum">     509 </span><span class="lineCov">       8316 :   if (serverinfoLen &lt; 0) serverinfoLen = strlen(serverinfo);</span>
+<span class="lineNum">     509 </span><span class="lineCov">       8442 :   if (serverinfoLen &lt; 0) serverinfoLen = strlen(serverinfo);</span>
 <span class="lineNum">     510 </span>            : 
-<span class="lineNum">     511 </span><span class="lineCov">       8316 :   if (serverinfoLen == 0) {</span>
+<span class="lineNum">     511 </span><span class="lineCov">       8442 :   if (serverinfoLen == 0) {</span>
 <span class="lineNum">     512 </span><span class="lineNoCov">          0 :     SET_RESULT(hostname, 0, 0);</span>
 <span class="lineNum">     513 </span><span class="lineNoCov">          0 :     if (port) *port = -1;</span>
 <span class="lineNum">     514 </span><span class="lineNoCov">          0 :     return NS_OK;</span>
@@ -586,10 +586,10 @@
 <span class="lineNum">     516 </span>            : 
 <span class="lineNum">     517 </span>            :   // search backwards for a ':' but stop on ']' (IPv6 address literal
 <span class="lineNum">     518 </span>            :   // delimiter).  check for illegal characters in the hostname.
-<span class="lineNum">     519 </span><span class="lineCov">       8316 :   const char* p = serverinfo + serverinfoLen - 1;</span>
-<span class="lineNum">     520 </span><span class="lineCov">       8316 :   const char *colon = nullptr, *bracket = nullptr;</span>
-<span class="lineNum">     521 </span><span class="lineCov">      87648 :   for (; p &gt; serverinfo; --p) {</span>
-<span class="lineNum">     522 </span><span class="lineCov">      35508 :     switch (*p) {</span>
+<span class="lineNum">     519 </span><span class="lineCov">       8442 :   const char* p = serverinfo + serverinfoLen - 1;</span>
+<span class="lineNum">     520 </span><span class="lineCov">       8442 :   const char *colon = nullptr, *bracket = nullptr;</span>
+<span class="lineNum">     521 </span><span class="lineCov">      88976 :   for (; p &gt; serverinfo; --p) {</span>
+<span class="lineNum">     522 </span><span class="lineCov">      36046 :     switch (*p) {</span>
 <span class="lineNum">     523 </span>            :       case ']':
 <span class="lineNum">     524 </span><span class="lineNoCov">          0 :         bracket = p;</span>
 <span class="lineNum">     525 </span><span class="lineNoCov">          0 :         break;</span>
@@ -600,9 +600,9 @@
 <span class="lineNum">     530 </span>            :         // hostname must not contain a space
 <span class="lineNum">     531 </span><span class="lineNoCov">          0 :         return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     532 </span>            :     }
-<span class="lineNum">     533 </span><span class="lineCov">      35508 :   }</span>
+<span class="lineNum">     533 </span><span class="lineCov">      36046 :   }</span>
 <span class="lineNum">     534 </span>            : 
-<span class="lineNum">     535 </span><span class="lineCov">       8316 :   if (colon) {</span>
+<span class="lineNum">     535 </span><span class="lineCov">       8442 :   if (colon) {</span>
 <span class="lineNum">     536 </span>            :     // serverinfo = &lt;hostname:port&gt;
 <span class="lineNum">     537 </span><span class="lineNoCov">          0 :     SET_RESULT(hostname, 0, colon - serverinfo);</span>
 <span class="lineNum">     538 </span><span class="lineNoCov">          0 :     if (port) {</span>
@@ -623,19 +623,19 @@
 <span class="lineNum">     553 </span><span class="lineNoCov">          0 :     }</span>
 <span class="lineNum">     554 </span><span class="lineNoCov">          0 :   } else {</span>
 <span class="lineNum">     555 </span>            :     // serverinfo = &lt;hostname&gt;
-<span class="lineNum">     556 </span><span class="lineCov">      58212 :     SET_RESULT(hostname, 0, serverinfoLen);</span>
-<span class="lineNum">     557 </span><span class="lineCov">      16632 :     if (port) *port = -1;</span>
+<span class="lineNum">     556 </span><span class="lineCov">      59094 :     SET_RESULT(hostname, 0, serverinfoLen);</span>
+<span class="lineNum">     557 </span><span class="lineCov">      16884 :     if (port) *port = -1;</span>
 <span class="lineNum">     558 </span>            :   }
 <span class="lineNum">     559 </span>            : 
 <span class="lineNum">     560 </span>            :   // In case of IPv6 address check its validity
-<span class="lineNum">     561 </span><span class="lineCov">      41580 :   if (*hostnameLen &gt; 1 &amp;&amp; *(serverinfo + *hostnamePos) == '[' &amp;&amp;</span>
+<span class="lineNum">     561 </span><span class="lineCov">      42210 :   if (*hostnameLen &gt; 1 &amp;&amp; *(serverinfo + *hostnamePos) == '[' &amp;&amp;</span>
 <span class="lineNum">     562 </span><span class="lineNoCov">          0 :       *(serverinfo + *hostnamePos + *hostnameLen - 1) == ']' &amp;&amp;</span>
 <span class="lineNum">     563 </span><span class="lineNoCov">          0 :       !net_IsValidIPv6Addr(</span>
 <span class="lineNum">     564 </span><span class="lineNoCov">          0 :           Substring(serverinfo + *hostnamePos + 1, *hostnameLen - 2)))</span>
 <span class="lineNum">     565 </span><span class="lineNoCov">          0 :     return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     566 </span>            : 
-<span class="lineNum">     567 </span><span class="lineCov">       8316 :   return NS_OK;</span>
-<a name="568"><span class="lineNum">     568 </span><span class="lineCov">      16632 : }</span></a>
+<span class="lineNum">     567 </span><span class="lineCov">       8442 :   return NS_OK;</span>
+<a name="568"><span class="lineNum">     568 </span><span class="lineCov">      16884 : }</span></a>
 <span class="lineNum">     569 </span>            : 
 <span class="lineNum">     570 </span><span class="lineNoCov">          0 : void nsAuthURLParser::ParseAfterScheme(const char* spec, int32_t specLen,</span>
 <span class="lineNum">     571 </span>            :                                        uint32_t* authPos, int32_t* authLen,
@@ -665,32 +665,32 @@
 <span class="lineNum">     595 </span>            : // nsStdURLParser implementation
 <a name="596"><span class="lineNum">     596 </span>            : //----------------------------------------------------------------------------</a>
 <span class="lineNum">     597 </span>            : 
-<span class="lineNum">     598 </span><span class="lineCov">       8316 : void nsStdURLParser::ParseAfterScheme(const char* spec, int32_t specLen,</span>
+<span class="lineNum">     598 </span><span class="lineCov">       8442 : void nsStdURLParser::ParseAfterScheme(const char* spec, int32_t specLen,</span>
 <span class="lineNum">     599 </span>            :                                       uint32_t* authPos, int32_t* authLen,
 <span class="lineNum">     600 </span>            :                                       uint32_t* pathPos, int32_t* pathLen) {
-<span class="lineNum">     601 </span><span class="lineCov">      16632 :   MOZ_ASSERT(specLen &gt;= 0, &quot;unexpected&quot;);</span>
+<span class="lineNum">     601 </span><span class="lineCov">      16884 :   MOZ_ASSERT(specLen &gt;= 0, &quot;unexpected&quot;);</span>
 <span class="lineNum">     602 </span>            : 
-<span class="lineNum">     603 </span><span class="lineCov">       8316 :   uint32_t nslash = CountConsecutiveSlashes(spec, specLen);</span>
+<span class="lineNum">     603 </span><span class="lineCov">       8442 :   uint32_t nslash = CountConsecutiveSlashes(spec, specLen);</span>
 <span class="lineNum">     604 </span>            : 
 <span class="lineNum">     605 </span>            :   // search for the end of the authority section
-<span class="lineNum">     606 </span><span class="lineCov">       8316 :   const char* end = spec + specLen;</span>
-<span class="lineNum">     607 </span><span class="lineCov">       8316 :   const char* p;</span>
-<span class="lineNum">     608 </span><span class="lineCov">     104280 :   for (p = spec + nslash; p &lt; end; ++p) {</span>
-<span class="lineNum">     609 </span><span class="lineCov">      60456 :     if (strchr(&quot;/?#;&quot;, *p)) break;</span>
-<span class="lineNum">     610 </span><span class="lineCov">      43824 :   }</span>
-<span class="lineNum">     611 </span><span class="lineCov">       8316 :   switch (nslash) {</span>
+<span class="lineNum">     606 </span><span class="lineCov">       8442 :   const char* end = spec + specLen;</span>
+<span class="lineNum">     607 </span><span class="lineCov">       8442 :   const char* p;</span>
+<span class="lineNum">     608 </span><span class="lineCov">     105860 :   for (p = spec + nslash; p &lt; end; ++p) {</span>
+<span class="lineNum">     609 </span><span class="lineCov">      61372 :     if (strchr(&quot;/?#;&quot;, *p)) break;</span>
+<span class="lineNum">     610 </span><span class="lineCov">      44488 :   }</span>
+<span class="lineNum">     611 </span><span class="lineCov">       8442 :   switch (nslash) {</span>
 <span class="lineNum">     612 </span>            :     case 0:
 <span class="lineNum">     613 </span>            :     case 2:
-<span class="lineNum">     614 </span><span class="lineCov">       8316 :       if (p &lt; end) {</span>
+<span class="lineNum">     614 </span><span class="lineCov">       8442 :       if (p &lt; end) {</span>
 <span class="lineNum">     615 </span>            :         // spec = (//)&lt;auth&gt;&lt;path&gt;
-<span class="lineNum">     616 </span><span class="lineCov">      58212 :         SET_RESULT(auth, nslash, p - (spec + nslash));</span>
-<span class="lineNum">     617 </span><span class="lineCov">      58212 :         SET_RESULT(path, p - spec, specLen - (p - spec));</span>
-<span class="lineNum">     618 </span><span class="lineCov">       8316 :       } else {</span>
+<span class="lineNum">     616 </span><span class="lineCov">      59094 :         SET_RESULT(auth, nslash, p - (spec + nslash));</span>
+<span class="lineNum">     617 </span><span class="lineCov">      59094 :         SET_RESULT(path, p - spec, specLen - (p - spec));</span>
+<span class="lineNum">     618 </span><span class="lineCov">       8442 :       } else {</span>
 <span class="lineNum">     619 </span>            :         // spec = (//)&lt;auth&gt;
 <span class="lineNum">     620 </span><span class="lineNoCov">          0 :         SET_RESULT(auth, nslash, specLen - nslash);</span>
 <span class="lineNum">     621 </span><span class="lineNoCov">          0 :         SET_RESULT(path, 0, -1);</span>
 <span class="lineNum">     622 </span>            :       }
-<span class="lineNum">     623 </span><span class="lineCov">       8316 :       break;</span>
+<span class="lineNum">     623 </span><span class="lineCov">       8442 :       break;</span>
 <span class="lineNum">     624 </span>            :     case 1:
 <span class="lineNum">     625 </span>            :       // spec = /&lt;path&gt;
 <span class="lineNum">     626 </span><span class="lineNoCov">          0 :       SET_RESULT(auth, 0, -1);</span>
@@ -701,7 +701,7 @@
 <span class="lineNum">     631 </span><span class="lineNoCov">          0 :       SET_RESULT(auth, 2, 0);</span>
 <span class="lineNum">     632 </span><span class="lineNoCov">          0 :       SET_RESULT(path, 2, specLen - 2);</span>
 <span class="lineNum">     633 </span><span class="lineNoCov">          0 :   }</span>
-<span class="lineNum">     634 </span><span class="lineCov">       8316 : }</span>
+<span class="lineNum">     634 </span><span class="lineCov">       8442 : }</span>
 </pre>
       </td>
     </tr>
