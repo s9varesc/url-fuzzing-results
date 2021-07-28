@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-07-28 01:16:48</td>
+            <td class="headerValue">2021-07-28 05:41:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -105,8 +105,8 @@
 <span class="lineNum">      43 </span>            : 
 <a name="44"><span class="lineNum">      44 </span>            : </a>
 <span class="lineNum">      45 </span>            : 
-<span class="lineNum">      46 </span><span class="lineCov">      16965 : void uriWriteQuadToDoubleByte(const unsigned char * hexDigits, int digitCount, unsigned char * output) {</span>
-<span class="lineNum">      47 </span><span class="lineCov">      16965 :         switch (digitCount) {</span>
+<span class="lineNum">      46 </span><span class="lineCov">      17094 : void uriWriteQuadToDoubleByte(const unsigned char * hexDigits, int digitCount, unsigned char * output) {</span>
+<span class="lineNum">      47 </span><span class="lineCov">      17094 :         switch (digitCount) {</span>
 <span class="lineNum">      48 </span><span class="lineNoCov">          0 :         case 1:</span>
 <span class="lineNum">      49 </span>            :                 /* 0x___? -&gt; \x00 \x0? */
 <span class="lineNum">      50 </span><span class="lineNoCov">          0 :                 output[0] = 0;</span>
@@ -125,28 +125,28 @@
 <span class="lineNum">      63 </span><span class="lineNoCov">          0 :                 output[1] = 16 * hexDigits[1] + hexDigits[2];</span>
 <span class="lineNum">      64 </span><span class="lineNoCov">          0 :                 break;</span>
 <span class="lineNum">      65 </span>            : 
-<span class="lineNum">      66 </span><span class="lineCov">      16965 :         case 4:</span>
+<span class="lineNum">      66 </span><span class="lineCov">      17094 :         case 4:</span>
 <span class="lineNum">      67 </span>            :                 /* 0x???? -&gt; \0?? \x?? */
-<span class="lineNum">      68 </span><span class="lineCov">      16965 :                 output[0] = 16 * hexDigits[0] + hexDigits[1];</span>
-<span class="lineNum">      69 </span><span class="lineCov">      16965 :                 output[1] = 16 * hexDigits[2] + hexDigits[3];</span>
-<span class="lineNum">      70 </span><span class="lineCov">      16965 :                 break;</span>
+<span class="lineNum">      68 </span><span class="lineCov">      17094 :                 output[0] = 16 * hexDigits[0] + hexDigits[1];</span>
+<span class="lineNum">      69 </span><span class="lineCov">      17094 :                 output[1] = 16 * hexDigits[2] + hexDigits[3];</span>
+<span class="lineNum">      70 </span><span class="lineCov">      17094 :                 break;</span>
 <span class="lineNum">      71 </span>            : 
 <span class="lineNum">      72 </span>            :         }
-<span class="lineNum">      73 </span><span class="lineCov">      16965 : }</span>
+<span class="lineNum">      73 </span><span class="lineCov">      17094 : }</span>
 <span class="lineNum">      74 </span>            : 
 <a name="75"><span class="lineNum">      75 </span>            : </a>
 <span class="lineNum">      76 </span>            : 
-<span class="lineNum">      77 </span><span class="lineCov">      15452 : unsigned char uriGetOctetValue(const unsigned char * digits, int digitCount) {</span>
-<span class="lineNum">      78 </span><span class="lineCov">      15452 :         switch (digitCount) {</span>
-<span class="lineNum">      79 </span><span class="lineCov">        838 :         case 1:</span>
-<span class="lineNum">      80 </span><span class="lineCov">        838 :                 return digits[0];</span>
+<span class="lineNum">      77 </span><span class="lineCov">      15573 : unsigned char uriGetOctetValue(const unsigned char * digits, int digitCount) {</span>
+<span class="lineNum">      78 </span><span class="lineCov">      15573 :         switch (digitCount) {</span>
+<span class="lineNum">      79 </span><span class="lineCov">        847 :         case 1:</span>
+<span class="lineNum">      80 </span><span class="lineCov">        847 :                 return digits[0];</span>
 <span class="lineNum">      81 </span>            : 
-<span class="lineNum">      82 </span><span class="lineCov">       1151 :         case 2:</span>
-<span class="lineNum">      83 </span><span class="lineCov">       1151 :                 return 10 * digits[0] + digits[1];</span>
+<span class="lineNum">      82 </span><span class="lineCov">       1161 :         case 2:</span>
+<span class="lineNum">      83 </span><span class="lineCov">       1161 :                 return 10 * digits[0] + digits[1];</span>
 <span class="lineNum">      84 </span>            : 
-<span class="lineNum">      85 </span><span class="lineCov">      13463 :         case 3:</span>
+<span class="lineNum">      85 </span><span class="lineCov">      13565 :         case 3:</span>
 <span class="lineNum">      86 </span>            :         default:
-<span class="lineNum">      87 </span><span class="lineCov">      13463 :                 return 100 * digits[0] + 10 * digits[1] + digits[2];</span>
+<span class="lineNum">      87 </span><span class="lineCov">      13565 :                 return 100 * digits[0] + 10 * digits[1] + digits[2];</span>
 <span class="lineNum">      88 </span>            : 
 <span class="lineNum">      89 </span>            :         }
 <span class="lineNum">      90 </span>            : }
