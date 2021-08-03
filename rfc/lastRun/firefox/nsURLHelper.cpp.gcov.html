@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-02 19:38:48</td>
+            <td class="headerValue">2021-08-03 00:48:31</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">24</td>
@@ -420,44 +420,44 @@
 <span class="lineNum">     350 </span>            : // scheme fu
 <a name="351"><span class="lineNum">     351 </span>            : //----------------------------------------------------------------------------</a>
 <span class="lineNum">     352 </span>            : 
-<span class="lineNum">     353 </span><span class="lineCov">     387552 : static bool net_IsValidSchemeChar(const char aChar) {</span>
-<span class="lineNum">     354 </span><span class="lineCov">     387552 :   return mozilla::net::rust_net_is_valid_scheme_char(aChar);</span>
+<span class="lineNum">     353 </span><span class="lineCov">     387688 : static bool net_IsValidSchemeChar(const char aChar) {</span>
+<span class="lineNum">     354 </span><span class="lineCov">     387688 :   return mozilla::net::rust_net_is_valid_scheme_char(aChar);</span>
 <span class="lineNum">     355 </span>            : }
 <a name="356"><span class="lineNum">     356 </span>            : </a>
 <span class="lineNum">     357 </span>            : /* Extract URI-Scheme if possible */
-<span class="lineNum">     358 </span><span class="lineCov">      79838 : nsresult net_ExtractURLScheme(const nsACString&amp; inURI, nsACString&amp; scheme) {</span>
-<span class="lineNum">     359 </span><span class="lineCov">      79838 :   nsACString::const_iterator start, end;</span>
-<span class="lineNum">     360 </span><span class="lineCov">      79838 :   inURI.BeginReading(start);</span>
-<span class="lineNum">     361 </span><span class="lineCov">      79838 :   inURI.EndReading(end);</span>
+<span class="lineNum">     358 </span><span class="lineCov">      80004 : nsresult net_ExtractURLScheme(const nsACString&amp; inURI, nsACString&amp; scheme) {</span>
+<span class="lineNum">     359 </span><span class="lineCov">      80004 :   nsACString::const_iterator start, end;</span>
+<span class="lineNum">     360 </span><span class="lineCov">      80004 :   inURI.BeginReading(start);</span>
+<span class="lineNum">     361 </span><span class="lineCov">      80004 :   inURI.EndReading(end);</span>
 <span class="lineNum">     362 </span>            : 
 <span class="lineNum">     363 </span>            :   // Strip C0 and space from begining
-<span class="lineNum">     364 </span><span class="lineCov">     159676 :   while (start != end) {</span>
-<span class="lineNum">     365 </span><span class="lineCov">      79838 :     if ((uint8_t)*start &gt; 0x20) {</span>
-<span class="lineNum">     366 </span><span class="lineCov">      79838 :       break;</span>
+<span class="lineNum">     364 </span><span class="lineCov">     160008 :   while (start != end) {</span>
+<span class="lineNum">     365 </span><span class="lineCov">      80004 :     if ((uint8_t)*start &gt; 0x20) {</span>
+<span class="lineNum">     366 </span><span class="lineCov">      80004 :       break;</span>
 <span class="lineNum">     367 </span>            :     }
 <span class="lineNum">     368 </span><span class="lineNoCov">          0 :     start++;</span>
 <span class="lineNum">     369 </span>            :   }
 <span class="lineNum">     370 </span>            : 
-<span class="lineNum">     371 </span><span class="lineCov">      79838 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
-<span class="lineNum">     372 </span><span class="lineCov">      79838 :   p.Record();</span>
-<span class="lineNum">     373 </span><span class="lineCov">      79838 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
+<span class="lineNum">     371 </span><span class="lineCov">      80004 :   Tokenizer p(Substring(start, end), &quot;\r\n\t&quot;);</span>
+<span class="lineNum">     372 </span><span class="lineCov">      80004 :   p.Record();</span>
+<span class="lineNum">     373 </span><span class="lineCov">      80004 :   if (!p.CheckChar(IsAsciiAlpha)) {</span>
 <span class="lineNum">     374 </span>            :     // First char must be alpha
-<span class="lineNum">     375 </span><span class="lineCov">       9774 :     return NS_ERROR_MALFORMED_URI;</span>
+<span class="lineNum">     375 </span><span class="lineCov">       9808 :     return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     376 </span>            :   }
 <span class="lineNum">     377 </span>            : 
-<span class="lineNum">     378 </span><span class="lineCov">    1014596 :   while (p.CheckChar(net_IsValidSchemeChar) || p.CheckWhite()) {</span>
+<span class="lineNum">     378 </span><span class="lineCov">    1015136 :   while (p.CheckChar(net_IsValidSchemeChar) || p.CheckWhite()) {</span>
 <span class="lineNum">     379 </span>            :     // Skip valid scheme characters or \r\n\t
 <span class="lineNum">     380 </span>            :   }
 <span class="lineNum">     381 </span>            : 
-<span class="lineNum">     382 </span><span class="lineCov">      70064 :   if (!p.CheckChar(':')) {</span>
+<span class="lineNum">     382 </span><span class="lineCov">      70196 :   if (!p.CheckChar(':')) {</span>
 <span class="lineNum">     383 </span><span class="lineCov">      14940 :     return NS_ERROR_MALFORMED_URI;</span>
 <span class="lineNum">     384 </span>            :   }
 <span class="lineNum">     385 </span>            : 
-<span class="lineNum">     386 </span><span class="lineCov">      55124 :   p.Claim(scheme);</span>
-<span class="lineNum">     387 </span><span class="lineCov">      55124 :   scheme.StripTaggedASCII(ASCIIMask::MaskCRLFTab());</span>
-<span class="lineNum">     388 </span><span class="lineCov">      55124 :   ToLowerCase(scheme);</span>
-<span class="lineNum">     389 </span><span class="lineCov">      55124 :   return NS_OK;</span>
-<a name="390"><span class="lineNum">     390 </span><span class="lineCov">      79838 : }</span></a>
+<span class="lineNum">     386 </span><span class="lineCov">      55256 :   p.Claim(scheme);</span>
+<span class="lineNum">     387 </span><span class="lineCov">      55256 :   scheme.StripTaggedASCII(ASCIIMask::MaskCRLFTab());</span>
+<span class="lineNum">     388 </span><span class="lineCov">      55256 :   ToLowerCase(scheme);</span>
+<span class="lineNum">     389 </span><span class="lineCov">      55256 :   return NS_OK;</span>
+<a name="390"><span class="lineNum">     390 </span><span class="lineCov">      80004 : }</span></a>
 <span class="lineNum">     391 </span>            : 
 <span class="lineNum">     392 </span><span class="lineCov">      44156 : bool net_IsValidScheme(const nsACString&amp; scheme) {</span>
 <span class="lineNum">     393 </span><span class="lineCov">      44156 :   return mozilla::net::rust_net_is_valid_scheme(&amp;scheme);</span>
@@ -541,26 +541,26 @@
 <span class="lineNum">     471 </span><span class="lineNoCov">          0 :   }</span>
 <a name="472"><span class="lineNum">     472 </span><span class="lineCov">      77356 : }</span></a>
 <span class="lineNum">     473 </span>            : 
-<span class="lineNum">     474 </span><span class="lineCov">       8306 : nsresult net_FilterAndEscapeURI(const nsACString&amp; aInput, uint32_t aFlags,</span>
+<span class="lineNum">     474 </span><span class="lineCov">       8372 : nsresult net_FilterAndEscapeURI(const nsACString&amp; aInput, uint32_t aFlags,</span>
 <span class="lineNum">     475 </span>            :                                 nsACString&amp; aResult) {
-<span class="lineNum">     476 </span><span class="lineCov">       8306 :   aResult.Truncate();</span>
+<span class="lineNum">     476 </span><span class="lineCov">       8372 :   aResult.Truncate();</span>
 <span class="lineNum">     477 </span>            : 
-<span class="lineNum">     478 </span><span class="lineCov">       8306 :   auto start = aInput.BeginReading();</span>
-<span class="lineNum">     479 </span><span class="lineCov">       8306 :   auto end = aInput.EndReading();</span>
+<span class="lineNum">     478 </span><span class="lineCov">       8372 :   auto start = aInput.BeginReading();</span>
+<span class="lineNum">     479 </span><span class="lineCov">       8372 :   auto end = aInput.EndReading();</span>
 <a name="480"><span class="lineNum">     480 </span>            : </a>
 <span class="lineNum">     481 </span>            :   // Trim off leading and trailing invalid chars.
-<span class="lineNum">     482 </span><span class="lineCov">      41530 :   auto charFilter = [](char c) { return static_cast&lt;uint8_t&gt;(c) &gt; 0x20; };</span>
-<span class="lineNum">     483 </span><span class="lineCov">       8306 :   auto newStart = std::find_if(start, end, charFilter);</span>
-<span class="lineNum">     484 </span><span class="lineCov">      16612 :   auto newEnd =</span>
-<span class="lineNum">     485 </span><span class="lineCov">      24918 :       std::find_if(std::reverse_iterator&lt;decltype(end)&gt;(end),</span>
-<span class="lineNum">     486 </span><span class="lineCov">       8306 :                    std::reverse_iterator&lt;decltype(newStart)&gt;(newStart),</span>
+<span class="lineNum">     482 </span><span class="lineCov">      41860 :   auto charFilter = [](char c) { return static_cast&lt;uint8_t&gt;(c) &gt; 0x20; };</span>
+<span class="lineNum">     483 </span><span class="lineCov">       8372 :   auto newStart = std::find_if(start, end, charFilter);</span>
+<span class="lineNum">     484 </span><span class="lineCov">      16744 :   auto newEnd =</span>
+<span class="lineNum">     485 </span><span class="lineCov">      25116 :       std::find_if(std::reverse_iterator&lt;decltype(end)&gt;(end),</span>
+<span class="lineNum">     486 </span><span class="lineCov">       8372 :                    std::reverse_iterator&lt;decltype(newStart)&gt;(newStart),</span>
 <span class="lineNum">     487 </span>            :                    charFilter)
-<span class="lineNum">     488 </span><span class="lineCov">       8306 :           .base();</span>
+<span class="lineNum">     488 </span><span class="lineCov">       8372 :           .base();</span>
 <span class="lineNum">     489 </span>            : 
-<span class="lineNum">     490 </span><span class="lineCov">       8306 :   const ASCIIMaskArray&amp; mask = ASCIIMask::MaskCRLFTab();</span>
-<span class="lineNum">     491 </span><span class="lineCov">      24918 :   return NS_EscapeAndFilterURL(Substring(newStart, newEnd), aFlags, &amp;mask,</span>
-<span class="lineNum">     492 </span><span class="lineCov">       8306 :                                aResult, fallible);</span>
-<span class="lineNum">     493 </span><span class="lineCov">       8306 : }</span>
+<span class="lineNum">     490 </span><span class="lineCov">       8372 :   const ASCIIMaskArray&amp; mask = ASCIIMask::MaskCRLFTab();</span>
+<span class="lineNum">     491 </span><span class="lineCov">      25116 :   return NS_EscapeAndFilterURL(Substring(newStart, newEnd), aFlags, &amp;mask,</span>
+<span class="lineNum">     492 </span><span class="lineCov">       8372 :                                aResult, fallible);</span>
+<span class="lineNum">     493 </span><span class="lineCov">       8372 : }</span>
 <span class="lineNum">     494 </span>            : 
 <span class="lineNum">     495 </span>            : #if defined(XP_WIN)
 <span class="lineNum">     496 </span>            : bool net_NormalizeFileURL(const nsACString&amp; aURL, nsCString&amp; aResultBuf) {
