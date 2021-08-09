@@ -1,0 +1,30 @@
+# Execute Chromium existing tests
+# Chromium also provides URL tests in gurl_unittest.cc and url_canon_unittest.cc but these also include processes beyond parsing
+
+
+cd /home/chromium/src
+# this excludes filesystem and mailto URLs and some extraction test cases
+python tools/code_coverage/coverage.py url_unittests -b out/coverage -o out/report -c 'out/coverage/url_unittests --gtest_filter=URLParser.Standard:URLParser.PathURL:URLParser.ParseFileURL' -f url/
+
+
+[2021-04-16 15:28:35,975 INFO] Building ['url_unittests'].
+ninja: Entering directory `/home/chromium/src/out/coverage'
+[2777/2777] LINK ./url_unittests
+[2021-04-16 15:34:49,622 INFO] Running command: "out/coverage/url_unittests --gtest_filter=URLParser.Standard:URLParser.PathURL:URLParser.ParseFileURL", the output is redirected to "/home/chromium/src/out/report/linux/logs/url_unittests_output.log".
+[2021-04-16 15:34:49,760 INFO] Creating target profile data file.
+[2021-04-16 15:34:50,328 INFO] Target "url_unittests" profile data is created as: "/home/chromium/src/out/report/url_unittests.profdata".
+[2021-04-16 15:34:50,332 INFO] Creating the coverage profile data file.
+[2021-04-16 15:34:50,355 INFO] Code coverage profile data is created as: "/home/chromium/src/out/report/linux/coverage.profdata".
+[2021-04-16 15:34:50,356 INFO] Finding shared libraries for targets (if any).
+[2021-04-16 15:34:50,430 INFO] Finished finding shared libraries for targets.
+[2021-04-16 15:34:50,431 INFO] Generating code coverage report in html (this can take a while depending on size of target!).
+[2021-04-16 15:34:52,415 INFO] Index file for html report is generated as: "file:///home/chromium/src/out/report/linux/index.html".
+
+
+# Optional: move reports to mounted volume
+cp out/report/linux/home/chromium/src/url/third_party/mozilla/* /home/coverageReports/chromium
+cp out/report/linux/logs/url_unittests_output.log /home/coverageReports/chromium
+
+
+# Alternative execution including mailto and filesystem URLs
+python tools/code_coverage/coverage.py url_unittests -b out/coverage -o out/report -c 'out/coverage/url_unittests --gtest_filter=-URLParser.Ex*' -f url/
