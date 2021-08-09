@@ -1,0 +1,45 @@
+#Execution of test_URIs.js and test_URIs2.js
+
+
+cd mozilla-unified/
+./mach test netwerk/test/unit/test_URIs*.js
+
+Test configuration changed. Regenerating backend.
+ 0:05.29 INFO Found node at /root/.mozbuild/node/bin/node
+ 0:05.29 INFO Found moz-http2 at /home/mozilla-unified/testing/xpcshell/moz-http2/moz-http2.js
+ 0:05.43 INFO Found /home/mozilla-unified/obj-x86_64-pc-linux-gnu/dist/bin/http3server
+ 0:05.43 INFO Using /home/mozilla-unified/netwerk/test/http3serverDB
+ 0:05.45 INFO Using at most 12 threads.
+ 0:05.45 SUITE_START: xpcshell - running 2 tests
+ 0:05.45 TEST_START: netwerk/test/unit/test_URIs.js
+ 0:05.45 TEST_START: netwerk/test/unit/test_URIs2.js
+ 0:14.78 TEST_END: PASS
+ 1:33.17 TEST_END: PASS
+ 1:33.17 INFO INFO | Result summary:
+ 1:33.18 INFO INFO | Passed: 2
+ 1:33.18 INFO INFO | Failed: 0
+ 1:33.18 INFO INFO | Todo: 0
+ 1:33.18 INFO INFO | Retried: 0
+ 1:33.18 SUITE_END
+ 1:33.18 INFO Node moz-http2 server shutting down ...
+ 1:33.19 INFO http3Server server shutting down ...
+ 1:33.30 
+Overall Summary
+===============
+
+xpcshell
+~~~~~~~~
+Ran 2 checks (2 tests)
+Expected results: 2
+Unexpected results: 0
+OK
+
+
+#Collect coverage reports
+cd ..
+grcov ./mozilla-unified --ignore *.rs -t lcov >lcov.info
+genhtml -o /home/reports/firefox --show-details --highlight --ignore-errors source --legend lcov.info >genhtmlout.txt 2> /dev/null
+
+#Optional: move relevant report files to mounted volume
+cp /home/reports/firefox/netwerk/base/nsURL*.html /home/coverageReports/firefox
+cp /home/reports/firefox/netwerk/base/index.html /home/coverageReports/firefox
