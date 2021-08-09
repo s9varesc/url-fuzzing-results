@@ -1,0 +1,33 @@
+
+# Execute full WPT URL parser tests
+
+cd /home/chromium
+pip install requests
+
+PATH=$PATH:/home/depot_tools   
+
+
+cd /home/chromium/src
+python tools/code_coverage/coverage.py blink_tests -wt='--driver-logging web_tests/external/wpt/url/url-constructor.any.js' -b out/coverage -o out/report -f url/	
+
+
+[2021-04-17 16:36:08,080 INFO] Building ['blink_tests'].
+ninja: Entering directory `/home/chromium/src/out/coverage'
+ninja: no work to do.
+[2021-04-17 16:36:13,040 INFO] Running command: "python testing/xvfb.py python third_party/blink/tools/run_web_tests.py --additional-driver-flag=--no-sandbox --additional-env-var=LLVM_PROFILE_FILE=<llvm_profile_file_path> --child-processes=4 --disable-breakpad --no-show-results --skip-failing-tests --target=coverage --time-out-ms=30000 --driver-logging web_tests/external/wpt/url/url-constructor.any.js", the output is redirected to "/home/chromium/src/out/report/linux/logs/blink_tests_output.log".
+[2021-04-17 16:36:36,800 INFO] Creating target profile data file.
+[2021-04-17 16:37:02,056 INFO] Target "blink_tests" profile data is created as: "/home/chromium/src/out/report/blink_tests.profdata".
+[2021-04-17 16:37:02,142 INFO] Creating the coverage profile data file.
+[2021-04-17 16:37:02,559 INFO] Code coverage profile data is created as: "/home/chromium/src/out/report/linux/coverage.profdata".
+[2021-04-17 16:37:02,568 INFO] Finding shared libraries for targets (if any).
+[2021-04-17 16:37:02,581 INFO] Finished finding shared libraries for targets.
+[2021-04-17 16:37:02,581 INFO] Generating code coverage report in html (this can take a while depending on size of target!).
+[2021-04-17 16:37:37,172 INFO] Index file for html report is generated as: "file:///home/chromium/src/out/report/linux/index.html".
+
+
+# copy report and results to mounted volume
+cp out/report/linux/home/chromium/src/url/third_party/mozilla/* /home/coverageReports/chromium		
+cp out/report/linux/logs/blink_tests_output.log /home/coverageReports/chromium		
+
+
+# Execute reduced WPT URL parser tests: use alterd-url-constructor.any.js as url-constructor.any.js
