@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-08-23 01:58:20</td>
+            <td class="headerValue">2021-08-23 09:12:38</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">3</td>
@@ -136,11 +136,11 @@
 <span class="lineNum">      74 </span>            : 
 <a name="75"><span class="lineNum">      75 </span>            : </a>
 <span class="lineNum">      76 </span>            : 
-<span class="lineNum">      77 </span><span class="lineCov">      19817 : void URI_FUNC(ResetUri)(URI_TYPE(Uri) * uri) {</span>
-<span class="lineNum">      78 </span><span class="lineCov">      19817 :         if (uri == NULL) {</span>
+<span class="lineNum">      77 </span><span class="lineCov">      19901 : void URI_FUNC(ResetUri)(URI_TYPE(Uri) * uri) {</span>
+<span class="lineNum">      78 </span><span class="lineCov">      19901 :         if (uri == NULL) {</span>
 <span class="lineNum">      79 </span><span class="lineNoCov">          0 :                 return;</span>
 <span class="lineNum">      80 </span>            :         }
-<span class="lineNum">      81 </span><span class="lineCov">      19817 :         memset(uri, 0, sizeof(URI_TYPE(Uri)));</span>
+<span class="lineNum">      81 </span><span class="lineCov">      19901 :         memset(uri, 0, sizeof(URI_TYPE(Uri)));</span>
 <span class="lineNum">      82 </span>            : }
 <span class="lineNum">      83 </span>            : 
 <span class="lineNum">      84 </span>            : 
@@ -481,9 +481,9 @@
 <span class="lineNum">     419 </span>            : 
 <a name="420"><span class="lineNum">     420 </span>            : </a>
 <span class="lineNum">     421 </span>            : /* Checks if a URI has the host component set. */
-<span class="lineNum">     422 </span><span class="lineCov">      13625 : UriBool URI_FUNC(IsHostSet)(const URI_TYPE(Uri) * uri) {</span>
+<span class="lineNum">     422 </span><span class="lineCov">      13675 : UriBool URI_FUNC(IsHostSet)(const URI_TYPE(Uri) * uri) {</span>
 <span class="lineNum">     423 </span>            :         return (uri != NULL)
-<span class="lineNum">     424 </span><span class="lineCov">      27250 :                         &amp;&amp; ((uri-&gt;hostText.first != NULL)</span>
+<span class="lineNum">     424 </span><span class="lineCov">      27350 :                         &amp;&amp; ((uri-&gt;hostText.first != NULL)</span>
 <span class="lineNum">     425 </span><span class="lineNoCov">          0 :                                 || (uri-&gt;hostData.ip4 != NULL)</span>
 <span class="lineNum">     426 </span><span class="lineNoCov">          0 :                                 || (uri-&gt;hostData.ip6 != NULL)</span>
 <span class="lineNum">     427 </span><span class="lineNoCov">          0 :                                 || (uri-&gt;hostData.ipFuture.first != NULL)</span>
@@ -615,11 +615,11 @@
 <span class="lineNum">     553 </span>            : 
 <a name="554"><span class="lineNum">     554 </span>            : </a>
 <span class="lineNum">     555 </span>            : 
-<span class="lineNum">     556 </span><span class="lineCov">      13625 : void URI_FUNC(FixEmptyTrailSegment)(URI_TYPE(Uri) * uri,</span>
+<span class="lineNum">     556 </span><span class="lineCov">      13675 : void URI_FUNC(FixEmptyTrailSegment)(URI_TYPE(Uri) * uri,</span>
 <span class="lineNum">     557 </span>            :                 UriMemoryManager * memory) {
 <span class="lineNum">     558 </span>            :         /* Fix path if only one empty segment */
-<span class="lineNum">     559 </span><span class="lineCov">      13625 :         if (!uri-&gt;absolutePath</span>
-<span class="lineNum">     560 </span><span class="lineCov">      13625 :                         &amp;&amp; !URI_FUNC(IsHostSet)(uri)</span>
+<span class="lineNum">     559 </span><span class="lineCov">      13675 :         if (!uri-&gt;absolutePath</span>
+<span class="lineNum">     560 </span><span class="lineCov">      13675 :                         &amp;&amp; !URI_FUNC(IsHostSet)(uri)</span>
 <span class="lineNum">     561 </span><span class="lineNoCov">          0 :                         &amp;&amp; (uri-&gt;pathHead != NULL)</span>
 <span class="lineNum">     562 </span><span class="lineNoCov">          0 :                         &amp;&amp; (uri-&gt;pathHead-&gt;next == NULL)</span>
 <span class="lineNum">     563 </span><span class="lineNoCov">          0 :                         &amp;&amp; (uri-&gt;pathHead-&gt;text.first == uri-&gt;pathHead-&gt;text.afterLast)) {</span>
@@ -627,7 +627,7 @@
 <span class="lineNum">     565 </span><span class="lineNoCov">          0 :                 uri-&gt;pathHead = NULL;</span>
 <span class="lineNum">     566 </span><span class="lineNoCov">          0 :                 uri-&gt;pathTail = NULL;</span>
 <span class="lineNum">     567 </span>            :         }
-<span class="lineNum">     568 </span><span class="lineCov">      13625 : }</span>
+<span class="lineNum">     568 </span><span class="lineCov">      13675 : }</span>
 <span class="lineNum">     569 </span>            : 
 <span class="lineNum">     570 </span>            : 
 <span class="lineNum">     571 </span>            : 
