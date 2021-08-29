@@ -43,6 +43,7 @@
 {"url":"ftp://[::]<//[b9ca:eaca::cffa:addb:250.252.252.250]", "exception":"bad URI(is not URI?): //[b9ca:eaca::cffa:addb:250.252.252.250]"}
 {"url":"s:/<//[cdfa:cada:fdff:ccdc:cecb:fcce:ff6d:baaa]", "exception":"bad URI(is not URI?): //[cdfa:cada:fdff:ccdc:cecb:fcce:ff6d:baaa]"}
 {"url":"http://[::]<//@_", "exception":"URI must be ascii only "//\uED9D@_""}
+{"url":"file:///#[", "exception":"bad URI(is not URI?): file:///#["}
 {"url":"X:/#쀍</", "exception":"URI must be ascii only "X:/#\uC00D""}
 {"url":"file:///<//[fdea::255.251.254.254]", "exception":"bad URI(is not URI?): //[fdea::255.251.254.254]"}
 {"url":"N:/?轢", "exception":"URI must be ascii only "N:/?\uF98D""}
@@ -66,6 +67,7 @@
 {"url":"l:///</", "exception":"URI must be ascii only "l:///\uF4EC""}
 {"url":"ftp://[::]<//254.217.251.254", "exception":"undefined method `typecode' for "//254.217.251.254":String"}
 {"url":"P:/<//[::]:5", "exception":"bad URI(is not URI?): //[::]:5"}
+{"url":"f:/<%2e//򮲼", "exception":"URI must be ascii only "%2e//\u{AECBC}""}
 {"url":"wss://[::]<//[de3e::bcea]", "exception":"bad URI(is not URI?): //[de3e::bcea]"}
 {"url":"ftp://[::]/]꯼", "exception":"URI must be ascii only "ftp://[::]/]\uABFC""}
 {"url":"file:///?［", "exception":"URI must be ascii only "file:///?\uFF3B""}
@@ -137,6 +139,7 @@
 {"url":"H:/<//[::cb1b]", "exception":"bad URI(is not URI?): //[::cb1b]"}
 {"url":"http://[::]?񙶸", "exception":"URI must be ascii only "http://[::]?\u{59DB8}""}
 {"url":"http://[::]<//[bbef:eadf:aeec:fcca:dfaa:ebca:fcab:cce1]", "exception":"bad URI(is not URI?): //[bbef:eadf:aeec:fcca:dfaa:ebca:fcab:cce1]"}
+{"url":"b:/<//[aef4:aeac::ebef:ebaf:254.251.250.252]", "exception":"bad URI(is not URI?): //[aef4:aeac::ebef:ebaf:254.251.250.252]"}
 {"url":"q:/<//[::]:64994", "exception":"bad URI(is not URI?): //[::]:64994"}
 {"url":"M:/<//[::]:65535", "exception":"bad URI(is not URI?): //[::]:65535"}
 {"url":"file:///<//[::]/%2e%2e//%7b", "exception":"bad URI(is not URI?): //[::]/%2e%2e//%7b"}
@@ -327,6 +330,7 @@
 {"url":"M:///'￺</", "exception":"URI must be ascii only "M:///'\uFFFA""}
 {"url":"file://ť-İ", "exception":"URI must be ascii only "file://\u0165-\u0130""}
 {"url":"file:///</%", "exception":"URI must be ascii only "/%\uEB87""}
+{"url":"file:///<//[::]/.//򕭿", "exception":"URI must be ascii only "//[::]/.//\u{95B7F}""}
 {"url":"http://7ſ", "exception":"URI must be ascii only "http://7\u017F""}
 {"url":"I:///,񡔬", "exception":"URI must be ascii only "I:///,\u{6152C}""}
 {"url":"D:/<//[1cbd::fdcd:253.251.255.250]", "exception":"bad URI(is not URI?): //[1cbd::fdcd:253.251.255.250]"}
@@ -426,6 +430,7 @@
 {"url":"https://[::]/%2e./）", "exception":"URI must be ascii only "https://[::]/%2e./\uFF09""}
 {"url":"file://[::]/", "exception":"URI must be ascii only "file://[::]/\uEE81""}
 {"url":"U:/<//[::]:65527", "exception":"bad URI(is not URI?): //[::]:65527"}
+{"url":"https://[::]<//﬽@"", "exception":"URI must be ascii only "//\uFB3D@\"""}
 {"url":"t:/<//[ebcb:abca:bceb:bddb:bdba:babd:4.251.255.255]", "exception":"bad URI(is not URI?): //[ebcb:abca:bceb:bddb:bdba:babd:4.251.255.255]"}
 {"url":"file:///</", "exception":"URI must be ascii only "/\uF112""}
 {"url":"H:/<//[aade:bcfd:febd:aebd:eaee:fbde:160.250.251.254]", "exception":"bad URI(is not URI?): //[aade:bcfd:febd:aebd:eaee:fbde:160.250.251.254]"}
@@ -543,6 +548,7 @@
 {"url":"ws://[::]</?", "exception":"URI must be ascii only "/?\uEE08""}
 {"url":"file:///</./􆹾", "exception":"URI must be ascii only "/./\u{106E7E}""}
 {"url":"file:///<//[fdd0::255.250.250.254]", "exception":"bad URI(is not URI?): //[fdd0::255.250.250.254]"}
+{"url":"file:///<//[eef1::cffd]", "exception":"bad URI(is not URI?): //[eef1::cffd]"}
 {"url":"https://[::]<//[::bcfa:efee:252.251.255.200]", "exception":"bad URI(is not URI?): //[::bcfa:efee:252.251.255.200]"}
 {"url":"https://[::]<//[1cbf:aabc::fcce:eeaf:250.252.251.251]", "exception":"bad URI(is not URI?): //[1cbf:aabc::fcce:eeaf:250.252.251.251]"}
 {"url":"http://[::]<//[::dffc:254.253.254.187]", "exception":"bad URI(is not URI?): //[::dffc:254.253.254.187]"}
@@ -1467,6 +1473,7 @@
 {"url":"file:///#{", "exception":"bad URI(is not URI?): file:///#{"}
 {"url":"file:///<%2e./ｎ", "exception":"URI must be ascii only "%2e./\uFF4E""}
 {"url":"m:/<//[::aefb:bfcb:255.250.193.251]", "exception":"bad URI(is not URI?): //[::aefb:bfcb:255.250.193.251]"}
+{"url":"file:///<//[::]/缝", "exception":"URI must be ascii only "//[::]/\u7F1D""}
 {"url":"file:///<///^񋦽", "exception":"URI must be ascii only "///^\u{4B9BD}""}
 {"url":"ftp://[::]<//[::]/%7b󣊐", "exception":"URI must be ascii only "//[::]/%7b\u{E3290}""}
 {"url":"ws://[::]<//[::251.250.254.31]", "exception":"bad URI(is not URI?): //[::251.250.254.31]"}
@@ -1495,6 +1502,7 @@
 {"url":"F:/<///[[", "exception":"bad URI(is not URI?): ///[["}
 {"url":"http://[::]<//[::251.28.254.251]", "exception":"bad URI(is not URI?): //[::251.28.254.251]"}
 {"url":"file:///<//[acee:aade:dcde:ecab:dbdd:febc:253.254.254.65]", "exception":"bad URI(is not URI?): //[acee:aade:dcde:ecab:dbdd:febc:253.254.254.65]"}
+{"url":"file:///</)񷫎", "exception":"URI must be ascii only "/)\u{77ACE}""}
 {"url":"n:/?ꗐ</", "exception":"URI must be ascii only "n:/?\uA5D0""}
 {"url":"ftp://[::]<//[::ebba:254.7.250.253]", "exception":"bad URI(is not URI?): //[::ebba:254.7.250.253]"}
 {"url":"ws://[::]<//[::faab:218.254.254.255]", "exception":"bad URI(is not URI?): //[::faab:218.254.254.255]"}
@@ -1669,6 +1677,7 @@
 {"url":"file:///<//[::]/￸", "exception":"URI must be ascii only "//[::]/\uFFF8""}
 {"url":"o:/<//[1eca:fabf::cbbd]", "exception":"bad URI(is not URI?): //[1eca:fabf::cbbd]"}
 {"url":"file:///<//"*", "exception":"bad URI(is not URI?): //"*"}
+{"url":"file:///<//[::253.254.250.73]", "exception":"bad URI(is not URI?): //[::253.254.250.73]"}
 {"url":"v:/<//[::]:3", "exception":"bad URI(is not URI?): //[::]:3"}
 {"url":"file:///<//[d6da:fcaa::253.254.251.251]", "exception":"bad URI(is not URI?): //[d6da:fcaa::253.254.251.251]"}
 {"url":"https://[::]<//[b8ab::eccb:253.255.251.251]", "exception":"bad URI(is not URI?): //[b8ab::eccb:253.255.251.251]"}
@@ -2084,6 +2093,7 @@
 {"url":"ftp://[::]<//:%3a@!", "exception":"undefined method `typecode' for "//:%3a@!":String"}
 {"url":"i:/<//[::f7fa:dafa]", "exception":"bad URI(is not URI?): //[::f7fa:dafa]"}
 {"url":"ftp://[::]<//[::fc6a:255.250.251.255]", "exception":"bad URI(is not URI?): //[::fc6a:255.250.251.255]"}
+{"url":"file:///<//[::babe:218.254.254.253]", "exception":"bad URI(is not URI?): //[::babe:218.254.254.253]"}
 {"url":"file:///<^︃", "exception":"URI must be ascii only "^\uFE03""}
 {"url":"a:/<//[fefb:aece:bdec:fedc:aafc:aefe:253.29.250.253]", "exception":"bad URI(is not URI?): //[fefb:aece:bdec:fedc:aafc:aefe:253.29.250.253]"}
 {"url":"file:///<//[::251.250.133.252]", "exception":"bad URI(is not URI?): //[::251.250.133.252]"}
@@ -2647,6 +2657,7 @@
 {"url":"d:/<///􏾐", "exception":"URI must be ascii only "///\u{10FF90}""}
 {"url":"ws://[::]/%7b﹅", "exception":"URI must be ascii only "ws://[::]/%7b\uFE45""}
 {"url":"https://[::]<//[::fccf:99.253.255.254]", "exception":"bad URI(is not URI?): //[::fccf:99.253.255.254]"}
+{"url":"file:///<//0Ş", "exception":"URI must be ascii only "//0\u015E""}
 {"url":"n:/<///=︕", "exception":"URI must be ascii only "///=\uFE15""}
 {"url":"wss://[::]<//4`", "exception":"bad URI(is not URI?): //4`"}
 {"url":"http://[::]/@</", "exception":"URI must be ascii only "http://[::]/@\uF815""}
@@ -2913,6 +2924,7 @@
 {"url":"d:/<┳", "exception":"URI must be ascii only "\u2533""}
 {"url":"wss://[::]</?󁄲", "exception":"URI must be ascii only "/?\u{C1132}""}
 {"url":"U:/<//[::badd:255.251.255.138]", "exception":"bad URI(is not URI?): //[::badd:255.251.255.138]"}
+{"url":"file:///<//[::5eda:faae:254.252.253.255]", "exception":"bad URI(is not URI?): //[::5eda:faae:254.252.253.255]"}
 {"url":"a:/<︘", "exception":"URI must be ascii only "\uFE18""}
 {"url":"ws://[::]<//[::]/.%2e/.%2e", "exception":"bad URI(is not URI?): //[::]/.%2e/.%2e"}
 {"url":"ftp://[::]<//[fe0b::250.251.251.253]", "exception":"bad URI(is not URI?): //[fe0b::250.251.251.253]"}
@@ -3008,6 +3020,7 @@
 {"url":"wss://[::]<//[::]/r:/", "exception":"bad URI(is not URI?): //[::]/r:/"}
 {"url":"ftp://[::]<//ua", "exception":"undefined method `typecode' for "//ua":String"}
 {"url":"file:///<//[dbd6::edee:ddba:252.253.250.253]", "exception":"bad URI(is not URI?): //[dbd6::edee:ddba:252.253.250.253]"}
+{"url":"file:///<//[::]/..//򩄄", "exception":"URI must be ascii only "//[::]/..//\u{A9104}""}
 {"url":"file:///<//[e5ce:ecfe::]", "exception":"bad URI(is not URI?): //[e5ce:ecfe::]"}
 {"url":"T:/<//[::fdcb:254.222.251.252]", "exception":"bad URI(is not URI?): //[::fdcb:254.222.251.252]"}
 {"url":"http://[::]<//[::cfaa:cead:250.198.252.254]", "exception":"bad URI(is not URI?): //[::cfaa:cead:250.198.252.254]"}
@@ -3031,6 +3044,7 @@
 {"url":"ws://[::]<//[2beb:decf::254.250.251.252]", "exception":"bad URI(is not URI?): //[2beb:decf::254.250.251.252]"}
 {"url":"C:/<//[::ddbe:cfaf:250.254.252.223]", "exception":"bad URI(is not URI?): //[::ddbe:cfaf:250.254.252.223]"}
 {"url":"ftp://[::]<//[e2ef::fdea]", "exception":"bad URI(is not URI?): //[e2ef::fdea]"}
+{"url":"wss://[::]<//[::252.253.82.253]", "exception":"bad URI(is not URI?): //[::252.253.82.253]"}
 {"url":"ftp://[::]<//[fbc9:abbc::253.255.252.252]", "exception":"bad URI(is not URI?): //[fbc9:abbc::253.255.252.252]"}
 {"url":"ftp://[::]/%2e/􏼎</", "exception":"URI must be ascii only "ftp://[::]/%2e/\u{10FF0E}""}
 {"url":"ftp://[::]<//[bfdb:afed:acad:cedd:abcf:cffd:252.3.253.251]", "exception":"bad URI(is not URI?): //[bfdb:afed:acad:cedd:abcf:cffd:252.3.253.251]"}
@@ -3898,6 +3912,7 @@
 {"url":"a:/<//[a0fa:cdea::]", "exception":"bad URI(is not URI?): //[a0fa:cdea::]"}
 {"url":"file:///</?ⱹ", "exception":"URI must be ascii only "/?\u2C79""}
 {"url":"https://[::]<//Ą.Ā", "exception":"URI must be ascii only "//\u0104.\u0100""}
+{"url":"x:/<//[4dfb:abcf::250.252.253.254]", "exception":"bad URI(is not URI?): //[4dfb:abcf::250.252.253.254]"}
 {"url":"C:/<//[acbf:dcdb:feff:cece:aeec:afad:251.254.247.251]", "exception":"bad URI(is not URI?): //[acbf:dcdb:feff:cece:aeec:afad:251.254.247.251]"}
 {"url":"f:/<//[::bbdc:cbda:221.251.251.255]", "exception":"bad URI(is not URI?): //[::bbdc:cbda:221.251.251.255]"}
 {"url":"H:/<//[::bfbd:da5f:feef]", "exception":"bad URI(is not URI?): //[::bfbd:da5f:feef]"}
@@ -3984,6 +3999,7 @@
 {"url":"H:/</|", "exception":"bad URI(is not URI?): /|"}
 {"url":"ftp://[::]<//[::]/%3f︺", "exception":"URI must be ascii only "//[::]/%3f\uFE3A""}
 {"url":"https://[::]<//:򶍩@(", "exception":"URI must be ascii only "//:\u{B6369}@(""}
+{"url":"file:///#", "exception":"URI must be ascii only "file:///#\uE4CB""}
 {"url":"e:/<//[8ebb:cefa::bbaf:ccde:251.252.255.254]", "exception":"bad URI(is not URI?): //[8ebb:cefa::bbaf:ccde:251.252.255.254]"}
 {"url":"https://[::]<//[::251.76.250.251]", "exception":"bad URI(is not URI?): //[::251.76.250.251]"}
 {"url":"wss://[::]/.%2e/틊", "exception":"URI must be ascii only "wss://[::]/.%2e/\uD2CA""}
@@ -4396,6 +4412,7 @@
 {"url":"z:/?㧎</", "exception":"URI must be ascii only "z:/?\u39CE""}
 {"url":"file:///</../////", "exception":"URI must be ascii only "/../////\uF20D""}
 {"url":"https://[::]<//[::]/&%23", "exception":"bad URI(is not URI?): //[::]/&%23"}
+{"url":"file:///<//[::fcfc:cdbd:252.65.252.250]", "exception":"bad URI(is not URI?): //[::fcfc:cdbd:252.65.252.250]"}
 {"url":"ftp://[::]<//[::]:65513", "exception":"bad URI(is not URI?): //[::]:65513"}
 {"url":"ftp://򉺡@!", "exception":"URI must be ascii only "ftp://\u{89EA1}@!""}
 {"url":"ws://[::]<%7b􏒽", "exception":"URI must be ascii only "%7b\u{10F4BD}""}
@@ -4756,6 +4773,7 @@
 {"url":"file:///<//[::]/", "exception":"URI must be ascii only "//[::]/\uE2F6""}
 {"url":"file:///<//[bdcf::254.250.253.252]", "exception":"bad URI(is not URI?): //[bdcf::254.250.253.252]"}
 {"url":"https://[::]<//[::eeb2:ffff:255.252.251.250]", "exception":"bad URI(is not URI?): //[::eeb2:ffff:255.252.251.250]"}
+{"url":"wss://[::]?퐻</", "exception":"URI must be ascii only "wss://[::]?\uD43B""}
 {"url":"file://ĤD", "exception":"URI must be ascii only "file://\u0124D""}
 {"url":"file:///</../", "exception":"URI must be ascii only "/../\uE787""}
 {"url":"ftp://[::]<//[fdc4:facd::afce:cdde:254.253.253.253]", "exception":"bad URI(is not URI?): //[fdc4:facd::afce:cdde:254.253.253.253]"}
@@ -5397,6 +5415,7 @@
 {"url":"v:/<//[1eae::feee:250.250.254.254]", "exception":"bad URI(is not URI?): //[1eae::feee:250.250.254.254]"}
 {"url":"f:/<//[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]", "exception":"bad URI(is not URI?): //[acde:dcab:beae:dfdb:abbb:fbcb:d7ce:fdae]"}
 {"url":"wss://[::]<//[::aacd:251.237.254.252]", "exception":"bad URI(is not URI?): //[::aacd:251.237.254.252]"}
+{"url":"file:///<///%2e/﵇", "exception":"URI must be ascii only "///%2e/\uFD47""}
 {"url":"file:///<//[dacf:bacc::cdcb:252.254.255.255]", "exception":"bad URI(is not URI?): //[dacf:bacc::cdcb:252.254.255.255]"}
 {"url":"file:///<.//񭋠", "exception":"URI must be ascii only ".//\u{6D2E0}""}
 {"url":"b:/<//[1cbd::]", "exception":"bad URI(is not URI?): //[1cbd::]"}
@@ -5757,6 +5776,7 @@
 {"url":"wss://[::]<//[::]:42895", "exception":"bad URI(is not URI?): //[::]:42895"}
 {"url":"file:///<//[b5fb:aaca::feec:251.253.253.251]", "exception":"bad URI(is not URI?): //[b5fb:aaca::feec:251.253.253.251]"}
 {"url":"K:/</.%2e///", "exception":"URI must be ascii only "/.%2e///\uE424""}
+{"url":"wss://[::]<//[::bb1c:250.253.255.255]", "exception":"bad URI(is not URI?): //[::bb1c:250.253.255.255]"}
 {"url":"l:/<//[::fcef:225.251.255.255]", "exception":"bad URI(is not URI?): //[::fcef:225.251.255.255]"}
 {"url":"file:///<//[cfa5:bcea::fdaf:deed:250.251.251.251]", "exception":"bad URI(is not URI?): //[cfa5:bcea::fdaf:deed:250.251.251.251]"}
 {"url":"file:///<//[cbfe:afcb:aade:bbfc:bbbc:fafd:250.251.78.253]", "exception":"bad URI(is not URI?): //[cbfe:afcb:aade:bbfc:bbbc:fafd:250.251.78.253]"}
@@ -5838,6 +5858,7 @@
 {"url":"file:///%2e%2e/﹚", "exception":"URI must be ascii only "file:///%2e%2e/\uFE5A""}
 {"url":"https://[::]</%60画", "exception":"URI must be ascii only "/%60\u753B""}
 {"url":"wss://[::]<//[c2ab:aace:bbff:accb:cbee:afac:251.251.252.252]", "exception":"bad URI(is not URI?): //[c2ab:aace:bbff:accb:cbee:afac:251.251.252.252]"}
+{"url":"file:///<//[ad1c:bbec::252.255.251.252]", "exception":"bad URI(is not URI?): //[ad1c:bbec::252.255.251.252]"}
 {"url":"file:///<//[b4de::febb]", "exception":"bad URI(is not URI?): //[b4de::febb]"}
 {"url":"https://:󸱾@+", "exception":"URI must be ascii only "https://:\u{F8C7E}@+""}
 {"url":"ftp://[::]<//[::afeb:bdf4]", "exception":"bad URI(is not URI?): //[::afeb:bdf4]"}
@@ -5965,6 +5986,7 @@
 {"url":"file:///<.//򐀿", "exception":"URI must be ascii only ".//\u{9003F}""}
 {"url":"G:/</..//䖚", "exception":"URI must be ascii only "/..//\u459A""}
 {"url":"ws://[::]<//[::dfea:acbc:255.1.254.253]", "exception":"bad URI(is not URI?): //[::dfea:acbc:255.1.254.253]"}
+{"url":"file:///</㰟", "exception":"URI must be ascii only "/\u3C1F""}
 {"url":"y:/</#񇯪", "exception":"URI must be ascii only "/#\u{47BEA}""}
 {"url":"m:/<//[::252.250.250.91]", "exception":"bad URI(is not URI?): //[::252.250.250.91]"}
 {"url":"file://[::]/%2e/𡿗", "exception":"URI must be ascii only "file://[::]/%2e/\u{21FD7}""}
@@ -6334,6 +6356,7 @@
 {"url":"wss://[::]<//[::]/&", "exception":"bad URI(is not URI?): //[::]/&"}
 {"url":"file:///<;", "exception":"URI must be ascii only ";\uE433""}
 {"url":"q:/<//[ea8b:cddb::cdcf:ddcc:252.252.255.250]", "exception":"bad URI(is not URI?): //[ea8b:cddb::cdcf:ddcc:252.252.255.250]"}
+{"url":"wss://[::]?ﾇ", "exception":"URI must be ascii only "wss://[::]?\uFF87""}
 {"url":"wss://[::]<//[aead:cace::babf]", "exception":"bad URI(is not URI?): //[aead:cace::babf]"}
 {"url":"http://[::]<//[baac:cddc::]", "exception":"bad URI(is not URI?): //[baac:cddc::]"}
 {"url":"e:/<//[::edab:252.223.255.252]", "exception":"bad URI(is not URI?): //[::edab:252.223.255.252]"}
@@ -6356,6 +6379,7 @@
 {"url":"ws://:᠌@!", "exception":"URI must be ascii only "ws://:\u180C@!""}
 {"url":"c:/<//"", "exception":"bad URI(is not URI?): //""}
 {"url":"https://[::]<//[::febe:eaeb:fdfd:2baa]", "exception":"bad URI(is not URI?): //[::febe:eaeb:fdfd:2baa]"}
+{"url":"z:///%7bﺪ</", "exception":"URI must be ascii only "z:///%7b\uFEAA""}
 {"url":"file:///<//[d2bc:bacb::eafe:254.255.254.255]", "exception":"bad URI(is not URI?): //[d2bc:bacb::eafe:254.255.254.255]"}
 {"url":"d:/<//[::251.254.70.252]", "exception":"bad URI(is not URI?): //[::251.254.70.252]"}
 {"url":"https://[::]<//.@{", "exception":"bad URI(is not URI?): //.@{"}
@@ -6372,6 +6396,7 @@
 {"url":"http://[::]?沫</", "exception":"URI must be ascii only "http://[::]?\u6CAB""}
 {"url":"file:///</.///򶣝", "exception":"URI must be ascii only "/.///\u{B68DD}""}
 {"url":"y:/#ﹱ</", "exception":"URI must be ascii only "y:/#\uFE71""}
+{"url":"file://~{", "exception":"bad URI(is not URI?): file://~{"}
 {"url":"ws://[::]?吃</", "exception":"URI must be ascii only "ws://[::]?\u5403""}
 {"url":"http://[::]</%7b�", "exception":"URI must be ascii only "/%7b\uFFFD""}
 {"url":"ftp://[::]<%7bﾞ", "exception":"URI must be ascii only "%7b\uFF9E""}
