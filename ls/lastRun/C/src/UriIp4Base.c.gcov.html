@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-01 10:16:32</td>
+            <td class="headerValue">2021-09-01 18:52:36</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">2</td>
@@ -110,52 +110,52 @@
 <span class="lineNum">      48 </span>            : 
 <a name="49"><span class="lineNum">      49 </span>            : </a>
 <span class="lineNum">      50 </span>            : 
-<span class="lineNum">      51 </span><span class="lineCov">       3113 : void uriStackToOctet(UriIp4Parser * parser, unsigned char * octet) {</span>
-<span class="lineNum">      52 </span><span class="lineCov">       3113 :         switch (parser-&gt;stackCount) {</span>
-<span class="lineNum">      53 </span><span class="lineCov">        175 :         case 1:</span>
-<span class="lineNum">      54 </span><span class="lineCov">        175 :                 *octet = parser-&gt;stackOne;</span>
-<span class="lineNum">      55 </span><span class="lineCov">        175 :                 break;</span>
+<span class="lineNum">      51 </span><span class="lineCov">       3117 : void uriStackToOctet(UriIp4Parser * parser, unsigned char * octet) {</span>
+<span class="lineNum">      52 </span><span class="lineCov">       3117 :         switch (parser-&gt;stackCount) {</span>
+<span class="lineNum">      53 </span><span class="lineCov">        176 :         case 1:</span>
+<span class="lineNum">      54 </span><span class="lineCov">        176 :                 *octet = parser-&gt;stackOne;</span>
+<span class="lineNum">      55 </span><span class="lineCov">        176 :                 break;</span>
 <span class="lineNum">      56 </span>            : 
 <span class="lineNum">      57 </span><span class="lineCov">        257 :         case 2:</span>
 <span class="lineNum">      58 </span><span class="lineCov">        514 :                 *octet = parser-&gt;stackOne * 10</span>
 <span class="lineNum">      59 </span><span class="lineCov">        257 :                                 + parser-&gt;stackTwo;</span>
 <span class="lineNum">      60 </span><span class="lineCov">        257 :                 break;</span>
 <span class="lineNum">      61 </span>            : 
-<span class="lineNum">      62 </span><span class="lineCov">       2681 :         case 3:</span>
-<span class="lineNum">      63 </span><span class="lineCov">       5362 :                 *octet = parser-&gt;stackOne * 100</span>
-<span class="lineNum">      64 </span><span class="lineCov">       2681 :                                 + parser-&gt;stackTwo * 10</span>
-<span class="lineNum">      65 </span><span class="lineCov">       2681 :                                 + parser-&gt;stackThree;</span>
-<span class="lineNum">      66 </span><span class="lineCov">       2681 :                 break;</span>
+<span class="lineNum">      62 </span><span class="lineCov">       2684 :         case 3:</span>
+<span class="lineNum">      63 </span><span class="lineCov">       5368 :                 *octet = parser-&gt;stackOne * 100</span>
+<span class="lineNum">      64 </span><span class="lineCov">       2684 :                                 + parser-&gt;stackTwo * 10</span>
+<span class="lineNum">      65 </span><span class="lineCov">       2684 :                                 + parser-&gt;stackThree;</span>
+<span class="lineNum">      66 </span><span class="lineCov">       2684 :                 break;</span>
 <span class="lineNum">      67 </span>            : 
-<span class="lineNum">      68 </span><span class="lineCov">       3113 :         default:</span>
+<span class="lineNum">      68 </span><span class="lineCov">       3117 :         default:</span>
 <span class="lineNum">      69 </span>            :                 ;
 <span class="lineNum">      70 </span>            :         }
-<span class="lineNum">      71 </span><span class="lineCov">       3113 :         parser-&gt;stackCount = 0;</span>
-<span class="lineNum">      72 </span><span class="lineCov">       3113 : }</span>
+<span class="lineNum">      71 </span><span class="lineCov">       3117 :         parser-&gt;stackCount = 0;</span>
+<span class="lineNum">      72 </span><span class="lineCov">       3117 : }</span>
 <span class="lineNum">      73 </span>            : 
 <a name="74"><span class="lineNum">      74 </span>            : </a>
 <span class="lineNum">      75 </span>            : 
-<span class="lineNum">      76 </span><span class="lineCov">       8849 : void uriPushToStack(UriIp4Parser * parser, unsigned char digit) {</span>
-<span class="lineNum">      77 </span><span class="lineCov">       8849 :         switch (parser-&gt;stackCount) {</span>
-<span class="lineNum">      78 </span><span class="lineCov">       3230 :         case 0:</span>
-<span class="lineNum">      79 </span><span class="lineCov">       3230 :                 parser-&gt;stackOne = digit;</span>
-<span class="lineNum">      80 </span><span class="lineCov">       3230 :                 parser-&gt;stackCount = 1;</span>
-<span class="lineNum">      81 </span><span class="lineCov">       3230 :                 break;</span>
+<span class="lineNum">      76 </span><span class="lineCov">       8860 : void uriPushToStack(UriIp4Parser * parser, unsigned char digit) {</span>
+<span class="lineNum">      77 </span><span class="lineCov">       8860 :         switch (parser-&gt;stackCount) {</span>
+<span class="lineNum">      78 </span><span class="lineCov">       3235 :         case 0:</span>
+<span class="lineNum">      79 </span><span class="lineCov">       3235 :                 parser-&gt;stackOne = digit;</span>
+<span class="lineNum">      80 </span><span class="lineCov">       3235 :                 parser-&gt;stackCount = 1;</span>
+<span class="lineNum">      81 </span><span class="lineCov">       3235 :                 break;</span>
 <span class="lineNum">      82 </span>            : 
-<span class="lineNum">      83 </span><span class="lineCov">       2938 :         case 1:</span>
-<span class="lineNum">      84 </span><span class="lineCov">       2938 :                 parser-&gt;stackTwo = digit;</span>
-<span class="lineNum">      85 </span><span class="lineCov">       2938 :                 parser-&gt;stackCount = 2;</span>
-<span class="lineNum">      86 </span><span class="lineCov">       2938 :                 break;</span>
+<span class="lineNum">      83 </span><span class="lineCov">       2941 :         case 1:</span>
+<span class="lineNum">      84 </span><span class="lineCov">       2941 :                 parser-&gt;stackTwo = digit;</span>
+<span class="lineNum">      85 </span><span class="lineCov">       2941 :                 parser-&gt;stackCount = 2;</span>
+<span class="lineNum">      86 </span><span class="lineCov">       2941 :                 break;</span>
 <span class="lineNum">      87 </span>            : 
-<span class="lineNum">      88 </span><span class="lineCov">       2681 :         case 2:</span>
-<span class="lineNum">      89 </span><span class="lineCov">       2681 :                 parser-&gt;stackThree = digit;</span>
-<span class="lineNum">      90 </span><span class="lineCov">       2681 :                 parser-&gt;stackCount = 3;</span>
-<span class="lineNum">      91 </span><span class="lineCov">       2681 :                 break;</span>
+<span class="lineNum">      88 </span><span class="lineCov">       2684 :         case 2:</span>
+<span class="lineNum">      89 </span><span class="lineCov">       2684 :                 parser-&gt;stackThree = digit;</span>
+<span class="lineNum">      90 </span><span class="lineCov">       2684 :                 parser-&gt;stackCount = 3;</span>
+<span class="lineNum">      91 </span><span class="lineCov">       2684 :                 break;</span>
 <span class="lineNum">      92 </span>            : 
-<span class="lineNum">      93 </span><span class="lineCov">       8849 :         default:</span>
+<span class="lineNum">      93 </span><span class="lineCov">       8860 :         default:</span>
 <span class="lineNum">      94 </span>            :                 ;
 <span class="lineNum">      95 </span>            :         }
-<span class="lineNum">      96 </span><span class="lineCov">       8849 : }</span>
+<span class="lineNum">      96 </span><span class="lineCov">       8860 : }</span>
 </pre>
       </td>
     </tr>
