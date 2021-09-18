@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-18 07:51:56</td>
+            <td class="headerValue">2021-09-18 21:30:59</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">40</td>
@@ -271,12 +271,12 @@
 <span class="lineNum">     209 </span>            : 
 <a name="210"><span class="lineNum">     210 </span>            : </a>
 <span class="lineNum">     211 </span>            : 
-<span class="lineNum">     212 </span><span class="lineCov">       4278 : static URI_INLINE void URI_FUNC(StopSyntax)(URI_TYPE(ParserState) * state,</span>
+<span class="lineNum">     212 </span><span class="lineCov">       4293 : static URI_INLINE void URI_FUNC(StopSyntax)(URI_TYPE(ParserState) * state,</span>
 <span class="lineNum">     213 </span>            :                 const URI_CHAR * errorPos, UriMemoryManager * memory) {
-<span class="lineNum">     214 </span><span class="lineCov">       4278 :         URI_FUNC(FreeUriMembersMm)(state-&gt;uri, memory);</span>
-<span class="lineNum">     215 </span><span class="lineCov">       4278 :         state-&gt;errorPos = errorPos;</span>
-<span class="lineNum">     216 </span><span class="lineCov">       4278 :         state-&gt;errorCode = URI_ERROR_SYNTAX;</span>
-<span class="lineNum">     217 </span><span class="lineCov">       4278 : }</span>
+<span class="lineNum">     214 </span><span class="lineCov">       4293 :         URI_FUNC(FreeUriMembersMm)(state-&gt;uri, memory);</span>
+<span class="lineNum">     215 </span><span class="lineCov">       4293 :         state-&gt;errorPos = errorPos;</span>
+<span class="lineNum">     216 </span><span class="lineCov">       4293 :         state-&gt;errorCode = URI_ERROR_SYNTAX;</span>
+<span class="lineNum">     217 </span><span class="lineCov">       4293 : }</span>
 <span class="lineNum">     218 </span>            : 
 <a name="219"><span class="lineNum">     219 </span>            : </a>
 <span class="lineNum">     220 </span>            : 
@@ -293,29 +293,29 @@
 <span class="lineNum">     231 </span>            :  * [authority]-&gt;[ownHostUserInfoNz]
 <a name="232"><span class="lineNum">     232 </span>            :  * [authority]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">     233 </span>            :  */
-<span class="lineNum">     234 </span><span class="lineCov">      17000 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseAuthority)(</span>
+<span class="lineNum">     234 </span><span class="lineCov">      17056 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseAuthority)(</span>
 <span class="lineNum">     235 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">     236 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">     237 </span><span class="lineCov">      17000 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     237 </span><span class="lineCov">      17056 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">     238 </span>            :                 /* &quot;&quot; regname host */
 <span class="lineNum">     239 </span><span class="lineCov">          1 :                 state-&gt;uri-&gt;hostText.first = URI_FUNC(SafeToPointTo);</span>
 <span class="lineNum">     240 </span><span class="lineCov">          1 :                 state-&gt;uri-&gt;hostText.afterLast = URI_FUNC(SafeToPointTo);</span>
 <span class="lineNum">     241 </span><span class="lineCov">          1 :                 return afterLast;</span>
 <span class="lineNum">     242 </span>            :         }
 <span class="lineNum">     243 </span>            : 
-<span class="lineNum">     244 </span><span class="lineCov">      16999 :         switch (*first) {</span>
-<span class="lineNum">     245 </span><span class="lineCov">       9830 :         case _UT('['):</span>
+<span class="lineNum">     244 </span><span class="lineCov">      17055 :         switch (*first) {</span>
+<span class="lineNum">     245 </span><span class="lineCov">       9862 :         case _UT('['):</span>
 <span class="lineNum">     246 </span>            :                 {
-<span class="lineNum">     247 </span><span class="lineCov">       9830 :                         const URI_CHAR * const afterIpLit2</span>
-<span class="lineNum">     248 </span><span class="lineCov">       9830 :                                         = URI_FUNC(ParseIpLit2)(state, first + 1, afterLast, memory);</span>
-<span class="lineNum">     249 </span><span class="lineCov">       9830 :                         if (afterIpLit2 == NULL) {</span>
+<span class="lineNum">     247 </span><span class="lineCov">       9862 :                         const URI_CHAR * const afterIpLit2</span>
+<span class="lineNum">     248 </span><span class="lineCov">       9862 :                                         = URI_FUNC(ParseIpLit2)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">     249 </span><span class="lineCov">       9862 :                         if (afterIpLit2 == NULL) {</span>
 <span class="lineNum">     250 </span><span class="lineCov">        160 :                                 return NULL;</span>
 <span class="lineNum">     251 </span>            :                         }
-<span class="lineNum">     252 </span><span class="lineCov">       9670 :                         state-&gt;uri-&gt;hostText.first = first + 1; /* HOST BEGIN */</span>
-<span class="lineNum">     253 </span><span class="lineCov">       9670 :                         return URI_FUNC(ParseAuthorityTwo)(state, afterIpLit2, afterLast);</span>
+<span class="lineNum">     252 </span><span class="lineCov">       9702 :                         state-&gt;uri-&gt;hostText.first = first + 1; /* HOST BEGIN */</span>
+<span class="lineNum">     253 </span><span class="lineCov">       9702 :                         return URI_FUNC(ParseAuthorityTwo)(state, afterIpLit2, afterLast);</span>
 <span class="lineNum">     254 </span>            :                 }
 <span class="lineNum">     255 </span>            : 
-<span class="lineNum">     256 </span><span class="lineCov">       2672 :         case _UT('!'):</span>
+<span class="lineNum">     256 </span><span class="lineCov">       2679 :         case _UT('!'):</span>
 <span class="lineNum">     257 </span>            :         case _UT('$'):
 <span class="lineNum">     258 </span>            :         case _UT('%'):
 <span class="lineNum">     259 </span>            :         case _UT('&amp;'):
@@ -335,14 +335,14 @@
 <span class="lineNum">     273 </span>            :         case _UT('='):
 <span class="lineNum">     274 </span>            :         case URI_SET_DIGIT:
 <span class="lineNum">     275 </span>            :         case URI_SET_ALPHA:
-<span class="lineNum">     276 </span><span class="lineCov">       2672 :                 state-&gt;uri-&gt;userInfo.first = first; /* USERINFO BEGIN */</span>
-<span class="lineNum">     277 </span><span class="lineCov">       2672 :                 return URI_FUNC(ParseOwnHostUserInfoNz)(state, first, afterLast, memory);</span>
+<span class="lineNum">     276 </span><span class="lineCov">       2679 :                 state-&gt;uri-&gt;userInfo.first = first; /* USERINFO BEGIN */</span>
+<span class="lineNum">     277 </span><span class="lineCov">       2679 :                 return URI_FUNC(ParseOwnHostUserInfoNz)(state, first, afterLast, memory);</span>
 <span class="lineNum">     278 </span>            : 
-<span class="lineNum">     279 </span><span class="lineCov">       4497 :         default:</span>
+<span class="lineNum">     279 </span><span class="lineCov">       4514 :         default:</span>
 <span class="lineNum">     280 </span>            :                 /* &quot;&quot; regname host */
-<span class="lineNum">     281 </span><span class="lineCov">       4497 :                 state-&gt;uri-&gt;hostText.first = URI_FUNC(SafeToPointTo);</span>
-<span class="lineNum">     282 </span><span class="lineCov">       4497 :                 state-&gt;uri-&gt;hostText.afterLast = URI_FUNC(SafeToPointTo);</span>
-<span class="lineNum">     283 </span><span class="lineCov">       4497 :                 return first;</span>
+<span class="lineNum">     281 </span><span class="lineCov">       4514 :                 state-&gt;uri-&gt;hostText.first = URI_FUNC(SafeToPointTo);</span>
+<span class="lineNum">     282 </span><span class="lineCov">       4514 :                 state-&gt;uri-&gt;hostText.afterLast = URI_FUNC(SafeToPointTo);</span>
+<span class="lineNum">     283 </span><span class="lineCov">       4514 :                 return first;</span>
 <span class="lineNum">     284 </span>            :         }
 <span class="lineNum">     285 </span>            : }
 <span class="lineNum">     286 </span>            : 
@@ -352,25 +352,25 @@
 <span class="lineNum">     290 </span>            :  * [authorityTwo]-&gt;&lt;:&gt;[port]
 <a name="291"><span class="lineNum">     291 </span>            :  * [authorityTwo]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">     292 </span>            :  */
-<span class="lineNum">     293 </span><span class="lineCov">       9709 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseAuthorityTwo)(URI_TYPE(ParserState) * state, const URI_CHAR * first, const URI_CHAR * afterLast) {</span>
-<span class="lineNum">     294 </span><span class="lineCov">       9709 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">     295 </span><span class="lineCov">       8203 :                 return afterLast;</span>
+<span class="lineNum">     293 </span><span class="lineCov">       9741 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseAuthorityTwo)(URI_TYPE(ParserState) * state, const URI_CHAR * first, const URI_CHAR * afterLast) {</span>
+<span class="lineNum">     294 </span><span class="lineCov">       9741 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     295 </span><span class="lineCov">       8232 :                 return afterLast;</span>
 <span class="lineNum">     296 </span>            :         }
 <span class="lineNum">     297 </span>            : 
-<span class="lineNum">     298 </span><span class="lineCov">       1506 :         switch (*first) {</span>
-<span class="lineNum">     299 </span><span class="lineCov">        317 :         case _UT(':'):</span>
+<span class="lineNum">     298 </span><span class="lineCov">       1509 :         switch (*first) {</span>
+<span class="lineNum">     299 </span><span class="lineCov">        318 :         case _UT(':'):</span>
 <span class="lineNum">     300 </span>            :                 {
-<span class="lineNum">     301 </span><span class="lineCov">        317 :                         const URI_CHAR * const afterPort = URI_FUNC(ParsePort)(state, first + 1, afterLast);</span>
-<span class="lineNum">     302 </span><span class="lineCov">        317 :                         if (afterPort == NULL) {</span>
+<span class="lineNum">     301 </span><span class="lineCov">        318 :                         const URI_CHAR * const afterPort = URI_FUNC(ParsePort)(state, first + 1, afterLast);</span>
+<span class="lineNum">     302 </span><span class="lineCov">        318 :                         if (afterPort == NULL) {</span>
 <span class="lineNum">     303 </span><span class="lineNoCov">          0 :                                 return NULL;</span>
 <span class="lineNum">     304 </span>            :                         }
-<span class="lineNum">     305 </span><span class="lineCov">        317 :                         state-&gt;uri-&gt;portText.first = first + 1; /* PORT BEGIN */</span>
-<span class="lineNum">     306 </span><span class="lineCov">        317 :                         state-&gt;uri-&gt;portText.afterLast = afterPort; /* PORT END */</span>
-<span class="lineNum">     307 </span><span class="lineCov">        317 :                         return afterPort;</span>
+<span class="lineNum">     305 </span><span class="lineCov">        318 :                         state-&gt;uri-&gt;portText.first = first + 1; /* PORT BEGIN */</span>
+<span class="lineNum">     306 </span><span class="lineCov">        318 :                         state-&gt;uri-&gt;portText.afterLast = afterPort; /* PORT END */</span>
+<span class="lineNum">     307 </span><span class="lineCov">        318 :                         return afterPort;</span>
 <span class="lineNum">     308 </span>            :                 }
 <span class="lineNum">     309 </span>            : 
-<span class="lineNum">     310 </span><span class="lineCov">       1189 :         default:</span>
-<span class="lineNum">     311 </span><span class="lineCov">       1189 :                 return first;</span>
+<span class="lineNum">     310 </span><span class="lineCov">       1191 :         default:</span>
+<span class="lineNum">     311 </span><span class="lineCov">       1191 :                 return first;</span>
 <span class="lineNum">     312 </span>            :         }
 <span class="lineNum">     313 </span>            : }
 <span class="lineNum">     314 </span>            : 
@@ -401,14 +401,14 @@
 <span class="lineNum">     339 </span>            :  * [hierPart]-&gt;&lt;/&gt;[partHelperTwo]
 <a name="340"><span class="lineNum">     340 </span>            :  * [hierPart]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">     341 </span>            :  */
-<span class="lineNum">     342 </span><span class="lineCov">      14910 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseHierPart)(</span>
+<span class="lineNum">     342 </span><span class="lineCov">      14960 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseHierPart)(</span>
 <span class="lineNum">     343 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">     344 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">     345 </span><span class="lineCov">      14910 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     345 </span><span class="lineCov">      14960 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">     346 </span><span class="lineNoCov">          0 :                 return afterLast;</span>
 <span class="lineNum">     347 </span>            :         }
 <span class="lineNum">     348 </span>            : 
-<span class="lineNum">     349 </span><span class="lineCov">      14910 :         switch (*first) {</span>
+<span class="lineNum">     349 </span><span class="lineCov">      14960 :         switch (*first) {</span>
 <span class="lineNum">     350 </span><span class="lineNoCov">          0 :         case _UT('!'):</span>
 <span class="lineNum">     351 </span>            :         case _UT('$'):
 <span class="lineNum">     352 </span>            :         case _UT('%'):
@@ -431,8 +431,8 @@
 <span class="lineNum">     369 </span>            :         case URI_SET_ALPHA:
 <span class="lineNum">     370 </span><span class="lineNoCov">          0 :                 return URI_FUNC(ParsePathRootless)(state, first, afterLast, memory);</span>
 <span class="lineNum">     371 </span>            : 
-<span class="lineNum">     372 </span><span class="lineCov">      14910 :         case _UT('/'):</span>
-<span class="lineNum">     373 </span><span class="lineCov">      14910 :                 return URI_FUNC(ParsePartHelperTwo)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">     372 </span><span class="lineCov">      14960 :         case _UT('/'):</span>
+<span class="lineNum">     373 </span><span class="lineCov">      14960 :                 return URI_FUNC(ParsePartHelperTwo)(state, first + 1, afterLast, memory);</span>
 <span class="lineNum">     374 </span>            : 
 <span class="lineNum">     375 </span><span class="lineNoCov">          0 :         default:</span>
 <span class="lineNum">     376 </span><span class="lineNoCov">          0 :                 return first;</span>
@@ -593,15 +593,15 @@
 <span class="lineNum">     531 </span>            :  * [ipLit2]-&gt;[ipFuture]&lt;]&gt;
 <a name="532"><span class="lineNum">     532 </span>            :  * [ipLit2]-&gt;[IPv6address2]</a>
 <span class="lineNum">     533 </span>            :  */
-<span class="lineNum">     534 </span><span class="lineCov">       9830 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseIpLit2)(</span>
+<span class="lineNum">     534 </span><span class="lineCov">       9862 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseIpLit2)(</span>
 <span class="lineNum">     535 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">     536 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">     537 </span><span class="lineCov">       9830 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">     537 </span><span class="lineCov">       9862 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">     538 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">     539 </span><span class="lineNoCov">          0 :                 return NULL;</span>
 <span class="lineNum">     540 </span>            :         }
 <span class="lineNum">     541 </span>            : 
-<span class="lineNum">     542 </span><span class="lineCov">       9830 :         switch (*first) {</span>
+<span class="lineNum">     542 </span><span class="lineCov">       9862 :         switch (*first) {</span>
 <span class="lineNum">     543 </span><span class="lineNoCov">          0 :         case _UT('v'):</span>
 <span class="lineNum">     544 </span>            :                 {
 <span class="lineNum">     545 </span><span class="lineNoCov">          0 :                         const URI_CHAR * const afterIpFuture</span>
@@ -620,15 +620,15 @@
 <span class="lineNum">     558 </span><span class="lineNoCov">          0 :                         return afterIpFuture + 1;</span>
 <span class="lineNum">     559 </span>            :                 }
 <span class="lineNum">     560 </span>            : 
-<span class="lineNum">     561 </span><span class="lineCov">       9830 :         case _UT(':'):</span>
+<span class="lineNum">     561 </span><span class="lineCov">       9862 :         case _UT(':'):</span>
 <span class="lineNum">     562 </span>            :         case _UT(']'):
 <span class="lineNum">     563 </span>            :         case URI_SET_HEXDIG:
-<span class="lineNum">     564 </span><span class="lineCov">       9830 :                 state-&gt;uri-&gt;hostData.ip6 = memory-&gt;malloc(memory, 1 * sizeof(UriIp6)); /* Freed when stopping on parse error */</span>
-<span class="lineNum">     565 </span><span class="lineCov">       9830 :                 if (state-&gt;uri-&gt;hostData.ip6 == NULL) {</span>
+<span class="lineNum">     564 </span><span class="lineCov">       9862 :                 state-&gt;uri-&gt;hostData.ip6 = memory-&gt;malloc(memory, 1 * sizeof(UriIp6)); /* Freed when stopping on parse error */</span>
+<span class="lineNum">     565 </span><span class="lineCov">       9862 :                 if (state-&gt;uri-&gt;hostData.ip6 == NULL) {</span>
 <span class="lineNum">     566 </span><span class="lineNoCov">          0 :                         URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">     567 </span><span class="lineNoCov">          0 :                         return NULL;</span>
 <span class="lineNum">     568 </span>            :                 }
-<span class="lineNum">     569 </span><span class="lineCov">       9830 :                 return URI_FUNC(ParseIPv6address2)(state, first, afterLast, memory);</span>
+<span class="lineNum">     569 </span><span class="lineCov">       9862 :                 return URI_FUNC(ParseIPv6address2)(state, first, afterLast, memory);</span>
 <span class="lineNum">     570 </span>            : 
 <span class="lineNum">     571 </span><span class="lineNoCov">          0 :         default:</span>
 <span class="lineNum">     572 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, first, memory);</span>
@@ -641,60 +641,60 @@
 <span class="lineNum">     579 </span>            : /*
 <a name="580"><span class="lineNum">     580 </span>            :  * [IPv6address2]-&gt;..&lt;]&gt;</a>
 <span class="lineNum">     581 </span>            :  */
-<span class="lineNum">     582 </span><span class="lineCov">       9830 : static const URI_CHAR * URI_FUNC(ParseIPv6address2)(</span>
+<span class="lineNum">     582 </span><span class="lineCov">       9862 : static const URI_CHAR * URI_FUNC(ParseIPv6address2)(</span>
 <span class="lineNum">     583 </span>            :                 URI_TYPE(ParserState) * state,
 <span class="lineNum">     584 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">     585 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">     586 </span><span class="lineCov">       9830 :         int zipperEver = 0;</span>
-<span class="lineNum">     587 </span><span class="lineCov">       9830 :         int quadsDone = 0;</span>
-<span class="lineNum">     588 </span><span class="lineCov">       9830 :         int digitCount = 0;</span>
+<span class="lineNum">     586 </span><span class="lineCov">       9862 :         int zipperEver = 0;</span>
+<span class="lineNum">     587 </span><span class="lineCov">       9862 :         int quadsDone = 0;</span>
+<span class="lineNum">     588 </span><span class="lineCov">       9862 :         int digitCount = 0;</span>
 <span class="lineNum">     589 </span>            :         unsigned char digitHistory[4];
-<span class="lineNum">     590 </span><span class="lineCov">       9830 :         int ip4OctetsDone = 0;</span>
+<span class="lineNum">     590 </span><span class="lineCov">       9862 :         int ip4OctetsDone = 0;</span>
 <span class="lineNum">     591 </span>            : 
 <span class="lineNum">     592 </span>            :         unsigned char quadsAfterZipper[14];
-<span class="lineNum">     593 </span><span class="lineCov">       9830 :         int quadsAfterZipperCount = 0;</span>
+<span class="lineNum">     593 </span><span class="lineCov">       9862 :         int quadsAfterZipperCount = 0;</span>
 <span class="lineNum">     594 </span>            : 
 <span class="lineNum">     595 </span>            : 
 <span class="lineNum">     596 </span>            :         for (;;) {
-<span class="lineNum">     597 </span><span class="lineCov">      17334 :                 if (first &gt;= afterLast) {</span>
+<span class="lineNum">     597 </span><span class="lineCov">      17402 :                 if (first &gt;= afterLast) {</span>
 <span class="lineNum">     598 </span><span class="lineNoCov">          0 :                         URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">     599 </span><span class="lineNoCov">          0 :                         return NULL;</span>
 <span class="lineNum">     600 </span>            :                 }
 <span class="lineNum">     601 </span>            : 
 <span class="lineNum">     602 </span>            :                 /* Inside IPv4 part? */
-<span class="lineNum">     603 </span><span class="lineCov">      13582 :                 if (ip4OctetsDone &gt; 0) {</span>
+<span class="lineNum">     603 </span><span class="lineCov">      13632 :                 if (ip4OctetsDone &gt; 0) {</span>
 <span class="lineNum">     604 </span>            :                         /* Eat rest of IPv4 address */
 <span class="lineNum">     605 </span>            :                         for (;;) {
-<span class="lineNum">     606 </span><span class="lineCov">      82974 :                                 switch (*first) {</span>
-<span class="lineNum">     607 </span><span class="lineCov">      32242 :                                 case URI_SET_DIGIT:</span>
-<span class="lineNum">     608 </span><span class="lineCov">      32242 :                                         if (digitCount == 4) {</span>
+<span class="lineNum">     606 </span><span class="lineCov">      83376 :                                 switch (*first) {</span>
+<span class="lineNum">     607 </span><span class="lineCov">      32398 :                                 case URI_SET_DIGIT:</span>
+<span class="lineNum">     608 </span><span class="lineCov">      32398 :                                         if (digitCount == 4) {</span>
 <span class="lineNum">     609 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     610 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
 <span class="lineNum">     611 </span>            :                                         }
-<span class="lineNum">     612 </span><span class="lineCov">      32242 :                                         digitHistory[digitCount++] = (unsigned char)(9 + *first - _UT('9'));</span>
-<span class="lineNum">     613 </span><span class="lineCov">      32242 :                                         break;</span>
+<span class="lineNum">     612 </span><span class="lineCov">      32398 :                                         digitHistory[digitCount++] = (unsigned char)(9 + *first - _UT('9'));</span>
+<span class="lineNum">     613 </span><span class="lineCov">      32398 :                                         break;</span>
 <span class="lineNum">     614 </span>            : 
-<span class="lineNum">     615 </span><span class="lineCov">       7459 :                                 case _UT('.'):</span>
-<span class="lineNum">     616 </span><span class="lineCov">       7459 :                                         if ((ip4OctetsDone == 4) /* NOTE! */</span>
-<span class="lineNum">     617 </span><span class="lineCov">       7459 :                                                         || (digitCount == 0)</span>
-<span class="lineNum">     618 </span><span class="lineCov">       7459 :                                                         || (digitCount == 4)) {</span>
+<span class="lineNum">     615 </span><span class="lineCov">       7495 :                                 case _UT('.'):</span>
+<span class="lineNum">     616 </span><span class="lineCov">       7495 :                                         if ((ip4OctetsDone == 4) /* NOTE! */</span>
+<span class="lineNum">     617 </span><span class="lineCov">       7495 :                                                         || (digitCount == 0)</span>
+<span class="lineNum">     618 </span><span class="lineCov">       7495 :                                                         || (digitCount == 4)) {</span>
 <span class="lineNum">     619 </span>            :                                                 /* Invalid digit or octet count */
 <span class="lineNum">     620 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     621 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
-<span class="lineNum">     622 </span><span class="lineCov">       7459 :                                         } else if ((digitCount &gt; 1)</span>
-<span class="lineNum">     623 </span><span class="lineCov">       7275 :                                                         &amp;&amp; (digitHistory[0] == 0)) {</span>
+<span class="lineNum">     622 </span><span class="lineCov">       7495 :                                         } else if ((digitCount &gt; 1)</span>
+<span class="lineNum">     623 </span><span class="lineCov">       7311 :                                                         &amp;&amp; (digitHistory[0] == 0)) {</span>
 <span class="lineNum">     624 </span>            :                                                 /* Leading zero */
 <span class="lineNum">     625 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first - digitCount, memory);</span>
 <span class="lineNum">     626 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
-<span class="lineNum">     627 </span><span class="lineCov">       7459 :                                         } else if ((digitCount &gt; 2)</span>
-<span class="lineNum">     628 </span><span class="lineCov">       6905 :                                                         &amp;&amp; (digitHistory[1] == 0)) {</span>
+<span class="lineNum">     627 </span><span class="lineCov">       7495 :                                         } else if ((digitCount &gt; 2)</span>
+<span class="lineNum">     628 </span><span class="lineCov">       6938 :                                                         &amp;&amp; (digitHistory[1] == 0)) {</span>
 <span class="lineNum">     629 </span>            :                                                 /* Leading zero */
 <span class="lineNum">     630 </span><span class="lineCov">         90 :                                                 URI_FUNC(StopSyntax)(state, first - digitCount + 1, memory);</span>
 <span class="lineNum">     631 </span><span class="lineCov">         90 :                                                 return NULL;</span>
-<span class="lineNum">     632 </span><span class="lineCov">       7369 :                                         } else if ((digitCount == 3)</span>
-<span class="lineNum">     633 </span><span class="lineCov">      13630 :                                                         &amp;&amp; (100 * digitHistory[0]</span>
-<span class="lineNum">     634 </span><span class="lineCov">       6815 :                                                                 + 10 * digitHistory[1]</span>
-<span class="lineNum">     635 </span><span class="lineCov">       6815 :                                                                 + digitHistory[2] &gt; 255)) {</span>
+<span class="lineNum">     632 </span><span class="lineCov">       7405 :                                         } else if ((digitCount == 3)</span>
+<span class="lineNum">     633 </span><span class="lineCov">      13696 :                                                         &amp;&amp; (100 * digitHistory[0]</span>
+<span class="lineNum">     634 </span><span class="lineCov">       6848 :                                                                 + 10 * digitHistory[1]</span>
+<span class="lineNum">     635 </span><span class="lineCov">       6848 :                                                                 + digitHistory[2] &gt; 255)) {</span>
 <span class="lineNum">     636 </span>            :                                                 /* Octet value too large */
 <span class="lineNum">     637 </span><span class="lineNoCov">          0 :                                                 if (digitHistory[0] &gt; 2) {</span>
 <span class="lineNum">     638 </span><span class="lineNoCov">          0 :                                                         URI_FUNC(StopSyntax)(state, first - 3, memory);</span>
@@ -707,32 +707,32 @@
 <span class="lineNum">     645 </span>            :                                         }
 <span class="lineNum">     646 </span>            : 
 <span class="lineNum">     647 </span>            :                                         /* Copy IPv4 octet */
-<span class="lineNum">     648 </span><span class="lineCov">       7369 :                                         state-&gt;uri-&gt;hostData.ip6-&gt;data[16 - 4 + ip4OctetsDone] = uriGetOctetValue(digitHistory, digitCount);</span>
-<span class="lineNum">     649 </span><span class="lineCov">       7369 :                                         digitCount = 0;</span>
-<span class="lineNum">     650 </span><span class="lineCov">       7369 :                                         ip4OctetsDone++;</span>
-<span class="lineNum">     651 </span><span class="lineCov">       7369 :                                         break;</span>
+<span class="lineNum">     648 </span><span class="lineCov">       7405 :                                         state-&gt;uri-&gt;hostData.ip6-&gt;data[16 - 4 + ip4OctetsDone] = uriGetOctetValue(digitHistory, digitCount);</span>
+<span class="lineNum">     649 </span><span class="lineCov">       7405 :                                         digitCount = 0;</span>
+<span class="lineNum">     650 </span><span class="lineCov">       7405 :                                         ip4OctetsDone++;</span>
+<span class="lineNum">     651 </span><span class="lineCov">       7405 :                                         break;</span>
 <span class="lineNum">     652 </span>            : 
-<span class="lineNum">     653 </span><span class="lineCov">       3662 :                                 case _UT(']'):</span>
-<span class="lineNum">     654 </span><span class="lineCov">       3662 :                                         if ((ip4OctetsDone != 3) /* NOTE! */</span>
-<span class="lineNum">     655 </span><span class="lineCov">       3662 :                                                         || (digitCount == 0)</span>
-<span class="lineNum">     656 </span><span class="lineCov">       3662 :                                                         || (digitCount == 4)) {</span>
+<span class="lineNum">     653 </span><span class="lineCov">       3680 :                                 case _UT(']'):</span>
+<span class="lineNum">     654 </span><span class="lineCov">       3680 :                                         if ((ip4OctetsDone != 3) /* NOTE! */</span>
+<span class="lineNum">     655 </span><span class="lineCov">       3680 :                                                         || (digitCount == 0)</span>
+<span class="lineNum">     656 </span><span class="lineCov">       3680 :                                                         || (digitCount == 4)) {</span>
 <span class="lineNum">     657 </span>            :                                                 /* Invalid digit or octet count */
 <span class="lineNum">     658 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     659 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
-<span class="lineNum">     660 </span><span class="lineCov">       3662 :                                         } else if ((digitCount &gt; 1)</span>
-<span class="lineNum">     661 </span><span class="lineCov">       3560 :                                                         &amp;&amp; (digitHistory[0] == 0)) {</span>
+<span class="lineNum">     660 </span><span class="lineCov">       3680 :                                         } else if ((digitCount &gt; 1)</span>
+<span class="lineNum">     661 </span><span class="lineCov">       3578 :                                                         &amp;&amp; (digitHistory[0] == 0)) {</span>
 <span class="lineNum">     662 </span>            :                                                 /* Leading zero */
 <span class="lineNum">     663 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first - digitCount, memory);</span>
 <span class="lineNum">     664 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
-<span class="lineNum">     665 </span><span class="lineCov">       3662 :                                         } else if ((digitCount &gt; 2)</span>
-<span class="lineNum">     666 </span><span class="lineCov">       3381 :                                                         &amp;&amp; (digitHistory[1] == 0)) {</span>
+<span class="lineNum">     665 </span><span class="lineCov">       3680 :                                         } else if ((digitCount &gt; 2)</span>
+<span class="lineNum">     666 </span><span class="lineCov">       3396 :                                                         &amp;&amp; (digitHistory[1] == 0)) {</span>
 <span class="lineNum">     667 </span>            :                                                 /* Leading zero */
 <span class="lineNum">     668 </span><span class="lineCov">         37 :                                                 URI_FUNC(StopSyntax)(state, first - digitCount + 1, memory);</span>
 <span class="lineNum">     669 </span><span class="lineCov">         37 :                                                 return NULL;</span>
-<span class="lineNum">     670 </span><span class="lineCov">       3625 :                                         } else if ((digitCount == 3)</span>
-<span class="lineNum">     671 </span><span class="lineCov">       6688 :                                                         &amp;&amp; (100 * digitHistory[0]</span>
-<span class="lineNum">     672 </span><span class="lineCov">       3344 :                                                                 + 10 * digitHistory[1]</span>
-<span class="lineNum">     673 </span><span class="lineCov">       3344 :                                                                 + digitHistory[2] &gt; 255)) {</span>
+<span class="lineNum">     670 </span><span class="lineCov">       3643 :                                         } else if ((digitCount == 3)</span>
+<span class="lineNum">     671 </span><span class="lineCov">       6718 :                                                         &amp;&amp; (100 * digitHistory[0]</span>
+<span class="lineNum">     672 </span><span class="lineCov">       3359 :                                                                 + 10 * digitHistory[1]</span>
+<span class="lineNum">     673 </span><span class="lineCov">       3359 :                                                                 + digitHistory[2] &gt; 255)) {</span>
 <span class="lineNum">     674 </span>            :                                                 /* Octet value too large */
 <span class="lineNum">     675 </span><span class="lineNoCov">          0 :                                                 if (digitHistory[0] &gt; 2) {</span>
 <span class="lineNum">     676 </span><span class="lineNoCov">          0 :                                                         URI_FUNC(StopSyntax)(state, first - 3, memory);</span>
@@ -744,43 +744,43 @@
 <span class="lineNum">     682 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
 <span class="lineNum">     683 </span>            :                                         }
 <span class="lineNum">     684 </span>            : 
-<span class="lineNum">     685 </span><span class="lineCov">       3625 :                                         state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
+<span class="lineNum">     685 </span><span class="lineCov">       3643 :                                         state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
 <span class="lineNum">     686 </span>            : 
 <span class="lineNum">     687 </span>            :                                         /* Copy missing quads right before IPv4 */
-<span class="lineNum">     688 </span><span class="lineCov">       3625 :                                         memcpy(state-&gt;uri-&gt;hostData.ip6-&gt;data + 16 - 4 - 2 * quadsAfterZipperCount,</span>
-<span class="lineNum">     689 </span><span class="lineCov">       3625 :                                                                 quadsAfterZipper, 2 * quadsAfterZipperCount);</span>
+<span class="lineNum">     688 </span><span class="lineCov">       3643 :                                         memcpy(state-&gt;uri-&gt;hostData.ip6-&gt;data + 16 - 4 - 2 * quadsAfterZipperCount,</span>
+<span class="lineNum">     689 </span><span class="lineCov">       3643 :                                                                 quadsAfterZipper, 2 * quadsAfterZipperCount);</span>
 <span class="lineNum">     690 </span>            : 
 <span class="lineNum">     691 </span>            :                                         /* Copy last IPv4 octet */
-<span class="lineNum">     692 </span><span class="lineCov">       3625 :                                         state-&gt;uri-&gt;hostData.ip6-&gt;data[16 - 4 + 3] = uriGetOctetValue(digitHistory, digitCount);</span>
+<span class="lineNum">     692 </span><span class="lineCov">       3643 :                                         state-&gt;uri-&gt;hostData.ip6-&gt;data[16 - 4 + 3] = uriGetOctetValue(digitHistory, digitCount);</span>
 <span class="lineNum">     693 </span>            : 
-<span class="lineNum">     694 </span><span class="lineCov">       3625 :                                         return first + 1;</span>
+<span class="lineNum">     694 </span><span class="lineCov">       3643 :                                         return first + 1;</span>
 <span class="lineNum">     695 </span>            : 
 <span class="lineNum">     696 </span><span class="lineNoCov">          0 :                                 default:</span>
 <span class="lineNum">     697 </span><span class="lineNoCov">          0 :                                         URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     698 </span><span class="lineNoCov">          0 :                                         return NULL;</span>
 <span class="lineNum">     699 </span>            :                                 }
-<span class="lineNum">     700 </span><span class="lineCov">      39611 :                                 first++;</span>
+<span class="lineNum">     700 </span><span class="lineCov">      39803 :                                 first++;</span>
 <span class="lineNum">     701 </span>            : 
-<span class="lineNum">     702 </span><span class="lineCov">      39611 :                                 if (first &gt;= afterLast) {</span>
+<span class="lineNum">     702 </span><span class="lineCov">      39803 :                                 if (first &gt;= afterLast) {</span>
 <span class="lineNum">     703 </span><span class="lineNoCov">          0 :                                         URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">     704 </span><span class="lineNoCov">          0 :                                         return NULL;</span>
 <span class="lineNum">     705 </span>            :                                 }
 <span class="lineNum">     706 </span>            :                         }
 <span class="lineNum">     707 </span>            :                 } else {
 <span class="lineNum">     708 </span>            :                         /* Eat while no dot in sight */
-<span class="lineNum">     709 </span><span class="lineCov">       9830 :                         int letterAmong = 0;</span>
-<span class="lineNum">     710 </span><span class="lineCov">       9830 :                         int walking = 1;</span>
+<span class="lineNum">     709 </span><span class="lineCov">       9862 :                         int letterAmong = 0;</span>
+<span class="lineNum">     710 </span><span class="lineCov">       9862 :                         int walking = 1;</span>
 <span class="lineNum">     711 </span>            :                         do {
-<span class="lineNum">     712 </span><span class="lineCov">     101025 :                                 switch (*first) {</span>
-<span class="lineNum">     713 </span><span class="lineCov">      56685 :                                 case URI_SET_HEX_LETTER_LOWER:</span>
-<span class="lineNum">     714 </span><span class="lineCov">      56685 :                                         letterAmong = 1;</span>
-<span class="lineNum">     715 </span><span class="lineCov">      56685 :                                         if (digitCount == 4) {</span>
+<span class="lineNum">     712 </span><span class="lineCov">     101443 :                                 switch (*first) {</span>
+<span class="lineNum">     713 </span><span class="lineCov">      56928 :                                 case URI_SET_HEX_LETTER_LOWER:</span>
+<span class="lineNum">     714 </span><span class="lineCov">      56928 :                                         letterAmong = 1;</span>
+<span class="lineNum">     715 </span><span class="lineCov">      56928 :                                         if (digitCount == 4) {</span>
 <span class="lineNum">     716 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     717 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
 <span class="lineNum">     718 </span>            :                                         }
-<span class="lineNum">     719 </span><span class="lineCov">      56685 :                                         digitHistory[digitCount] = (unsigned char)(15 + *first - _UT('f'));</span>
-<span class="lineNum">     720 </span><span class="lineCov">      56685 :                                         digitCount++;</span>
-<span class="lineNum">     721 </span><span class="lineCov">      56685 :                                         break;</span>
+<span class="lineNum">     719 </span><span class="lineCov">      56928 :                                         digitHistory[digitCount] = (unsigned char)(15 + *first - _UT('f'));</span>
+<span class="lineNum">     720 </span><span class="lineCov">      56928 :                                         digitCount++;</span>
+<span class="lineNum">     721 </span><span class="lineCov">      56928 :                                         break;</span>
 <span class="lineNum">     722 </span>            : 
 <span class="lineNum">     723 </span><span class="lineNoCov">          0 :                                 case URI_SET_HEX_LETTER_UPPER:</span>
 <span class="lineNum">     724 </span><span class="lineNoCov">          0 :                                         letterAmong = 1;</span>
@@ -792,95 +792,95 @@
 <span class="lineNum">     730 </span><span class="lineNoCov">          0 :                                         digitCount++;</span>
 <span class="lineNum">     731 </span><span class="lineNoCov">          0 :                                         break;</span>
 <span class="lineNum">     732 </span>            : 
-<span class="lineNum">     733 </span><span class="lineCov">      14099 :                                 case URI_SET_DIGIT:</span>
-<span class="lineNum">     734 </span><span class="lineCov">      14099 :                                         if (digitCount == 4) {</span>
+<span class="lineNum">     733 </span><span class="lineCov">      14162 :                                 case URI_SET_DIGIT:</span>
+<span class="lineNum">     734 </span><span class="lineCov">      14162 :                                         if (digitCount == 4) {</span>
 <span class="lineNum">     735 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     736 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
 <span class="lineNum">     737 </span>            :                                         }
-<span class="lineNum">     738 </span><span class="lineCov">      14099 :                                         digitHistory[digitCount] = (unsigned char)(9 + *first - _UT('9'));</span>
-<span class="lineNum">     739 </span><span class="lineCov">      14099 :                                         digitCount++;</span>
-<span class="lineNum">     740 </span><span class="lineCov">      14099 :                                         break;</span>
+<span class="lineNum">     738 </span><span class="lineCov">      14162 :                                         digitHistory[digitCount] = (unsigned char)(9 + *first - _UT('9'));</span>
+<span class="lineNum">     739 </span><span class="lineCov">      14162 :                                         digitCount++;</span>
+<span class="lineNum">     740 </span><span class="lineCov">      14162 :                                         break;</span>
 <span class="lineNum">     741 </span>            : 
-<span class="lineNum">     742 </span><span class="lineCov">      20411 :                                 case _UT(':'):</span>
+<span class="lineNum">     742 </span><span class="lineCov">      20491 :                                 case _UT(':'):</span>
 <span class="lineNum">     743 </span>            :                                         {
-<span class="lineNum">     744 </span><span class="lineCov">      20411 :                                                 int setZipper = 0;</span>
+<span class="lineNum">     744 </span><span class="lineCov">      20491 :                                                 int setZipper = 0;</span>
 <span class="lineNum">     745 </span>            : 
-<span class="lineNum">     746 </span><span class="lineCov">      20411 :                                                 if (digitCount &gt; 0) {</span>
-<span class="lineNum">     747 </span><span class="lineCov">      13464 :                                                         if (zipperEver) {</span>
-<span class="lineNum">     748 </span><span class="lineCov">       4644 :                                                                 uriWriteQuadToDoubleByte(digitHistory, digitCount, quadsAfterZipper + 2 * quadsAfterZipperCount);</span>
-<span class="lineNum">     749 </span><span class="lineCov">       4644 :                                                                 quadsAfterZipperCount++;</span>
+<span class="lineNum">     746 </span><span class="lineCov">      20491 :                                                 if (digitCount &gt; 0) {</span>
+<span class="lineNum">     747 </span><span class="lineCov">      13524 :                                                         if (zipperEver) {</span>
+<span class="lineNum">     748 </span><span class="lineCov">       4658 :                                                                 uriWriteQuadToDoubleByte(digitHistory, digitCount, quadsAfterZipper + 2 * quadsAfterZipperCount);</span>
+<span class="lineNum">     749 </span><span class="lineCov">       4658 :                                                                 quadsAfterZipperCount++;</span>
 <span class="lineNum">     750 </span>            :                                                         } else {
-<span class="lineNum">     751 </span><span class="lineCov">       8820 :                                                                 uriWriteQuadToDoubleByte(digitHistory, digitCount, state-&gt;uri-&gt;hostData.ip6-&gt;data + 2 * quadsDone);</span>
+<span class="lineNum">     751 </span><span class="lineCov">       8866 :                                                                 uriWriteQuadToDoubleByte(digitHistory, digitCount, state-&gt;uri-&gt;hostData.ip6-&gt;data + 2 * quadsDone);</span>
 <span class="lineNum">     752 </span>            :                                                         }
-<span class="lineNum">     753 </span><span class="lineCov">      13464 :                                                         quadsDone++;</span>
-<span class="lineNum">     754 </span><span class="lineCov">      13464 :                                                         digitCount = 0;</span>
+<span class="lineNum">     753 </span><span class="lineCov">      13524 :                                                         quadsDone++;</span>
+<span class="lineNum">     754 </span><span class="lineCov">      13524 :                                                         digitCount = 0;</span>
 <span class="lineNum">     755 </span>            :                                                 }
-<span class="lineNum">     756 </span><span class="lineCov">      20411 :                                                 letterAmong = 0;</span>
+<span class="lineNum">     756 </span><span class="lineCov">      20491 :                                                 letterAmong = 0;</span>
 <span class="lineNum">     757 </span>            : 
 <span class="lineNum">     758 </span>            :                                                 /* Too many quads? */
-<span class="lineNum">     759 </span><span class="lineCov">      20411 :                                                 if (quadsDone &gt;= 8 - zipperEver) {</span>
+<span class="lineNum">     759 </span><span class="lineCov">      20491 :                                                 if (quadsDone &gt;= 8 - zipperEver) {</span>
 <span class="lineNum">     760 </span><span class="lineNoCov">          0 :                                                         URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     761 </span><span class="lineNoCov">          0 :                                                         return NULL;</span>
 <span class="lineNum">     762 </span>            :                                                 }
 <span class="lineNum">     763 </span>            : 
 <span class="lineNum">     764 </span>            :                                                 /* &quot;::&quot;? */
-<span class="lineNum">     765 </span><span class="lineCov">      20411 :                                                 if (first + 1 &gt;= afterLast) {</span>
+<span class="lineNum">     765 </span><span class="lineCov">      20491 :                                                 if (first + 1 &gt;= afterLast) {</span>
 <span class="lineNum">     766 </span><span class="lineNoCov">          0 :                                                         URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">     767 </span><span class="lineNoCov">          0 :                                                         return NULL;</span>
 <span class="lineNum">     768 </span>            :                                                 }
-<span class="lineNum">     769 </span><span class="lineCov">      20411 :                                                 if (first[1] == _UT(':')) {</span>
-<span class="lineNum">     770 </span><span class="lineCov">       8909 :                                                         const int resetOffset = 2 * (quadsDone + (digitCount &gt; 0));</span>
+<span class="lineNum">     769 </span><span class="lineCov">      20491 :                                                 if (first[1] == _UT(':')) {</span>
+<span class="lineNum">     770 </span><span class="lineCov">       8935 :                                                         const int resetOffset = 2 * (quadsDone + (digitCount &gt; 0));</span>
 <span class="lineNum">     771 </span>            : 
-<span class="lineNum">     772 </span><span class="lineCov">       8909 :                                                         first++;</span>
-<span class="lineNum">     773 </span><span class="lineCov">       8909 :                                                         if (zipperEver) {</span>
+<span class="lineNum">     772 </span><span class="lineCov">       8935 :                                                         first++;</span>
+<span class="lineNum">     773 </span><span class="lineCov">       8935 :                                                         if (zipperEver) {</span>
 <span class="lineNum">     774 </span><span class="lineNoCov">          0 :                                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     775 </span><span class="lineNoCov">          0 :                                                                 return NULL; /* &quot;::.+::&quot; */</span>
 <span class="lineNum">     776 </span>            :                                                         }
 <span class="lineNum">     777 </span>            : 
 <span class="lineNum">     778 </span>            :                                                         /* Zero everything after zipper */
-<span class="lineNum">     779 </span><span class="lineCov">       8909 :                                                         memset(state-&gt;uri-&gt;hostData.ip6-&gt;data + resetOffset, 0, 16 - resetOffset);</span>
-<span class="lineNum">     780 </span><span class="lineCov">       8909 :                                                         setZipper = 1;</span>
+<span class="lineNum">     779 </span><span class="lineCov">       8935 :                                                         memset(state-&gt;uri-&gt;hostData.ip6-&gt;data + resetOffset, 0, 16 - resetOffset);</span>
+<span class="lineNum">     780 </span><span class="lineCov">       8935 :                                                         setZipper = 1;</span>
 <span class="lineNum">     781 </span>            : 
 <span class="lineNum">     782 </span>            :                                                         /* &quot;:::+&quot;? */
-<span class="lineNum">     783 </span><span class="lineCov">       8909 :                                                         if (first + 1 &gt;= afterLast) {</span>
+<span class="lineNum">     783 </span><span class="lineCov">       8935 :                                                         if (first + 1 &gt;= afterLast) {</span>
 <span class="lineNum">     784 </span><span class="lineNoCov">          0 :                                                                 URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">     785 </span><span class="lineNoCov">          0 :                                                                 return NULL; /* No ']' yet */</span>
 <span class="lineNum">     786 </span>            :                                                         }
-<span class="lineNum">     787 </span><span class="lineCov">       8909 :                                                         if (first[1] == _UT(':')) {</span>
+<span class="lineNum">     787 </span><span class="lineCov">       8935 :                                                         if (first[1] == _UT(':')) {</span>
 <span class="lineNum">     788 </span><span class="lineNoCov">          0 :                                                                 URI_FUNC(StopSyntax)(state, first + 1, memory);</span>
 <span class="lineNum">     789 </span><span class="lineNoCov">          0 :                                                                 return NULL; /* &quot;:::+ &quot;*/</span>
 <span class="lineNum">     790 </span>            :                                                         }
 <span class="lineNum">     791 </span>            :                                                 }
 <span class="lineNum">     792 </span>            : 
-<span class="lineNum">     793 </span><span class="lineCov">      20411 :                                                 if (setZipper) {</span>
-<span class="lineNum">     794 </span><span class="lineCov">       8909 :                                                         zipperEver = 1;</span>
+<span class="lineNum">     793 </span><span class="lineCov">      20491 :                                                 if (setZipper) {</span>
+<span class="lineNum">     794 </span><span class="lineCov">       8935 :                                                         zipperEver = 1;</span>
 <span class="lineNum">     795 </span>            :                                                 }
 <span class="lineNum">     796 </span>            :                                         }
-<span class="lineNum">     797 </span><span class="lineCov">      20411 :                                         break;</span>
+<span class="lineNum">     797 </span><span class="lineCov">      20491 :                                         break;</span>
 <span class="lineNum">     798 </span>            : 
-<span class="lineNum">     799 </span><span class="lineCov">       3785 :                                 case _UT('.'):</span>
-<span class="lineNum">     800 </span><span class="lineCov">       3785 :                                         if ((quadsDone &gt; 6) /* NOTE */</span>
-<span class="lineNum">     801 </span><span class="lineCov">       3785 :                                                         || (!zipperEver &amp;&amp; (quadsDone &lt; 6))</span>
-<span class="lineNum">     802 </span><span class="lineCov">       3785 :                                                         || letterAmong</span>
-<span class="lineNum">     803 </span><span class="lineCov">       3785 :                                                         || (digitCount == 0)</span>
-<span class="lineNum">     804 </span><span class="lineCov">       3785 :                                                         || (digitCount == 4)) {</span>
+<span class="lineNum">     799 </span><span class="lineCov">       3803 :                                 case _UT('.'):</span>
+<span class="lineNum">     800 </span><span class="lineCov">       3803 :                                         if ((quadsDone &gt; 6) /* NOTE */</span>
+<span class="lineNum">     801 </span><span class="lineCov">       3803 :                                                         || (!zipperEver &amp;&amp; (quadsDone &lt; 6))</span>
+<span class="lineNum">     802 </span><span class="lineCov">       3803 :                                                         || letterAmong</span>
+<span class="lineNum">     803 </span><span class="lineCov">       3803 :                                                         || (digitCount == 0)</span>
+<span class="lineNum">     804 </span><span class="lineCov">       3803 :                                                         || (digitCount == 4)) {</span>
 <span class="lineNum">     805 </span>            :                                                 /* Invalid octet before */
 <span class="lineNum">     806 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     807 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
-<span class="lineNum">     808 </span><span class="lineCov">       3785 :                                         } else if ((digitCount &gt; 1)</span>
-<span class="lineNum">     809 </span><span class="lineCov">       3693 :                                                         &amp;&amp; (digitHistory[0] == 0)) {</span>
+<span class="lineNum">     808 </span><span class="lineCov">       3803 :                                         } else if ((digitCount &gt; 1)</span>
+<span class="lineNum">     809 </span><span class="lineCov">       3711 :                                                         &amp;&amp; (digitHistory[0] == 0)) {</span>
 <span class="lineNum">     810 </span>            :                                                 /* Leading zero */
 <span class="lineNum">     811 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first - digitCount, memory);</span>
 <span class="lineNum">     812 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
-<span class="lineNum">     813 </span><span class="lineCov">       3785 :                                         } else if ((digitCount &gt; 2)</span>
-<span class="lineNum">     814 </span><span class="lineCov">       3526 :                                                         &amp;&amp; (digitHistory[1] == 0)) {</span>
+<span class="lineNum">     813 </span><span class="lineCov">       3803 :                                         } else if ((digitCount &gt; 2)</span>
+<span class="lineNum">     814 </span><span class="lineCov">       3544 :                                                         &amp;&amp; (digitHistory[1] == 0)) {</span>
 <span class="lineNum">     815 </span>            :                                                 /* Leading zero */
 <span class="lineNum">     816 </span><span class="lineCov">         33 :                                                 URI_FUNC(StopSyntax)(state, first - digitCount + 1, memory);</span>
 <span class="lineNum">     817 </span><span class="lineCov">         33 :                                                 return NULL;</span>
-<span class="lineNum">     818 </span><span class="lineCov">       3752 :                                         } else if ((digitCount == 3)</span>
-<span class="lineNum">     819 </span><span class="lineCov">       6986 :                                                         &amp;&amp; (100 * digitHistory[0]</span>
-<span class="lineNum">     820 </span><span class="lineCov">       3493 :                                                                 + 10 * digitHistory[1]</span>
-<span class="lineNum">     821 </span><span class="lineCov">       3493 :                                                                 + digitHistory[2] &gt; 255)) {</span>
+<span class="lineNum">     818 </span><span class="lineCov">       3770 :                                         } else if ((digitCount == 3)</span>
+<span class="lineNum">     819 </span><span class="lineCov">       7022 :                                                         &amp;&amp; (100 * digitHistory[0]</span>
+<span class="lineNum">     820 </span><span class="lineCov">       3511 :                                                                 + 10 * digitHistory[1]</span>
+<span class="lineNum">     821 </span><span class="lineCov">       3511 :                                                                 + digitHistory[2] &gt; 255)) {</span>
 <span class="lineNum">     822 </span>            :                                                 /* Octet value too large */
 <span class="lineNum">     823 </span><span class="lineNoCov">          0 :                                                 if (digitHistory[0] &gt; 2) {</span>
 <span class="lineNum">     824 </span><span class="lineNoCov">          0 :                                                         URI_FUNC(StopSyntax)(state, first - 3, memory);</span>
@@ -893,25 +893,25 @@
 <span class="lineNum">     831 </span>            :                                         }
 <span class="lineNum">     832 </span>            : 
 <span class="lineNum">     833 </span>            :                                         /* Copy first IPv4 octet */
-<span class="lineNum">     834 </span><span class="lineCov">       3752 :                                         state-&gt;uri-&gt;hostData.ip6-&gt;data[16 - 4] = uriGetOctetValue(digitHistory, digitCount);</span>
-<span class="lineNum">     835 </span><span class="lineCov">       3752 :                                         digitCount = 0;</span>
+<span class="lineNum">     834 </span><span class="lineCov">       3770 :                                         state-&gt;uri-&gt;hostData.ip6-&gt;data[16 - 4] = uriGetOctetValue(digitHistory, digitCount);</span>
+<span class="lineNum">     835 </span><span class="lineCov">       3770 :                                         digitCount = 0;</span>
 <span class="lineNum">     836 </span>            : 
 <span class="lineNum">     837 </span>            :                                         /* Switch over to IPv4 loop */
-<span class="lineNum">     838 </span><span class="lineCov">       3752 :                                         ip4OctetsDone = 1;</span>
-<span class="lineNum">     839 </span><span class="lineCov">       3752 :                                         walking = 0;</span>
-<span class="lineNum">     840 </span><span class="lineCov">       3752 :                                         break;</span>
+<span class="lineNum">     838 </span><span class="lineCov">       3770 :                                         ip4OctetsDone = 1;</span>
+<span class="lineNum">     839 </span><span class="lineCov">       3770 :                                         walking = 0;</span>
+<span class="lineNum">     840 </span><span class="lineCov">       3770 :                                         break;</span>
 <span class="lineNum">     841 </span>            : 
-<span class="lineNum">     842 </span><span class="lineCov">       6045 :                                 case _UT(']'):</span>
+<span class="lineNum">     842 </span><span class="lineCov">       6059 :                                 case _UT(']'):</span>
 <span class="lineNum">     843 </span>            :                                         /* Too little quads? */
-<span class="lineNum">     844 </span><span class="lineCov">       6045 :                                         if (!zipperEver &amp;&amp; !((quadsDone == 7) &amp;&amp; (digitCount &gt; 0))) {</span>
+<span class="lineNum">     844 </span><span class="lineCov">       6059 :                                         if (!zipperEver &amp;&amp; !((quadsDone == 7) &amp;&amp; (digitCount &gt; 0))) {</span>
 <span class="lineNum">     845 </span><span class="lineNoCov">          0 :                                                 URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     846 </span><span class="lineNoCov">          0 :                                                 return NULL;</span>
 <span class="lineNum">     847 </span>            :                                         }
 <span class="lineNum">     848 </span>            : 
-<span class="lineNum">     849 </span><span class="lineCov">       6045 :                                         if (digitCount &gt; 0) {</span>
-<span class="lineNum">     850 </span><span class="lineCov">       1481 :                                                 if (zipperEver) {</span>
-<span class="lineNum">     851 </span><span class="lineCov">       1225 :                                                         uriWriteQuadToDoubleByte(digitHistory, digitCount, quadsAfterZipper + 2 * quadsAfterZipperCount);</span>
-<span class="lineNum">     852 </span><span class="lineCov">       1225 :                                                         quadsAfterZipperCount++;</span>
+<span class="lineNum">     849 </span><span class="lineCov">       6059 :                                         if (digitCount &gt; 0) {</span>
+<span class="lineNum">     850 </span><span class="lineCov">       1484 :                                                 if (zipperEver) {</span>
+<span class="lineNum">     851 </span><span class="lineCov">       1228 :                                                         uriWriteQuadToDoubleByte(digitHistory, digitCount, quadsAfterZipper + 2 * quadsAfterZipperCount);</span>
+<span class="lineNum">     852 </span><span class="lineCov">       1228 :                                                         quadsAfterZipperCount++;</span>
 <span class="lineNum">     853 </span>            :                                                 } else {
 <span class="lineNum">     854 </span><span class="lineCov">        256 :                                                         uriWriteQuadToDoubleByte(digitHistory, digitCount, state-&gt;uri-&gt;hostData.ip6-&gt;data + 2 * quadsDone);</span>
 <span class="lineNum">     855 </span>            :                                                 }
@@ -922,23 +922,23 @@
 <span class="lineNum">     860 </span>            :                                         }
 <span class="lineNum">     861 </span>            : 
 <span class="lineNum">     862 </span>            :                                         /* Copy missing quads to the end */
-<span class="lineNum">     863 </span><span class="lineCov">       6045 :                                         memcpy(state-&gt;uri-&gt;hostData.ip6-&gt;data + 16 - 2 * quadsAfterZipperCount,</span>
-<span class="lineNum">     864 </span><span class="lineCov">       6045 :                                                                 quadsAfterZipper, 2 * quadsAfterZipperCount);</span>
+<span class="lineNum">     863 </span><span class="lineCov">       6059 :                                         memcpy(state-&gt;uri-&gt;hostData.ip6-&gt;data + 16 - 2 * quadsAfterZipperCount,</span>
+<span class="lineNum">     864 </span><span class="lineCov">       6059 :                                                                 quadsAfterZipper, 2 * quadsAfterZipperCount);</span>
 <span class="lineNum">     865 </span>            : 
-<span class="lineNum">     866 </span><span class="lineCov">       6045 :                                         state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
-<span class="lineNum">     867 </span><span class="lineCov">       6045 :                                         return first + 1; /* Fine */</span>
+<span class="lineNum">     866 </span><span class="lineCov">       6059 :                                         state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
+<span class="lineNum">     867 </span><span class="lineCov">       6059 :                                         return first + 1; /* Fine */</span>
 <span class="lineNum">     868 </span>            : 
 <span class="lineNum">     869 </span><span class="lineNoCov">          0 :                                 default:</span>
 <span class="lineNum">     870 </span><span class="lineNoCov">          0 :                                         URI_FUNC(StopSyntax)(state, first, memory);</span>
 <span class="lineNum">     871 </span><span class="lineNoCov">          0 :                                         return NULL;</span>
 <span class="lineNum">     872 </span>            :                                 }
-<span class="lineNum">     873 </span><span class="lineCov">      94947 :                                 first++;</span>
+<span class="lineNum">     873 </span><span class="lineCov">      95351 :                                 first++;</span>
 <span class="lineNum">     874 </span>            : 
-<span class="lineNum">     875 </span><span class="lineCov">      94947 :                                 if (first &gt;= afterLast) {</span>
+<span class="lineNum">     875 </span><span class="lineCov">      95351 :                                 if (first &gt;= afterLast) {</span>
 <span class="lineNum">     876 </span><span class="lineNoCov">          0 :                                         URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">     877 </span><span class="lineNoCov">          0 :                                         return NULL; /* No ']' yet */</span>
 <span class="lineNum">     878 </span>            :                                 }
-<span class="lineNum">     879 </span><span class="lineCov">      94947 :                         } while (walking);</span>
+<span class="lineNum">     879 </span><span class="lineCov">      95351 :                         } while (walking);</span>
 <span class="lineNum">     880 </span>            :                 }
 <span class="lineNum">     881 </span>            :         }
 <span class="lineNum">     882 </span>            : }
@@ -1139,25 +1139,25 @@
 <span class="lineNum">    1077 </span>            : 
 <a name="1078"><span class="lineNum">    1078 </span>            : </a>
 <span class="lineNum">    1079 </span>            : 
-<span class="lineNum">    1080 </span><span class="lineCov">       2383 : static URI_INLINE UriBool URI_FUNC(OnExitOwnHostUserInfo)(</span>
+<span class="lineNum">    1080 </span><span class="lineCov">       2389 : static URI_INLINE UriBool URI_FUNC(OnExitOwnHostUserInfo)(</span>
 <span class="lineNum">    1081 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1082 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1083 </span><span class="lineCov">       2383 :         state-&gt;uri-&gt;hostText.first = state-&gt;uri-&gt;userInfo.first; /* Host instead of userInfo, update */</span>
-<span class="lineNum">    1084 </span><span class="lineCov">       2383 :         state-&gt;uri-&gt;userInfo.first = NULL; /* Not a userInfo, reset */</span>
-<span class="lineNum">    1085 </span><span class="lineCov">       2383 :         state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
+<span class="lineNum">    1083 </span><span class="lineCov">       2389 :         state-&gt;uri-&gt;hostText.first = state-&gt;uri-&gt;userInfo.first; /* Host instead of userInfo, update */</span>
+<span class="lineNum">    1084 </span><span class="lineCov">       2389 :         state-&gt;uri-&gt;userInfo.first = NULL; /* Not a userInfo, reset */</span>
+<span class="lineNum">    1085 </span><span class="lineCov">       2389 :         state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
 <span class="lineNum">    1086 </span>            : 
 <span class="lineNum">    1087 </span>            :         /* Valid IPv4 or just a regname? */
-<span class="lineNum">    1088 </span><span class="lineCov">       2383 :         state-&gt;uri-&gt;hostData.ip4 = memory-&gt;malloc(memory, 1 * sizeof(UriIp4)); /* Freed when stopping on parse error */</span>
-<span class="lineNum">    1089 </span><span class="lineCov">       2383 :         if (state-&gt;uri-&gt;hostData.ip4 == NULL) {</span>
+<span class="lineNum">    1088 </span><span class="lineCov">       2389 :         state-&gt;uri-&gt;hostData.ip4 = memory-&gt;malloc(memory, 1 * sizeof(UriIp4)); /* Freed when stopping on parse error */</span>
+<span class="lineNum">    1089 </span><span class="lineCov">       2389 :         if (state-&gt;uri-&gt;hostData.ip4 == NULL) {</span>
 <span class="lineNum">    1090 </span><span class="lineNoCov">          0 :                 return URI_FALSE; /* Raises malloc error */</span>
 <span class="lineNum">    1091 </span>            :         }
-<span class="lineNum">    1092 </span><span class="lineCov">       4766 :         if (URI_FUNC(ParseIpFourAddress)(state-&gt;uri-&gt;hostData.ip4-&gt;data,</span>
-<span class="lineNum">    1093 </span><span class="lineCov">       4766 :                         state-&gt;uri-&gt;hostText.first, state-&gt;uri-&gt;hostText.afterLast)) {</span>
+<span class="lineNum">    1092 </span><span class="lineCov">       4778 :         if (URI_FUNC(ParseIpFourAddress)(state-&gt;uri-&gt;hostData.ip4-&gt;data,</span>
+<span class="lineNum">    1093 </span><span class="lineCov">       4778 :                         state-&gt;uri-&gt;hostText.first, state-&gt;uri-&gt;hostText.afterLast)) {</span>
 <span class="lineNum">    1094 </span>            :                 /* Not IPv4 */
-<span class="lineNum">    1095 </span><span class="lineCov">       1524 :                 memory-&gt;free(memory, state-&gt;uri-&gt;hostData.ip4);</span>
-<span class="lineNum">    1096 </span><span class="lineCov">       1524 :                 state-&gt;uri-&gt;hostData.ip4 = NULL;</span>
+<span class="lineNum">    1095 </span><span class="lineCov">       1527 :                 memory-&gt;free(memory, state-&gt;uri-&gt;hostData.ip4);</span>
+<span class="lineNum">    1096 </span><span class="lineCov">       1527 :                 state-&gt;uri-&gt;hostData.ip4 = NULL;</span>
 <span class="lineNum">    1097 </span>            :         }
-<span class="lineNum">    1098 </span><span class="lineCov">       2383 :         return URI_TRUE; /* Success */</span>
+<span class="lineNum">    1098 </span><span class="lineCov">       2389 :         return URI_TRUE; /* Success */</span>
 <span class="lineNum">    1099 </span>            : }
 <span class="lineNum">    1100 </span>            : 
 <span class="lineNum">    1101 </span>            : 
@@ -1166,19 +1166,19 @@
 <span class="lineNum">    1104 </span>            :  * [ownHostUserInfo]-&gt;[ownHostUserInfoNz]
 <a name="1105"><span class="lineNum">    1105 </span>            :  * [ownHostUserInfo]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    1106 </span>            :  */
-<span class="lineNum">    1107 </span><span class="lineCov">      14582 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseOwnHostUserInfo)(</span>
+<span class="lineNum">    1107 </span><span class="lineCov">      14630 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseOwnHostUserInfo)(</span>
 <span class="lineNum">    1108 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1109 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1110 </span><span class="lineCov">      14582 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    1111 </span><span class="lineCov">       2144 :                 if (!URI_FUNC(OnExitOwnHostUserInfo)(state, first, memory)) {</span>
+<span class="lineNum">    1110 </span><span class="lineCov">      14630 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1111 </span><span class="lineCov">       2150 :                 if (!URI_FUNC(OnExitOwnHostUserInfo)(state, first, memory)) {</span>
 <span class="lineNum">    1112 </span><span class="lineNoCov">          0 :                         URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">    1113 </span><span class="lineNoCov">          0 :                         return NULL;</span>
 <span class="lineNum">    1114 </span>            :                 }
-<span class="lineNum">    1115 </span><span class="lineCov">       2144 :                 return afterLast;</span>
+<span class="lineNum">    1115 </span><span class="lineCov">       2150 :                 return afterLast;</span>
 <span class="lineNum">    1116 </span>            :         }
 <span class="lineNum">    1117 </span>            : 
-<span class="lineNum">    1118 </span><span class="lineCov">      12438 :         switch (*first) {</span>
-<span class="lineNum">    1119 </span><span class="lineCov">      12199 :         case _UT('!'):</span>
+<span class="lineNum">    1118 </span><span class="lineCov">      12480 :         switch (*first) {</span>
+<span class="lineNum">    1119 </span><span class="lineCov">      12241 :         case _UT('!'):</span>
 <span class="lineNum">    1120 </span>            :         case _UT('$'):
 <span class="lineNum">    1121 </span>            :         case _UT('%'):
 <span class="lineNum">    1122 </span>            :         case _UT('&amp;'):
@@ -1198,7 +1198,7 @@
 <span class="lineNum">    1136 </span>            :         case _UT('='):
 <span class="lineNum">    1137 </span>            :         case URI_SET_DIGIT:
 <span class="lineNum">    1138 </span>            :         case URI_SET_ALPHA:
-<span class="lineNum">    1139 </span><span class="lineCov">      12199 :                 return URI_FUNC(ParseOwnHostUserInfoNz)(state, first, afterLast, memory);</span>
+<span class="lineNum">    1139 </span><span class="lineCov">      12241 :                 return URI_FUNC(ParseOwnHostUserInfoNz)(state, first, afterLast, memory);</span>
 <span class="lineNum">    1140 </span>            : 
 <span class="lineNum">    1141 </span><span class="lineCov">        239 :         default:</span>
 <span class="lineNum">    1142 </span><span class="lineCov">        239 :                 if (!URI_FUNC(OnExitOwnHostUserInfo)(state, first, memory)) {</span>
@@ -1216,16 +1216,16 @@
 <span class="lineNum">    1154 </span>            :  * [ownHostUserInfoNz]-&gt;&lt;:&gt;[ownPortUserInfo]
 <a name="1155"><span class="lineNum">    1155 </span>            :  * [ownHostUserInfoNz]-&gt;&lt;@&gt;[ownHost]</a>
 <span class="lineNum">    1156 </span>            :  */
-<span class="lineNum">    1157 </span><span class="lineCov">      14871 : static const URI_CHAR * URI_FUNC(ParseOwnHostUserInfoNz)(</span>
+<span class="lineNum">    1157 </span><span class="lineCov">      14920 : static const URI_CHAR * URI_FUNC(ParseOwnHostUserInfoNz)(</span>
 <span class="lineNum">    1158 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1159 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1160 </span><span class="lineCov">      14871 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1160 </span><span class="lineCov">      14920 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1161 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">    1162 </span><span class="lineNoCov">          0 :                 return NULL;</span>
 <span class="lineNum">    1163 </span>            :         }
 <span class="lineNum">    1164 </span>            : 
-<span class="lineNum">    1165 </span><span class="lineCov">      14871 :         switch (*first) {</span>
-<span class="lineNum">    1166 </span><span class="lineCov">      14584 :         case _UT('!'):</span>
+<span class="lineNum">    1165 </span><span class="lineCov">      14920 :         switch (*first) {</span>
+<span class="lineNum">    1166 </span><span class="lineCov">      14632 :         case _UT('!'):</span>
 <span class="lineNum">    1167 </span>            :         case _UT('$'):
 <span class="lineNum">    1168 </span>            :         case _UT('%'):
 <span class="lineNum">    1169 </span>            :         case _UT('&amp;'):
@@ -1244,18 +1244,18 @@
 <span class="lineNum">    1182 </span>            :         case URI_SET_DIGIT:
 <span class="lineNum">    1183 </span>            :         case URI_SET_ALPHA:
 <span class="lineNum">    1184 </span>            :                 {
-<span class="lineNum">    1185 </span><span class="lineCov">      14584 :                         const URI_CHAR * const afterPctSubUnres</span>
+<span class="lineNum">    1185 </span><span class="lineCov">      14632 :                         const URI_CHAR * const afterPctSubUnres</span>
 <span class="lineNum">    1186 </span>            :                                         = URI_FUNC(ParsePctSubUnres)(state, first, afterLast, memory);
-<span class="lineNum">    1187 </span><span class="lineCov">      14584 :                         if (afterPctSubUnres == NULL) {</span>
+<span class="lineNum">    1187 </span><span class="lineCov">      14632 :                         if (afterPctSubUnres == NULL) {</span>
 <span class="lineNum">    1188 </span><span class="lineCov">          2 :                                 return NULL;</span>
 <span class="lineNum">    1189 </span>            :                         }
-<span class="lineNum">    1190 </span><span class="lineCov">      14582 :                         return URI_FUNC(ParseOwnHostUserInfo)(state, afterPctSubUnres, afterLast, memory);</span>
+<span class="lineNum">    1190 </span><span class="lineCov">      14630 :                         return URI_FUNC(ParseOwnHostUserInfo)(state, afterPctSubUnres, afterLast, memory);</span>
 <span class="lineNum">    1191 </span>            :                 }
 <span class="lineNum">    1192 </span>            : 
-<span class="lineNum">    1193 </span><span class="lineCov">        185 :         case _UT(':'):</span>
-<span class="lineNum">    1194 </span><span class="lineCov">        185 :                 state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
-<span class="lineNum">    1195 </span><span class="lineCov">        185 :                 state-&gt;uri-&gt;portText.first = first + 1; /* PORT BEGIN */</span>
-<span class="lineNum">    1196 </span><span class="lineCov">        185 :                 return URI_FUNC(ParseOwnPortUserInfo)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1193 </span><span class="lineCov">        186 :         case _UT(':'):</span>
+<span class="lineNum">    1194 </span><span class="lineCov">        186 :                 state-&gt;uri-&gt;hostText.afterLast = first; /* HOST END */</span>
+<span class="lineNum">    1195 </span><span class="lineCov">        186 :                 state-&gt;uri-&gt;portText.first = first + 1; /* PORT BEGIN */</span>
+<span class="lineNum">    1196 </span><span class="lineCov">        186 :                 return URI_FUNC(ParseOwnPortUserInfo)(state, first + 1, afterLast, memory);</span>
 <span class="lineNum">    1197 </span>            : 
 <span class="lineNum">    1198 </span><span class="lineCov">        102 :         case _UT('@'):</span>
 <span class="lineNum">    1199 </span><span class="lineCov">        102 :                 state-&gt;uri-&gt;userInfo.afterLast = first; /* USERINFO END */</span>
@@ -1270,25 +1270,25 @@
 <span class="lineNum">    1208 </span>            : 
 <a name="1209"><span class="lineNum">    1209 </span>            : </a>
 <span class="lineNum">    1210 </span>            : 
-<span class="lineNum">    1211 </span><span class="lineCov">         90 : static URI_INLINE UriBool URI_FUNC(OnExitOwnPortUserInfo)(</span>
+<span class="lineNum">    1211 </span><span class="lineCov">         91 : static URI_INLINE UriBool URI_FUNC(OnExitOwnPortUserInfo)(</span>
 <span class="lineNum">    1212 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1213 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1214 </span><span class="lineCov">         90 :         state-&gt;uri-&gt;hostText.first = state-&gt;uri-&gt;userInfo.first; /* Host instead of userInfo, update */</span>
-<span class="lineNum">    1215 </span><span class="lineCov">         90 :         state-&gt;uri-&gt;userInfo.first = NULL; /* Not a userInfo, reset */</span>
-<span class="lineNum">    1216 </span><span class="lineCov">         90 :         state-&gt;uri-&gt;portText.afterLast = first; /* PORT END */</span>
+<span class="lineNum">    1214 </span><span class="lineCov">         91 :         state-&gt;uri-&gt;hostText.first = state-&gt;uri-&gt;userInfo.first; /* Host instead of userInfo, update */</span>
+<span class="lineNum">    1215 </span><span class="lineCov">         91 :         state-&gt;uri-&gt;userInfo.first = NULL; /* Not a userInfo, reset */</span>
+<span class="lineNum">    1216 </span><span class="lineCov">         91 :         state-&gt;uri-&gt;portText.afterLast = first; /* PORT END */</span>
 <span class="lineNum">    1217 </span>            : 
 <span class="lineNum">    1218 </span>            :         /* Valid IPv4 or just a regname? */
-<span class="lineNum">    1219 </span><span class="lineCov">         90 :         state-&gt;uri-&gt;hostData.ip4 = memory-&gt;malloc(memory, 1 * sizeof(UriIp4)); /* Freed when stopping on parse error */</span>
-<span class="lineNum">    1220 </span><span class="lineCov">         90 :         if (state-&gt;uri-&gt;hostData.ip4 == NULL) {</span>
+<span class="lineNum">    1219 </span><span class="lineCov">         91 :         state-&gt;uri-&gt;hostData.ip4 = memory-&gt;malloc(memory, 1 * sizeof(UriIp4)); /* Freed when stopping on parse error */</span>
+<span class="lineNum">    1220 </span><span class="lineCov">         91 :         if (state-&gt;uri-&gt;hostData.ip4 == NULL) {</span>
 <span class="lineNum">    1221 </span><span class="lineNoCov">          0 :                 return URI_FALSE; /* Raises malloc error */</span>
 <span class="lineNum">    1222 </span>            :         }
-<span class="lineNum">    1223 </span><span class="lineCov">        180 :         if (URI_FUNC(ParseIpFourAddress)(state-&gt;uri-&gt;hostData.ip4-&gt;data,</span>
-<span class="lineNum">    1224 </span><span class="lineCov">        180 :                         state-&gt;uri-&gt;hostText.first, state-&gt;uri-&gt;hostText.afterLast)) {</span>
+<span class="lineNum">    1223 </span><span class="lineCov">        182 :         if (URI_FUNC(ParseIpFourAddress)(state-&gt;uri-&gt;hostData.ip4-&gt;data,</span>
+<span class="lineNum">    1224 </span><span class="lineCov">        182 :                         state-&gt;uri-&gt;hostText.first, state-&gt;uri-&gt;hostText.afterLast)) {</span>
 <span class="lineNum">    1225 </span>            :                 /* Not IPv4 */
-<span class="lineNum">    1226 </span><span class="lineCov">         90 :                 memory-&gt;free(memory, state-&gt;uri-&gt;hostData.ip4);</span>
-<span class="lineNum">    1227 </span><span class="lineCov">         90 :                 state-&gt;uri-&gt;hostData.ip4 = NULL;</span>
+<span class="lineNum">    1226 </span><span class="lineCov">         91 :                 memory-&gt;free(memory, state-&gt;uri-&gt;hostData.ip4);</span>
+<span class="lineNum">    1227 </span><span class="lineCov">         91 :                 state-&gt;uri-&gt;hostData.ip4 = NULL;</span>
 <span class="lineNum">    1228 </span>            :         }
-<span class="lineNum">    1229 </span><span class="lineCov">         90 :         return URI_TRUE; /* Success */</span>
+<span class="lineNum">    1229 </span><span class="lineCov">         91 :         return URI_TRUE; /* Success */</span>
 <span class="lineNum">    1230 </span>            : }
 <span class="lineNum">    1231 </span>            : 
 <span class="lineNum">    1232 </span>            : 
@@ -1306,10 +1306,10 @@
 <span class="lineNum">    1244 </span>            :  * [ownPortUserInfo]-&gt;&lt;@&gt;[ownHost]
 <a name="1245"><span class="lineNum">    1245 </span>            :  * [ownPortUserInfo]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    1246 </span>            :  */
-<span class="lineNum">    1247 </span><span class="lineCov">        191 : static const URI_CHAR * URI_FUNC(ParseOwnPortUserInfo)(</span>
+<span class="lineNum">    1247 </span><span class="lineCov">        192 : static const URI_CHAR * URI_FUNC(ParseOwnPortUserInfo)(</span>
 <span class="lineNum">    1248 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1249 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1250 </span><span class="lineCov">        191 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1250 </span><span class="lineCov">        192 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1251 </span><span class="lineNoCov">          0 :                 if (!URI_FUNC(OnExitOwnPortUserInfo)(state, first, memory)) {</span>
 <span class="lineNum">    1252 </span><span class="lineNoCov">          0 :                         URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">    1253 </span><span class="lineNoCov">          0 :                         return NULL;</span>
@@ -1317,7 +1317,7 @@
 <span class="lineNum">    1255 </span><span class="lineNoCov">          0 :                 return afterLast;</span>
 <span class="lineNum">    1256 </span>            :         }
 <span class="lineNum">    1257 </span>            : 
-<span class="lineNum">    1258 </span><span class="lineCov">        191 :         switch (*first) {</span>
+<span class="lineNum">    1258 </span><span class="lineCov">        192 :         switch (*first) {</span>
 <span class="lineNum">    1259 </span>            :         /* begin sub-delims */
 <span class="lineNum">    1260 </span><span class="lineCov">         46 :         case _UT('!'):</span>
 <span class="lineNum">    1261 </span>            :         case _UT('$'):
@@ -1364,12 +1364,12 @@
 <span class="lineNum">    1302 </span><span class="lineCov">          7 :                 state-&gt;uri-&gt;hostText.first = first + 1; /* HOST BEGIN */</span>
 <span class="lineNum">    1303 </span><span class="lineCov">          7 :                 return URI_FUNC(ParseOwnHost)(state, first + 1, afterLast, memory);</span>
 <span class="lineNum">    1304 </span>            : 
-<span class="lineNum">    1305 </span><span class="lineCov">         90 :         default:</span>
-<span class="lineNum">    1306 </span><span class="lineCov">         90 :                 if (!URI_FUNC(OnExitOwnPortUserInfo)(state, first, memory)) {</span>
+<span class="lineNum">    1305 </span><span class="lineCov">         91 :         default:</span>
+<span class="lineNum">    1306 </span><span class="lineCov">         91 :                 if (!URI_FUNC(OnExitOwnPortUserInfo)(state, first, memory)) {</span>
 <span class="lineNum">    1307 </span><span class="lineNoCov">          0 :                         URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">    1308 </span><span class="lineNoCov">          0 :                         return NULL;</span>
 <span class="lineNum">    1309 </span>            :                 }
-<span class="lineNum">    1310 </span><span class="lineCov">         90 :                 return first;</span>
+<span class="lineNum">    1310 </span><span class="lineCov">         91 :                 return first;</span>
 <span class="lineNum">    1311 </span>            :         }
 <span class="lineNum">    1312 </span>            : }
 <span class="lineNum">    1313 </span>            : 
@@ -1433,9 +1433,9 @@
 <span class="lineNum">    1371 </span>            : 
 <a name="1372"><span class="lineNum">    1372 </span>            : </a>
 <span class="lineNum">    1373 </span>            : 
-<span class="lineNum">    1374 </span><span class="lineCov">       6668 : static URI_INLINE void URI_FUNC(OnExitPartHelperTwo)(URI_TYPE(ParserState) * state) {</span>
-<span class="lineNum">    1375 </span><span class="lineCov">       6668 :         state-&gt;uri-&gt;absolutePath = URI_TRUE;</span>
-<span class="lineNum">    1376 </span><span class="lineCov">       6668 : }</span>
+<span class="lineNum">    1374 </span><span class="lineCov">       6692 : static URI_INLINE void URI_FUNC(OnExitPartHelperTwo)(URI_TYPE(ParserState) * state) {</span>
+<span class="lineNum">    1375 </span><span class="lineCov">       6692 :         state-&gt;uri-&gt;absolutePath = URI_TRUE;</span>
+<span class="lineNum">    1376 </span><span class="lineCov">       6692 : }</span>
 <span class="lineNum">    1377 </span>            : 
 <span class="lineNum">    1378 </span>            : 
 <span class="lineNum">    1379 </span>            : 
@@ -1443,33 +1443,33 @@
 <span class="lineNum">    1381 </span>            :  * [partHelperTwo]-&gt;[pathAbsNoLeadSlash] // can take &lt;NULL&gt;
 <a name="1382"><span class="lineNum">    1382 </span>            :  * [partHelperTwo]-&gt;&lt;/&gt;[authority][pathAbsEmpty]</a>
 <span class="lineNum">    1383 </span>            :  */
-<span class="lineNum">    1384 </span><span class="lineCov">      23668 : static URI_INLINE const URI_CHAR * URI_FUNC(ParsePartHelperTwo)(</span>
+<span class="lineNum">    1384 </span><span class="lineCov">      23748 : static URI_INLINE const URI_CHAR * URI_FUNC(ParsePartHelperTwo)(</span>
 <span class="lineNum">    1385 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1386 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1387 </span><span class="lineCov">      23668 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    1388 </span><span class="lineCov">       4325 :                 URI_FUNC(OnExitPartHelperTwo)(state);</span>
-<span class="lineNum">    1389 </span><span class="lineCov">       4325 :                 return afterLast;</span>
+<span class="lineNum">    1387 </span><span class="lineCov">      23748 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1388 </span><span class="lineCov">       4340 :                 URI_FUNC(OnExitPartHelperTwo)(state);</span>
+<span class="lineNum">    1389 </span><span class="lineCov">       4340 :                 return afterLast;</span>
 <span class="lineNum">    1390 </span>            :         }
 <span class="lineNum">    1391 </span>            : 
-<span class="lineNum">    1392 </span><span class="lineCov">      19343 :         switch (*first) {</span>
-<span class="lineNum">    1393 </span><span class="lineCov">      17000 :         case _UT('/'):</span>
+<span class="lineNum">    1392 </span><span class="lineCov">      19408 :         switch (*first) {</span>
+<span class="lineNum">    1393 </span><span class="lineCov">      17056 :         case _UT('/'):</span>
 <span class="lineNum">    1394 </span>            :                 {
-<span class="lineNum">    1395 </span><span class="lineCov">      17000 :                         const URI_CHAR * const afterAuthority</span>
-<span class="lineNum">    1396 </span><span class="lineCov">      17000 :                                         = URI_FUNC(ParseAuthority)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1395 </span><span class="lineCov">      17056 :                         const URI_CHAR * const afterAuthority</span>
+<span class="lineNum">    1396 </span><span class="lineCov">      17056 :                                         = URI_FUNC(ParseAuthority)(state, first + 1, afterLast, memory);</span>
 <span class="lineNum">    1397 </span>            :                         const URI_CHAR * afterPathAbsEmpty;
-<span class="lineNum">    1398 </span><span class="lineCov">      17000 :                         if (afterAuthority == NULL) {</span>
+<span class="lineNum">    1398 </span><span class="lineCov">      17056 :                         if (afterAuthority == NULL) {</span>
 <span class="lineNum">    1399 </span><span class="lineCov">        165 :                                 return NULL;</span>
 <span class="lineNum">    1400 </span>            :                         }
-<span class="lineNum">    1401 </span><span class="lineCov">      16835 :                         afterPathAbsEmpty = URI_FUNC(ParsePathAbsEmpty)(state, afterAuthority, afterLast, memory);</span>
+<span class="lineNum">    1401 </span><span class="lineCov">      16891 :                         afterPathAbsEmpty = URI_FUNC(ParsePathAbsEmpty)(state, afterAuthority, afterLast, memory);</span>
 <span class="lineNum">    1402 </span>            : 
-<span class="lineNum">    1403 </span><span class="lineCov">      16835 :                         URI_FUNC(FixEmptyTrailSegment)(state-&gt;uri, memory);</span>
+<span class="lineNum">    1403 </span><span class="lineCov">      16891 :                         URI_FUNC(FixEmptyTrailSegment)(state-&gt;uri, memory);</span>
 <span class="lineNum">    1404 </span>            : 
-<span class="lineNum">    1405 </span><span class="lineCov">      16835 :                         return afterPathAbsEmpty;</span>
+<span class="lineNum">    1405 </span><span class="lineCov">      16891 :                         return afterPathAbsEmpty;</span>
 <span class="lineNum">    1406 </span>            :                 }
 <span class="lineNum">    1407 </span>            : 
-<span class="lineNum">    1408 </span><span class="lineCov">       2343 :         default:</span>
-<span class="lineNum">    1409 </span><span class="lineCov">       2343 :                 URI_FUNC(OnExitPartHelperTwo)(state);</span>
-<span class="lineNum">    1410 </span><span class="lineCov">       2343 :                 return URI_FUNC(ParsePathAbsNoLeadSlash)(state, first, afterLast, memory);</span>
+<span class="lineNum">    1408 </span><span class="lineCov">       2352 :         default:</span>
+<span class="lineNum">    1409 </span><span class="lineCov">       2352 :                 URI_FUNC(OnExitPartHelperTwo)(state);</span>
+<span class="lineNum">    1410 </span><span class="lineCov">       2352 :                 return URI_FUNC(ParsePathAbsNoLeadSlash)(state, first, afterLast, memory);</span>
 <span class="lineNum">    1411 </span>            :         }
 <span class="lineNum">    1412 </span>            : }
 <span class="lineNum">    1413 </span>            : 
@@ -1479,30 +1479,30 @@
 <span class="lineNum">    1417 </span>            :  * [pathAbsEmpty]-&gt;&lt;/&gt;[segment][pathAbsEmpty]
 <a name="1418"><span class="lineNum">    1418 </span>            :  * [pathAbsEmpty]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    1419 </span>            :  */
-<span class="lineNum">    1420 </span><span class="lineCov">      22815 : static const URI_CHAR * URI_FUNC(ParsePathAbsEmpty)(</span>
+<span class="lineNum">    1420 </span><span class="lineCov">      22889 : static const URI_CHAR * URI_FUNC(ParsePathAbsEmpty)(</span>
 <span class="lineNum">    1421 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1422 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1423 </span><span class="lineCov">      22815 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    1424 </span><span class="lineCov">      14374 :                 return afterLast;</span>
+<span class="lineNum">    1423 </span><span class="lineCov">      22889 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1424 </span><span class="lineCov">      14422 :                 return afterLast;</span>
 <span class="lineNum">    1425 </span>            :         }
 <span class="lineNum">    1426 </span>            : 
-<span class="lineNum">    1427 </span><span class="lineCov">       8441 :         switch (*first) {</span>
-<span class="lineNum">    1428 </span><span class="lineCov">       6015 :         case _UT('/'):</span>
+<span class="lineNum">    1427 </span><span class="lineCov">       8467 :         switch (*first) {</span>
+<span class="lineNum">    1428 </span><span class="lineCov">       6033 :         case _UT('/'):</span>
 <span class="lineNum">    1429 </span>            :                 {
-<span class="lineNum">    1430 </span><span class="lineCov">       6015 :                         const URI_CHAR * const afterSegment</span>
-<span class="lineNum">    1431 </span><span class="lineCov">       6015 :                                         = URI_FUNC(ParseSegment)(state, first + 1, afterLast, memory);</span>
-<span class="lineNum">    1432 </span><span class="lineCov">       6015 :                         if (afterSegment == NULL) {</span>
+<span class="lineNum">    1430 </span><span class="lineCov">       6033 :                         const URI_CHAR * const afterSegment</span>
+<span class="lineNum">    1431 </span><span class="lineCov">       6033 :                                         = URI_FUNC(ParseSegment)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1432 </span><span class="lineCov">       6033 :                         if (afterSegment == NULL) {</span>
 <span class="lineNum">    1433 </span><span class="lineCov">         35 :                                 return NULL;</span>
 <span class="lineNum">    1434 </span>            :                         }
-<span class="lineNum">    1435 </span><span class="lineCov">       5980 :                         if (!URI_FUNC(PushPathSegment)(state, first + 1, afterSegment, memory)) { /* SEGMENT BOTH */</span>
+<span class="lineNum">    1435 </span><span class="lineCov">       5998 :                         if (!URI_FUNC(PushPathSegment)(state, first + 1, afterSegment, memory)) { /* SEGMENT BOTH */</span>
 <span class="lineNum">    1436 </span><span class="lineNoCov">          0 :                                 URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">    1437 </span><span class="lineNoCov">          0 :                                 return NULL;</span>
 <span class="lineNum">    1438 </span>            :                         }
-<span class="lineNum">    1439 </span><span class="lineCov">       5980 :                         return URI_FUNC(ParsePathAbsEmpty)(state, afterSegment, afterLast, memory);</span>
+<span class="lineNum">    1439 </span><span class="lineCov">       5998 :                         return URI_FUNC(ParsePathAbsEmpty)(state, afterSegment, afterLast, memory);</span>
 <span class="lineNum">    1440 </span>            :                 }
 <span class="lineNum">    1441 </span>            : 
-<span class="lineNum">    1442 </span><span class="lineCov">       2426 :         default:</span>
-<span class="lineNum">    1443 </span><span class="lineCov">       2426 :                 return first;</span>
+<span class="lineNum">    1442 </span><span class="lineCov">       2434 :         default:</span>
+<span class="lineNum">    1443 </span><span class="lineCov">       2434 :                 return first;</span>
 <span class="lineNum">    1444 </span>            :         }
 <span class="lineNum">    1445 </span>            : }
 <span class="lineNum">    1446 </span>            : 
@@ -1512,15 +1512,15 @@
 <span class="lineNum">    1450 </span>            :  * [pathAbsNoLeadSlash]-&gt;[segmentNz][zeroMoreSlashSegs]
 <a name="1451"><span class="lineNum">    1451 </span>            :  * [pathAbsNoLeadSlash]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    1452 </span>            :  */
-<span class="lineNum">    1453 </span><span class="lineCov">       2343 : static URI_INLINE const URI_CHAR * URI_FUNC(ParsePathAbsNoLeadSlash)(</span>
+<span class="lineNum">    1453 </span><span class="lineCov">       2352 : static URI_INLINE const URI_CHAR * URI_FUNC(ParsePathAbsNoLeadSlash)(</span>
 <span class="lineNum">    1454 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1455 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1456 </span><span class="lineCov">       2343 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1456 </span><span class="lineCov">       2352 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1457 </span><span class="lineNoCov">          0 :                 return afterLast;</span>
 <span class="lineNum">    1458 </span>            :         }
 <span class="lineNum">    1459 </span>            : 
-<span class="lineNum">    1460 </span><span class="lineCov">       2343 :         switch (*first) {</span>
-<span class="lineNum">    1461 </span><span class="lineCov">       1260 :         case _UT('!'):</span>
+<span class="lineNum">    1460 </span><span class="lineCov">       2352 :         switch (*first) {</span>
+<span class="lineNum">    1461 </span><span class="lineCov">       1264 :         case _UT('!'):</span>
 <span class="lineNum">    1462 </span>            :         case _UT('$'):
 <span class="lineNum">    1463 </span>            :         case _UT('%'):
 <span class="lineNum">    1464 </span>            :         case _UT('&amp;'):
@@ -1541,20 +1541,20 @@
 <span class="lineNum">    1479 </span>            :         case URI_SET_DIGIT:
 <span class="lineNum">    1480 </span>            :         case URI_SET_ALPHA:
 <span class="lineNum">    1481 </span>            :                 {
-<span class="lineNum">    1482 </span><span class="lineCov">       1260 :                         const URI_CHAR * const afterSegmentNz</span>
+<span class="lineNum">    1482 </span><span class="lineCov">       1264 :                         const URI_CHAR * const afterSegmentNz</span>
 <span class="lineNum">    1483 </span>            :                                         = URI_FUNC(ParseSegmentNz)(state, first, afterLast, memory);
-<span class="lineNum">    1484 </span><span class="lineCov">       1260 :                         if (afterSegmentNz == NULL) {</span>
+<span class="lineNum">    1484 </span><span class="lineCov">       1264 :                         if (afterSegmentNz == NULL) {</span>
 <span class="lineNum">    1485 </span><span class="lineCov">         25 :                                 return NULL;</span>
 <span class="lineNum">    1486 </span>            :                         }
-<span class="lineNum">    1487 </span><span class="lineCov">       1235 :                         if (!URI_FUNC(PushPathSegment)(state, first, afterSegmentNz, memory)) { /* SEGMENT BOTH */</span>
+<span class="lineNum">    1487 </span><span class="lineCov">       1239 :                         if (!URI_FUNC(PushPathSegment)(state, first, afterSegmentNz, memory)) { /* SEGMENT BOTH */</span>
 <span class="lineNum">    1488 </span><span class="lineNoCov">          0 :                                 URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">    1489 </span><span class="lineNoCov">          0 :                                 return NULL;</span>
 <span class="lineNum">    1490 </span>            :                         }
-<span class="lineNum">    1491 </span><span class="lineCov">       1235 :                         return URI_FUNC(ParseZeroMoreSlashSegs)(state, afterSegmentNz, afterLast, memory);</span>
+<span class="lineNum">    1491 </span><span class="lineCov">       1239 :                         return URI_FUNC(ParseZeroMoreSlashSegs)(state, afterSegmentNz, afterLast, memory);</span>
 <span class="lineNum">    1492 </span>            :                 }
 <span class="lineNum">    1493 </span>            : 
-<span class="lineNum">    1494 </span><span class="lineCov">       1083 :         default:</span>
-<span class="lineNum">    1495 </span><span class="lineCov">       1083 :                 return first;</span>
+<span class="lineNum">    1494 </span><span class="lineCov">       1088 :         default:</span>
+<span class="lineNum">    1495 </span><span class="lineCov">       1088 :                 return first;</span>
 <span class="lineNum">    1496 </span>            :         }
 <span class="lineNum">    1497 </span>            : }
 <span class="lineNum">    1498 </span>            : 
@@ -1588,19 +1588,19 @@
 <span class="lineNum">    1526 </span>            :  * [pchar]-&gt;&lt;:&gt;
 <a name="1527"><span class="lineNum">    1527 </span>            :  * [pchar]-&gt;&lt;@&gt;</a>
 <span class="lineNum">    1528 </span>            :  */
-<span class="lineNum">    1529 </span><span class="lineCov">       5223 : static const URI_CHAR * URI_FUNC(ParsePchar)(URI_TYPE(ParserState) * state,</span>
+<span class="lineNum">    1529 </span><span class="lineCov">       5236 : static const URI_CHAR * URI_FUNC(ParsePchar)(URI_TYPE(ParserState) * state,</span>
 <span class="lineNum">    1530 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    1531 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1532 </span><span class="lineCov">       5223 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1532 </span><span class="lineCov">       5236 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1533 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">    1534 </span><span class="lineNoCov">          0 :                 return NULL;</span>
 <span class="lineNum">    1535 </span>            :         }
 <span class="lineNum">    1536 </span>            : 
-<span class="lineNum">    1537 </span><span class="lineCov">       5223 :         switch (*first) {</span>
-<span class="lineNum">    1538 </span><span class="lineCov">       2003 :         case _UT('%'):</span>
-<span class="lineNum">    1539 </span><span class="lineCov">       2003 :                 return URI_FUNC(ParsePctEncoded)(state, first, afterLast, memory);</span>
+<span class="lineNum">    1537 </span><span class="lineCov">       5236 :         switch (*first) {</span>
+<span class="lineNum">    1538 </span><span class="lineCov">       2008 :         case _UT('%'):</span>
+<span class="lineNum">    1539 </span><span class="lineCov">       2008 :                 return URI_FUNC(ParsePctEncoded)(state, first, afterLast, memory);</span>
 <span class="lineNum">    1540 </span>            : 
-<span class="lineNum">    1541 </span><span class="lineCov">       3220 :         case _UT(':'):</span>
+<span class="lineNum">    1541 </span><span class="lineCov">       3228 :         case _UT(':'):</span>
 <span class="lineNum">    1542 </span>            :         case _UT('@'):
 <span class="lineNum">    1543 </span>            :         case _UT('!'):
 <span class="lineNum">    1544 </span>            :         case _UT('$'):
@@ -1619,7 +1619,7 @@
 <span class="lineNum">    1557 </span>            :         case _UT('~'):
 <span class="lineNum">    1558 </span>            :         case URI_SET_DIGIT:
 <span class="lineNum">    1559 </span>            :         case URI_SET_ALPHA:
-<span class="lineNum">    1560 </span><span class="lineCov">       3220 :                 return first + 1;</span>
+<span class="lineNum">    1560 </span><span class="lineCov">       3228 :                 return first + 1;</span>
 <span class="lineNum">    1561 </span>            : 
 <span class="lineNum">    1562 </span><span class="lineNoCov">          0 :         default:</span>
 <span class="lineNum">    1563 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, first, memory);</span>
@@ -1632,11 +1632,11 @@
 <span class="lineNum">    1570 </span>            : /*
 <a name="1571"><span class="lineNum">    1571 </span>            :  * [pctEncoded]-&gt;&lt;%&gt;[HEXDIG][HEXDIG]</a>
 <span class="lineNum">    1572 </span>            :  */
-<span class="lineNum">    1573 </span><span class="lineCov">       2510 : static const URI_CHAR * URI_FUNC(ParsePctEncoded)(</span>
+<span class="lineNum">    1573 </span><span class="lineCov">       2515 : static const URI_CHAR * URI_FUNC(ParsePctEncoded)(</span>
 <span class="lineNum">    1574 </span>            :                 URI_TYPE(ParserState) * state,
 <span class="lineNum">    1575 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    1576 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1577 </span><span class="lineCov">       2510 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1577 </span><span class="lineCov">       2515 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1578 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">    1579 </span><span class="lineNoCov">          0 :                 return NULL;</span>
 <span class="lineNum">    1580 </span>            :         }
@@ -1648,21 +1648,21 @@
 <span class="lineNum">    1586 </span>            :         switch (*first) {
 <span class="lineNum">    1587 </span>            :         case _UT('%'):
 <span class="lineNum">    1588 </span>            :         */
-<span class="lineNum">    1589 </span><span class="lineCov">       2510 :                 if (first + 1 &gt;= afterLast) {</span>
+<span class="lineNum">    1589 </span><span class="lineCov">       2515 :                 if (first + 1 &gt;= afterLast) {</span>
 <span class="lineNum">    1590 </span><span class="lineCov">         55 :                         URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">    1591 </span><span class="lineCov">         55 :                         return NULL;</span>
 <span class="lineNum">    1592 </span>            :                 }
 <span class="lineNum">    1593 </span>            : 
-<span class="lineNum">    1594 </span><span class="lineCov">       2455 :                 switch (first[1]) {</span>
-<span class="lineNum">    1595 </span><span class="lineCov">       2406 :                 case URI_SET_HEXDIG:</span>
-<span class="lineNum">    1596 </span><span class="lineCov">       2406 :                         if (first + 2 &gt;= afterLast) {</span>
+<span class="lineNum">    1594 </span><span class="lineCov">       2460 :                 switch (first[1]) {</span>
+<span class="lineNum">    1595 </span><span class="lineCov">       2411 :                 case URI_SET_HEXDIG:</span>
+<span class="lineNum">    1596 </span><span class="lineCov">       2411 :                         if (first + 2 &gt;= afterLast) {</span>
 <span class="lineNum">    1597 </span><span class="lineCov">          2 :                                 URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">    1598 </span><span class="lineCov">          2 :                                 return NULL;</span>
 <span class="lineNum">    1599 </span>            :                         }
 <span class="lineNum">    1600 </span>            : 
-<span class="lineNum">    1601 </span><span class="lineCov">       2404 :                         switch (first[2]) {</span>
-<span class="lineNum">    1602 </span><span class="lineCov">       2404 :                         case URI_SET_HEXDIG:</span>
-<span class="lineNum">    1603 </span><span class="lineCov">       2404 :                                 return first + 3;</span>
+<span class="lineNum">    1601 </span><span class="lineCov">       2409 :                         switch (first[2]) {</span>
+<span class="lineNum">    1602 </span><span class="lineCov">       2409 :                         case URI_SET_HEXDIG:</span>
+<span class="lineNum">    1603 </span><span class="lineCov">       2409 :                                 return first + 3;</span>
 <span class="lineNum">    1604 </span>            : 
 <span class="lineNum">    1605 </span><span class="lineNoCov">          0 :                         default:</span>
 <span class="lineNum">    1606 </span><span class="lineNoCov">          0 :                                 URI_FUNC(StopSyntax)(state, first + 2, memory);</span>
@@ -1689,20 +1689,20 @@
 <span class="lineNum">    1627 </span>            :  * [pctSubUnres]-&gt;[subDelims]
 <a name="1628"><span class="lineNum">    1628 </span>            :  * [pctSubUnres]-&gt;[unreserved]</a>
 <span class="lineNum">    1629 </span>            :  */
-<span class="lineNum">    1630 </span><span class="lineCov">      14739 : static const URI_CHAR * URI_FUNC(ParsePctSubUnres)(</span>
+<span class="lineNum">    1630 </span><span class="lineCov">      14787 : static const URI_CHAR * URI_FUNC(ParsePctSubUnres)(</span>
 <span class="lineNum">    1631 </span>            :                 URI_TYPE(ParserState) * state,
 <span class="lineNum">    1632 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    1633 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1634 </span><span class="lineCov">      14739 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1634 </span><span class="lineCov">      14787 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1635 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">    1636 </span><span class="lineNoCov">          0 :                 return NULL;</span>
 <span class="lineNum">    1637 </span>            :         }
 <span class="lineNum">    1638 </span>            : 
-<span class="lineNum">    1639 </span><span class="lineCov">      14739 :         switch (*first) {</span>
+<span class="lineNum">    1639 </span><span class="lineCov">      14787 :         switch (*first) {</span>
 <span class="lineNum">    1640 </span><span class="lineCov">         58 :         case _UT('%'):</span>
 <span class="lineNum">    1641 </span><span class="lineCov">         58 :                 return URI_FUNC(ParsePctEncoded)(state, first, afterLast, memory);</span>
 <span class="lineNum">    1642 </span>            : 
-<span class="lineNum">    1643 </span><span class="lineCov">      14681 :         case _UT('!'):</span>
+<span class="lineNum">    1643 </span><span class="lineCov">      14729 :         case _UT('!'):</span>
 <span class="lineNum">    1644 </span>            :         case _UT('$'):
 <span class="lineNum">    1645 </span>            :         case _UT('&amp;'):
 <span class="lineNum">    1646 </span>            :         case _UT('('):
@@ -1719,7 +1719,7 @@
 <span class="lineNum">    1657 </span>            :         case _UT('~'):
 <span class="lineNum">    1658 </span>            :         case URI_SET_DIGIT:
 <span class="lineNum">    1659 </span>            :         case URI_SET_ALPHA:
-<span class="lineNum">    1660 </span><span class="lineCov">      14681 :                 return first + 1;</span>
+<span class="lineNum">    1660 </span><span class="lineCov">      14729 :                 return first + 1;</span>
 <span class="lineNum">    1661 </span>            : 
 <span class="lineNum">    1662 </span><span class="lineNoCov">          0 :         default:</span>
 <span class="lineNum">    1663 </span><span class="lineNoCov">          0 :                 URI_FUNC(StopSyntax)(state, first, memory);</span>
@@ -1733,14 +1733,14 @@
 <span class="lineNum">    1671 </span>            :  * [port]-&gt;[DIGIT][port]
 <a name="1672"><span class="lineNum">    1672 </span>            :  * [port]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    1673 </span>            :  */
-<span class="lineNum">    1674 </span><span class="lineCov">       1662 : static const URI_CHAR * URI_FUNC(ParsePort)(URI_TYPE(ParserState) * state, const URI_CHAR * first, const URI_CHAR * afterLast) {</span>
-<span class="lineNum">    1675 </span><span class="lineCov">       1662 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    1676 </span><span class="lineCov">        317 :                 return afterLast;</span>
+<span class="lineNum">    1674 </span><span class="lineCov">       1668 : static const URI_CHAR * URI_FUNC(ParsePort)(URI_TYPE(ParserState) * state, const URI_CHAR * first, const URI_CHAR * afterLast) {</span>
+<span class="lineNum">    1675 </span><span class="lineCov">       1668 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1676 </span><span class="lineCov">        318 :                 return afterLast;</span>
 <span class="lineNum">    1677 </span>            :         }
 <span class="lineNum">    1678 </span>            : 
-<span class="lineNum">    1679 </span><span class="lineCov">       1345 :         switch (*first) {</span>
-<span class="lineNum">    1680 </span><span class="lineCov">       1345 :         case URI_SET_DIGIT:</span>
-<span class="lineNum">    1681 </span><span class="lineCov">       1345 :                 return URI_FUNC(ParsePort)(state, first + 1, afterLast);</span>
+<span class="lineNum">    1679 </span><span class="lineCov">       1350 :         switch (*first) {</span>
+<span class="lineNum">    1680 </span><span class="lineCov">       1350 :         case URI_SET_DIGIT:</span>
+<span class="lineNum">    1681 </span><span class="lineCov">       1350 :                 return URI_FUNC(ParsePort)(state, first + 1, afterLast);</span>
 <span class="lineNum">    1682 </span>            : 
 <span class="lineNum">    1683 </span><span class="lineNoCov">          0 :         default:</span>
 <span class="lineNum">    1684 </span><span class="lineNoCov">          0 :                 return first;</span>
@@ -1755,14 +1755,14 @@
 <span class="lineNum">    1693 </span>            :  * [queryFrag]-&gt;&lt;?&gt;[queryFrag]
 <a name="1694"><span class="lineNum">    1694 </span>            :  * [queryFrag]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    1695 </span>            :  */
-<span class="lineNum">    1696 </span><span class="lineCov">       1833 : static const URI_CHAR * URI_FUNC(ParseQueryFrag)(URI_TYPE(ParserState) * state,</span>
+<span class="lineNum">    1696 </span><span class="lineCov">       1837 : static const URI_CHAR * URI_FUNC(ParseQueryFrag)(URI_TYPE(ParserState) * state,</span>
 <span class="lineNum">    1697 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    1698 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1699 </span><span class="lineCov">       1833 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    1700 </span><span class="lineCov">        457 :                 return afterLast;</span>
+<span class="lineNum">    1699 </span><span class="lineCov">       1837 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1700 </span><span class="lineCov">        458 :                 return afterLast;</span>
 <span class="lineNum">    1701 </span>            :         }
 <span class="lineNum">    1702 </span>            : 
-<span class="lineNum">    1703 </span><span class="lineCov">       1376 :         switch (*first) {</span>
+<span class="lineNum">    1703 </span><span class="lineCov">       1379 :         switch (*first) {</span>
 <span class="lineNum">    1704 </span><span class="lineCov">        443 :         case _UT('!'):</span>
 <span class="lineNum">    1705 </span>            :         case _UT('$'):
 <span class="lineNum">    1706 </span>            :         case _UT('%'):
@@ -1792,12 +1792,12 @@
 <span class="lineNum">    1730 </span><span class="lineCov">        430 :                         return URI_FUNC(ParseQueryFrag)(state, afterPchar, afterLast, memory);</span>
 <span class="lineNum">    1731 </span>            :                 }
 <span class="lineNum">    1732 </span>            : 
-<span class="lineNum">    1733 </span><span class="lineCov">         27 :         case _UT('/'):</span>
+<span class="lineNum">    1733 </span><span class="lineCov">         28 :         case _UT('/'):</span>
 <span class="lineNum">    1734 </span>            :         case _UT('?'):
-<span class="lineNum">    1735 </span><span class="lineCov">         27 :                 return URI_FUNC(ParseQueryFrag)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1735 </span><span class="lineCov">         28 :                 return URI_FUNC(ParseQueryFrag)(state, first + 1, afterLast, memory);</span>
 <span class="lineNum">    1736 </span>            : 
-<span class="lineNum">    1737 </span><span class="lineCov">        906 :         default:</span>
-<span class="lineNum">    1738 </span><span class="lineCov">        906 :                 return first;</span>
+<span class="lineNum">    1737 </span><span class="lineCov">        908 :         default:</span>
+<span class="lineNum">    1738 </span><span class="lineCov">        908 :                 return first;</span>
 <span class="lineNum">    1739 </span>            :         }
 <span class="lineNum">    1740 </span>            : }
 <span class="lineNum">    1741 </span>            : 
@@ -1807,15 +1807,15 @@
 <span class="lineNum">    1745 </span>            :  * [segment]-&gt;[pchar][segment]
 <a name="1746"><span class="lineNum">    1746 </span>            :  * [segment]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    1747 </span>            :  */
-<span class="lineNum">    1748 </span><span class="lineCov">      12806 : static const URI_CHAR * URI_FUNC(ParseSegment)(URI_TYPE(ParserState) * state,</span>
+<span class="lineNum">    1748 </span><span class="lineCov">      12840 : static const URI_CHAR * URI_FUNC(ParseSegment)(URI_TYPE(ParserState) * state,</span>
 <span class="lineNum">    1749 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    1750 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1751 </span><span class="lineCov">      12806 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    1752 </span><span class="lineCov">       4477 :                 return afterLast;</span>
+<span class="lineNum">    1751 </span><span class="lineCov">      12840 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1752 </span><span class="lineCov">       4492 :                 return afterLast;</span>
 <span class="lineNum">    1753 </span>            :         }
 <span class="lineNum">    1754 </span>            : 
-<span class="lineNum">    1755 </span><span class="lineCov">       8329 :         switch (*first) {</span>
-<span class="lineNum">    1756 </span><span class="lineCov">       3520 :         case _UT('!'):</span>
+<span class="lineNum">    1755 </span><span class="lineCov">       8348 :         switch (*first) {</span>
+<span class="lineNum">    1756 </span><span class="lineCov">       3529 :         case _UT('!'):</span>
 <span class="lineNum">    1757 </span>            :         case _UT('$'):
 <span class="lineNum">    1758 </span>            :         case _UT('%'):
 <span class="lineNum">    1759 </span>            :         case _UT('&amp;'):
@@ -1836,16 +1836,16 @@
 <span class="lineNum">    1774 </span>            :         case URI_SET_DIGIT:
 <span class="lineNum">    1775 </span>            :         case URI_SET_ALPHA:
 <span class="lineNum">    1776 </span>            :                 {
-<span class="lineNum">    1777 </span><span class="lineCov">       3520 :                         const URI_CHAR * const afterPchar</span>
+<span class="lineNum">    1777 </span><span class="lineCov">       3529 :                         const URI_CHAR * const afterPchar</span>
 <span class="lineNum">    1778 </span>            :                                         = URI_FUNC(ParsePchar)(state, first, afterLast, memory);
-<span class="lineNum">    1779 </span><span class="lineCov">       3520 :                         if (afterPchar == NULL) {</span>
+<span class="lineNum">    1779 </span><span class="lineCov">       3529 :                         if (afterPchar == NULL) {</span>
 <span class="lineNum">    1780 </span><span class="lineCov">         53 :                                 return NULL;</span>
 <span class="lineNum">    1781 </span>            :                         }
-<span class="lineNum">    1782 </span><span class="lineCov">       3467 :                         return URI_FUNC(ParseSegment)(state, afterPchar, afterLast, memory);</span>
+<span class="lineNum">    1782 </span><span class="lineCov">       3476 :                         return URI_FUNC(ParseSegment)(state, afterPchar, afterLast, memory);</span>
 <span class="lineNum">    1783 </span>            :                 }
 <span class="lineNum">    1784 </span>            : 
-<span class="lineNum">    1785 </span><span class="lineCov">       4809 :         default:</span>
-<span class="lineNum">    1786 </span><span class="lineCov">       4809 :                 return first;</span>
+<span class="lineNum">    1785 </span><span class="lineCov">       4819 :         default:</span>
+<span class="lineNum">    1786 </span><span class="lineCov">       4819 :                 return first;</span>
 <span class="lineNum">    1787 </span>            :         }
 <span class="lineNum">    1788 </span>            : }
 <span class="lineNum">    1789 </span>            : 
@@ -1854,16 +1854,16 @@
 <span class="lineNum">    1792 </span>            : /*
 <a name="1793"><span class="lineNum">    1793 </span>            :  * [segmentNz]-&gt;[pchar][segment]</a>
 <span class="lineNum">    1794 </span>            :  */
-<span class="lineNum">    1795 </span><span class="lineCov">       1260 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseSegmentNz)(</span>
+<span class="lineNum">    1795 </span><span class="lineCov">       1264 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseSegmentNz)(</span>
 <span class="lineNum">    1796 </span>            :                 URI_TYPE(ParserState) * state,
 <span class="lineNum">    1797 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    1798 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    1799 </span><span class="lineCov">       1260 :         const URI_CHAR * const afterPchar</span>
+<span class="lineNum">    1799 </span><span class="lineCov">       1264 :         const URI_CHAR * const afterPchar</span>
 <span class="lineNum">    1800 </span>            :                         = URI_FUNC(ParsePchar)(state, first, afterLast, memory);
-<span class="lineNum">    1801 </span><span class="lineCov">       1260 :         if (afterPchar == NULL) {</span>
+<span class="lineNum">    1801 </span><span class="lineCov">       1264 :         if (afterPchar == NULL) {</span>
 <span class="lineNum">    1802 </span><span class="lineCov">         18 :                 return NULL;</span>
 <span class="lineNum">    1803 </span>            :         }
-<span class="lineNum">    1804 </span><span class="lineCov">       1242 :         return URI_FUNC(ParseSegment)(state, afterPchar, afterLast, memory);</span>
+<span class="lineNum">    1804 </span><span class="lineCov">       1246 :         return URI_FUNC(ParseSegment)(state, afterPchar, afterLast, memory);</span>
 <span class="lineNum">    1805 </span>            : }
 <span class="lineNum">    1806 </span>            : 
 <a name="1807"><span class="lineNum">    1807 </span>            : </a>
@@ -1904,10 +1904,10 @@
 <span class="lineNum">    1842 </span>            :  * [segmentNzNcOrScheme2]-&gt;&lt;'&gt;[mustBeSegmentNzNc]
 <a name="1843"><span class="lineNum">    1843 </span>            :  * [segmentNzNcOrScheme2]-&gt;&lt;-&gt;[segmentNzNcOrScheme2]</a>
 <span class="lineNum">    1844 </span>            :  */
-<span class="lineNum">    1845 </span><span class="lineCov">      43485 : static const URI_CHAR * URI_FUNC(ParseSegmentNzNcOrScheme2)(</span>
+<span class="lineNum">    1845 </span><span class="lineCov">      43623 : static const URI_CHAR * URI_FUNC(ParseSegmentNzNcOrScheme2)(</span>
 <span class="lineNum">    1846 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1847 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1848 </span><span class="lineCov">      43485 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1848 </span><span class="lineCov">      43623 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1849 </span><span class="lineCov">         29 :                 if (!URI_FUNC(OnExitSegmentNzNcOrScheme2)(state, first, memory)) {</span>
 <span class="lineNum">    1850 </span><span class="lineNoCov">          0 :                         URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">    1851 </span><span class="lineNoCov">          0 :                         return NULL;</span>
@@ -1915,13 +1915,13 @@
 <span class="lineNum">    1853 </span><span class="lineCov">         29 :                 return afterLast;</span>
 <span class="lineNum">    1854 </span>            :         }
 <span class="lineNum">    1855 </span>            : 
-<span class="lineNum">    1856 </span><span class="lineCov">      43456 :         switch (*first) {</span>
-<span class="lineNum">    1857 </span><span class="lineCov">      28546 :         case _UT('.'):</span>
+<span class="lineNum">    1856 </span><span class="lineCov">      43594 :         switch (*first) {</span>
+<span class="lineNum">    1857 </span><span class="lineCov">      28634 :         case _UT('.'):</span>
 <span class="lineNum">    1858 </span>            :         case _UT('+'):
 <span class="lineNum">    1859 </span>            :         case _UT('-'):
 <span class="lineNum">    1860 </span>            :         case URI_SET_ALPHA:
 <span class="lineNum">    1861 </span>            :         case URI_SET_DIGIT:
-<span class="lineNum">    1862 </span><span class="lineCov">      28546 :                 return URI_FUNC(ParseSegmentNzNcOrScheme2)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1862 </span><span class="lineCov">      28634 :                 return URI_FUNC(ParseSegmentNzNcOrScheme2)(state, first + 1, afterLast, memory);</span>
 <span class="lineNum">    1863 </span>            : 
 <span class="lineNum">    1864 </span><span class="lineNoCov">          0 :         case _UT('%'):</span>
 <span class="lineNum">    1865 </span>            :                 {
@@ -1973,15 +1973,15 @@
 <span class="lineNum">    1911 </span><span class="lineNoCov">          0 :                         return URI_FUNC(ParseUriTail)(state, afterZeroMoreSlashSegs, afterLast, memory);</span>
 <span class="lineNum">    1912 </span>            :                 }
 <span class="lineNum">    1913 </span>            : 
-<span class="lineNum">    1914 </span><span class="lineCov">      14910 :         case _UT(':'):</span>
+<span class="lineNum">    1914 </span><span class="lineCov">      14960 :         case _UT(':'):</span>
 <span class="lineNum">    1915 </span>            :                 {
-<span class="lineNum">    1916 </span><span class="lineCov">      14910 :                         const URI_CHAR * const afterHierPart</span>
-<span class="lineNum">    1917 </span><span class="lineCov">      14910 :                                         = URI_FUNC(ParseHierPart)(state, first + 1, afterLast, memory);</span>
-<span class="lineNum">    1918 </span><span class="lineCov">      14910 :                         state-&gt;uri-&gt;scheme.afterLast = first; /* SCHEME END */</span>
-<span class="lineNum">    1919 </span><span class="lineCov">      14910 :                         if (afterHierPart == NULL) {</span>
+<span class="lineNum">    1916 </span><span class="lineCov">      14960 :                         const URI_CHAR * const afterHierPart</span>
+<span class="lineNum">    1917 </span><span class="lineCov">      14960 :                                         = URI_FUNC(ParseHierPart)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1918 </span><span class="lineCov">      14960 :                         state-&gt;uri-&gt;scheme.afterLast = first; /* SCHEME END */</span>
+<span class="lineNum">    1919 </span><span class="lineCov">      14960 :                         if (afterHierPart == NULL) {</span>
 <span class="lineNum">    1920 </span><span class="lineCov">        108 :                                 return NULL;</span>
 <span class="lineNum">    1921 </span>            :                         }
-<span class="lineNum">    1922 </span><span class="lineCov">      14802 :                         return URI_FUNC(ParseUriTail)(state, afterHierPart, afterLast, memory);</span>
+<span class="lineNum">    1922 </span><span class="lineCov">      14852 :                         return URI_FUNC(ParseUriTail)(state, afterHierPart, afterLast, memory);</span>
 <span class="lineNum">    1923 </span>            :                 }
 <span class="lineNum">    1924 </span>            : 
 <span class="lineNum">    1925 </span><span class="lineNoCov">          0 :         default:</span>
@@ -2008,17 +2008,17 @@
 <span class="lineNum">    1946 </span>            :  * [uriReference]-&gt;&lt;~&gt;[mustBeSegmentNzNc]
 <a name="1947"><span class="lineNum">    1947 </span>            :  * [uriReference]-&gt;&lt;-&gt;[mustBeSegmentNzNc]</a>
 <span class="lineNum">    1948 </span>            :  */
-<span class="lineNum">    1949 </span><span class="lineCov">      24512 : static const URI_CHAR * URI_FUNC(ParseUriReference)(</span>
+<span class="lineNum">    1949 </span><span class="lineCov">      24594 : static const URI_CHAR * URI_FUNC(ParseUriReference)(</span>
 <span class="lineNum">    1950 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    1951 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    1952 </span><span class="lineCov">      24512 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    1952 </span><span class="lineCov">      24594 :         if (first &gt;= afterLast) {</span>
 <span class="lineNum">    1953 </span><span class="lineNoCov">          0 :                 return afterLast;</span>
 <span class="lineNum">    1954 </span>            :         }
 <span class="lineNum">    1955 </span>            : 
-<span class="lineNum">    1956 </span><span class="lineCov">      24512 :         switch (*first) {</span>
-<span class="lineNum">    1957 </span><span class="lineCov">      14939 :         case URI_SET_ALPHA:</span>
-<span class="lineNum">    1958 </span><span class="lineCov">      14939 :                 state-&gt;uri-&gt;scheme.first = first; /* SCHEME BEGIN */</span>
-<span class="lineNum">    1959 </span><span class="lineCov">      14939 :                 return URI_FUNC(ParseSegmentNzNcOrScheme2)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1956 </span><span class="lineCov">      24594 :         switch (*first) {</span>
+<span class="lineNum">    1957 </span><span class="lineCov">      14989 :         case URI_SET_ALPHA:</span>
+<span class="lineNum">    1958 </span><span class="lineCov">      14989 :                 state-&gt;uri-&gt;scheme.first = first; /* SCHEME BEGIN */</span>
+<span class="lineNum">    1959 </span><span class="lineCov">      14989 :                 return URI_FUNC(ParseSegmentNzNcOrScheme2)(state, first + 1, afterLast, memory);</span>
 <span class="lineNum">    1960 </span>            : 
 <span class="lineNum">    1961 </span><span class="lineCov">        283 :         case URI_SET_DIGIT:</span>
 <span class="lineNum">    1962 </span>            :         case _UT('!'):
@@ -2051,18 +2051,18 @@
 <span class="lineNum">    1989 </span><span class="lineCov">        286 :                         return URI_FUNC(ParseMustBeSegmentNzNc)(state, afterPctEncoded, afterLast, memory);</span>
 <span class="lineNum">    1990 </span>            :                 }
 <span class="lineNum">    1991 </span>            : 
-<span class="lineNum">    1992 </span><span class="lineCov">       8758 :         case _UT('/'):</span>
+<span class="lineNum">    1992 </span><span class="lineCov">       8788 :         case _UT('/'):</span>
 <span class="lineNum">    1993 </span>            :                 {
-<span class="lineNum">    1994 </span><span class="lineCov">       8758 :                         const URI_CHAR * const afterPartHelperTwo</span>
-<span class="lineNum">    1995 </span><span class="lineCov">       8758 :                                         = URI_FUNC(ParsePartHelperTwo)(state, first + 1, afterLast, memory);</span>
-<span class="lineNum">    1996 </span><span class="lineCov">       8758 :                         if (afterPartHelperTwo == NULL) {</span>
+<span class="lineNum">    1994 </span><span class="lineCov">       8788 :                         const URI_CHAR * const afterPartHelperTwo</span>
+<span class="lineNum">    1995 </span><span class="lineCov">       8788 :                                         = URI_FUNC(ParsePartHelperTwo)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    1996 </span><span class="lineCov">       8788 :                         if (afterPartHelperTwo == NULL) {</span>
 <span class="lineNum">    1997 </span><span class="lineCov">        124 :                                 return NULL;</span>
 <span class="lineNum">    1998 </span>            :                         }
-<span class="lineNum">    1999 </span><span class="lineCov">       8634 :                         return URI_FUNC(ParseUriTail)(state, afterPartHelperTwo, afterLast, memory);</span>
+<span class="lineNum">    1999 </span><span class="lineCov">       8664 :                         return URI_FUNC(ParseUriTail)(state, afterPartHelperTwo, afterLast, memory);</span>
 <span class="lineNum">    2000 </span>            :                 }
 <span class="lineNum">    2001 </span>            : 
-<span class="lineNum">    2002 </span><span class="lineCov">        232 :         default:</span>
-<span class="lineNum">    2003 </span><span class="lineCov">        232 :                 return URI_FUNC(ParseUriTail)(state, first, afterLast, memory);</span>
+<span class="lineNum">    2002 </span><span class="lineCov">        234 :         default:</span>
+<span class="lineNum">    2003 </span><span class="lineCov">        234 :                 return URI_FUNC(ParseUriTail)(state, first, afterLast, memory);</span>
 <span class="lineNum">    2004 </span>            :         }
 <span class="lineNum">    2005 </span>            : }
 <span class="lineNum">    2006 </span>            : 
@@ -2073,40 +2073,40 @@
 <span class="lineNum">    2011 </span>            :  * [uriTail]-&gt;&lt;?&gt;[queryFrag][uriTailTwo]
 <a name="2012"><span class="lineNum">    2012 </span>            :  * [uriTail]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    2013 </span>            :  */
-<span class="lineNum">    2014 </span><span class="lineCov">      24104 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseUriTail)(</span>
+<span class="lineNum">    2014 </span><span class="lineCov">      24186 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseUriTail)(</span>
 <span class="lineNum">    2015 </span>            :                 URI_TYPE(ParserState) * state,
 <span class="lineNum">    2016 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    2017 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    2018 </span><span class="lineCov">      24104 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    2019 </span><span class="lineCov">      19622 :                 return afterLast;</span>
+<span class="lineNum">    2018 </span><span class="lineCov">      24186 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    2019 </span><span class="lineCov">      19688 :                 return afterLast;</span>
 <span class="lineNum">    2020 </span>            :         }
 <span class="lineNum">    2021 </span>            : 
-<span class="lineNum">    2022 </span><span class="lineCov">       4482 :         switch (*first) {</span>
-<span class="lineNum">    2023 </span><span class="lineCov">        622 :         case _UT('#'):</span>
+<span class="lineNum">    2022 </span><span class="lineCov">       4498 :         switch (*first) {</span>
+<span class="lineNum">    2023 </span><span class="lineCov">        623 :         case _UT('#'):</span>
 <span class="lineNum">    2024 </span>            :                 {
-<span class="lineNum">    2025 </span><span class="lineCov">        622 :                         const URI_CHAR * const afterQueryFrag = URI_FUNC(ParseQueryFrag)(state, first + 1, afterLast, memory);</span>
-<span class="lineNum">    2026 </span><span class="lineCov">        622 :                         if (afterQueryFrag == NULL) {</span>
+<span class="lineNum">    2025 </span><span class="lineCov">        623 :                         const URI_CHAR * const afterQueryFrag = URI_FUNC(ParseQueryFrag)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    2026 </span><span class="lineCov">        623 :                         if (afterQueryFrag == NULL) {</span>
 <span class="lineNum">    2027 </span><span class="lineCov">          3 :                                 return NULL;</span>
 <span class="lineNum">    2028 </span>            :                         }
-<span class="lineNum">    2029 </span><span class="lineCov">        619 :                         state-&gt;uri-&gt;fragment.first = first + 1; /* FRAGMENT BEGIN */</span>
-<span class="lineNum">    2030 </span><span class="lineCov">        619 :                         state-&gt;uri-&gt;fragment.afterLast = afterQueryFrag; /* FRAGMENT END */</span>
-<span class="lineNum">    2031 </span><span class="lineCov">        619 :                         return afterQueryFrag;</span>
+<span class="lineNum">    2029 </span><span class="lineCov">        620 :                         state-&gt;uri-&gt;fragment.first = first + 1; /* FRAGMENT BEGIN */</span>
+<span class="lineNum">    2030 </span><span class="lineCov">        620 :                         state-&gt;uri-&gt;fragment.afterLast = afterQueryFrag; /* FRAGMENT END */</span>
+<span class="lineNum">    2031 </span><span class="lineCov">        620 :                         return afterQueryFrag;</span>
 <span class="lineNum">    2032 </span>            :                 }
 <span class="lineNum">    2033 </span>            : 
-<span class="lineNum">    2034 </span><span class="lineCov">        754 :         case _UT('?'):</span>
+<span class="lineNum">    2034 </span><span class="lineCov">        756 :         case _UT('?'):</span>
 <span class="lineNum">    2035 </span>            :                 {
-<span class="lineNum">    2036 </span><span class="lineCov">        754 :                         const URI_CHAR * const afterQueryFrag</span>
-<span class="lineNum">    2037 </span><span class="lineCov">        754 :                                         = URI_FUNC(ParseQueryFrag)(state, first + 1, afterLast, memory);</span>
-<span class="lineNum">    2038 </span><span class="lineCov">        754 :                         if (afterQueryFrag == NULL) {</span>
+<span class="lineNum">    2036 </span><span class="lineCov">        756 :                         const URI_CHAR * const afterQueryFrag</span>
+<span class="lineNum">    2037 </span><span class="lineCov">        756 :                                         = URI_FUNC(ParseQueryFrag)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    2038 </span><span class="lineCov">        756 :                         if (afterQueryFrag == NULL) {</span>
 <span class="lineNum">    2039 </span><span class="lineCov">         10 :                                 return NULL;</span>
 <span class="lineNum">    2040 </span>            :                         }
-<span class="lineNum">    2041 </span><span class="lineCov">        744 :                         state-&gt;uri-&gt;query.first = first + 1; /* QUERY BEGIN */</span>
-<span class="lineNum">    2042 </span><span class="lineCov">        744 :                         state-&gt;uri-&gt;query.afterLast = afterQueryFrag; /* QUERY END */</span>
-<span class="lineNum">    2043 </span><span class="lineCov">        744 :                         return URI_FUNC(ParseUriTailTwo)(state, afterQueryFrag, afterLast, memory);</span>
+<span class="lineNum">    2041 </span><span class="lineCov">        746 :                         state-&gt;uri-&gt;query.first = first + 1; /* QUERY BEGIN */</span>
+<span class="lineNum">    2042 </span><span class="lineCov">        746 :                         state-&gt;uri-&gt;query.afterLast = afterQueryFrag; /* QUERY END */</span>
+<span class="lineNum">    2043 </span><span class="lineCov">        746 :                         return URI_FUNC(ParseUriTailTwo)(state, afterQueryFrag, afterLast, memory);</span>
 <span class="lineNum">    2044 </span>            :                 }
 <span class="lineNum">    2045 </span>            : 
-<span class="lineNum">    2046 </span><span class="lineCov">       3106 :         default:</span>
-<span class="lineNum">    2047 </span><span class="lineCov">       3106 :                 return first;</span>
+<span class="lineNum">    2046 </span><span class="lineCov">       3119 :         default:</span>
+<span class="lineNum">    2047 </span><span class="lineCov">       3119 :                 return first;</span>
 <span class="lineNum">    2048 </span>            :         }
 <span class="lineNum">    2049 </span>            : }
 <span class="lineNum">    2050 </span>            : 
@@ -2116,15 +2116,15 @@
 <span class="lineNum">    2054 </span>            :  * [uriTailTwo]-&gt;&lt;#&gt;[queryFrag]
 <a name="2055"><span class="lineNum">    2055 </span>            :  * [uriTailTwo]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    2056 </span>            :  */
-<span class="lineNum">    2057 </span><span class="lineCov">        744 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseUriTailTwo)(</span>
+<span class="lineNum">    2057 </span><span class="lineCov">        746 : static URI_INLINE const URI_CHAR * URI_FUNC(ParseUriTailTwo)(</span>
 <span class="lineNum">    2058 </span>            :                 URI_TYPE(ParserState) * state,
 <span class="lineNum">    2059 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    2060 </span>            :                 UriMemoryManager * memory) {
-<span class="lineNum">    2061 </span><span class="lineCov">        744 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    2062 </span><span class="lineCov">        239 :                 return afterLast;</span>
+<span class="lineNum">    2061 </span><span class="lineCov">        746 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    2062 </span><span class="lineCov">        240 :                 return afterLast;</span>
 <span class="lineNum">    2063 </span>            :         }
 <span class="lineNum">    2064 </span>            : 
-<span class="lineNum">    2065 </span><span class="lineCov">        505 :         switch (*first) {</span>
+<span class="lineNum">    2065 </span><span class="lineCov">        506 :         switch (*first) {</span>
 <span class="lineNum">    2066 </span><span class="lineNoCov">          0 :         case _UT('#'):</span>
 <span class="lineNum">    2067 </span>            :                 {
 <span class="lineNum">    2068 </span><span class="lineNoCov">          0 :                         const URI_CHAR * const afterQueryFrag = URI_FUNC(ParseQueryFrag)(state, first + 1, afterLast, memory);</span>
@@ -2136,8 +2136,8 @@
 <span class="lineNum">    2074 </span><span class="lineNoCov">          0 :                         return afterQueryFrag;</span>
 <span class="lineNum">    2075 </span>            :                 }
 <span class="lineNum">    2076 </span>            : 
-<span class="lineNum">    2077 </span><span class="lineCov">        505 :         default:</span>
-<span class="lineNum">    2078 </span><span class="lineCov">        505 :                 return first;</span>
+<span class="lineNum">    2077 </span><span class="lineCov">        506 :         default:</span>
+<span class="lineNum">    2078 </span><span class="lineCov">        506 :                 return first;</span>
 <span class="lineNum">    2079 </span>            :         }
 <span class="lineNum">    2080 </span>            : }
 <span class="lineNum">    2081 </span>            : 
@@ -2147,126 +2147,126 @@
 <span class="lineNum">    2085 </span>            :  * [zeroMoreSlashSegs]-&gt;&lt;/&gt;[segment][zeroMoreSlashSegs]
 <a name="2086"><span class="lineNum">    2086 </span>            :  * [zeroMoreSlashSegs]-&gt;&lt;NULL&gt;</a>
 <span class="lineNum">    2087 </span>            :  */
-<span class="lineNum">    2088 </span><span class="lineCov">       3306 : static const URI_CHAR * URI_FUNC(ParseZeroMoreSlashSegs)(</span>
+<span class="lineNum">    2088 </span><span class="lineCov">       3313 : static const URI_CHAR * URI_FUNC(ParseZeroMoreSlashSegs)(</span>
 <span class="lineNum">    2089 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    2090 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    2091 </span><span class="lineCov">       3306 :         if (first &gt;= afterLast) {</span>
-<span class="lineNum">    2092 </span><span class="lineCov">        923 :                 return afterLast;</span>
+<span class="lineNum">    2091 </span><span class="lineCov">       3313 :         if (first &gt;= afterLast) {</span>
+<span class="lineNum">    2092 </span><span class="lineCov">        926 :                 return afterLast;</span>
 <span class="lineNum">    2093 </span>            :         }
 <span class="lineNum">    2094 </span>            : 
-<span class="lineNum">    2095 </span><span class="lineCov">       2383 :         switch (*first) {</span>
-<span class="lineNum">    2096 </span><span class="lineCov">       1766 :         case _UT('/'):</span>
+<span class="lineNum">    2095 </span><span class="lineCov">       2387 :         switch (*first) {</span>
+<span class="lineNum">    2096 </span><span class="lineCov">       1769 :         case _UT('/'):</span>
 <span class="lineNum">    2097 </span>            :                 {
-<span class="lineNum">    2098 </span><span class="lineCov">       1766 :                         const URI_CHAR * const afterSegment</span>
-<span class="lineNum">    2099 </span><span class="lineCov">       1766 :                                         = URI_FUNC(ParseSegment)(state, first + 1, afterLast, memory);</span>
-<span class="lineNum">    2100 </span><span class="lineCov">       1766 :                         if (afterSegment == NULL) {</span>
+<span class="lineNum">    2098 </span><span class="lineCov">       1769 :                         const URI_CHAR * const afterSegment</span>
+<span class="lineNum">    2099 </span><span class="lineCov">       1769 :                                         = URI_FUNC(ParseSegment)(state, first + 1, afterLast, memory);</span>
+<span class="lineNum">    2100 </span><span class="lineCov">       1769 :                         if (afterSegment == NULL) {</span>
 <span class="lineNum">    2101 </span><span class="lineCov">          8 :                                 return NULL;</span>
 <span class="lineNum">    2102 </span>            :                         }
-<span class="lineNum">    2103 </span><span class="lineCov">       1758 :                         if (!URI_FUNC(PushPathSegment)(state, first + 1, afterSegment, memory)) { /* SEGMENT BOTH */</span>
+<span class="lineNum">    2103 </span><span class="lineCov">       1761 :                         if (!URI_FUNC(PushPathSegment)(state, first + 1, afterSegment, memory)) { /* SEGMENT BOTH */</span>
 <span class="lineNum">    2104 </span><span class="lineNoCov">          0 :                                 URI_FUNC(StopMalloc)(state, memory);</span>
 <span class="lineNum">    2105 </span><span class="lineNoCov">          0 :                                 return NULL;</span>
 <span class="lineNum">    2106 </span>            :                         }
-<span class="lineNum">    2107 </span><span class="lineCov">       1758 :                         return URI_FUNC(ParseZeroMoreSlashSegs)(state, afterSegment, afterLast, memory);</span>
+<span class="lineNum">    2107 </span><span class="lineCov">       1761 :                         return URI_FUNC(ParseZeroMoreSlashSegs)(state, afterSegment, afterLast, memory);</span>
 <span class="lineNum">    2108 </span>            :                 }
 <span class="lineNum">    2109 </span>            : 
-<span class="lineNum">    2110 </span><span class="lineCov">        617 :         default:</span>
-<span class="lineNum">    2111 </span><span class="lineCov">        617 :                 return first;</span>
+<span class="lineNum">    2110 </span><span class="lineCov">        618 :         default:</span>
+<span class="lineNum">    2111 </span><span class="lineCov">        618 :                 return first;</span>
 <span class="lineNum">    2112 </span>            :         }
 <span class="lineNum">    2113 </span>            : }
 <span class="lineNum">    2114 </span>            : 
 <a name="2115"><span class="lineNum">    2115 </span>            : </a>
 <span class="lineNum">    2116 </span>            : 
-<span class="lineNum">    2117 </span><span class="lineCov">      24512 : static URI_INLINE void URI_FUNC(ResetParserStateExceptUri)(URI_TYPE(ParserState) * state) {</span>
-<span class="lineNum">    2118 </span><span class="lineCov">      24512 :         URI_TYPE(Uri) * const uriBackup = state-&gt;uri;</span>
-<span class="lineNum">    2119 </span><span class="lineCov">      24512 :         memset(state, 0, sizeof(URI_TYPE(ParserState)));</span>
-<span class="lineNum">    2120 </span><span class="lineCov">      24512 :         state-&gt;uri = uriBackup;</span>
-<span class="lineNum">    2121 </span><span class="lineCov">      24512 : }</span>
+<span class="lineNum">    2117 </span><span class="lineCov">      24594 : static URI_INLINE void URI_FUNC(ResetParserStateExceptUri)(URI_TYPE(ParserState) * state) {</span>
+<span class="lineNum">    2118 </span><span class="lineCov">      24594 :         URI_TYPE(Uri) * const uriBackup = state-&gt;uri;</span>
+<span class="lineNum">    2119 </span><span class="lineCov">      24594 :         memset(state, 0, sizeof(URI_TYPE(ParserState)));</span>
+<span class="lineNum">    2120 </span><span class="lineCov">      24594 :         state-&gt;uri = uriBackup;</span>
+<span class="lineNum">    2121 </span><span class="lineCov">      24594 : }</span>
 <span class="lineNum">    2122 </span>            : 
 <a name="2123"><span class="lineNum">    2123 </span>            : </a>
 <span class="lineNum">    2124 </span>            : 
-<span class="lineNum">    2125 </span><span class="lineCov">       9881 : static URI_INLINE UriBool URI_FUNC(PushPathSegment)(</span>
+<span class="lineNum">    2125 </span><span class="lineCov">       9906 : static URI_INLINE UriBool URI_FUNC(PushPathSegment)(</span>
 <span class="lineNum">    2126 </span>            :                 URI_TYPE(ParserState) * state, const URI_CHAR * first,
 <span class="lineNum">    2127 </span>            :                 const URI_CHAR * afterLast, UriMemoryManager * memory) {
-<span class="lineNum">    2128 </span><span class="lineCov">       9881 :         URI_TYPE(PathSegment) * segment = memory-&gt;calloc(memory, 1, sizeof(URI_TYPE(PathSegment)));</span>
-<span class="lineNum">    2129 </span><span class="lineCov">       9881 :         if (segment == NULL) {</span>
+<span class="lineNum">    2128 </span><span class="lineCov">       9906 :         URI_TYPE(PathSegment) * segment = memory-&gt;calloc(memory, 1, sizeof(URI_TYPE(PathSegment)));</span>
+<span class="lineNum">    2129 </span><span class="lineCov">       9906 :         if (segment == NULL) {</span>
 <span class="lineNum">    2130 </span><span class="lineNoCov">          0 :                 return URI_FALSE; /* Raises malloc error */</span>
 <span class="lineNum">    2131 </span>            :         }
-<span class="lineNum">    2132 </span><span class="lineCov">       9881 :         if (first == afterLast) {</span>
-<span class="lineNum">    2133 </span><span class="lineCov">       5966 :                 segment-&gt;text.first = URI_FUNC(SafeToPointTo);</span>
-<span class="lineNum">    2134 </span><span class="lineCov">       5966 :                 segment-&gt;text.afterLast = URI_FUNC(SafeToPointTo);</span>
+<span class="lineNum">    2132 </span><span class="lineCov">       9906 :         if (first == afterLast) {</span>
+<span class="lineNum">    2133 </span><span class="lineCov">       5982 :                 segment-&gt;text.first = URI_FUNC(SafeToPointTo);</span>
+<span class="lineNum">    2134 </span><span class="lineCov">       5982 :                 segment-&gt;text.afterLast = URI_FUNC(SafeToPointTo);</span>
 <span class="lineNum">    2135 </span>            :         } else {
-<span class="lineNum">    2136 </span><span class="lineCov">       3915 :                 segment-&gt;text.first = first;</span>
-<span class="lineNum">    2137 </span><span class="lineCov">       3915 :                 segment-&gt;text.afterLast = afterLast;</span>
+<span class="lineNum">    2136 </span><span class="lineCov">       3924 :                 segment-&gt;text.first = first;</span>
+<span class="lineNum">    2137 </span><span class="lineCov">       3924 :                 segment-&gt;text.afterLast = afterLast;</span>
 <span class="lineNum">    2138 </span>            :         }
 <span class="lineNum">    2139 </span>            : 
 <span class="lineNum">    2140 </span>            :         /* First segment ever? */
-<span class="lineNum">    2141 </span><span class="lineCov">       9881 :         if (state-&gt;uri-&gt;pathHead == NULL) {</span>
+<span class="lineNum">    2141 </span><span class="lineCov">       9906 :         if (state-&gt;uri-&gt;pathHead == NULL) {</span>
 <span class="lineNum">    2142 </span>            :                 /* First segment ever, set head and tail */
-<span class="lineNum">    2143 </span><span class="lineCov">       6739 :                 state-&gt;uri-&gt;pathHead = segment;</span>
-<span class="lineNum">    2144 </span><span class="lineCov">       6739 :                 state-&gt;uri-&gt;pathTail = segment;</span>
+<span class="lineNum">    2143 </span><span class="lineCov">       6758 :                 state-&gt;uri-&gt;pathHead = segment;</span>
+<span class="lineNum">    2144 </span><span class="lineCov">       6758 :                 state-&gt;uri-&gt;pathTail = segment;</span>
 <span class="lineNum">    2145 </span>            :         } else {
 <span class="lineNum">    2146 </span>            :                 /* Append, update tail */
-<span class="lineNum">    2147 </span><span class="lineCov">       3142 :                 state-&gt;uri-&gt;pathTail-&gt;next = segment;</span>
-<span class="lineNum">    2148 </span><span class="lineCov">       3142 :                 state-&gt;uri-&gt;pathTail = segment;</span>
+<span class="lineNum">    2147 </span><span class="lineCov">       3148 :                 state-&gt;uri-&gt;pathTail-&gt;next = segment;</span>
+<span class="lineNum">    2148 </span><span class="lineCov">       3148 :                 state-&gt;uri-&gt;pathTail = segment;</span>
 <span class="lineNum">    2149 </span>            :         }
 <span class="lineNum">    2150 </span>            : 
-<span class="lineNum">    2151 </span><span class="lineCov">       9881 :         return URI_TRUE; /* Success */</span>
+<span class="lineNum">    2151 </span><span class="lineCov">       9906 :         return URI_TRUE; /* Success */</span>
 <span class="lineNum">    2152 </span>            : }
 <span class="lineNum">    2153 </span>            : 
 <a name="2154"><span class="lineNum">    2154 </span>            : </a>
 <span class="lineNum">    2155 </span>            : 
-<span class="lineNum">    2156 </span><span class="lineCov">      24512 : int URI_FUNC(ParseUriEx)(URI_TYPE(ParserState) * state,</span>
+<span class="lineNum">    2156 </span><span class="lineCov">      24594 : int URI_FUNC(ParseUriEx)(URI_TYPE(ParserState) * state,</span>
 <span class="lineNum">    2157 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast) {
-<span class="lineNum">    2158 </span><span class="lineCov">      24512 :         return URI_FUNC(ParseUriExMm)(state, first, afterLast, NULL);</span>
+<span class="lineNum">    2158 </span><span class="lineCov">      24594 :         return URI_FUNC(ParseUriExMm)(state, first, afterLast, NULL);</span>
 <span class="lineNum">    2159 </span>            : }
 <span class="lineNum">    2160 </span>            : 
 <a name="2161"><span class="lineNum">    2161 </span>            : </a>
 <span class="lineNum">    2162 </span>            : 
-<span class="lineNum">    2163 </span><span class="lineCov">      24512 : static int URI_FUNC(ParseUriExMm)(URI_TYPE(ParserState) * state,</span>
+<span class="lineNum">    2163 </span><span class="lineCov">      24594 : static int URI_FUNC(ParseUriExMm)(URI_TYPE(ParserState) * state,</span>
 <span class="lineNum">    2164 </span>            :                 const URI_CHAR * first, const URI_CHAR * afterLast,
 <span class="lineNum">    2165 </span>            :                 UriMemoryManager * memory) {
 <span class="lineNum">    2166 </span>            :         const URI_CHAR * afterUriReference;
 <span class="lineNum">    2167 </span>            :         URI_TYPE(Uri) * uri;
 <span class="lineNum">    2168 </span>            : 
 <span class="lineNum">    2169 </span>            :         /* Check params */
-<span class="lineNum">    2170 </span><span class="lineCov">      24512 :         if ((state == NULL) || (first == NULL) || (afterLast == NULL)) {</span>
+<span class="lineNum">    2170 </span><span class="lineCov">      24594 :         if ((state == NULL) || (first == NULL) || (afterLast == NULL)) {</span>
 <span class="lineNum">    2171 </span><span class="lineNoCov">          0 :                 return URI_ERROR_NULL;</span>
 <span class="lineNum">    2172 </span>            :         }
-<span class="lineNum">    2173 </span><span class="lineCov">      24512 :         URI_CHECK_MEMORY_MANAGER(memory);  /* may return */</span>
+<span class="lineNum">    2173 </span><span class="lineCov">      24594 :         URI_CHECK_MEMORY_MANAGER(memory);  /* may return */</span>
 <span class="lineNum">    2174 </span>            : 
-<span class="lineNum">    2175 </span><span class="lineCov">      24512 :         uri = state-&gt;uri;</span>
+<span class="lineNum">    2175 </span><span class="lineCov">      24594 :         uri = state-&gt;uri;</span>
 <span class="lineNum">    2176 </span>            : 
 <span class="lineNum">    2177 </span>            :         /* Init parser */
-<span class="lineNum">    2178 </span><span class="lineCov">      24512 :         URI_FUNC(ResetParserStateExceptUri)(state);</span>
-<span class="lineNum">    2179 </span><span class="lineCov">      24512 :         URI_FUNC(ResetUri)(uri);</span>
+<span class="lineNum">    2178 </span><span class="lineCov">      24594 :         URI_FUNC(ResetParserStateExceptUri)(state);</span>
+<span class="lineNum">    2179 </span><span class="lineCov">      24594 :         URI_FUNC(ResetUri)(uri);</span>
 <span class="lineNum">    2180 </span>            : 
 <span class="lineNum">    2181 </span>            :         /* Parse */
-<span class="lineNum">    2182 </span><span class="lineCov">      24512 :         afterUriReference = URI_FUNC(ParseUriReference)(state, first, afterLast, memory);</span>
-<span class="lineNum">    2183 </span><span class="lineCov">      24512 :         if (afterUriReference == NULL) {</span>
+<span class="lineNum">    2182 </span><span class="lineCov">      24594 :         afterUriReference = URI_FUNC(ParseUriReference)(state, first, afterLast, memory);</span>
+<span class="lineNum">    2183 </span><span class="lineCov">      24594 :         if (afterUriReference == NULL) {</span>
 <span class="lineNum">    2184 </span>            :                 /* Waterproof errorPos &lt;= afterLast */
 <span class="lineNum">    2185 </span><span class="lineCov">        266 :                 if (state-&gt;errorPos &amp;&amp; (state-&gt;errorPos &gt; afterLast)) {</span>
 <span class="lineNum">    2186 </span><span class="lineNoCov">          0 :                         state-&gt;errorPos = afterLast;</span>
 <span class="lineNum">    2187 </span>            :                 }
 <span class="lineNum">    2188 </span><span class="lineCov">        266 :                 return state-&gt;errorCode;</span>
 <span class="lineNum">    2189 </span>            :         }
-<span class="lineNum">    2190 </span><span class="lineCov">      24246 :         if (afterUriReference != afterLast) {</span>
-<span class="lineNum">    2191 </span><span class="lineCov">       4012 :                 if (afterUriReference &lt; afterLast) {</span>
-<span class="lineNum">    2192 </span><span class="lineCov">       4012 :                         URI_FUNC(StopSyntax)(state, afterUriReference, memory);</span>
+<span class="lineNum">    2190 </span><span class="lineCov">      24328 :         if (afterUriReference != afterLast) {</span>
+<span class="lineNum">    2191 </span><span class="lineCov">       4027 :                 if (afterUriReference &lt; afterLast) {</span>
+<span class="lineNum">    2192 </span><span class="lineCov">       4027 :                         URI_FUNC(StopSyntax)(state, afterUriReference, memory);</span>
 <span class="lineNum">    2193 </span>            :                 } else {
 <span class="lineNum">    2194 </span><span class="lineNoCov">          0 :                         URI_FUNC(StopSyntax)(state, afterLast, memory);</span>
 <span class="lineNum">    2195 </span>            :                 }
-<span class="lineNum">    2196 </span><span class="lineCov">       4012 :                 return state-&gt;errorCode;</span>
+<span class="lineNum">    2196 </span><span class="lineCov">       4027 :                 return state-&gt;errorCode;</span>
 <span class="lineNum">    2197 </span>            :         }
-<span class="lineNum">    2198 </span><span class="lineCov">      20234 :         return URI_SUCCESS;</span>
+<span class="lineNum">    2198 </span><span class="lineCov">      20301 :         return URI_SUCCESS;</span>
 <span class="lineNum">    2199 </span>            : }
 <span class="lineNum">    2200 </span>            : 
 <a name="2201"><span class="lineNum">    2201 </span>            : </a>
 <span class="lineNum">    2202 </span>            : 
-<span class="lineNum">    2203 </span><span class="lineCov">      24512 : int URI_FUNC(ParseUri)(URI_TYPE(ParserState) * state, const URI_CHAR * text) {</span>
-<span class="lineNum">    2204 </span><span class="lineCov">      24512 :         if ((state == NULL) || (text == NULL)) {</span>
+<span class="lineNum">    2203 </span><span class="lineCov">      24594 : int URI_FUNC(ParseUri)(URI_TYPE(ParserState) * state, const URI_CHAR * text) {</span>
+<span class="lineNum">    2204 </span><span class="lineCov">      24594 :         if ((state == NULL) || (text == NULL)) {</span>
 <span class="lineNum">    2205 </span><span class="lineNoCov">          0 :                 return URI_ERROR_NULL;</span>
 <span class="lineNum">    2206 </span>            :         }
-<span class="lineNum">    2207 </span><span class="lineCov">      24512 :         return URI_FUNC(ParseUriEx)(state, text, text + URI_STRLEN(text));</span>
+<span class="lineNum">    2207 </span><span class="lineCov">      24594 :         return URI_FUNC(ParseUriEx)(state, text, text + URI_STRLEN(text));</span>
 <span class="lineNum">    2208 </span>            : }
 <span class="lineNum">    2209 </span>            : 
 <a name="2210"><span class="lineNum">    2210 </span>            : </a>
@@ -2317,20 +2317,20 @@
 <span class="lineNum">    2255 </span>            : 
 <a name="2256"><span class="lineNum">    2256 </span>            : </a>
 <span class="lineNum">    2257 </span>            : 
-<span class="lineNum">    2258 </span><span class="lineCov">      24512 : void URI_FUNC(FreeUriMembers)(URI_TYPE(Uri) * uri) {</span>
-<span class="lineNum">    2259 </span><span class="lineCov">      24512 :         URI_FUNC(FreeUriMembersMm)(uri, NULL);</span>
-<span class="lineNum">    2260 </span><span class="lineCov">      24512 : }</span>
+<span class="lineNum">    2258 </span><span class="lineCov">      24594 : void URI_FUNC(FreeUriMembers)(URI_TYPE(Uri) * uri) {</span>
+<span class="lineNum">    2259 </span><span class="lineCov">      24594 :         URI_FUNC(FreeUriMembersMm)(uri, NULL);</span>
+<span class="lineNum">    2260 </span><span class="lineCov">      24594 : }</span>
 <span class="lineNum">    2261 </span>            : 
 <a name="2262"><span class="lineNum">    2262 </span>            : </a>
 <span class="lineNum">    2263 </span>            : 
-<span class="lineNum">    2264 </span><span class="lineCov">      28790 : int URI_FUNC(FreeUriMembersMm)(URI_TYPE(Uri) * uri, UriMemoryManager * memory) {</span>
-<span class="lineNum">    2265 </span><span class="lineCov">      28790 :         if (uri == NULL) {</span>
+<span class="lineNum">    2264 </span><span class="lineCov">      28887 : int URI_FUNC(FreeUriMembersMm)(URI_TYPE(Uri) * uri, UriMemoryManager * memory) {</span>
+<span class="lineNum">    2265 </span><span class="lineCov">      28887 :         if (uri == NULL) {</span>
 <span class="lineNum">    2266 </span><span class="lineNoCov">          0 :                 return URI_ERROR_NULL;</span>
 <span class="lineNum">    2267 </span>            :         }
 <span class="lineNum">    2268 </span>            : 
-<span class="lineNum">    2269 </span><span class="lineCov">      28790 :         URI_CHECK_MEMORY_MANAGER(memory);  /* may return */</span>
+<span class="lineNum">    2269 </span><span class="lineCov">      28887 :         URI_CHECK_MEMORY_MANAGER(memory);  /* may return */</span>
 <span class="lineNum">    2270 </span>            : 
-<span class="lineNum">    2271 </span><span class="lineCov">      28790 :         if (uri-&gt;owner) {</span>
+<span class="lineNum">    2271 </span><span class="lineCov">      28887 :         if (uri-&gt;owner) {</span>
 <span class="lineNum">    2272 </span>            :                 /* Scheme */
 <span class="lineNum">    2273 </span><span class="lineNoCov">          0 :                 if (uri-&gt;scheme.first != NULL) {</span>
 <span class="lineNum">    2274 </span><span class="lineNoCov">          0 :                         if (uri-&gt;scheme.first != uri-&gt;scheme.afterLast) {</span>
@@ -2374,19 +2374,19 @@
 <span class="lineNum">    2312 </span>            :         }
 <span class="lineNum">    2313 </span>            : 
 <span class="lineNum">    2314 </span>            :         /* Host data - IPv4 */
-<span class="lineNum">    2315 </span><span class="lineCov">      28790 :         if (uri-&gt;hostData.ip4 != NULL) {</span>
-<span class="lineNum">    2316 </span><span class="lineCov">        859 :                 memory-&gt;free(memory, uri-&gt;hostData.ip4);</span>
-<span class="lineNum">    2317 </span><span class="lineCov">        859 :                 uri-&gt;hostData.ip4 = NULL;</span>
+<span class="lineNum">    2315 </span><span class="lineCov">      28887 :         if (uri-&gt;hostData.ip4 != NULL) {</span>
+<span class="lineNum">    2316 </span><span class="lineCov">        862 :                 memory-&gt;free(memory, uri-&gt;hostData.ip4);</span>
+<span class="lineNum">    2317 </span><span class="lineCov">        862 :                 uri-&gt;hostData.ip4 = NULL;</span>
 <span class="lineNum">    2318 </span>            :         }
 <span class="lineNum">    2319 </span>            : 
 <span class="lineNum">    2320 </span>            :         /* Host data - IPv6 */
-<span class="lineNum">    2321 </span><span class="lineCov">      28790 :         if (uri-&gt;hostData.ip6 != NULL) {</span>
-<span class="lineNum">    2322 </span><span class="lineCov">       9830 :                 memory-&gt;free(memory, uri-&gt;hostData.ip6);</span>
-<span class="lineNum">    2323 </span><span class="lineCov">       9830 :                 uri-&gt;hostData.ip6 = NULL;</span>
+<span class="lineNum">    2321 </span><span class="lineCov">      28887 :         if (uri-&gt;hostData.ip6 != NULL) {</span>
+<span class="lineNum">    2322 </span><span class="lineCov">       9862 :                 memory-&gt;free(memory, uri-&gt;hostData.ip6);</span>
+<span class="lineNum">    2323 </span><span class="lineCov">       9862 :                 uri-&gt;hostData.ip6 = NULL;</span>
 <span class="lineNum">    2324 </span>            :         }
 <span class="lineNum">    2325 </span>            : 
 <span class="lineNum">    2326 </span>            :         /* Port text */
-<span class="lineNum">    2327 </span><span class="lineCov">      28790 :         if (uri-&gt;owner &amp;&amp; (uri-&gt;portText.first != NULL)) {</span>
+<span class="lineNum">    2327 </span><span class="lineCov">      28887 :         if (uri-&gt;owner &amp;&amp; (uri-&gt;portText.first != NULL)) {</span>
 <span class="lineNum">    2328 </span><span class="lineNoCov">          0 :                 if (uri-&gt;portText.first != uri-&gt;portText.afterLast) {</span>
 <span class="lineNum">    2329 </span><span class="lineNoCov">          0 :                         memory-&gt;free(memory, (URI_CHAR *)uri-&gt;portText.first);</span>
 <span class="lineNum">    2330 </span>            :                 }
@@ -2395,22 +2395,22 @@
 <span class="lineNum">    2333 </span>            :         }
 <span class="lineNum">    2334 </span>            : 
 <span class="lineNum">    2335 </span>            :         /* Path */
-<span class="lineNum">    2336 </span><span class="lineCov">      28790 :         if (uri-&gt;pathHead != NULL) {</span>
-<span class="lineNum">    2337 </span><span class="lineCov">       6739 :                 URI_TYPE(PathSegment) * segWalk = uri-&gt;pathHead;</span>
-<span class="lineNum">    2338 </span><span class="lineCov">      23359 :                 while (segWalk != NULL) {</span>
-<span class="lineNum">    2339 </span><span class="lineCov">       9881 :                         URI_TYPE(PathSegment) * const next = segWalk-&gt;next;</span>
-<span class="lineNum">    2340 </span><span class="lineCov">       9881 :                         if (uri-&gt;owner &amp;&amp; (segWalk-&gt;text.first != NULL)</span>
+<span class="lineNum">    2336 </span><span class="lineCov">      28887 :         if (uri-&gt;pathHead != NULL) {</span>
+<span class="lineNum">    2337 </span><span class="lineCov">       6758 :                 URI_TYPE(PathSegment) * segWalk = uri-&gt;pathHead;</span>
+<span class="lineNum">    2338 </span><span class="lineCov">      23422 :                 while (segWalk != NULL) {</span>
+<span class="lineNum">    2339 </span><span class="lineCov">       9906 :                         URI_TYPE(PathSegment) * const next = segWalk-&gt;next;</span>
+<span class="lineNum">    2340 </span><span class="lineCov">       9906 :                         if (uri-&gt;owner &amp;&amp; (segWalk-&gt;text.first != NULL)</span>
 <span class="lineNum">    2341 </span><span class="lineNoCov">          0 :                                         &amp;&amp; (segWalk-&gt;text.first &lt; segWalk-&gt;text.afterLast)) {</span>
 <span class="lineNum">    2342 </span><span class="lineNoCov">          0 :                                 memory-&gt;free(memory, (URI_CHAR *)segWalk-&gt;text.first);</span>
 <span class="lineNum">    2343 </span>            :                         }
-<span class="lineNum">    2344 </span><span class="lineCov">       9881 :                         memory-&gt;free(memory, segWalk);</span>
-<span class="lineNum">    2345 </span><span class="lineCov">       9881 :                         segWalk = next;</span>
+<span class="lineNum">    2344 </span><span class="lineCov">       9906 :                         memory-&gt;free(memory, segWalk);</span>
+<span class="lineNum">    2345 </span><span class="lineCov">       9906 :                         segWalk = next;</span>
 <span class="lineNum">    2346 </span>            :                 }
-<span class="lineNum">    2347 </span><span class="lineCov">       6739 :                 uri-&gt;pathHead = NULL;</span>
-<span class="lineNum">    2348 </span><span class="lineCov">       6739 :                 uri-&gt;pathTail = NULL;</span>
+<span class="lineNum">    2347 </span><span class="lineCov">       6758 :                 uri-&gt;pathHead = NULL;</span>
+<span class="lineNum">    2348 </span><span class="lineCov">       6758 :                 uri-&gt;pathTail = NULL;</span>
 <span class="lineNum">    2349 </span>            :         }
 <span class="lineNum">    2350 </span>            : 
-<span class="lineNum">    2351 </span><span class="lineCov">      28790 :         if (uri-&gt;owner) {</span>
+<span class="lineNum">    2351 </span><span class="lineCov">      28887 :         if (uri-&gt;owner) {</span>
 <span class="lineNum">    2352 </span>            :                 /* Query */
 <span class="lineNum">    2353 </span><span class="lineNoCov">          0 :                 if (uri-&gt;query.first != NULL) {</span>
 <span class="lineNum">    2354 </span><span class="lineNoCov">          0 :                         if (uri-&gt;query.first != uri-&gt;query.afterLast) {</span>
@@ -2430,7 +2430,7 @@
 <span class="lineNum">    2368 </span>            :                 }
 <span class="lineNum">    2369 </span>            :         }
 <span class="lineNum">    2370 </span>            : 
-<span class="lineNum">    2371 </span><span class="lineCov">      28790 :         return URI_SUCCESS;</span>
+<span class="lineNum">    2371 </span><span class="lineCov">      28887 :         return URI_SUCCESS;</span>
 <span class="lineNum">    2372 </span>            : }
 <span class="lineNum">    2373 </span>            : 
 <a name="2374"><span class="lineNum">    2374 </span>            : </a>
