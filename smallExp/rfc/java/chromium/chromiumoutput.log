@@ -9,12 +9,33 @@ Note: Google Test filter = URLParser.Parsing
 [----------] Global test environment set-up.
 [----------] 1 test from URLParser
 [ RUN      ] URLParser.Parsing
-[       OK ] URLParser.Parsing (0 ms)
-[----------] 1 test from URLParser (0 ms total)
+../../url/url_parsing_unittest.cc:22: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]", "exception":"invalid URL"}
+Stack trace:
+#0 0x55be0a1a2280 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+../../url/url_parsing_unittest.cc:22: Failure
+Value of: parsed_url.is_valid()
+  Actual: false
+Expected: true
+{"url":"//[::ecfc:fbaf:dcaa:236.255.254.250%25_]", "exception":"invalid URL"}
+Stack trace:
+#0 0x55be0a1a2280 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+
+[  FAILED  ] URLParser.Parsing (1 ms)
+[----------] 1 test from URLParser (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-[1/1] URLParser.Parsing (0 ms)
-SUCCESS: all tests passed.
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] URLParser.Parsing
+
+ 1 FAILED TEST
+[1/1] URLParser.Parsing (1 ms)
+1 test failed:
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:33)
 Tests took 0 seconds.

@@ -26,19 +26,15 @@ void CheckValidity(const URLParseCase& parse_case, const GURL& parsed_url) {
 
 
 //Test inputs
-static URLParseCase parse_cases[]={{"I://[::daef:dfdb:ebfb:252.252.251.7%25~]"},
-{"f:///+"},
-{"q://[5dbf:faed::badf:255.250.252.251%25_]"},
-{"a://[bace:ddaf:afdb:ddfd:dafc:afce:254.62.250.255%25~]"},
-{"//?%f8"},
-{"//[5cda:fcfe::fbfe:cadc:eccf:250.252.251.252%25_]"},
-{"//[::deca:eabe:bbdc:251.252.90.251]"},
-{"//[::fbec:39.252.254.252]"},
-{"//[::bbab:eedf:cabd:dfef:fcef:254.121.251.252%25_]"},
-{"L://[::dbca:eafc:acca:255.255.254.243%25_]"},
-{"//[::9ebc:ebcf:daeb:ffef:aadc:252.250.255.253]"},
-{"U://[fcaa::aaaa:ebeb:dbfa:aeba:252.5.251.250]"},
-{"d://[::8ceb:cfcd]"}};
+static URLParseCase parse_cases[]={{"//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]"},
+{"//[::fbfd:bdbc:254.253.125.252]"},
+{"L://[1bcb::bdaa:251.251.254.251%25-]"},
+{"v://[::afca:dfed:fdcd:253.252.254.130]"},
+{"///_"},
+{"N://[::%25%ee]"},
+{"//[::ecfc:fbaf:dcaa:236.255.254.250%25_]"},
+{"//[::abed:dbac:bdda:250.252.86.251]"},
+{"F://[::8acd:efce:eacc:253.250.253.255%25_]"}};
 //test execution
 TEST(URLParser, Parsing){
 	for (size_t i = 0; i < base::size(parse_cases); i++) {
