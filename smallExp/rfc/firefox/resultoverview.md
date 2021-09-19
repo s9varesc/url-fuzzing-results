@@ -8,16 +8,16 @@ Total number of Parsers: 11
 
  Parsername | Number of Exceptions | Number of Different Exceptions | Code Coverage 
  --- | --- | --- | ---
-firefox | 0 | 0 | 48.1% 
-JavaScripturijs | 0 | 0 | 17.07% 
-Cpp | 0 | 0 | 10.6% 
+JavaScripturijs | 0 | 0 | 16.72% 
+Cpp | 0 | 0 | 8.8% 
 Go | 0 | 0 | 68.5% 
-chromium | 0 | 0 | 13.53% 
-Python | 0 | 0 | 32.0% 
-C | 1 | 1 | 19.2% 
+Python | 0 | 0 | 31.0% 
+firefox | 1 | 1 | 48.1% 
+C | 1 | 1 | 18.0% 
 PHP | 1 | 1 | 34.48% 
-Java | 1 | 1 | 36.0% 
-JavaScriptwhatwg-url | 1 | 1 | 25.78% 
+Java | 1 | 1 | 23.0% 
+JavaScriptwhatwg-url | 1 | 1 | 11.92% 
+chromium | 1 | 1 | 13.53% 
 Ruby | 1 | 1 | 63.21% 
 
 
@@ -27,13 +27,14 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
+ ``` NS_ERROR_MALFORMED_URI 2152398858 ```  |  ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  <br> 
 
 
 ### C
 
  Exception Type | URLs 
  --- | --- 
- ``` 1 ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` 1 ```  |  ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  <br> 
 
 
 ### JavaScripturijs
@@ -52,14 +53,14 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` Host `[::dbca:eafc:acca:255.255.254.243%25_]` is invalid : the IP host is malformed ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` Host `[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]` is invalid : the IP host is malformed ```  |  ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  <br> 
 
 
 ### Java
 
  Exception Type | URLs 
  --- | --- 
- ``` java.net.MalformedURLException: unknown protocol: l ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` java.net.MalformedURLException: no protocol:  ```  |  ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  <br> 
 
 
 ### Go
@@ -72,13 +73,14 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` Invalid URL:  ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` Invalid URL:  ```  |  ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  <br> 
 
 
 ### chromium
 
  Exception Type | URLs 
  --- | --- 
+ ``` invalid URL ```  |  ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  <br> 
 
 
 ### Python
@@ -91,21 +93,21 @@ Ruby | 1 | 1 | 63.21%
 
  Exception Type | URLs 
  --- | --- 
- ``` bad URI(is not URI?):  ```  |  ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  <br> 
+ ``` bad URI(is not URI?):  ```  |  ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  <br> 
 
 
 ## URL Comparison 
 
  URL | Parsers 
  --- | --- 
- ``` L://[::dbca:eafc:acca:255.255.254.243%25_] ```  | C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br>
+ ``` //[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~] ```  | firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br>
 
 ## Browsers
 
  Browser | Overall Failures | Parsing Exceptions | Verification Errors 
  --- | --- | --- | --- 
-firefox | 0 | 0 | 0
-chromium | 0 | 0 | 0
+firefox | 1 | 1 | 0
+chromium | 1 | 1 | 0
 
 [full browser comparison](./browseroverview.html)
 

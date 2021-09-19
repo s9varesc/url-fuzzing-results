@@ -13,87 +13,32 @@ Note: Google Test filter = URLParser.Parsing
 Value of: parsed_url.is_valid()
   Actual: false
 Expected: true
-{"url":"F:/<//M~", "exception":"invalid URL"}
+{"url":"K:/<///", "exception":"invalid URL"}
 Stack trace:
-#0 0x55ae8bbfc686 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55f0853e8c46 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
 ../../url/url_parsing_unittest.cc:54: Failure
 Expected equality of these values:
   parse_case.host
-    Which is: "{"
+    Which is: "{n"
   parsed_url.host()
-    Which is: ""
-{"url":"file://{</", "error":{"component":"host", "expected":"{", "actual":""}}
+    Which is: "%7Bn"
+{"url":"file:///<//{n", "error":{"component":"host", "expected":"{n", "actual":"%7Bn"}}
 Stack trace:
-#0 0x55ae8bbfeac5 url::(anonymous namespace)::CheckComponents()
-#1 0x55ae8bbfc7e8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
+#0 0x55f0853eb085 url::(anonymous namespace)::CheckComponents()
+#1 0x55f0853e8da8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
 
-../../url/url_parsing_unittest.cc:54: Failure
-Expected equality of these values:
-  parse_case.host
-    Which is: "{"
-  parsed_url.host()
-    Which is: "%7B"
-{"url":"file://{", "error":{"component":"host", "expected":"{", "actual":"%7B"}}
-Stack trace:
-#0 0x55ae8bbfeac5 url::(anonymous namespace)::CheckComponents()
-#1 0x55ae8bbfc7e8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
-
-../../url/url_parsing_unittest.cc:54: Failure
-Expected equality of these values:
-  parse_case.host
-    Which is: "\""
-  parsed_url.host()
-    Which is: "%22"
-{"url":"https://%3d@"", "error":{"component":"host", "expected":""", "actual":"%22"}}
-Stack trace:
-#0 0x55ae8bbfeac5 url::(anonymous namespace)::CheckComponents()
-#1 0x55ae8bbfc7e8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
-
-../../url/url_parsing_unittest.cc:54: Failure
-Expected equality of these values:
-  parse_case.host
-    Which is: "`"
-  parsed_url.host()
-    Which is: "%60"
-{"url":"S:/<//`", "error":{"component":"host", "expected":"`", "actual":"%60"}}
-Stack trace:
-#0 0x55ae8bbfeac5 url::(anonymous namespace)::CheckComponents()
-#1 0x55ae8bbfc7e8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
-
-../../url/url_parsing_unittest.cc:54: Failure
-Expected equality of these values:
-  parse_case.host
-    Which is: "250.253.251.250"
-  parsed_url.host()
-    Which is: ""
-{"url":"file://250.253.251.250</", "error":{"component":"host", "expected":"250.253.251.250", "actual":""}}
-Stack trace:
-#0 0x55ae8bbfeac5 url::(anonymous namespace)::CheckComponents()
-#1 0x55ae8bbfc7e8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
-
-../../url/url_parsing_unittest.cc:54: Failure
-Expected equality of these values:
-  parse_case.host
-    Which is: "{v"
-  parsed_url.host()
-    Which is: "%7Bv"
-{"url":"F:/<//{v", "error":{"component":"host", "expected":"{v", "actual":"%7Bv"}}
-Stack trace:
-#0 0x55ae8bbfeac5 url::(anonymous namespace)::CheckComponents()
-#1 0x55ae8bbfc7e8 url::(anonymous namespace)::URLParser_Parsing_Test::TestBody()
-
-[  FAILED  ] URLParser.Parsing (4 ms)
-[----------] 1 test from URLParser (5 ms total)
+[  FAILED  ] URLParser.Parsing (1 ms)
+[----------] 1 test from URLParser (1 ms total)
 
 [----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (5 ms total)
+[==========] 1 test from 1 test suite ran. (1 ms total)
 [  PASSED  ] 0 tests.
 [  FAILED  ] 1 test, listed below:
 [  FAILED  ] URLParser.Parsing
 
  1 FAILED TEST
-[1/1] URLParser.Parsing (4 ms)
+[1/1] URLParser.Parsing (1 ms)
 1 test failed:
-    URLParser.Parsing (../../url/url_parsing_unittest.cc:102)
-Tests took 0 seconds.
+    URLParser.Parsing (../../url/url_parsing_unittest.cc:75)
+Tests took 2 seconds.

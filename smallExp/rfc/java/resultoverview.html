@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="style.css"><title>URL-Fuzzing</title></head><body>
 <h1>Results</h1>
-<p>Total number of URLs: 1</p>
+<p>Total number of URLs: 3</p>
 <p>Total number of Parsers: 11</p>
 <h2>Parser Comparison</h2>
 <table class="simpletable">
@@ -14,22 +14,16 @@
 </thead>
 <tbody>
 <tr>
-<td>firefox</td>
-<td>0</td>
-<td>0</td>
-<td>48.1%</td>
-</tr>
-<tr>
 <td>JavaScripturijs</td>
 <td>0</td>
 <td>0</td>
-<td>17.07%</td>
+<td>17.33%</td>
 </tr>
 <tr>
 <td>Cpp</td>
 <td>0</td>
 <td>0</td>
-<td>10.6%</td>
+<td>16.0%</td>
 </tr>
 <tr>
 <td>Go</td>
@@ -38,46 +32,52 @@
 <td>68.5%</td>
 </tr>
 <tr>
-<td>chromium</td>
-<td>0</td>
-<td>0</td>
-<td>13.53%</td>
-</tr>
-<tr>
 <td>Python</td>
 <td>0</td>
 <td>0</td>
 <td>32.0%</td>
 </tr>
 <tr>
+<td>firefox</td>
+<td>2</td>
+<td>1</td>
+<td>48.1%</td>
+</tr>
+<tr>
 <td>C</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>19.2%</td>
+<td>23.5%</td>
 </tr>
 <tr>
 <td>PHP</td>
-<td>1</td>
-<td>1</td>
-<td>34.48%</td>
-</tr>
-<tr>
-<td>Java</td>
-<td>1</td>
-<td>1</td>
-<td>36.0%</td>
+<td>2</td>
+<td>2</td>
+<td>41.38%</td>
 </tr>
 <tr>
 <td>JavaScriptwhatwg-url</td>
+<td>2</td>
 <td>1</td>
+<td>29.51%</td>
+</tr>
+<tr>
+<td>chromium</td>
+<td>2</td>
 <td>1</td>
-<td>25.78%</td>
+<td>13.53%</td>
 </tr>
 <tr>
 <td>Ruby</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>63.21%</td>
+<td>67.88%</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>3</td>
+<td>2</td>
+<td>36.0%</td>
 </tr>
 </tbody>
 </table>
@@ -92,8 +92,8 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>NS_ERROR_MALFORMED_URI 2152398858</code></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code>  <br> <code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -108,7 +108,7 @@
 <tbody>
 <tr>
 <td><code>1</code></td>
-<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code>  <br> <code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -152,8 +152,12 @@
 </thead>
 <tbody>
 <tr>
-<td><code>Host `[::dbca:eafc:acca:255.255.254.243%25_]` is invalid : the IP host is malformed</code></td>
-<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br></td>
+<td><code>Host `[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]` is invalid : the IP host is malformed</code></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code>  <br></td>
+</tr>
+<tr>
+<td><code>Host `[::ecfc:fbaf:dcaa:236.255.254.250%25_]` is invalid : the IP host is malformed</code></td>
+<td><code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -167,8 +171,12 @@
 </thead>
 <tbody>
 <tr>
-<td><code>java.net.MalformedURLException: unknown protocol: l</code></td>
-<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br></td>
+<td><code>java.net.MalformedURLException: no protocol:</code></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code>  <br> <code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code>  <br></td>
+</tr>
+<tr>
+<td><code>java.net.MalformedURLException: unknown protocol: v</code></td>
+<td><code>v://[::afca:dfed:fdcd:253.252.254.130]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -198,7 +206,7 @@
 <tbody>
 <tr>
 <td><code>Invalid URL:</code></td>
-<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code>  <br> <code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -212,8 +220,8 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>invalid URL</code></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code>  <br> <code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -243,7 +251,7 @@
 <tbody>
 <tr>
 <td><code>bad URI(is not URI?):</code></td>
-<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code>  <br></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code>  <br> <code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code>  <br></td>
 </tr>
 </tbody>
 </table>
@@ -257,8 +265,16 @@
 </thead>
 <tbody>
 <tr>
-<td><code>L://[::dbca:eafc:acca:255.255.254.243%25_]</code></td>
-<td>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>Ruby <br></td>
+<td><code>//[ccec:fdaa::edcd:bcca:cede:252.251.254.250%25~]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
+</tr>
+<tr>
+<td><code>v://[::afca:dfed:fdcd:253.252.254.130]</code></td>
+<td>Java <br></td>
+</tr>
+<tr>
+<td><code>//[::ecfc:fbaf:dcaa:236.255.254.250%25_]</code></td>
+<td>firefox <br>C <br>PHP <br>Java <br>JavaScriptwhatwg-url <br>chromium <br>Ruby <br></td>
 </tr>
 </tbody>
 </table>
@@ -275,14 +291,14 @@
 <tbody>
 <tr>
 <td>firefox</td>
-<td>0</td>
-<td>0</td>
+<td>2</td>
+<td>2</td>
 <td>0</td>
 </tr>
 <tr>
 <td>chromium</td>
-<td>0</td>
-<td>0</td>
+<td>2</td>
+<td>2</td>
 <td>0</td>
 </tr>
 </tbody>
