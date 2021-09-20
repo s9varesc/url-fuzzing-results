@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2021-09-19 07:51:16</td>
+            <td class="headerValue">2021-09-19 17:15:12</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">13</td>
@@ -98,11 +98,11 @@
 <span class="lineNum">      36 </span><span class="lineNoCov">          0 : }</span>
 <a name="37"><span class="lineNum">      37 </span>            : </a>
 <span class="lineNum">      38 </span>            : 
-<span class="lineNum">      39 </span><span class="lineCov">      15010 : URI::URI(const std::string&amp; uri):</span>
-<span class="lineNum">      40 </span><span class="lineCov">      15011 :         _port(0)</span>
+<span class="lineNum">      39 </span><span class="lineCov">      15060 : URI::URI(const std::string&amp; uri):</span>
+<span class="lineNum">      40 </span><span class="lineCov">      15061 :         _port(0)</span>
 <span class="lineNum">      41 </span>            : {
-<span class="lineNum">      42 </span><span class="lineCov">      15010 :         parse(uri);</span>
-<span class="lineNum">      43 </span><span class="lineCov">      15009 : }</span>
+<span class="lineNum">      42 </span><span class="lineCov">      15060 :         parse(uri);</span>
+<span class="lineNum">      43 </span><span class="lineCov">      15059 : }</span>
 <a name="44"><span class="lineNum">      44 </span>            : </a>
 <span class="lineNum">      45 </span>            : 
 <span class="lineNum">      46 </span><span class="lineNoCov">          0 : URI::URI(const char* uri):</span>
@@ -208,9 +208,9 @@
 <span class="lineNum">     146 </span><span class="lineNoCov">          0 : }</span>
 <a name="147"><span class="lineNum">     147 </span>            : </a>
 <span class="lineNum">     148 </span>            : 
-<span class="lineNum">     149 </span><span class="lineCov">      15009 : URI::~URI()</span>
+<span class="lineNum">     149 </span><span class="lineCov">      15059 : URI::~URI()</span>
 <span class="lineNum">     150 </span>            : {
-<span class="lineNum">     151 </span><span class="lineCov">      15009 : }</span>
+<span class="lineNum">     151 </span><span class="lineCov">      15059 : }</span>
 <a name="152"><span class="lineNum">     152 </span>            : </a>
 <span class="lineNum">     153 </span>            : 
 <span class="lineNum">     154 </span><span class="lineNoCov">          0 : URI&amp; URI::operator = (const URI&amp; uri)</span>
@@ -325,11 +325,11 @@
 <span class="lineNum">     263 </span>            : }
 <a name="264"><span class="lineNum">     264 </span>            : </a>
 <span class="lineNum">     265 </span>            : 
-<span class="lineNum">     266 </span><span class="lineCov">       7610 : void URI::setScheme(const std::string&amp; scheme)</span>
+<span class="lineNum">     266 </span><span class="lineCov">       7634 : void URI::setScheme(const std::string&amp; scheme)</span>
 <span class="lineNum">     267 </span>            : {
-<span class="lineNum">     268 </span><span class="lineCov">       7610 :         _scheme = scheme;</span>
-<span class="lineNum">     269 </span><span class="lineCov">       7610 :         toLowerInPlace(_scheme);</span>
-<span class="lineNum">     270 </span><span class="lineCov">       7610 : }</span>
+<span class="lineNum">     268 </span><span class="lineCov">       7634 :         _scheme = scheme;</span>
+<span class="lineNum">     269 </span><span class="lineCov">       7634 :         toLowerInPlace(_scheme);</span>
+<span class="lineNum">     270 </span><span class="lineCov">       7634 : }</span>
 <a name="271"><span class="lineNum">     271 </span>            : </a>
 <span class="lineNum">     272 </span>            : 
 <span class="lineNum">     273 </span><span class="lineNoCov">          0 : void URI::setUserInfo(const std::string&amp; userInfo)</span>
@@ -728,42 +728,42 @@
 <span class="lineNum">     666 </span><span class="lineNoCov">          0 : }</span>
 <a name="667"><span class="lineNum">     667 </span>            : </a>
 <span class="lineNum">     668 </span>            : 
-<span class="lineNum">     669 </span><span class="lineCov">       8053 : void URI::decode(const std::string&amp; str, std::string&amp; decodedStr, bool plusAsSpace)</span>
+<span class="lineNum">     669 </span><span class="lineCov">       8080 : void URI::decode(const std::string&amp; str, std::string&amp; decodedStr, bool plusAsSpace)</span>
 <span class="lineNum">     670 </span>            : {
-<span class="lineNum">     671 </span><span class="lineCov">       8053 :         bool inQuery = false;</span>
-<span class="lineNum">     672 </span><span class="lineCov">       8053 :         std::string::const_iterator it  = str.begin();</span>
-<span class="lineNum">     673 </span><span class="lineCov">       8053 :         std::string::const_iterator end = str.end();</span>
-<span class="lineNum">     674 </span><span class="lineCov">     441629 :         while (it != end)</span>
+<span class="lineNum">     671 </span><span class="lineCov">       8080 :         bool inQuery = false;</span>
+<span class="lineNum">     672 </span><span class="lineCov">       8080 :         std::string::const_iterator it  = str.begin();</span>
+<span class="lineNum">     673 </span><span class="lineCov">       8080 :         std::string::const_iterator end = str.end();</span>
+<span class="lineNum">     674 </span><span class="lineCov">     443274 :         while (it != end)</span>
 <span class="lineNum">     675 </span>            :         {
-<span class="lineNum">     676 </span><span class="lineCov">     216788 :                 char c = *it++;</span>
-<span class="lineNum">     677 </span><span class="lineCov">     216788 :                 if (c == '?') inQuery = true;</span>
+<span class="lineNum">     676 </span><span class="lineCov">     217597 :                 char c = *it++;</span>
+<span class="lineNum">     677 </span><span class="lineCov">     217597 :                 if (c == '?') inQuery = true;</span>
 <span class="lineNum">     678 </span>            :                 // spaces may be encoded as plus signs in the query
-<span class="lineNum">     679 </span><span class="lineCov">     216788 :                 if (inQuery &amp;&amp; plusAsSpace &amp;&amp; c == '+') c = ' ';</span>
-<span class="lineNum">     680 </span><span class="lineCov">     216788 :                 else if (c == '%')</span>
+<span class="lineNum">     679 </span><span class="lineCov">     217597 :                 if (inQuery &amp;&amp; plusAsSpace &amp;&amp; c == '+') c = ' ';</span>
+<span class="lineNum">     680 </span><span class="lineCov">     217597 :                 else if (c == '%')</span>
 <span class="lineNum">     681 </span>            :                 {
-<span class="lineNum">     682 </span><span class="lineCov">       3541 :                         if (it == end) throw URISyntaxException(&quot;URI encoding: no hex digit following percent sign&quot;, str);</span>
-<span class="lineNum">     683 </span><span class="lineCov">       3541 :                         char hi = *it++;</span>
-<span class="lineNum">     684 </span><span class="lineCov">       3541 :                         if (it == end) throw URISyntaxException(&quot;URI encoding: two hex digits must follow percent sign&quot;, str);</span>
-<span class="lineNum">     685 </span><span class="lineCov">       3541 :                         char lo = *it++;</span>
-<span class="lineNum">     686 </span><span class="lineCov">       3541 :                         if (hi &gt;= '0' &amp;&amp; hi &lt;= '9')</span>
-<span class="lineNum">     687 </span><span class="lineCov">       3225 :                                 c = hi - '0';</span>
+<span class="lineNum">     682 </span><span class="lineCov">       3555 :                         if (it == end) throw URISyntaxException(&quot;URI encoding: no hex digit following percent sign&quot;, str);</span>
+<span class="lineNum">     683 </span><span class="lineCov">       3555 :                         char hi = *it++;</span>
+<span class="lineNum">     684 </span><span class="lineCov">       3555 :                         if (it == end) throw URISyntaxException(&quot;URI encoding: two hex digits must follow percent sign&quot;, str);</span>
+<span class="lineNum">     685 </span><span class="lineCov">       3555 :                         char lo = *it++;</span>
+<span class="lineNum">     686 </span><span class="lineCov">       3555 :                         if (hi &gt;= '0' &amp;&amp; hi &lt;= '9')</span>
+<span class="lineNum">     687 </span><span class="lineCov">       3239 :                                 c = hi - '0';</span>
 <span class="lineNum">     688 </span><span class="lineCov">        316 :                         else if (hi &gt;= 'A' &amp;&amp; hi &lt;= 'F')</span>
 <span class="lineNum">     689 </span><span class="lineNoCov">          0 :                                 c = hi - 'A' + 10;</span>
 <span class="lineNum">     690 </span><span class="lineCov">        316 :                         else if (hi &gt;= 'a' &amp;&amp; hi &lt;= 'f')</span>
 <span class="lineNum">     691 </span><span class="lineCov">        316 :                                 c = hi - 'a' + 10;</span>
 <span class="lineNum">     692 </span><span class="lineNoCov">          0 :                         else throw URISyntaxException(&quot;URI encoding: not a hex digit&quot;);</span>
-<span class="lineNum">     693 </span><span class="lineCov">       3541 :                         c *= 16;</span>
-<span class="lineNum">     694 </span><span class="lineCov">       3541 :                         if (lo &gt;= '0' &amp;&amp; lo &lt;= '9')</span>
-<span class="lineNum">     695 </span><span class="lineCov">       3229 :                                 c += lo - '0';</span>
-<span class="lineNum">     696 </span><span class="lineCov">        312 :                         else if (lo &gt;= 'A' &amp;&amp; lo &lt;= 'F')</span>
+<span class="lineNum">     693 </span><span class="lineCov">       3555 :                         c *= 16;</span>
+<span class="lineNum">     694 </span><span class="lineCov">       3555 :                         if (lo &gt;= '0' &amp;&amp; lo &lt;= '9')</span>
+<span class="lineNum">     695 </span><span class="lineCov">       3242 :                                 c += lo - '0';</span>
+<span class="lineNum">     696 </span><span class="lineCov">        313 :                         else if (lo &gt;= 'A' &amp;&amp; lo &lt;= 'F')</span>
 <span class="lineNum">     697 </span><span class="lineNoCov">          0 :                                 c += lo - 'A' + 10;</span>
-<span class="lineNum">     698 </span><span class="lineCov">        312 :                         else if (lo &gt;= 'a' &amp;&amp; lo &lt;= 'f')</span>
-<span class="lineNum">     699 </span><span class="lineCov">        312 :                                 c += lo - 'a' + 10;</span>
+<span class="lineNum">     698 </span><span class="lineCov">        313 :                         else if (lo &gt;= 'a' &amp;&amp; lo &lt;= 'f')</span>
+<span class="lineNum">     699 </span><span class="lineCov">        313 :                                 c += lo - 'a' + 10;</span>
 <span class="lineNum">     700 </span><span class="lineNoCov">          0 :                         else throw URISyntaxException(&quot;URI encoding: not a hex digit&quot;);</span>
 <span class="lineNum">     701 </span>            :                 }
-<span class="lineNum">     702 </span><span class="lineCov">     216788 :                 decodedStr += c;</span>
+<span class="lineNum">     702 </span><span class="lineCov">     217597 :                 decodedStr += c;</span>
 <span class="lineNum">     703 </span>            :         }
-<span class="lineNum">     704 </span><span class="lineCov">       8053 : }</span>
+<span class="lineNum">     704 </span><span class="lineCov">       8080 : }</span>
 <a name="705"><span class="lineNum">     705 </span>            : </a>
 <span class="lineNum">     706 </span>            : 
 <span class="lineNum">     707 </span><span class="lineNoCov">          0 : bool URI::isWellKnownPort() const</span>
@@ -815,31 +815,31 @@
 <span class="lineNum">     753 </span>            : }
 <a name="754"><span class="lineNum">     754 </span>            : </a>
 <span class="lineNum">     755 </span>            : 
-<span class="lineNum">     756 </span><span class="lineCov">      15010 : void URI::parse(const std::string&amp; uri)</span>
+<span class="lineNum">     756 </span><span class="lineCov">      15060 : void URI::parse(const std::string&amp; uri)</span>
 <span class="lineNum">     757 </span>            : {
-<span class="lineNum">     758 </span><span class="lineCov">      15010 :         std::string::const_iterator it  = uri.begin();</span>
-<span class="lineNum">     759 </span><span class="lineCov">      15010 :         std::string::const_iterator end = uri.end();</span>
-<span class="lineNum">     760 </span><span class="lineCov">      15010 :         if (it == end) return;</span>
-<span class="lineNum">     761 </span><span class="lineCov">      15010 :         if (*it != '/' &amp;&amp; *it != '.' &amp;&amp; *it != '?' &amp;&amp; *it != '#')</span>
+<span class="lineNum">     758 </span><span class="lineCov">      15060 :         std::string::const_iterator it  = uri.begin();</span>
+<span class="lineNum">     759 </span><span class="lineCov">      15060 :         std::string::const_iterator end = uri.end();</span>
+<span class="lineNum">     760 </span><span class="lineCov">      15060 :         if (it == end) return;</span>
+<span class="lineNum">     761 </span><span class="lineCov">      15060 :         if (*it != '/' &amp;&amp; *it != '.' &amp;&amp; *it != '?' &amp;&amp; *it != '#')</span>
 <span class="lineNum">     762 </span>            :         {
-<span class="lineNum">     763 </span><span class="lineCov">      15220 :                 std::string scheme;</span>
-<span class="lineNum">     764 </span><span class="lineCov">      15263 :                 while (it != end &amp;&amp; *it != ':' &amp;&amp; *it != '?' &amp;&amp; *it != '#' &amp;&amp; *it != '/') scheme += *it++;</span>
-<span class="lineNum">     765 </span><span class="lineCov">       7610 :                 if (it != end &amp;&amp; *it == ':')</span>
+<span class="lineNum">     763 </span><span class="lineCov">      15268 :                 std::string scheme;</span>
+<span class="lineNum">     764 </span><span class="lineCov">      15311 :                 while (it != end &amp;&amp; *it != ':' &amp;&amp; *it != '?' &amp;&amp; *it != '#' &amp;&amp; *it != '/') scheme += *it++;</span>
+<span class="lineNum">     765 </span><span class="lineCov">       7634 :                 if (it != end &amp;&amp; *it == ':')</span>
 <span class="lineNum">     766 </span>            :                 {
-<span class="lineNum">     767 </span><span class="lineCov">       7610 :                         ++it;</span>
-<span class="lineNum">     768 </span><span class="lineCov">       7610 :                         if (it == end) throw URISyntaxException(&quot;URI scheme must be followed by authority or path&quot;, uri);</span>
-<span class="lineNum">     769 </span><span class="lineCov">       7610 :                         setScheme(scheme);</span>
-<span class="lineNum">     770 </span><span class="lineCov">       7610 :                         if (*it == '/')</span>
+<span class="lineNum">     767 </span><span class="lineCov">       7634 :                         ++it;</span>
+<span class="lineNum">     768 </span><span class="lineCov">       7634 :                         if (it == end) throw URISyntaxException(&quot;URI scheme must be followed by authority or path&quot;, uri);</span>
+<span class="lineNum">     769 </span><span class="lineCov">       7634 :                         setScheme(scheme);</span>
+<span class="lineNum">     770 </span><span class="lineCov">       7634 :                         if (*it == '/')</span>
 <span class="lineNum">     771 </span>            :                         {
-<span class="lineNum">     772 </span><span class="lineCov">       7610 :                                 ++it;</span>
-<span class="lineNum">     773 </span><span class="lineCov">       7610 :                                 if (it != end &amp;&amp; *it == '/')</span>
+<span class="lineNum">     772 </span><span class="lineCov">       7634 :                                 ++it;</span>
+<span class="lineNum">     773 </span><span class="lineCov">       7634 :                                 if (it != end &amp;&amp; *it == '/')</span>
 <span class="lineNum">     774 </span>            :                                 {
-<span class="lineNum">     775 </span><span class="lineCov">       7610 :                                         ++it;</span>
-<span class="lineNum">     776 </span><span class="lineCov">       7610 :                                         parseAuthority(it, end);</span>
+<span class="lineNum">     775 </span><span class="lineCov">       7634 :                                         ++it;</span>
+<span class="lineNum">     776 </span><span class="lineCov">       7634 :                                         parseAuthority(it, end);</span>
 <span class="lineNum">     777 </span>            :                                 }
 <span class="lineNum">     778 </span><span class="lineNoCov">          0 :                                 else --it;</span>
 <span class="lineNum">     779 </span>            :                         }
-<span class="lineNum">     780 </span><span class="lineCov">       7609 :                         parsePathEtc(it, end);</span>
+<span class="lineNum">     780 </span><span class="lineCov">       7633 :                         parsePathEtc(it, end);</span>
 <span class="lineNum">     781 </span>            :                 }
 <span class="lineNum">     782 </span>            :                 else
 <span class="lineNum">     783 </span>            :                 {
@@ -847,48 +847,48 @@
 <span class="lineNum">     785 </span><span class="lineNoCov">          0 :                         parsePathEtc(it, end);</span>
 <span class="lineNum">     786 </span>            :                 }
 <span class="lineNum">     787 </span>            :         }
-<span class="lineNum">     788 </span><span class="lineCov">       7400 :         else parsePathEtc(it, end);</span>
+<span class="lineNum">     788 </span><span class="lineCov">       7426 :         else parsePathEtc(it, end);</span>
 <span class="lineNum">     789 </span>            : }
 <a name="790"><span class="lineNum">     790 </span>            : </a>
 <span class="lineNum">     791 </span>            : 
-<span class="lineNum">     792 </span><span class="lineCov">       7610 : void URI::parseAuthority(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
+<span class="lineNum">     792 </span><span class="lineCov">       7634 : void URI::parseAuthority(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
 <span class="lineNum">     793 </span>            : {
-<span class="lineNum">     794 </span><span class="lineCov">      15220 :         std::string userInfo;</span>
-<span class="lineNum">     795 </span><span class="lineCov">      15220 :         std::string part;</span>
-<span class="lineNum">     796 </span><span class="lineCov">     428634 :         while (it != end &amp;&amp; *it != '/' &amp;&amp; *it != '?' &amp;&amp; *it != '#')</span>
+<span class="lineNum">     794 </span><span class="lineCov">      15268 :         std::string userInfo;</span>
+<span class="lineNum">     795 </span><span class="lineCov">      15268 :         std::string part;</span>
+<span class="lineNum">     796 </span><span class="lineCov">     430040 :         while (it != end &amp;&amp; *it != '/' &amp;&amp; *it != '?' &amp;&amp; *it != '#')</span>
 <span class="lineNum">     797 </span>            :         {
-<span class="lineNum">     798 </span><span class="lineCov">     210512 :                 if (*it == '@')</span>
+<span class="lineNum">     798 </span><span class="lineCov">     211203 :                 if (*it == '@')</span>
 <span class="lineNum">     799 </span>            :                 {
 <span class="lineNum">     800 </span><span class="lineCov">        208 :                         userInfo = part;</span>
 <span class="lineNum">     801 </span><span class="lineCov">        208 :                         part.clear();</span>
 <span class="lineNum">     802 </span>            :                 }
-<span class="lineNum">     803 </span><span class="lineCov">     210304 :                 else part += *it;</span>
-<span class="lineNum">     804 </span><span class="lineCov">     210512 :                 ++it;</span>
+<span class="lineNum">     803 </span><span class="lineCov">     210995 :                 else part += *it;</span>
+<span class="lineNum">     804 </span><span class="lineCov">     211203 :                 ++it;</span>
 <span class="lineNum">     805 </span>            :         }
-<span class="lineNum">     806 </span><span class="lineCov">       7610 :         std::string::const_iterator pbeg = part.begin();</span>
-<span class="lineNum">     807 </span><span class="lineCov">       7610 :         std::string::const_iterator pend = part.end();</span>
-<span class="lineNum">     808 </span><span class="lineCov">       7610 :         parseHostAndPort(pbeg, pend);</span>
-<span class="lineNum">     809 </span><span class="lineCov">       7609 :         _userInfo = userInfo;</span>
-<span class="lineNum">     810 </span><span class="lineCov">       7609 : }</span>
+<span class="lineNum">     806 </span><span class="lineCov">       7634 :         std::string::const_iterator pbeg = part.begin();</span>
+<span class="lineNum">     807 </span><span class="lineCov">       7634 :         std::string::const_iterator pend = part.end();</span>
+<span class="lineNum">     808 </span><span class="lineCov">       7634 :         parseHostAndPort(pbeg, pend);</span>
+<span class="lineNum">     809 </span><span class="lineCov">       7633 :         _userInfo = userInfo;</span>
+<span class="lineNum">     810 </span><span class="lineCov">       7633 : }</span>
 <a name="811"><span class="lineNum">     811 </span>            : </a>
 <span class="lineNum">     812 </span>            : 
-<span class="lineNum">     813 </span><span class="lineCov">       7610 : void URI::parseHostAndPort(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
+<span class="lineNum">     813 </span><span class="lineCov">       7634 : void URI::parseHostAndPort(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
 <span class="lineNum">     814 </span>            : {
-<span class="lineNum">     815 </span><span class="lineCov">       7610 :         if (it == end) return;</span>
-<span class="lineNum">     816 </span><span class="lineCov">      13630 :         std::string host;</span>
-<span class="lineNum">     817 </span><span class="lineCov">       6815 :         if (*it == '[')</span>
+<span class="lineNum">     815 </span><span class="lineCov">       7634 :         if (it == end) return;</span>
+<span class="lineNum">     816 </span><span class="lineCov">      13676 :         std::string host;</span>
+<span class="lineNum">     817 </span><span class="lineCov">       6838 :         if (*it == '[')</span>
 <span class="lineNum">     818 </span>            :         {
 <span class="lineNum">     819 </span>            :                 // IPv6 address
-<span class="lineNum">     820 </span><span class="lineCov">       6154 :                 ++it;</span>
-<span class="lineNum">     821 </span><span class="lineCov">     199351 :                 while (it != end &amp;&amp; *it != ']') host += *it++;</span>
-<span class="lineNum">     822 </span><span class="lineCov">       6154 :                 if (it == end) throw URISyntaxException(&quot;unterminated IPv6 address&quot;);</span>
-<span class="lineNum">     823 </span><span class="lineCov">       6154 :                 ++it;</span>
+<span class="lineNum">     820 </span><span class="lineCov">       6174 :                 ++it;</span>
+<span class="lineNum">     821 </span><span class="lineCov">     199993 :                 while (it != end &amp;&amp; *it != ']') host += *it++;</span>
+<span class="lineNum">     822 </span><span class="lineCov">       6174 :                 if (it == end) throw URISyntaxException(&quot;unterminated IPv6 address&quot;);</span>
+<span class="lineNum">     823 </span><span class="lineCov">       6174 :                 ++it;</span>
 <span class="lineNum">     824 </span>            :         }
 <span class="lineNum">     825 </span>            :         else
 <span class="lineNum">     826 </span>            :         {
-<span class="lineNum">     827 </span><span class="lineCov">       5134 :                 while (it != end &amp;&amp; *it != ':') host += *it++;</span>
+<span class="lineNum">     827 </span><span class="lineCov">       5166 :                 while (it != end &amp;&amp; *it != ':') host += *it++;</span>
 <span class="lineNum">     828 </span>            :         }
-<span class="lineNum">     829 </span><span class="lineCov">       6815 :         if (it != end &amp;&amp; *it == ':')</span>
+<span class="lineNum">     829 </span><span class="lineCov">       6838 :         if (it != end &amp;&amp; *it == ':')</span>
 <span class="lineNum">     830 </span>            :         {
 <span class="lineNum">     831 </span><span class="lineCov">         88 :                 ++it;</span>
 <span class="lineNum">     832 </span><span class="lineCov">        176 :                 std::string port;</span>
@@ -903,31 +903,31 @@
 <span class="lineNum">     841 </span>            :                 }
 <span class="lineNum">     842 </span><span class="lineCov">         73 :                 else _port = 0;</span>
 <span class="lineNum">     843 </span>            :         }
-<span class="lineNum">     844 </span><span class="lineCov">       6727 :         else _port = 0;</span>
-<span class="lineNum">     845 </span><span class="lineCov">       6814 :         _host = host;</span>
-<span class="lineNum">     846 </span><span class="lineCov">       6814 :         toLowerInPlace(_host);</span>
+<span class="lineNum">     844 </span><span class="lineCov">       6750 :         else _port = 0;</span>
+<span class="lineNum">     845 </span><span class="lineCov">       6837 :         _host = host;</span>
+<span class="lineNum">     846 </span><span class="lineCov">       6837 :         toLowerInPlace(_host);</span>
 <span class="lineNum">     847 </span>            : }
 <a name="848"><span class="lineNum">     848 </span>            : </a>
 <span class="lineNum">     849 </span>            : 
-<span class="lineNum">     850 </span><span class="lineCov">       7892 : void URI::parsePath(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
+<span class="lineNum">     850 </span><span class="lineCov">       7919 : void URI::parsePath(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
 <span class="lineNum">     851 </span>            : {
-<span class="lineNum">     852 </span><span class="lineCov">      15784 :         std::string path;</span>
-<span class="lineNum">     853 </span><span class="lineCov">     231503 :         while (it != end &amp;&amp; *it != '?' &amp;&amp; *it != '#') path += *it++;</span>
-<span class="lineNum">     854 </span><span class="lineCov">       7892 :         decode(path, _path);</span>
-<span class="lineNum">     855 </span><span class="lineCov">       7892 : }</span>
+<span class="lineNum">     852 </span><span class="lineCov">      15838 :         std::string path;</span>
+<span class="lineNum">     853 </span><span class="lineCov">     232367 :         while (it != end &amp;&amp; *it != '?' &amp;&amp; *it != '#') path += *it++;</span>
+<span class="lineNum">     854 </span><span class="lineCov">       7919 :         decode(path, _path);</span>
+<span class="lineNum">     855 </span><span class="lineCov">       7919 : }</span>
 <a name="856"><span class="lineNum">     856 </span>            : </a>
 <span class="lineNum">     857 </span>            : 
-<span class="lineNum">     858 </span><span class="lineCov">      15009 : void URI::parsePathEtc(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
+<span class="lineNum">     858 </span><span class="lineCov">      15059 : void URI::parsePathEtc(std::string::const_iterator&amp; it, const std::string::const_iterator&amp; end)</span>
 <span class="lineNum">     859 </span>            : {
-<span class="lineNum">     860 </span><span class="lineCov">      15009 :         if (it == end) return;</span>
-<span class="lineNum">     861 </span><span class="lineCov">       8080 :         if (*it != '?' &amp;&amp; *it != '#')</span>
-<span class="lineNum">     862 </span><span class="lineCov">       7892 :                 parsePath(it, end);</span>
-<span class="lineNum">     863 </span><span class="lineCov">       8080 :         if (it != end &amp;&amp; *it == '?')</span>
+<span class="lineNum">     860 </span><span class="lineCov">      15059 :         if (it == end) return;</span>
+<span class="lineNum">     861 </span><span class="lineCov">       8107 :         if (*it != '?' &amp;&amp; *it != '#')</span>
+<span class="lineNum">     862 </span><span class="lineCov">       7919 :                 parsePath(it, end);</span>
+<span class="lineNum">     863 </span><span class="lineCov">       8107 :         if (it != end &amp;&amp; *it == '?')</span>
 <span class="lineNum">     864 </span>            :         {
 <span class="lineNum">     865 </span><span class="lineCov">        193 :                 ++it;</span>
 <span class="lineNum">     866 </span><span class="lineCov">        193 :                 parseQuery(it, end);</span>
 <span class="lineNum">     867 </span>            :         }
-<span class="lineNum">     868 </span><span class="lineCov">       8080 :         if (it != end &amp;&amp; *it == '#')</span>
+<span class="lineNum">     868 </span><span class="lineCov">       8107 :         if (it != end &amp;&amp; *it == '#')</span>
 <span class="lineNum">     869 </span>            :         {
 <span class="lineNum">     870 </span><span class="lineCov">        161 :                 ++it;</span>
 <span class="lineNum">     871 </span><span class="lineCov">        161 :                 parseFragment(it, end);</span>
